@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل الفاتورة المستحقة وتأكيد السداد الذكي - حارث</title>
+<!-- Material Symbols & IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-variant": "#e0e3e4",
+            "surface-container-high": "#e5e9ea",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-background": "#181c1d",
+            "on-tertiary-container": "#e19000",
+            "on-primary-fixed": "#002022",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-fixed-variant": "#005236",
+            "text-primary": "#0F172A",
+            "primary": "#00272a",
+            "surface-container": "#ebeeef",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#00714d",
+            "tertiary-container": "#513100",
+            "text-secondary": "#475569",
+            "background": "#f7fafb",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "primary-container": "#0b3e42",
+            "surface-tint": "#396569",
+            "primary-fixed": "#bcebef",
+            "surface-container-highest": "#e0e3e4",
+            "inverse-surface": "#2d3132",
+            "inverse-on-surface": "#eef1f2",
+            "outline-variant": "#c0c8c9",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "outline": "#707979",
+            "surface-container-low": "#f1f4f5",
+            "on-surface": "#181c1d",
+            "inverse-primary": "#a1cfd3",
+            "surface-dim": "#d7dadb",
+            "secondary": "#006c49",
+            "surface-bright": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "text-muted": "#94A3B8",
+            "danger-debit": "#EF4444",
+            "border-subtle": "#E2E8F0",
+            "tertiary": "#341e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-full bg-background text-text-primary selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Viewport Container (~390px locked canvas on desktop preview, native fluid on mobile) -->
+<div class="relative mx-auto flex min-h-screen w-full max-w-[420px] flex-col bg-background pb-36 shadow-xl sm:border-x sm:border-border-subtle">
+<!-- TopAppBar (DefaultAppBar - Shared Component Standard) -->
+<header class="sticky top-0 z-40 flex h-16 w-full items-center justify-between bg-surface px-4 shadow-[0_2px_8px_rgba(11,62,66,0.03)] border-b border-border-subtle/80">
+<!-- Start (Physical Right in RTL): Back Action -->
+<button aria-label="الرجوع للخلف" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-subtle text-text-primary transition-transform active:scale-95 hover:bg-surface-container-high focus:outline-none" type="button">
+<span class="material-symbols-outlined text-text-primary" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight text-center">
+        تفاصيل الفاتورة المستحقة
+      </h1>
+<!-- End (Physical Left in RTL): Secondary Utility Trigger (Print / Share) -->
+<button aria-label="مشاركة أو طباعة" class="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-subtle text-text-secondary transition-transform active:scale-95 hover:bg-surface-container-high focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 space-y-4 px-4 pt-4">
+<!-- Status Banner: Utility Indicator -->
+<div class="flex items-center justify-between rounded-xl bg-primary-container/5 px-3.5 py-2.5 border border-primary-container/10">
+<div class="flex items-center gap-2.5">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="electric_meter">electric_meter</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-primary-container">شركة شمال القاهرة لتوزيع الكهرباء</p>
+<p class="text-body-sm font-body-sm text-text-secondary">خدمات السداد الإلكتروني المعتمدة</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 rounded-full bg-secondary-fixed/50 px-2.5 py-0.5 text-label-sm font-label-sm text-on-secondary-fixed-variant">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse"></span>
+          فاتورة نشطة
+        </span>
+</div>
+<!-- 2. Subscriber Info Card (بيانات المشترك والعداد) -->
+<section class="relative overflow-hidden rounded-2xl border border-border-subtle bg-surface p-4 shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<!-- Subtle Watermarked Icon in RTL Corner (Top Left) -->
+<div class="pointer-events-none absolute -left-4 -top-4 opacity-[0.04] text-primary-container select-none">
+<span class="material-symbols-outlined text-[100px]" data-icon="receipt_long">receipt_long</span>
+</div>
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[20px]" data-icon="badge">badge</span>
+<h2 class="text-label-lg font-label-lg text-text-primary">بيانات المشترك والعداد</h2>
+</div>
+<span class="rounded-lg bg-error-container/40 px-2 py-0.5 text-label-sm font-label-sm text-on-error-container font-semibold">
+            مستحقة السداد
+          </span>
+</div>
+<div class="mt-3.5 space-y-3">
+<!-- Row 1: Name -->
+<div>
+<span class="text-body-sm font-body-sm text-text-secondary">اسم المشترك:</span>
+<p class="text-body-lg font-body-lg text-text-primary mt-0.5">محمد سعيد محمود أحمد</p>
+</div>
+<!-- Row 2: Meter / Account Number with Copy -->
+<div class="flex items-center justify-between rounded-xl bg-surface-subtle px-3 py-2 border border-border-subtle/60">
+<div>
+<span class="text-body-sm font-body-sm text-text-secondary block">رقم العداد / الحساب:</span>
+<span class="font-mono text-body-md font-bold tracking-wider text-primary-container" id="meter-acc-num">10492841229014</span>
+</div>
+<button class="flex items-center gap-1 rounded-lg bg-surface px-2.5 py-1 text-label-sm font-label-sm text-primary-container shadow-sm border border-border-subtle hover:bg-surface-subtle active:scale-95 transition-all" onclick="copyAccountNumber()" title="نسخ الرقم" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+<span id="copy-text">نسخ</span>
+</button>
+</div>
+<!-- Row 3: Billing Period & Address Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="rounded-lg bg-surface-container-low p-2.5">
+<span class="text-body-sm font-body-sm text-text-secondary block">عن إصدار شهر:</span>
+<span class="text-label-md font-label-md text-text-primary mt-0.5 block">أكتوبر 2026</span>
+</div>
+<div class="rounded-lg bg-surface-container-low p-2.5">
+<span class="text-body-sm font-body-sm text-text-secondary block">رقم الدورة / الفئة:</span>
+<span class="text-label-md font-label-md text-text-primary mt-0.5 block">منزلي (شريحة 3)</span>
+</div>
+</div>
+<!-- Address -->
+<div class="pt-1 flex items-start gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-text-muted mt-0.5 shrink-0" data-icon="location_on">location_on</span>
+<span class="text-body-sm font-body-sm leading-relaxed text-text-secondary">
+              العنوان المسجل: شقة 5، عمارة 14، شارع السلام، مدينة نصر، القاهرة
+            </span>
+</div>
+</div>
+</section>
+<!-- 3. Financial Breakdown Card (تفصيل المبلغ المستحق) -->
+<section class="rounded-2xl border border-border-subtle bg-surface p-4 shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[20px]" data-icon="calculate">calculate</span>
+<h2 class="text-label-lg font-label-lg text-text-primary">تفصيل المبلغ المستحق</h2>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary">العملة: جنيه مصري (ج.م)</span>
+</div>
+<div class="mt-3 space-y-2.5">
+<!-- Breakdown Item 1 -->
+<div class="flex items-center justify-between py-1">
+<span class="text-body-md font-body-md text-text-secondary">قيمة الاستهلاك الأصلي (320 ك.و.س):</span>
+<span class="text-body-lg font-bold text-text-primary tabular-nums">420.00 ج.م</span>
+</div>
+<!-- Breakdown Item 2: Late fee (0.00 with Green Badge) -->
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md text-text-secondary">غرامة تأخير:</span>
+<span class="inline-flex items-center rounded-md bg-secondary-fixed/40 px-1.5 py-0.2 text-[10px] font-semibold text-secondary">
+                لا توجد غرامات
+              </span>
+</div>
+<span class="text-body-lg font-bold text-secondary tabular-nums">0.00 ج.م</span>
+</div>
+<!-- Breakdown Item 3 -->
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-1">
+<span class="text-body-md font-body-md text-text-secondary">رسوم الخدمة والدمغات الرسمية:</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted cursor-help" data-icon="info" title="تشمل رسوم النظافة وضريبة القيمة المضافة">info</span>
+</div>
+<span class="text-body-lg font-bold text-text-primary tabular-nums">5.50 ج.م</span>
+</div>
+<!-- Dashed Separator -->
+<div class="border-t border-dashed border-border-subtle my-2"></div>
+<!-- Highlighted Total Box (Deep Teal #0B3E42 Background) -->
+<div class="rounded-xl bg-primary-container p-3.5 text-on-primary shadow-[0_8px_20px_rgba(11,62,66,0.18)]">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md text-on-primary-container block">إجمالي المبلغ المطلوب سداده</span>
+<span class="text-label-sm font-label-sm text-surface-container-high/80">شامل كافة الرسوم النظامية</span>
+</div>
+<div class="text-left" dir="ltr">
+<span class="text-display-lg-mobile font-currency-display font-bold text-on-primary tabular-nums tracking-tight">425.50</span>
+<span class="text-label-md font-bold text-secondary-container mr-1">EGP</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Partial Payment Option (خيار السداد الجزئي) -->
+<section class="rounded-2xl border border-border-subtle bg-surface p-3.5 shadow-sm">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input class="mt-1 h-5 w-5 rounded border-border-subtle text-primary-container focus:ring-primary-container/20 cursor-pointer" id="partial-pay-toggle" onchange="togglePartialInput()" type="checkbox"/>
+<div class="flex-1">
+<span class="text-label-md font-label-lg text-text-primary block">
+              سداد جزء من الفاتورة أو مبلغ آخر
+            </span>
+<span class="text-body-sm font-body-sm text-text-secondary mt-0.5 block leading-normal">
+              يمكنك تعديل المبلغ إذا كنت ترغب في سداد دفعة مقدمة فقط أو جزء من المستحق.
+            </span>
+<!-- Hidden dynamic custom input field -->
+<div class="mt-3 hidden" id="partial-input-container">
+<div class="relative rounded-xl border border-border-subtle bg-surface-subtle p-2 focus-within:border-primary-container focus-within:ring-2 focus-within:ring-primary-container/10">
+<span class="text-label-sm font-label-sm text-text-secondary block mb-1">المبلغ المراد دفعه (الحد الأدنى 50.00 ج.م):</span>
+<div class="flex items-center gap-2">
+<input class="w-full bg-transparent text-headline-sm font-currency-body font-bold text-text-primary outline-none focus:outline-none" dir="ltr" id="partial-amount-input" placeholder="أدخل المبلغ هنا" type="number" value="425.50"/>
+<span class="text-label-md font-bold text-text-secondary">ج.م</span>
+</div>
+</div>
+</div>
+</div>
+</label>
+</section>
+<!-- 5. Payment Source & Smart Balance Check Box (مصدر الدفع والتحقق الذكي) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-label-lg font-label-lg text-text-primary">مصدر الدفع المعتمد</h2>
+<span class="text-label-sm font-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="security">security</span>
+            معاملة مشفرة بنكياً
+          </span>
+</div>
+<!-- Active Source Card (Smart Balance Checked) -->
+<div class="relative overflow-hidden rounded-2xl border-2 border-secondary bg-surface p-3.5 shadow-[0_4px_16px_rgba(0,108,73,0.08)]">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Custom Radio Checked Metaphor -->
+<div class="flex h-5 w-5 items-center justify-center rounded-full border-2 border-secondary bg-surface">
+<div class="h-2.5 w-2.5 rounded-full bg-secondary"></div>
+</div>
+<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[22px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<span class="text-label-lg font-label-lg text-text-primary block">الدفع من: المحفظة الأساسية</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="text-body-sm font-body-sm text-text-secondary">الرصيد المتاح:</span>
+<span class="text-body-md font-bold text-primary-container tabular-nums">6,420.50 ج.م</span>
+</div>
+</div>
+</div>
+<!-- Sufficient Balance Pill Badge -->
+<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 text-label-sm font-bold text-secondary border border-secondary/20 shrink-0">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="check_circle">check_circle</span>
+              كافٍ للسداد الفوري
+            </span>
+</div>
+<div class="mt-3 flex items-center justify-between border-t border-border-subtle/80 pt-2.5 text-body-sm text-text-secondary">
+<span>الرصيد بعد السداد المتوقع:</span>
+<span class="font-mono font-bold text-text-primary">5,995.00 ج.م</span>
+</div>
+</div>
+<!-- Smart Balance Demonstration Helper / Tip Box -->
+<div class="rounded-xl border border-secondary/20 bg-secondary-fixed/20 p-3">
+<div class="flex items-start gap-2.5">
+<div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-on-secondary mt-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+</div>
+<div class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+<strong class="font-label-md text-primary-container block">ميزة حارث الذكية:</strong>
+              في حال عدم كفاية الرصيد، يظهر زر <span class="font-semibold text-primary-container">"شحن سريع بضغطة واحدة من إنستاباي InstaPay"</span> دون مغادرة هذه الشاشة لضمان عدم انقطاع الخدمة.
+            </div>
+</div>
+</div>
+</section>
+<!-- Space for sticky CTA padding -->
+<div class="h-6"></div>
+</main>
+<!-- 6. Sticky Bottom Action Bar (Fixed Mobile Dock) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 mx-auto w-full max-w-[420px] border-t border-border-subtle bg-surface/95 px-4 py-3 shadow-[0_-8px_24px_rgba(11,62,66,0.08)] backdrop-blur-md">
+<!-- Primary CTA Button -->
+<button class="group relative flex h-14 w-full items-center justify-between rounded-xl bg-primary-container px-5 text-on-primary shadow-[0_8px_20px_rgba(11,62,66,0.25)] transition-all duration-200 hover:bg-primary active:scale-[0.98] focus:outline-none" id="pay-submit-btn" onclick="triggerPaymentConfirmation()" type="button">
+<!-- Lock & Receipt Icons Combination -->
+<div class="flex items-center gap-1.5 text-secondary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt">receipt</span>
+</div>
+<!-- Button Label -->
+<span class="text-label-lg font-headline-sm font-bold text-on-primary">
+          تأكيد الدفع وإصدار الإيصال (<span id="btn-total-display">425.50</span> ج.م)
+        </span>
+<!-- Chevron Action in RTL -->
+<div class="flex h-7 w-7 items-center justify-center rounded-lg bg-surface/10 text-on-primary transition-transform group-hover:-translate-x-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+</div>
+</button>
+<!-- Security / Process Subtext Note -->
+<p class="mt-2 text-center text-body-sm font-body-sm text-text-muted flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="print">print</span>
+        سيتم فتح نافذة الرقم السري وإمكانية طباعة الإيصال عبر البلوتوث فور السداد
+      </p>
+</div>
+</div>
+<!-- Micro-interaction Script for Copy and Partial Payment Handling -->
+<script>
+    function copyAccountNumber() {
+      const textToCopy = document.getElementById('meter-acc-num').innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const copyTextSpan = document.getElementById('copy-text');
+        copyTextSpan.innerText = 'تم النسخ!';
+        setTimeout(() => {
+          copyTextSpan.innerText = 'نسخ';
+        }, 2000);
+      }).catch(err => {
+        console.error('فشل النسخ: ', err);
+      });
+    }
+
+    function togglePartialInput() {
+      const checkbox = document.getElementById('partial-pay-toggle');
+      const container = document.getElementById('partial-input-container');
+      const input = document.getElementById('partial-amount-input');
+      const btnDisplay = document.getElementById('btn-total-display');
+
+      if (checkbox.checked) {
+        container.classList.remove('hidden');
+        input.focus();
+        input.addEventListener('input', function() {
+          const val = parseFloat(input.value);
+          btnDisplay.innerText = isNaN(val) ? '0.00' : val.toFixed(2);
+        });
+      } else {
+        container.classList.add('hidden');
+        btnDisplay.innerText = '425.50';
+      }
+    }
+
+    function triggerPaymentConfirmation() {
+      const btn = document.getElementById('pay-submit-btn');
+      const originalContent = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = `
+        <div class="w-full flex items-center justify-center gap-2">
+          <span class="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-white border-r-transparent"></span>
+          <span class="text-label-lg font-bold">جارٍ تشفير العملية وفتح نافذة الدفع...</span>
+        </div>
+      `;
+      setTimeout(() => {
+        alert('تم تأكيد طلب السداد! جاري تهيئة طابعة البلوتوث وتوليد كود الـ QR الرسمي للإيصال.');
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+      }, 1400);
+    }
+  </script>
+</body></html>

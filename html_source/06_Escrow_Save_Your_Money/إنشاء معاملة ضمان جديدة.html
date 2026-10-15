@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث | إنشاء معاملة ضمان جديدة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#6ffbbe",
+            "surface-variant": "#e0e3e4",
+            "surface-dim": "#d7dadb",
+            "on-surface-variant": "#404849",
+            "inverse-surface": "#2d3132",
+            "on-primary": "#ffffff",
+            "on-surface": "#181c1d",
+            "surface-container": "#ebeeef",
+            "secondary": "#006c49",
+            "outline-variant": "#c0c8c9",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary": "#ffffff",
+            "text-muted": "#94A3B8",
+            "surface-container-lowest": "#ffffff",
+            "text-primary": "#0F172A",
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "tertiary": "#341e00",
+            "surface-tint": "#396569",
+            "surface-container-highest": "#e0e3e4",
+            "primary": "#00272a",
+            "danger-debit": "#EF4444",
+            "on-primary-fixed": "#002022",
+            "on-secondary-container": "#00714d",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f5",
+            "text-secondary": "#475569",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "background": "#f7fafb",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "inverse-on-surface": "#eef1f2",
+            "tertiary-container": "#513100",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-container-high": "#e5e9ea",
+            "on-error-container": "#93000a",
+            "surface-subtle": "#F1F5F9",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-tertiary-container": "#e19000",
+            "secondary-container": "#6cf8bb",
+            "outline": "#707979",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-background": "#181c1d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-secondary selection:text-white">
+<!-- Mobile Wrapper Container -->
+<main class="w-full max-w-md bg-background flex flex-col min-h-screen relative pb-32">
+<!-- 1. Top AppBar -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-4 h-16 flex items-center justify-between border-b border-border-subtle shadow-none">
+<!-- Right in RTL: Back Navigation Button -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary active:scale-95 transition-transform hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center Title -->
+<div class="flex items-center gap-1.5">
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+          إنشاء معاملة ضمان جديدة
+        </h1>
+</div>
+<!-- Left in RTL: Support / Escrow Info Trigger -->
+<button aria-label="مساعدة الضمان" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container active:scale-95 transition-transform hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">help</span>
+</button>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-4 pt-4 space-y-4 flex-1">
+<!-- Trust Indicator Tag -->
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded-xl border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-body-sm font-body-sm text-text-secondary font-medium">خدمة «حافظ على فلوسك» المعتمدة</span>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-label-sm font-label-sm font-bold">ضمان 100%</span>
+</div>
+</div>
+<!-- 2. Role Selector Toggle Cards -->
+<section aria-label="تحديد دورك في المعاملة">
+<label class="block text-label-md font-label-md text-text-secondary mb-2">دورك في هذه المعاملة :</label>
+<div class="grid grid-cols-2 gap-3" id="role-selector">
+<!-- Card A: Selected (Buyer) -->
+<button class="relative text-start p-3.5 rounded-2xl bg-surface border-2 border-primary-container shadow-[0_4px_12px_rgba(11,62,66,0.08)] transition-all flex flex-col justify-between h-full" id="buyer-card" type="button">
+<div class="flex items-center justify-between w-full mb-2">
+<div class="w-7 h-7 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</div>
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-white">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-primary-container mb-1">أنا المشتري</p>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">سيتم حجز المبلغ مؤقتاً من محفظتي وإيداعه في خزنة حارث الآمنة حتى استلام السلعة</p>
+</div>
+</button>
+<!-- Card B: Unselected (Seller) -->
+<button class="relative text-start p-3.5 rounded-2xl bg-surface border border-border-subtle hover:border-slate-300 transition-all flex flex-col justify-between h-full group" id="seller-card" type="button">
+<div class="flex items-center justify-between w-full mb-2">
+<div class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-text-secondary group-hover:text-primary-container">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</div>
+<span class="w-5 h-5 rounded-full border border-border-subtle flex items-center justify-center"></span>
+</div>
+<div>
+<p class="text-label-lg font-label-lg font-bold text-text-primary mb-1">أنا البائع</p>
+<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">إرسال طلب وساطة للمشتري ليقوم بحجز المبلغ قبل البدء في التنفيذ أو الشحن</p>
+</div>
+</button>
+</div>
+</section>
+<!-- 3. Contract Details Form -->
+<section class="bg-surface rounded-[20px] p-5 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Field 1: Recipient Phone with Live Chip -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary font-bold" for="recipient-phone">
+              رقم هاتف الطرف الآخر (المسجل بحارث) <span class="text-error">*</span>
+</label>
+<span class="text-label-sm font-label-sm text-secondary font-medium">بحث فوري</span>
+</div>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">phone_iphone</span>
+</div>
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle pr-11 pl-12 text-left font-currency-body text-currency-body text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 focus:outline-none transition-all placeholder:text-text-muted text-sm" dir="ltr" id="recipient-phone" placeholder="010xxxxxxxx" type="tel" value="01098765432"/>
+<button aria-label="مسح QR للطرف الآخر" class="absolute inset-y-1.5 left-1.5 px-2.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-primary-container flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</button>
+</div>
+<!-- Live recipient preview chip -->
+<div class="mt-2 inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-body-sm font-body-sm text-primary-container font-semibold">
+              كريم عادل • حساب موثق
+            </span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Field 2: Transaction Title -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary font-bold mb-1.5" for="deal-title">
+            عنوان ووصف المعاملة <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-4 text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 focus:outline-none transition-all placeholder:text-text-muted" id="deal-title" placeholder="مثال: شراء لابتوب MacBook Pro M3 مستعمل بحالة الزيرو" type="text" value="شراء لابتوب MacBook Pro M3 مستعمل بحالة الزيرو"/>
+</div>
+</div>
+<!-- Field 3: Inspection Terms & Description -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary font-bold" for="deal-terms">
+              تفاصيل وشروط الاستلام والمواصفات المتفق عليها
+            </label>
+<span class="text-label-sm font-label-sm text-text-muted">اختياري وموصى به</span>
+</div>
+<textarea class="w-full h-20 bg-surface rounded-xl border border-border-subtle p-3 text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 focus:outline-none transition-all placeholder:text-text-muted resize-none leading-relaxed" id="deal-terms" placeholder="اكتب كافة تفاصيل الفحص، فترة التجربة (مثال: 48 ساعة)، والملحقات المتفق عليها..." rows="3">فحص حالة البطارية 95%+، عدم وجود خدوش بالشاشة، الشاحن والعلبة الأصلية مشمولان. فترة المعاينة 48 ساعة قبل تحرير الكود.</textarea>
+</div>
+<!-- 2-Column Financial Row -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<!-- Column 1 (RTL Right): Total Amount -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary font-bold mb-1.5" for="total-amount">
+              المبلغ الإجمالي (ج.م) <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3 text-left font-currency-body text-currency-body text-primary-container font-bold focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 focus:outline-none transition-all" dir="ltr" id="total-amount" type="text" value="45,000"/>
+<span class="absolute inset-y-0 right-3 flex items-center text-label-md font-label-md text-text-secondary pointer-events-none">ج.م</span>
+</div>
+<p class="mt-1.5 text-label-sm font-label-sm text-secondary font-medium flex items-center gap-1">
+<span>الرصيد المتاح: 52,400.00 ج.م</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</p>
+</div>
+<!-- Column 2 (RTL Left): Penalty Clause -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary font-bold mb-1.5" for="penalty-amount">
+              الشرط الجزائي <span class="text-label-sm font-label-sm text-text-muted font-normal">(اختياري)</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3 text-left font-currency-body text-currency-body text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 focus:outline-none transition-all" dir="ltr" id="penalty-amount" type="text" value="1,000"/>
+<span class="absolute inset-y-0 right-3 flex items-center text-label-md font-label-md text-text-secondary pointer-events-none">ج.م</span>
+</div>
+<p class="mt-1.5 text-label-sm font-label-sm text-text-muted leading-tight">
+              يُخصم لصالح الطرف المتضرر عند الإخلال
+            </p>
+</div>
+</div>
+<!-- Field 4: Inspection Period & Due Date -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary font-bold mb-1.5" for="due-date">
+            تاريخ انتهاء المعاملة وفترة المعاينة <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<input class="w-full h-[52px] bg-surface-subtle/50 rounded-xl border border-border-subtle pr-11 pl-4 text-body-md font-body-md text-text-primary cursor-pointer hover:bg-surface-subtle transition-all" id="due-date" readonly="" type="text" value="الخميس، 18 أكتوبر 2026 (خلال 3 أيام)"/>
+<div class="absolute inset-y-0 left-3 flex items-center text-text-muted pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Escrow Guarantee Pill Box -->
+<section class="bg-amber-50/90 border border-amber-200/80 rounded-[16px] p-3.5 flex items-start gap-3 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-amber-100 flex-shrink-0 flex items-center justify-center text-on-tertiary-container mt-0.5">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="space-y-0.5">
+<h2 class="text-label-md font-label-md font-bold text-tertiary">حماية كاملة لأموالك</h2>
+<p class="text-body-sm font-body-sm text-tertiary leading-relaxed font-normal">
+            أموالك في أمان تام: لا يتم تحويل القرش للبائع إلا بعد إدخالك لكود التأكيد السري بنفسك بعد الفحص والاستلام.
+          </p>
+</div>
+</section>
+<!-- 5. Legal Agreement Checkbox -->
+<section class="bg-surface p-3.5 rounded-xl border border-border-subtle">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary-container focus:ring-primary-container border-border-subtle cursor-pointer" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+            أوافق على <span class="text-primary-container font-bold underline underline-offset-2">شروط وأحكام</span> خدمة حافظ على فلوسك والوساطة المالية وحل النزاعات لدى تطبيق حارث.
+          </span>
+</label>
+</section>
+</div>
+<!-- 6. Sticky Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-border-subtle shadow-[0_-4px_20px_rgba(11,62,66,0.06)] px-4 pt-3 pb-5 max-w-md mx-auto">
+<!-- Primary Action CTA -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-white font-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-primary active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>تأكيد وحجز المبلغ في الضمان (45,000 ج.م)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</button>
+<!-- Security / Regulatory Footnote -->
+<div class="flex items-center justify-center gap-1.5 mt-2.5 text-text-muted">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="text-label-sm font-label-sm">
+          معاملة مشفرة ومحمية بمعايير البنك المركزي المصري
+        </span>
+</div>
+</div>
+</main>
+<!-- Interactive State Handler for Role Selection -->
+<script>
+    const buyerCard = document.getElementById('buyer-card');
+    const sellerCard = document.getElementById('seller-card');
+
+    if (buyerCard && sellerCard) {
+      buyerCard.addEventListener('click', () => {
+        // Buyer Active
+        buyerCard.className = "relative text-start p-3.5 rounded-2xl bg-surface border-2 border-primary-container shadow-[0_4px_12px_rgba(11,62,66,0.08)] transition-all flex flex-col justify-between h-full";
+        buyerCard.querySelector('span.material-symbols-outlined.text-\\[14px\\]')?.parentElement?.classList.remove('hidden');
+        
+        // Seller Inactive
+        sellerCard.className = "relative text-start p-3.5 rounded-2xl bg-surface border border-border-subtle hover:border-slate-300 transition-all flex flex-col justify-between h-full group";
+        const sellerCheck = sellerCard.querySelector('.w-5.h-5');
+        if (sellerCheck) {
+          sellerCheck.className = "w-5 h-5 rounded-full border border-border-subtle flex items-center justify-center";
+          sellerCheck.innerHTML = "";
+        }
+      });
+
+      sellerCard.addEventListener('click', () => {
+        // Seller Active
+        sellerCard.className = "relative text-start p-3.5 rounded-2xl bg-surface border-2 border-primary-container shadow-[0_4px_12px_rgba(11,62,66,0.08)] transition-all flex flex-col justify-between h-full";
+        const sellerCheck = sellerCard.querySelector('.w-5.h-5');
+        if (sellerCheck) {
+          sellerCheck.className = "flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-white";
+          sellerCheck.innerHTML = `<span class="material-symbols-outlined text-[14px]">check</span>`;
+        }
+
+        // Buyer Inactive
+        buyerCard.className = "relative text-start p-3.5 rounded-2xl bg-surface border border-border-subtle hover:border-slate-300 transition-all flex flex-col justify-between h-full group";
+        const buyerCheck = buyerCard.querySelector('.w-5.h-5');
+        if (buyerCheck) {
+          buyerCheck.className = "w-5 h-5 rounded-full border border-border-subtle flex items-center justify-center";
+          buyerCheck.innerHTML = "";
+        }
+      });
+    }
+  </script>
+</body></html>

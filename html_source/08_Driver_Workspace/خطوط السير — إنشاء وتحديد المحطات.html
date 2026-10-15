@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>خطوط السير — إنشاء وتحديد المحطات — حارث</title>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Theme Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-fixed": "#6ffbbe",
+            "secondary": "#006c49",
+            "surface-variant": "#e0e3e4",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "outline-variant": "#c0c8c9",
+            "primary-fixed": "#bcebef",
+            "border-subtle": "#E2E8F0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "text-secondary": "#475569",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "text-primary": "#0F172A",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary": "#ffffff",
+            "primary-container": "#0b3e42",
+            "on-primary-container": "#7ca9ad",
+            "on-surface": "#181c1d",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "danger-debit": "#EF4444",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#396569",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f1f4f5",
+            "secondary-container": "#6cf8bb",
+            "primary": "#00272a",
+            "tertiary-fixed": "#ffddb8",
+            "surface-subtle": "#F1F5F9",
+            "on-surface-variant": "#404849",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "tertiary": "#341e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "sans": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "label-md": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "headline-md": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "label-lg": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "headline-sm": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "headline-lg": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "display-lg": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "body-md": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "label-sm": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "currency-display": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "body-lg": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "body-sm": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "currency-body": ["'IBM Plex Sans Arabic'", "sans-serif"],
+            "display-lg-mobile": ["'IBM Plex Sans Arabic'", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .card-shadow {
+      box-shadow: 0 4px 16px rgba(11, 62, 66, 0.05);
+    }
+    .floating-fab-glow {
+      box-shadow: 0 8px 20px rgba(11, 62, 66, 0.28), 0 0 16px rgba(16, 185, 129, 0.25);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col items-center justify-start pb-36">
+<!-- Main Mobile Container Container (Max 440px viewport frame) -->
+<div class="w-full max-w-md bg-background min-h-screen flex flex-col relative">
+<!-- 1. TopAppBar (Mapped from Shared Components JSON & Style Guidance) -->
+<header class="bg-surface sticky top-0 z-40 w-full h-16 px-4 border-b border-border-subtle shadow-sm flex items-center justify-between">
+<!-- Right Side (RTL Start): Back button with right arrow chevron -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center hover:bg-surface-variant active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Center Title -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+          إنشاء وتعديل خط السير
+        </h1>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+          نظام حارث لذكاء النقل
+        </span>
+</div>
+<!-- Left Side (RTL End): Help / Route Guide trigger -->
+<button aria-label="مساعدة المسار" class="w-10 h-10 rounded-xl bg-surface-subtle text-text-primary flex items-center justify-center hover:bg-surface-variant active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-text-secondary" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<!-- Main Content Area with Bento Structure -->
+<main class="flex-1 px-4 pt-4 pb-8 space-y-4">
+<!-- 2. Stepper Header: 4 steps progress indicator -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle card-shadow">
+<div class="flex items-center justify-between mb-3 text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5 font-bold text-primary-container">
+<span class="w-6 h-6 rounded-full bg-primary-container text-surface flex items-center justify-center text-label-sm font-label-sm">1</span>
+<span>المسار والمحطات</span>
+<span class="bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-2 py-0.5 rounded-full mr-1">نشط</span>
+</div>
+<div class="text-text-muted text-label-md font-label-md">
+            الخطوة ٢ من ٤ (٥٠٪)
+          </div>
+</div>
+<!-- Visual Step Bar -->
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 50%;"></div>
+</div>
+<!-- Steps Legend Chips -->
+<div class="grid grid-cols-3 gap-1 pt-3 text-center border-t border-border-subtle mt-3">
+<div class="text-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-secondary text-base" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            المسار والمحطات
+          </div>
+<div class="text-text-muted font-label-sm text-label-sm flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+            ٢. التسعير
+          </div>
+<div class="text-text-muted font-label-sm text-label-sm flex items-center justify-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+            ٣. المواعيد والحفظ
+          </div>
+</div>
+</section>
+<!-- 3. Quick Info Alert Banner -->
+<section class="bg-primary-container/5 border border-primary-container/15 rounded-2xl p-3.5 flex items-start gap-3 text-start">
+<div class="w-8 h-8 rounded-xl bg-primary-container text-surface flex-shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-secondary-fixed text-lg" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<p class="text-text-secondary text-body-sm font-body-sm leading-relaxed">
+          قم بتحديد نقطة البداية، المحطة النهائية، ومحطات التوقف بالترتيب ليتمكن الركاب من حجز التذاكر وحساب الأجرة آلياً.
+        </p>
+</section>
+<!-- 4. Route General Info Card -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle card-shadow space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-text-muted flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="alt_route">alt_route</span>
+            بيانات خط التشغيل
+          </label>
+<span class="bg-primary-container text-inverse-on-surface font-label-md text-label-md font-bold px-2.5 py-1 rounded-lg">
+            LINE-88
+          </span>
+</div>
+<!-- Route Name Input -->
+<div class="relative">
+<input class="w-full h-12 bg-surface-subtle border border-border-subtle rounded-xl px-3 text-text-primary text-body-md font-body-md font-semibold focus:outline-none focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container" type="text" value="خط موقف السلام ⬅ ميدان رمسيس (سريع)"/>
+</div>
+<!-- Vehicle Assigned Box -->
+<div class="bg-surface-subtle rounded-xl p-3 flex items-center justify-between border border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface border border-border-subtle flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="directions_bus">directions_bus</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">المركبة المسندة للخط</span>
+<span class="text-body-sm font-body-sm font-bold text-text-primary">تويوتا هاي أس (ق ط ع 458)</span>
+</div>
+</div>
+<button class="text-secondary text-label-md font-label-md hover:underline font-bold" type="button">
+            تغيير
+          </button>
+</div>
+</section>
+<!-- 5. Main Terminals (Start & End) Card -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle card-shadow space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="fmd_good">fmd_good</span>
+            المحطتان الرئيسيتان
+          </h2>
+<span class="text-label-sm font-label-sm text-text-muted">نقطتا الانطلاق والوصول</span>
+</div>
+<!-- Start Station -->
+<div class="relative flex items-start gap-3">
+<div class="flex flex-col items-center self-stretch mt-1.5">
+<div class="w-5 h-5 rounded-full bg-secondary text-surface flex items-center justify-center shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface"></span>
+</div>
+<div class="w-0.5 flex-1 bg-dashed border-r border-dashed border-outline-variant my-1"></div>
+</div>
+<div class="flex-1">
+<span class="text-label-sm font-label-sm font-semibold text-secondary block mb-1">
+              محطة البداية (نقطة الانطلاق)
+            </span>
+<div class="h-12 bg-surface border border-border-subtle rounded-xl px-3 flex items-center justify-between shadow-sm hover:border-primary-container transition-colors cursor-pointer">
+<span class="text-body-sm font-body-sm font-bold text-text-primary truncate">
+                موقف السلام النموذجي (بوابة 3)
+              </span>
+<span class="material-symbols-outlined text-text-muted text-lg" data-icon="edit_location">edit_location</span>
+</div>
+</div>
+</div>
+<!-- End Station -->
+<div class="relative flex items-start gap-3">
+<div class="flex flex-col items-center self-stretch mt-1.5">
+<div class="w-5 h-5 rounded-full bg-danger-debit text-surface flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xs" data-icon="flag">flag</span>
+</div>
+</div>
+<div class="flex-1">
+<span class="text-label-sm font-label-sm font-semibold text-error block mb-1">
+              المحطة الختامية (نهاية الخط)
+            </span>
+<div class="h-12 bg-surface border border-border-subtle rounded-xl px-3 flex items-center justify-between shadow-sm hover:border-primary-container transition-colors cursor-pointer">
+<span class="text-body-sm font-body-sm font-bold text-text-primary truncate">
+                ميدان رمسيس (مجمع النقل العام)
+              </span>
+<span class="material-symbols-outlined text-text-muted text-lg" data-icon="edit_location">edit_location</span>
+</div>
+</div>
+</div>
+<!-- Distance & Time estimation chip -->
+<div class="bg-surface-subtle rounded-xl py-2 px-3 flex items-center justify-between border border-border-subtle text-text-secondary">
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm font-semibold">
+<span class="material-symbols-outlined text-primary-container text-base" data-icon="near_me">near_me</span>
+<span>~ 22 كم • 35 دقيقة تقريباً</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold bg-secondary/10 px-2 py-0.5 rounded-full">
+            حساب مسار خريطة قياسي
+          </span>
+</div>
+</section>
+<!-- 6. Intermediate Stops Section -->
+<section class="space-y-3">
+<!-- Section Header with Reorder Hint -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm font-bold text-text-primary">
+              محطات التوقف الوسيطة
+            </h3>
+<span class="bg-surface border border-border-subtle text-text-secondary text-label-sm font-label-sm font-bold px-2 py-0.5 rounded-full shadow-sm">
+              3 محطات مسجلة
+            </span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="drag_indicator">drag_indicator</span>
+<span>اسحب لإعادة الترتيب</span>
+</div>
+</div>
+<!-- Stops Cards List -->
+<div class="space-y-2.5">
+<!-- Stop 1 -->
+<article class="bg-surface rounded-2xl p-3.5 border border-border-subtle card-shadow flex items-center justify-between gap-2.5 transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<!-- Reorder handle -->
+<button aria-label="ترتيب المحطة" class="cursor-grab text-outline hover:text-text-primary" type="button">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+<!-- Number badge -->
+<div class="w-7 h-7 rounded-full bg-primary-container/10 text-primary-container flex items-center justify-center text-label-md font-label-md font-bold">
+                1
+              </div>
+<!-- Station Details -->
+<div>
+<h4 class="text-body-sm font-body-sm font-bold text-text-primary">
+                  محطة كعبيش / المحور الدائري
+                </h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-label-sm font-label-sm text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="straighten">straighten</span>
+                    8 كم
+                  </span>
+<span class="bg-secondary/10 text-secondary text-label-sm font-label-sm px-2 py-0.5 rounded-md font-medium">
+                    توقف ركوب ونزول
+                  </span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<button aria-label="حذف المحطة" class="w-8 h-8 rounded-lg text-error hover:bg-error-container/20 flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</article>
+<!-- Stop 2 -->
+<article class="bg-surface rounded-2xl p-3.5 border border-border-subtle card-shadow flex items-center justify-between gap-2.5 transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<button aria-label="ترتيب المحطة" class="cursor-grab text-outline hover:text-text-primary" type="button">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-primary-container/10 text-primary-container flex items-center justify-center text-label-md font-label-md font-bold">
+                2
+              </div>
+<div>
+<h4 class="text-body-sm font-body-sm font-bold text-text-primary">
+                  كوبري غمرة (مترو غمرة)
+                </h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-label-sm font-label-sm text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="straighten">straighten</span>
+                    16 كم
+                  </span>
+<span class="bg-surface-container text-text-secondary text-label-sm font-label-sm px-2 py-0.5 rounded-md font-medium">
+                    نزول رئيسي فقط
+                  </span>
+</div>
+</div>
+</div>
+<button aria-label="حذف المحطة" class="w-8 h-8 rounded-lg text-error hover:bg-error-container/20 flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</article>
+<!-- Stop 3 -->
+<article class="bg-surface rounded-2xl p-3.5 border border-border-subtle card-shadow flex items-center justify-between gap-2.5 transition-all active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<button aria-label="ترتيب المحطة" class="cursor-grab text-outline hover:text-text-primary" type="button">
+<span class="material-symbols-outlined" data-icon="drag_indicator">drag_indicator</span>
+</button>
+<div class="w-7 h-7 rounded-full bg-primary-container/10 text-primary-container flex items-center justify-center text-label-md font-label-md font-bold">
+                3
+              </div>
+<div>
+<h4 class="text-body-sm font-body-sm font-bold text-text-primary">
+                  كوبري الفردوس / طريق النصر
+                </h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-label-sm font-label-sm text-text-muted flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="straighten">straighten</span>
+                    19 كم
+                  </span>
+<span class="bg-surface-subtle text-outline text-label-sm font-label-sm px-2 py-0.5 rounded-md font-medium border border-border-subtle">
+                    توقف اختياري
+                  </span>
+</div>
+</div>
+</div>
+<button aria-label="حذف المحطة" class="w-8 h-8 rounded-lg text-error hover:bg-error-container/20 flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="delete_outline">delete_outline</span>
+</button>
+</article>
+</div>
+<!-- Dashed Border Add Stop Button -->
+<button class="w-full h-14 border-2 border-dashed border-primary-container/30 hover:border-primary-container rounded-2xl bg-surface hover:bg-primary-container/5 flex items-center justify-center gap-2 text-primary-container font-label-lg text-label-lg font-bold transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-secondary" data-icon="add_location_alt">add_location_alt</span>
+<span>+ إضافة محطة توقف جديدة على المسار</span>
+</button>
+</section>
+<!-- Bottom Step CTA Action Container -->
+<div class="pt-2">
+<button class="w-full h-12 bg-primary-container hover:bg-[#082C2F] text-surface rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-95 transition-all" type="button">
+<span>متابعة لمصفوفة التسعير (الخطوة التالية)</span>
+<!-- In RTL, forward arrow points left -->
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+</button>
+</div>
+</main>
+<!-- 7. Locked HarithBottomNav (Mapped from Shared Components JSON & Style Guidance) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-border-subtle shadow-md rounded-t-3xl h-[76px] px-2 flex justify-around items-center pb-safe max-w-md mx-auto right-0">
+<!-- Tab 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container font-medium active:scale-95 transition-all duration-150" href="#home">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Tab 2: المسارات (ACTIVE DESTINATION for Route Management) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95 transition-all duration-150" href="#routes">
+<span class="material-symbols-outlined text-2xl text-primary-container" data-icon="alt_route" style="font-variation-settings: 'FILL' 1;">alt_route</span>
+<span class="text-label-sm font-label-sm mt-0.5 text-primary-container">المسارات</span>
+</a>
+<!-- Tab 3 (Center Floating QR/NFC Scanner Dock): مسح الملصق -->
+<div class="relative -top-3">
+<button aria-label="مسح الملصق الذكي" class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center floating-fab-glow active:scale-95 transition-all border-2 border-surface" type="button">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm font-semibold text-primary-container block text-center mt-1">مسح الملصق</span>
+</div>
+<!-- Tab 4: التسعير -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container font-medium active:scale-95 transition-all duration-150" href="#pricing">
+<span class="material-symbols-outlined text-2xl" data-icon="table_chart">table_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">التسعير</span>
+</a>
+<!-- Tab 5: الطلبات -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container font-medium active:scale-95 transition-all duration-150" href="#orders">
+<span class="material-symbols-outlined text-2xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">الطلبات</span>
+</a>
+</nav>
+</div>
+</body></html>

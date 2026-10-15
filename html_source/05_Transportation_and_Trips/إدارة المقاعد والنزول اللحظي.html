@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - إدارة الرحلة والمقاعد والركاب النازلين</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom styling and container plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-subtle": "#F1F5F9",
+            "tertiary-container": "#513100",
+            "inverse-primary": "#a1cfd3",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "on-secondary-fixed-variant": "#005236",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-container": "#e19000",
+            "outline-variant": "#c0c8c9",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-container": "#00714d",
+            "primary-fixed-dim": "#a1cfd3",
+            "danger-debit": "#EF4444",
+            "on-error": "#ffffff",
+            "background": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "surface-container-low": "#f1f4f5",
+            "on-tertiary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed": "#002022",
+            "primary-container": "#0b3e42",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffddb8",
+            "secondary": "#006c49",
+            "on-surface-variant": "#404849",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "on-primary-fixed-variant": "#1f4d51",
+            "text-secondary": "#475569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-tint": "#396569",
+            "primary": "#00272a",
+            "surface-container-high": "#e5e9ea",
+            "on-secondary-fixed": "#002113",
+            "text-muted": "#94A3B8",
+            "on-surface": "#181c1d",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-container": "#7ca9ad",
+            "tertiary": "#341e00",
+            "secondary-container": "#6cf8bb",
+            "text-primary": "#0F172A",
+            "on-background": "#181c1d",
+            "surface-variant": "#e0e3e4",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+    @keyframes pulse-amber {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+      }
+    }
+    .pulse-seat {
+      animation: pulse-amber 2s infinite ease-in-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased selection:bg-secondary-fixed selection:text-primary min-h-screen pb-28">
+<!-- ================= TOP APP BAR (Shared Component Exact Mirror) ================= -->
+<header class="fixed top-0 inset-x-0 z-40 h-16 flex items-center justify-between px-margin w-full bg-surface border-b border-border-subtle shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-variant transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h1 class="font-headline-sm text-headline-sm text-primary leading-tight">إدارة الرحلة الحالية (#4820)</h1>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary/10 text-secondary border border-secondary/20">
+            مباشر
+          </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-text-muted" data-icon="directions_bus">directions_bus</span>
+          ميكروباص ق ط ع 458 - خط 88
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="طباعة البيان" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary hover:bg-surface-variant transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+</button>
+<button aria-label="نداء الطوارئ" class="w-10 h-10 rounded-xl bg-error-container/40 text-error flex items-center justify-center hover:bg-error-container transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</button>
+</div>
+</header>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="pt-20 px-margin max-w-5xl mx-auto space-y-space-md">
+<!-- HERO NOTIFICATION CARD (Dark Teal #0B3E42) -->
+<section class="bg-primary-container text-on-primary rounded-2xl p-space-lg shadow-[0_12px_28px_rgba(11,62,66,0.22)] border border-white/10 relative overflow-hidden">
+<!-- Decorative Backdrop Geometry -->
+<div class="absolute -left-12 -top-12 w-48 h-48 bg-secondary/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute right-0 bottom-0 w-36 h-36 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Station Header with ETA & Route Pulse -->
+<div class="flex items-start justify-between border-b border-white/10 pb-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary-fixed/30 flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined fill-icon text-2xl" data-icon="alt_route">alt_route</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed-dim">المحطة القادمة على المسار</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-secondary-fixed/20 text-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed ml-1 animate-ping"></span>
+                  خلال 4 دقائق
+                </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-white mt-0.5">كوبري غمرة - الموقف الرئيسي</h2>
+</div>
+</div>
+<div class="text-left font-display-lg text-white/95">
+<span class="font-currency-display text-currency-display text-secondary-fixed">3</span>
+<span class="font-body-sm text-body-sm text-white/70 block">نازلين الآن</span>
+</div>
+</div>
+<!-- Drop-off Alert Details -->
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<span class="w-8 h-8 rounded-lg bg-tertiary-container/80 text-on-tertiary-container flex items-center justify-center shrink-0 border border-on-tertiary-container/30">
+<span class="material-symbols-outlined fill-icon text-lg" data-icon="hail">hail</span>
+</span>
+<div>
+<p class="font-label-lg text-label-lg text-white">تنبيه النزول اللحظي: <span class="text-secondary-fixed">3 ركاب نازلين هنا!</span></p>
+<p class="font-body-sm text-body-sm text-white/80">المقاعد المحددة باللون الكهرماني مبرمج نزولها في غمرة.</p>
+</div>
+</div>
+<!-- Seat Number Badges -->
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<span class="px-2.5 py-1 rounded-lg bg-tertiary-container text-tertiary-fixed font-bold text-xs border border-on-tertiary-container/40 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="airline_seat_recline_normal">airline_seat_recline_normal</span>
+              مقعد 3
+            </span>
+<span class="px-2.5 py-1 rounded-lg bg-tertiary-container text-tertiary-fixed font-bold text-xs border border-on-tertiary-container/40 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="airline_seat_recline_normal">airline_seat_recline_normal</span>
+              مقعد 7
+            </span>
+<span class="px-2.5 py-1 rounded-lg bg-tertiary-container text-tertiary-fixed font-bold text-xs border border-on-tertiary-container/40 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" data-icon="airline_seat_recline_normal">airline_seat_recline_normal</span>
+              مقعد 11
+            </span>
+</div>
+</div>
+<!-- Seat Vacancy Opportunity Notification -->
+<div class="flex items-center justify-between text-xs text-white/90 bg-primary/40 px-3 py-2 rounded-lg border border-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-base" data-icon="airline_seat_recline_extra">airline_seat_recline_extra</span>
+<span class="font-body-sm text-body-sm">سيفرغ <span class="font-bold text-secondary-fixed">3 مقاعد شاغرة</span> لاستقبال ركاب جدد بمحطة كوبري غمرة.</span>
+</div>
+<span class="text-[11px] text-white/60 font-body-sm hidden md:inline">مزامنة تلقائية مع لوحة الحجز</span>
+</div>
+</div>
+</section>
+<!-- ================= BENTO GRID: SEATING LAYOUT & SELECTED PASSENGER DETAIL ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- SEAT MAP CONTAINER (8 Columns on desktop) -->
+<section class="lg:col-span-8 bg-surface rounded-2xl p-space-md border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<!-- Header & Legend Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-border-subtle gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">خريطة صالون الركاب التفاعلية</h3>
+<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-surface-subtle text-text-secondary border border-border-subtle">
+                14 مقعد
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">اضغط على أي مقعد لمراجعة التذكرة وتفاصيل الحساب أو تعديل الحالة</p>
+</div>
+<div class="flex items-center gap-1 text-xs text-text-secondary font-label-md">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary"></span> محفظة
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-primary-container mr-2"></span> NFC
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-text-secondary mr-2"></span> كاش
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 mr-2"></span> نازل
+          </div>
+</div>
+<!-- Cabin Top Mockup (Steering Wheel / Front Cockpit) -->
+<div class="my-4 p-2 bg-surface-subtle/80 rounded-xl border border-dashed border-border-subtle flex items-center justify-between text-xs text-text-muted">
+<div class="flex items-center gap-1.5 font-label-md text-text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="sports_motorsports">sports_motorsports</span>
+<span>كابينة السائق (أنت)</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-sm" data-icon="door_front">door_front</span>
+<span>باب الركوب الأمامي</span>
+</div>
+</div>
+<!-- MICROBUS CABIN SEATING PLAN (14 Seats: 4 Rows + Aisle) -->
+<div class="bg-background/80 rounded-2xl p-4 border border-border-subtle space-y-3.5">
+<!-- ROW 1 (Front Row behind driver: 3 seats) -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex gap-2">
+<!-- Seat 1: Harith Wallet (Emerald) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-secondary text-white p-1.5 flex flex-col justify-between items-center shadow-sm hover:scale-[1.02] active:scale-95 transition-all focus:ring-2 focus:ring-secondary focus:outline-none relative" onclick="selectSeat(1, 'أحمد ممدوح النجار', 'محفظة حارث الذكية', '12.00 ج.م', 'ميدان التحرير', 'كوبري القبة', 'مدفوع ومؤكد', 'wallet')" type="button">
+<span class="text-[10px] font-bold self-start bg-black/20 px-1 rounded">#1</span>
+<span class="material-symbols-outlined fill-icon text-lg sm:text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[11px] font-bold">محفظة</span>
+</button>
+<!-- Seat 2: Smart Card NFC (Teal #0B3E42) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-primary-container text-white p-1.5 flex flex-col justify-between items-center shadow-sm hover:scale-[1.02] active:scale-95 transition-all focus:ring-2 focus:ring-primary-container focus:outline-none" onclick="selectSeat(2, 'محمود طه إبراهيم', 'كارت حارث الذكي (NFC)', '12.00 ج.م', 'رمسيس', 'حدائق القبة', 'ممرر على الجهاز', 'nfc')" type="button">
+<span class="text-[10px] font-bold self-start bg-black/20 px-1 rounded">#2</span>
+<span class="material-symbols-outlined fill-icon text-lg sm:text-xl" data-icon="contactless">contactless</span>
+<span class="text-[11px] font-bold">كارت NFC</span>
+</button>
+</div>
+<!-- Central Aisle Label -->
+<div class="text-[11px] text-text-muted rotate-90 font-label-sm select-none tracking-widest hidden sm:block">
+              مـمـر
+            </div>
+<!-- Seat 3: DROPPING OFF AT GHAMRA (Amber border + Pulse) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-amber-50 text-amber-900 border-2 border-amber-500 p-1.5 flex flex-col justify-between items-center pulse-seat hover:scale-[1.02] active:scale-95 transition-all focus:ring-2 focus:ring-amber-500 focus:outline-none relative" onclick="selectSeat(3, 'خالد الشربيني', 'كارت ذكي - نازل غمرة', '12.00 ج.م', 'التحرير', 'كوبري غمرة', 'مستعد للنزول (المحطة القادمة)', 'drop')" type="button">
+<span class="absolute -top-2 -right-1 px-1 rounded-full text-[9px] font-bold bg-amber-500 text-white shadow-xs">نزول غمرة</span>
+<span class="text-[10px] font-bold self-start bg-amber-200/80 px-1 rounded">#3</span>
+<span class="material-symbols-outlined fill-icon text-amber-600 text-lg sm:text-xl" data-icon="hail">hail</span>
+<span class="text-[10px] font-bold text-amber-800">نازل الآن</span>
+</button>
+</div>
+<!-- ROW 2 -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex gap-2">
+<!-- Seat 4: Vacant (+ icon) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-surface border-2 border-dashed border-border-subtle text-text-muted p-1.5 flex flex-col justify-between items-center hover:border-secondary hover:text-secondary hover:bg-surface-subtle transition-all active:scale-95 focus:outline-none" onclick="selectSeat(4, 'مقعد شاغر', 'شاغر - متاح للركوب', '0.00 ج.م', '--', '--', 'جاهز لاستقبال راكب', 'empty')" type="button">
+<span class="text-[10px] font-bold self-start bg-surface-subtle px-1 rounded text-text-secondary">#4</span>
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="text-[11px] font-medium text-text-muted">شاغر</span>
+</button>
+<!-- Seat 5: Smart Card NFC -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-primary-container text-white p-1.5 flex flex-col justify-between items-center shadow-sm hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(5, 'نور الهدى كامل', 'كارت حارث الذكي (NFC)', '12.00 ج.م', 'التحرير', 'مصر الجديدة', 'مدفوع مسبقاً', 'nfc')" type="button">
+<span class="text-[10px] font-bold self-start bg-black/20 px-1 rounded">#5</span>
+<span class="material-symbols-outlined fill-icon text-lg sm:text-xl" data-icon="credit_card">credit_card</span>
+<span class="text-[11px] font-bold">كارت NFC</span>
+</button>
+</div>
+<!-- Central Aisle Label -->
+<div class="text-[11px] text-text-muted rotate-90 font-label-sm select-none tracking-widest hidden sm:block">
+              مـمـر
+            </div>
+<!-- Seat 6: Harith Wallet (Emerald) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-secondary text-white p-1.5 flex flex-col justify-between items-center shadow-sm hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(6, 'كريم عبد العزيز', 'محفظة حارث (مسح QR)', '12.00 ج.م', 'رمسيس', 'السواح', 'مدفوع ومسجل بالنظام', 'wallet')" type="button">
+<span class="text-[10px] font-bold self-start bg-black/20 px-1 rounded">#6</span>
+<span class="material-symbols-outlined fill-icon text-lg sm:text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[11px] font-bold">محفظة</span>
+</button>
+</div>
+<!-- ROW 3 -->
+<div class="flex items-center justify-between gap-3">
+<div class="flex gap-2">
+<!-- Seat 7: DROPPING OFF AT GHAMRA (Amber border + Pulse) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-amber-50 text-amber-900 border-2 border-amber-500 p-1.5 flex flex-col justify-between items-center pulse-seat hover:scale-[1.02] active:scale-95 transition-all focus:outline-none relative" onclick="selectSeat(7, 'سارة المنياوي', 'محفظة حارث - نازلة غمرة', '12.00 ج.م', 'التحرير', 'كوبري غمرة', 'مستعدة للنزول (المحطة القادمة)', 'drop')" type="button">
+<span class="absolute -top-2 -right-1 px-1 rounded-full text-[9px] font-bold bg-amber-500 text-white shadow-xs">نزول غمرة</span>
+<span class="text-[10px] font-bold self-start bg-amber-200/80 px-1 rounded">#7</span>
+<span class="material-symbols-outlined fill-icon text-amber-600 text-lg sm:text-xl" data-icon="hail">hail</span>
+<span class="text-[10px] font-bold text-amber-800">نازل الآن</span>
+</button>
+<!-- Seat 8: Cash Payment (Dark Slate) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-surface-subtle border-2 border-text-secondary/40 text-text-primary p-1.5 flex flex-col justify-between items-center shadow-xs hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(8, 'راكب نقدي (كاش)', 'كاش نقدي للسائق', '12.00 ج.م', 'الإسعاف', 'ميدان الحجاز', 'تم التحصيل يدوياً', 'cash')" type="button">
+<span class="text-[10px] font-bold self-start bg-border-subtle px-1 rounded">#8</span>
+<span class="material-symbols-outlined text-lg sm:text-xl text-text-secondary" data-icon="payments">payments</span>
+<span class="text-[11px] font-bold text-text-secondary">كاش يدوي</span>
+</button>
+</div>
+<!-- Central Aisle Label -->
+<div class="text-[11px] text-text-muted rotate-90 font-label-sm select-none tracking-widest hidden sm:block">
+              مـمـر
+            </div>
+<!-- Seat 9: Vacant (+ icon) -->
+<button class="seat-btn w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-surface border-2 border-dashed border-border-subtle text-text-muted p-1.5 flex flex-col justify-between items-center hover:border-secondary hover:text-secondary hover:bg-surface-subtle transition-all active:scale-95 focus:outline-none" onclick="selectSeat(9, 'مقعد شاغر', 'شاغر - متاح للركوب', '0.00 ج.م', '--', '--', 'جاهز لاستقبال راكب', 'empty')" type="button">
+<span class="text-[10px] font-bold self-start bg-surface-subtle px-1 rounded text-text-secondary">#9</span>
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+<span class="text-[11px] font-medium text-text-muted">شاغر</span>
+</button>
+</div>
+<!-- ROW 4 (Back Bench: 5 connected seats across) -->
+<div class="pt-2 border-t border-border-subtle/80">
+<div class="text-[10px] font-label-md text-text-muted mb-1 text-center">الكنبة الخلفية</div>
+<div class="grid grid-cols-5 gap-1.5 sm:gap-2">
+<!-- Seat 10: Cash -->
+<button class="seat-btn h-16 rounded-xl bg-surface-subtle border-2 border-text-secondary/40 text-text-primary p-1 flex flex-col justify-between items-center hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(10, 'راكب نقدي (كاش)', 'كاش نقدي', '12.00 ج.م', 'رمسيس', 'ألف مسكن', 'محصل كاش', 'cash')" type="button">
+<span class="text-[9px] font-bold self-start bg-border-subtle px-1 rounded">#10</span>
+<span class="material-symbols-outlined text-base text-text-secondary" data-icon="payments">payments</span>
+<span class="text-[10px] font-bold text-text-secondary">كاش</span>
+</button>
+<!-- Seat 11: DROPPING OFF AT GHAMRA -->
+<button class="seat-btn h-16 rounded-xl bg-amber-50 text-amber-900 border-2 border-amber-500 p-1 flex flex-col justify-between items-center pulse-seat hover:scale-[1.02] active:scale-95 transition-all focus:outline-none relative" onclick="selectSeat(11, 'طارق مصطفى', 'محفظة حارث - نازل غمرة', '12.00 ج.م', 'التحرير', 'كوبري غمرة', 'مستعد للنزول (المحطة القادمة)', 'drop')" type="button">
+<span class="text-[9px] font-bold self-start bg-amber-200/80 px-1 rounded">#11</span>
+<span class="material-symbols-outlined fill-icon text-amber-600 text-base" data-icon="hail">hail</span>
+<span class="text-[10px] font-bold text-amber-800">غمرة</span>
+</button>
+<!-- Seat 12: Wallet -->
+<button class="seat-btn h-16 rounded-xl bg-secondary text-white p-1 flex flex-col justify-between items-center hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(12, 'حسام الديب', 'محفظة حارث الذكية', '12.00 ج.م', 'الإسعاف', 'ميدان الحجاز', 'مدفوع بنجاح', 'wallet')" type="button">
+<span class="text-[9px] font-bold self-start bg-black/20 px-1 rounded">#12</span>
+<span class="material-symbols-outlined fill-icon text-base" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[10px] font-bold">محفظة</span>
+</button>
+<!-- Seat 13: NFC -->
+<button class="seat-btn h-16 rounded-xl bg-primary-container text-white p-1 flex flex-col justify-between items-center hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(13, 'منى رضوان', 'كارت حارث الذكي (NFC)', '12.00 ج.م', 'رمسيس', 'محكمة مصر الجديدة', 'مدفوع كارت', 'nfc')" type="button">
+<span class="text-[9px] font-bold self-start bg-black/20 px-1 rounded">#13</span>
+<span class="material-symbols-outlined fill-icon text-base" data-icon="contactless">contactless</span>
+<span class="text-[10px] font-bold">كارت</span>
+</button>
+<!-- Seat 14: NFC -->
+<button class="seat-btn h-16 rounded-xl bg-primary-container text-white p-1 flex flex-col justify-between items-center hover:scale-[1.02] active:scale-95 transition-all focus:outline-none" onclick="selectSeat(14, 'إسلام جابر', 'كارت حارث الذكي (NFC)', '12.00 ج.م', 'التحرير', 'ألف مسكن', 'مدفوع كارت', 'nfc')" type="button">
+<span class="text-[9px] font-bold self-start bg-black/20 px-1 rounded">#14</span>
+<span class="material-symbols-outlined fill-icon text-base" data-icon="contactless">contactless</span>
+<span class="text-[10px] font-bold">كارت</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- PASSENGER QUICK-CARD DETAILS (4 Columns on desktop) -->
+<aside class="lg:col-span-4 bg-surface rounded-2xl p-space-md border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] sticky top-20">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="badge">badge</span>
+</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">بطاقة بيانات المقعد</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300" id="seatBadgeTop">
+            مقعد #3 (محدد)
+          </span>
+</div>
+<div class="pt-4 space-y-3.5" id="seatDetailsContainer">
+<!-- Passenger Profile Head -->
+<div class="flex items-center gap-3 bg-surface-subtle p-3 rounded-xl border border-border-subtle">
+<div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0" id="passengerAvatarBg">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-text-primary" id="passengerName">خالد الشربيني</h4>
+<p class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1" id="paymentMethodName">
+<span class="material-symbols-outlined text-[13px] text-amber-600" data-icon="hail">hail</span>
+                كارت ذكي - نازل غمرة
+              </p>
+</div>
+</div>
+<!-- Trip Leg Route Info -->
+<div class="space-y-2 bg-background p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center justify-between text-xs font-body-sm">
+<span class="text-text-muted flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                محطة الصعود:
+              </span>
+<span class="font-bold text-text-primary" id="boardingStation">ميدان التحرير</span>
+</div>
+<div class="flex items-center justify-between text-xs font-body-sm">
+<span class="text-text-muted flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                محطة النزول المحددة:
+              </span>
+<span class="font-bold text-amber-600" id="destinationStation">كوبري غمرة (القادمة)</span>
+</div>
+<div class="border-t border-border-subtle pt-2 flex items-center justify-between text-xs font-body-sm">
+<span class="text-text-muted">حالة السداد:</span>
+<span class="font-bold text-secondary flex items-center gap-1" id="fareStatus">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                مستعد للنزول (المحطة القادمة)
+              </span>
+</div>
+</div>
+<!-- Fare Paid Callout -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-primary-container text-white">
+<span class="font-body-sm text-body-sm text-white/80">قيمة الأجرة المسددة</span>
+<span class="font-currency-body text-currency-body text-secondary-fixed" id="fareAmount">12.00 ج.م</span>
+</div>
+<!-- Contextual Seat Actions -->
+<div class="pt-1 grid grid-cols-2 gap-2">
+<button class="py-2.5 px-3 rounded-xl bg-surface-subtle text-text-primary border border-border-subtle font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-variant transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-base" data-icon="pin_drop">pin_drop</span>
+              تغيير النزول
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-subtle text-text-primary border border-border-subtle font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-variant transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-base" data-icon="swap_horiz">swap_horiz</span>
+              نقل لمقعد آخر
+            </button>
+</div>
+</div>
+</aside>
+</div>
+<!-- ================= DRIVER RAPID FIELD ACTION BAR (4 Large Chunky Buttons) ================= -->
+<section class="space-y-2 pt-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+          شريط إجراءات السائق الميدانية السريعة
+        </h3>
+<span class="text-xs text-text-muted font-body-sm">إجراءات بنقرة واحدة سريعة</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- 1. Fare & Change Calculator (Dark Teal Surface) -->
+<button class="h-16 px-4 rounded-xl bg-primary-container text-white flex items-center justify-between shadow-[0_4px_12px_rgba(11,62,66,0.12)] hover:bg-primary transition-all active:scale-95 duration-150 group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-secondary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="calculate">calculate</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm block text-white leading-tight">حاسبة الأجرة</span>
+<span class="font-body-sm text-body-sm text-white/70">حساب الفكة والباقي</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/50 group-hover:translate-x-1 transition-transform" data-icon="chevron_left">chevron_left</span>
+</button>
+<!-- 2. Return Digital Change (Amber #F59E0B) -->
+<button class="h-16 px-4 rounded-xl bg-amber-500 text-white flex items-center justify-between shadow-[0_4px_16px_rgba(245,158,11,0.25)] hover:bg-amber-600 transition-all active:scale-95 duration-150 group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-black/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined fill-icon text-2xl" data-icon="currency_exchange">currency_exchange</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm block text-white leading-tight">رد فكة رقمية</span>
+<span class="font-body-sm text-body-sm text-amber-100">تحويل لمحفظة/كارت راكب</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/70 group-hover:translate-x-1 transition-transform" data-icon="chevron_left">chevron_left</span>
+</button>
+<!-- 3. Collect New Passenger (+) (Emerald #10B981) -->
+<button class="h-16 px-4 rounded-xl bg-secondary text-white flex items-center justify-between shadow-[0_4px_16px_rgba(0,108,73,0.25)] hover:bg-on-secondary-container transition-all active:scale-95 duration-150 group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined fill-icon text-2xl" data-icon="person_add">person_add</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm block text-white leading-tight">تحصيل راكب جديد (+)</span>
+<span class="font-body-sm text-body-sm text-secondary-fixed">NFC أو مسح QR أو كاش</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/70 group-hover:translate-x-1 transition-transform" data-icon="chevron_left">chevron_left</span>
+</button>
+<!-- 4. End Trip & Settle Cash/Balance (Warning Red #EF4444) -->
+<button class="h-16 px-4 rounded-xl bg-danger-debit text-white flex items-center justify-between shadow-[0_4px_16px_rgba(239,68,68,0.25)] hover:bg-error transition-all active:scale-95 duration-150 group" type="button">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-black/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined fill-icon text-2xl" data-icon="flag">flag</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm block text-white leading-tight">إنهاء الرحلة</span>
+<span class="font-body-sm text-body-sm text-red-100">توريد وإغلاق البيان</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/70 group-hover:translate-x-1 transition-transform" data-icon="chevron_left">chevron_left</span>
+</button>
+</div>
+</section>
+<!-- TRIP REAL-TIME METRICS BENTO -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-1">
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-xs">
+<span class="font-body-sm text-body-sm text-text-secondary block">إجمالي الركاب بالمركبة</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-primary">12</span>
+<span class="font-body-sm text-body-sm text-text-muted">/ 14 راكب</span>
+</div>
+</div>
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-xs">
+<span class="font-body-sm text-body-sm text-text-secondary block">إجمالي محصل الرحلة</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-secondary">144.00</span>
+<span class="font-body-sm text-body-sm text-text-muted">ج.م</span>
+</div>
+</div>
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-xs">
+<span class="font-body-sm text-body-sm text-text-secondary block">حصيلة الدفع الرقمي</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-primary-container">120.00</span>
+<span class="font-body-sm text-body-sm text-text-muted">ج.م (83%)</span>
+</div>
+</div>
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-xs">
+<span class="font-body-sm text-body-sm text-text-secondary block">حصيلة الكاش النقدي</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-currency-display text-currency-display text-text-primary">24.00</span>
+<span class="font-body-sm text-body-sm text-text-muted">ج.م (مقعدين)</span>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= HARITH BOTTOM NAVIGATION BAR (Exact JSON Mapping) ================= -->
+<!-- Contextual Active: Item 4 "المواصلات" represents Driver live trip operations -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 inset-x-0 z-50 h-[76px] flex items-center justify-around px-margin w-full bg-surface rounded-t-3xl border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:bg-surface-subtle transition-colors active:scale-95 duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:bg-surface-subtle transition-colors active:scale-95 duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="credit_card">credit_card</span>
+<span class="font-label-sm text-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- Item 3 (Center Floating Scan Dock): ادفع / امسح -->
+<a class="-mt-6 flex flex-col items-center justify-center group focus:outline-none" href="#">
+<div class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] group-hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="font-label-sm text-label-sm mt-1 text-primary-container font-bold">ادفع / امسح</span>
+</a>
+<!-- Item 4 (Active Navigation Intent): المواصلات -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 py-1 px-3" href="#">
+<span class="material-symbols-outlined fill-icon text-2xl" data-icon="directions_bus">directions_bus</span>
+<span class="font-label-sm text-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Item 5: حسابي -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:bg-surface-subtle transition-colors active:scale-95 duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+<!-- Interactive Logic for Real-Time Seat Selection -->
+<script>
+    function selectSeat(seatNumber, passengerName, paymentMethod, fare, boarding, dropoff, status, type) {
+      document.getElementById('seatBadgeTop').innerText = 'مقعد #' + seatNumber + ' (محدد)';
+      document.getElementById('passengerName').innerText = passengerName;
+      document.getElementById('paymentMethodName').innerText = paymentMethod;
+      document.getElementById('boardingStation').innerText = boarding;
+      document.getElementById('destinationStation').innerText = dropoff;
+      document.getElementById('fareStatus').innerText = status;
+      document.getElementById('fareAmount').innerText = fare;
+
+      const avatarBox = document.getElementById('passengerAvatarBg');
+      if (type === 'drop') {
+        avatarBox.className = 'w-12 h-12 rounded-xl bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0';
+      } else if (type === 'wallet') {
+        avatarBox.className = 'w-12 h-12 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center shrink-0';
+      } else if (type === 'nfc') {
+        avatarBox.className = 'w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center shrink-0';
+      } else if (type === 'empty') {
+        avatarBox.className = 'w-12 h-12 rounded-xl bg-surface-subtle text-text-muted flex items-center justify-center shrink-0';
+      } else {
+        avatarBox.className = 'w-12 h-12 rounded-xl bg-surface-subtle text-text-secondary flex items-center justify-center shrink-0';
+      }
+    }
+  </script>
+</body></html>

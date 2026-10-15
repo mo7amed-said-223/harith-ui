@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - مركز المساعدة والدعم الفني</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006c49",
+            "on-primary-fixed": "#002022",
+            "surface-tint": "#396569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-container": "#00714d",
+            "surface-subtle": "#F1F5F9",
+            "outline": "#707979",
+            "primary-container": "#0b3e42",
+            "inverse-on-surface": "#eef1f2",
+            "surface-container-low": "#f1f4f5",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary": "#00272a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "text-primary": "#0F172A",
+            "on-error": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-bright": "#f7fafb",
+            "secondary-fixed": "#6ffbbe",
+            "text-secondary": "#475569",
+            "on-surface": "#181c1d",
+            "outline-variant": "#c0c8c9",
+            "border-subtle": "#E2E8F0",
+            "surface-container-high": "#e5e9ea",
+            "danger-debit": "#EF4444",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-container": "#6cf8bb",
+            "on-background": "#181c1d",
+            "inverse-surface": "#2d3132",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "surface-container": "#ebeeef",
+            "secondary-fixed-dim": "#4edea3",
+            "surface": "#FFFFFF",
+            "text-muted": "#94A3B8",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-container": "#e19000",
+            "primary-fixed-dim": "#a1cfd3",
+            "tertiary": "#341e00",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary-container": "#513100",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e0e3e4",
+            "on-secondary-fixed": "#002113"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .tab-indicator {
+      transition: all 0.25s ease-in-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile App Frame Wrapper -->
+<div class="max-w-md mx-auto min-h-screen bg-background relative shadow-2xl flex flex-col">
+<!-- TopAppBar (Shared Anchor Execution) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full shadow-[0_2px_8px_rgba(11,62,66,0.04)]">
+<div class="flex justify-between items-center w-full px-4 h-full">
+<!-- Leading Action: Back Chevron in 40x40 container (RTL physical right) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Screen Headline Anchor -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">مركز المساعدة والدعم الفني</h1>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            فريق الدعم متصل الآن
+          </span>
+</div>
+<!-- Trailing Action: 24/7 Hotline Button -->
+<a aria-label="اتصال بالخط الساخن للطوارئ 24/7" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-container-high relative" href="tel:19824">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-surface"></span>
+</a>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-5">
+<!-- Hero Direct Support Bento Card (#0B3E42) -->
+<section class="rounded-2xl p-5 bg-primary-container text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.16)] relative overflow-hidden">
+<!-- Subtle Glow Layer -->
+<div class="absolute -top-12 -left-12 w-40 h-40 bg-secondary/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/30 text-secondary-fixed text-label-sm font-label-sm border border-secondary-fixed/20 mb-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+                خدمة عملاء حارث الرسمية
+              </span>
+<h2 class="text-headline-md font-headline-md font-bold text-on-primary leading-tight">
+                جاهزون لمساعدتك 24 ساعة يومياً
+              </h2>
+</div>
+<div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/10 shrink-0">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-primary-container leading-relaxed">
+            اختر وسيلة المحادثة الأنسب لك لحل أي استفسار حول كروت المواصلات الذكية والمحفظة الرقمية وحماية المعاملات.
+          </p>
+<!-- Action Duo (WhatsApp + In-App Live Chat) -->
+<div class="grid grid-cols-2 gap-2.5 pt-1">
+<!-- WhatsApp Button -->
+<button class="flex items-center justify-center gap-2 h-12 px-3 rounded-xl bg-secondary text-white font-label-lg text-label-lg shadow-[0_4px_16px_rgba(0,108,73,0.35)] active:scale-95 transition-transform hover:opacity-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+<span>واتساب المعتمد</span>
+</button>
+<!-- Live Chat Button -->
+<button class="flex items-center justify-center gap-2 h-12 px-3 rounded-xl bg-surface/10 hover:bg-surface/20 text-white font-label-lg text-label-lg border border-white/20 backdrop-blur-md active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="forum">forum</span>
+<span>شات حي فوري</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Segmented Tabs Filter Bar (3 Segments) -->
+<section aria-label="تبويبات المساعدة" class="bg-surface p-1.5 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<div class="grid grid-cols-3 gap-1">
+<button class="py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-text-secondary hover:text-primary" id="tab-guides" onclick="switchHelpTab('guides')" type="button">
+            دليل مصور
+          </button>
+<button class="py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all bg-primary-container text-on-primary font-bold shadow-sm" id="tab-faq" onclick="switchHelpTab('faq')" type="button">
+            الأسئلة الشائعة
+          </button>
+<button class="py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-text-secondary hover:text-primary" id="tab-ticket" onclick="switchHelpTab('ticket')" type="button">
+            تذكرة شكوى
+          </button>
+</div>
+</section>
+<!-- FAQ Section (Accordion View) -->
+<section class="space-y-3" id="faq-section">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-headline-sm font-headline-sm text-text-primary">أكثر الاستفسارات شيوعاً</h3>
+<span class="text-label-sm font-label-sm text-text-muted">محدثة اليوم</span>
+</div>
+<!-- FAQ Item 1 (Expanded by Default) -->
+<article class="bg-surface rounded-2xl border border-border-subtle overflow-hidden shadow-[0_4px_12px_rgba(11,62,66,0.04)] transition-all">
+<button class="w-full flex items-center justify-between p-4 text-start font-headline-sm text-headline-sm text-primary gap-3" onclick="toggleAccordion('faq-content-1', 'faq-icon-1')" type="button">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="nfc">nfc</span>
+</span>
+<span>كيف أقوم بشحن كارت حارث الذكي (NFC) للمواصلات؟</span>
+</span>
+<span class="material-symbols-outlined text-text-muted transition-transform rotate-180" data-icon="keyboard_arrow_down" id="faq-icon-1">keyboard_arrow_down</span>
+</button>
+<div class="px-4 pb-4 pt-1 space-y-3 block" id="faq-content-1">
+<p class="text-body-sm font-body-sm text-text-secondary">
+              يمكنك تعبئة رصيد الكارت الذكي بلمسة واحدة مباشرة من هاتفك الداعم لخاصية NFC دون الحاجة لأكشاك الشحن عبر الخطوات التالية:
+            </p>
+<div class="space-y-2 bg-surface-subtle p-3 rounded-xl border border-border-subtle">
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center justify-center shrink-0 mt-0.5">1</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-text-primary">افتح قسم كروت المواصلات</h4>
+<p class="text-body-sm font-body-sm text-text-secondary">اختر "شحن كارت NFC" وحدد المبلغ المراد تعبئته من رصيدك في حارث.</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center justify-center shrink-0 mt-0.5">2</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-text-primary">ملامسة الكارت لظهر الهاتف</h4>
+<p class="text-body-sm font-body-sm text-text-secondary">ثبت كارت حارث البلاستيكي خلف كاميرا الهاتف لمدة 3 ثوانٍ حتى تسمع رنة التأكيد.</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center justify-center shrink-0 mt-0.5">3</div>
+<div>
+<h4 class="text-label-lg font-label-lg text-text-primary">جاهز للركوب فوراً</h4>
+<p class="text-body-sm font-body-sm text-text-secondary">يتم تحديث الرصيد على شريحة الكارت مباشرة ويمكنك تمريره على بوابات المترو وأتوبيسات النقل.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- FAQ Item 2 -->
+<article class="bg-surface rounded-2xl border border-border-subtle overflow-hidden shadow-[0_4px_12px_rgba(11,62,66,0.04)] transition-all">
+<button class="w-full flex items-center justify-between p-4 text-start font-headline-sm text-headline-sm text-primary gap-3" onclick="toggleAccordion('faq-content-2', 'faq-icon-2')" type="button">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</span>
+<span>ما هي شروط الاستفادة من خدمة سلفني بدون فوائد؟</span>
+</span>
+<span class="material-symbols-outlined text-text-muted transition-transform" data-icon="keyboard_arrow_down" id="faq-icon-2">keyboard_arrow_down</span>
+</button>
+<div class="px-4 pb-4 pt-1 space-y-2 hidden" id="faq-content-2">
+<p class="text-body-sm font-body-sm text-text-secondary">
+              خدمة "سلفني ركوبة ومشاوير" متاحة تلقائياً لجميع مستخدمي تطبيق حارث الموثقين بالرقم القومي الذين أتموا 5 رحلات مواصلات ناجحة على الأقل خلال الشهر الأخير. تمنحك الخدمة رصيد طوارئ فوري حتى 150 جنيهاً بدون أي فوائد إضافية، وتسدد مع أول عملية شحن تالية للمحفظة.
+            </p>
+</div>
+</article>
+<!-- FAQ Item 3 -->
+<article class="bg-surface rounded-2xl border border-border-subtle overflow-hidden shadow-[0_4px_12px_rgba(11,62,66,0.04)] transition-all">
+<button class="w-full flex items-center justify-between p-4 text-start font-headline-sm text-headline-sm text-primary gap-3" onclick="toggleAccordion('faq-content-3', 'faq-icon-3')" type="button">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield_with_heart">shield_with_heart</span>
+</span>
+<span>كيف يحميني نظام الوساطة وحافظ على فلوسك؟</span>
+</span>
+<span class="material-symbols-outlined text-text-muted transition-transform" data-icon="keyboard_arrow_down" id="faq-icon-3">keyboard_arrow_down</span>
+</button>
+<div class="px-4 pb-4 pt-1 space-y-2 hidden" id="faq-content-3">
+<p class="text-body-sm font-body-sm text-text-secondary">
+              عند إتمام عمليات الشراء والتحويل مع تجار أو أفراد معتمدين، يحتجز حارث المبلغ في صندوق الضمان الآمن (Escrow Vault) ولا يتم الإفراج عن الأموال للبائع إلا بعد تأكيد استلام المنتج ومطابقته للمواصفات أو مرور مهلة الفحص المحددة بدون نزاع.
+            </p>
+</div>
+</article>
+<!-- FAQ Item 4 -->
+<article class="bg-surface rounded-2xl border border-border-subtle overflow-hidden shadow-[0_4px_12px_rgba(11,62,66,0.04)] transition-all">
+<button class="w-full flex items-center justify-between p-4 text-start font-headline-sm text-headline-sm text-primary gap-3" onclick="toggleAccordion('faq-content-4', 'faq-icon-4')" type="button">
+<span class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock_reset">lock_reset</span>
+</span>
+<span>ماذا أفعل في حالة ضياع كارت حارث أو فقدان الهاتف؟</span>
+</span>
+<span class="material-symbols-outlined text-text-muted transition-transform" data-icon="keyboard_arrow_down" id="faq-icon-4">keyboard_arrow_down</span>
+</button>
+<div class="px-4 pb-4 pt-1 space-y-2 hidden" id="faq-content-4">
+<p class="text-body-sm font-body-sm text-text-secondary">
+              يمكنك تجميد الكارت الذكي في ثانية واحدة من زر "قفل الكارت" من أي جهاز مسجل، أو الاتصال بالخط الساخن الموحد 19824 على مدار الساعة لتعليق العمليات فورياً واسترجاع رصيدك كاملاً إلى محفظتك الرقمية.
+            </p>
+</div>
+</article>
+</section>
+<!-- Ticket Submission Section Bento Module -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_16px_rgba(11,62,66,0.05)] space-y-4" id="ticket-section">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary">تقديم تذكرة شكوى أو اقتراح</h3>
+<p class="text-body-sm font-body-sm text-text-secondary">يتابع فريقنا المتخصص مشكلتك خطوة بخطوة</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-surface-subtle text-text-primary font-label-sm text-label-sm border border-border-subtle">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="timer">timer</span>
+            الرد خلال 15 دقيقة
+          </span>
+</div>
+<form class="space-y-3.5" onsubmit="event.preventDefault(); alert('تم استلام تذكرتك بنجاح، رقم المتابعة: #HRTH-8942');">
+<!-- Dropdown: Issue Category -->
+<div class="space-y-1.5 text-start">
+<label class="block text-label-md font-label-md text-text-primary" for="category-select">
+              تصنيف المشكلة أو الطلب <span class="text-danger-debit">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle px-3 pr-4 pl-10 text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors appearance-none" id="category-select" required="">
+<option disabled="" selected="" value="">اختر مجال الشكوى...</option>
+<option value="wallet">مشاكل محفظة ورصيد مالي معلق</option>
+<option value="transit">تذاكر وبوابات مواصلات وكارت NFC</option>
+<option value="bills">سداد فواتير وشحن مرافق كهرباء/مياه</option>
+<option value="salefny">خدمة سلفني والائتمان الطارئ</option>
+<option value="suggestion">اقتراح تطوير ميزة جديدة في حارث</option>
+</select>
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</div>
+<!-- Input: Transaction ID (Optional) -->
+<div class="space-y-1.5 text-start">
+<div class="flex justify-between items-center">
+<label class="text-label-md font-label-md text-text-primary" for="txn-input">رقم العملية المتعلقة بالشكوى</label>
+<span class="text-label-sm font-label-sm text-text-muted">اختياري</span>
+</div>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle px-3 pr-10 text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" id="txn-input" placeholder="مثال: #TXN-74920381" type="text"/>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]" data-icon="tag">tag</span>
+</div>
+</div>
+</div>
+<!-- Textarea: Detailed Description -->
+<div class="space-y-1.5 text-start">
+<label class="block text-label-md font-label-md text-text-primary" for="desc-input">
+              شرح المشكلة أو تفاصيل الاقتراح <span class="text-danger-debit">*</span>
+</label>
+<textarea class="w-full bg-surface rounded-xl border-[1.5px] border-border-subtle p-3 text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" id="desc-input" placeholder="يرجى كتابة ما حدث معك بدقة لمساعدتنا على حل المشكلة فورياً..." required="" rows="3"></textarea>
+</div>
+<!-- Attachment Control -->
+<div class="pt-0.5">
+<label class="flex items-center justify-between p-3 rounded-xl border border-dashed border-border-subtle bg-surface-subtle hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="w-9 h-9 rounded-lg bg-surface flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[20px]" data-icon="attach_file">attach_file</span>
+</span>
+<div>
+<span class="text-label-md font-label-md text-text-primary block">إرفاق إيصال بنكي أو لقطة شاشة</span>
+<span class="text-label-sm font-label-sm text-text-muted">PNG, JPG أو PDF (بحد أقصى 10 ميجابايت)</span>
+</div>
+</div>
+<input class="hidden" type="file"/>
+<span class="text-label-sm font-label-sm text-primary font-bold px-2.5 py-1 bg-surface rounded-lg border border-border-subtle">رفع ملف</span>
+</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-white font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.22)] active:scale-95 transition-transform hover:opacity-95" type="submit">
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+<span>إرسال التذكرة لفريق الدعم</span>
+</button>
+</form>
+</section>
+<!-- Mini Trust Footer Indicator -->
+<div class="text-center pb-2 text-text-muted text-label-sm font-label-sm flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="check_circle">check_circle</span>
+<span>مرخص ومراقب من الهيئة العامة للرقابة المالية والبنك المركزي المصري</span>
+</div>
+</main>
+<!-- BottomNavBar (Semantic Shell Locked Anchor) -->
+<!-- Destination Rule: Top-level ecosystem screen with Profile/Account context active -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية (Home) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">الرئيسية</span>
+</a>
+<!-- Tab 2: محفظتي (Wallet) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm">محفظتي</span>
+</a>
+<!-- Tab 3: ادفع (Central Floating Pay/QR Scanner) -->
+<div class="flex flex-col items-center justify-center relative -top-3">
+<button aria-label="ادفع عبر المسح السريع" class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[28px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-primary mt-1 font-bold">ادفع</span>
+</div>
+<!-- Tab 4: المواصلات (Transit) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm">المواصلات</span>
+</a>
+<!-- Tab 5: حسابي (Profile / Help Center Active State Mapping) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">حسابي</span>
+</a>
+</nav>
+</div>
+<!-- Interactive Logic for Accordion & Tabs -->
+<script>
+    function toggleAccordion(contentId, iconId) {
+      const content = document.getElementById(contentId);
+      const icon = document.getElementById(iconId);
+      
+      if (!content || !icon) return;
+
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        content.classList.add('block');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    function switchHelpTab(tabKey) {
+      const faqSec = document.getElementById('faq-section');
+      const ticketSec = document.getElementById('ticket-section');
+      const tabGuides = document.getElementById('tab-guides');
+      const tabFaq = document.getElementById('tab-faq');
+      const tabTicket = document.getElementById('tab-ticket');
+
+      const tabs = [tabGuides, tabFaq, tabTicket];
+      tabs.forEach(t => {
+        t.className = "py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-text-secondary hover:text-primary";
+      });
+
+      if (tabKey === 'faq') {
+        tabFaq.className = "py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all bg-primary-container text-on-primary font-bold shadow-sm";
+        faqSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (tabKey === 'ticket') {
+        tabTicket.className = "py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all bg-primary-container text-on-primary font-bold shadow-sm";
+        ticketSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (tabKey === 'guides') {
+        tabGuides.className = "py-2.5 px-1 rounded-lg text-center font-label-md text-label-md transition-all bg-primary-container text-on-primary font-bold shadow-sm";
+        alert('سيتم فتح مكتبة فيديوهات الشرح التفاعلية قريباً.');
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مصفوفة التسعير وجدولة المواعيد — حارث</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-fixed": "#6ffbbe",
+            "secondary": "#006c49",
+            "surface-variant": "#e0e3e4",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "outline-variant": "#c0c8c9",
+            "primary-fixed": "#bcebef",
+            "border-subtle": "#E2E8F0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "text-secondary": "#475569",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "text-primary": "#0F172A",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary": "#ffffff",
+            "primary-container": "#0b3e42",
+            "on-primary-container": "#7ca9ad",
+            "on-surface": "#181c1d",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "danger-debit": "#EF4444",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#396569",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f1f4f5",
+            "secondary-container": "#6cf8bb",
+            "primary": "#00272a",
+            "tertiary-fixed": "#ffddb8",
+            "surface-subtle": "#F1F5F9",
+            "on-surface-variant": "#404849",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "tertiary": "#341e00"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          fontFamily: {
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          fontSize: {
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "34px", fontWeight: "700" }],
+            "display-lg": ["36px", { lineHeight: "48px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+            "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "0px", fontWeight: "700" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "500" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+            "currency-body": ["18px", { lineHeight: "26px", letterSpacing: "0px", fontWeight: "700" }],
+            "display-lg-mobile": ["28px", { lineHeight: "38px", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide native number spinners */
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-primary">
+<!-- Application Shell Wrapper (Max Mobile Canvas Container) -->
+<div class="w-full max-w-md mx-auto min-h-screen flex flex-col bg-background relative shadow-2xl">
+<!-- TOP APP BAR -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle h-16 px-4 flex items-center justify-between shadow-sm">
+<!-- Trailing Action in RTL (Physical Right) -> Back Chevron -->
+<button aria-label="الرجوع للخطوة السابقة" class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+<!-- Center Title -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold">مصفوفة التسعير والجدولة</h1>
+<span class="text-label-sm font-label-sm text-text-muted">مسار: السلام ⬅ ميدان رمسيس</span>
+</div>
+<!-- Action (Reset / Defaults) -->
+<button class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" title="استعادة القيم الافتراضية للتعريفة" type="button">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 px-4 pt-4 pb-28 space-y-5">
+<!-- STEPPER PROGRESS COMPONENT -->
+<section aria-label="مؤشر إنجاز التسجيل" class="bg-surface rounded-xl p-3.5 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-surface flex items-center justify-center text-label-sm font-label-sm font-bold">٣</span>
+<span class="text-label-lg font-label-lg font-bold text-primary-container">الخطوة ٣: مصفوفة الأجرة والتشغيل</span>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-secondary px-2 py-0.5 rounded-full bg-secondary-fixed/30">متبقي خطوة واحدة</span>
+</div>
+<!-- Visual Multi-segment Progress Bar -->
+<div class="grid grid-cols-4 gap-1.5 h-1.5 w-full rounded-full overflow-hidden">
+<div class="bg-secondary rounded-full"></div>
+<div class="bg-secondary rounded-full"></div>
+<div class="bg-secondary relative rounded-full overflow-hidden">
+<div class="absolute inset-0 bg-secondary-container animate-pulse"></div>
+</div>
+<div class="bg-surface-container rounded-full"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-label-sm font-label-sm text-text-muted">
+<span class="text-secondary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            المحطات
+          </span>
+<span class="text-secondary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            ترخيص السائق
+          </span>
+<span class="text-primary-container font-bold">التسعير والمواعيد</span>
+<span class="text-text-muted">توليد الـ QR</span>
+</div>
+</section>
+<!-- STATION-TO-STATION PRICING MATRIX CARD -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-sm relative overflow-hidden">
+<!-- Accent Top Bar -->
+<div class="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-primary-container via-secondary to-primary-container"></div>
+<div class="flex items-start gap-2.5 mb-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-text-primary">مصفوفة الأجرة الرسمية المعتمدة</h2>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">
+              حدد قيمة الأجرة بالجنيه المصري لكل مسار فرعي بين المحطات ليتم خصمها بدقة عند مسح QR الركاب.
+            </p>
+</div>
+</div>
+<!-- Tariff Regulatory Notice Banner -->
+<div class="bg-surface-subtle rounded-xl p-2.5 flex items-center gap-2 mb-4 border border-border-subtle">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="text-label-sm font-label-sm text-text-secondary">تخضع هذه الأسعار لتعريفة جهاز النقل الحضري لمحافظة القاهرة لسنة 2024.</span>
+</div>
+<!-- Rows Container -->
+<div class="space-y-3">
+<!-- Row 1 -->
+<div class="p-3 rounded-xl bg-surface-bright border border-border-subtle flex items-center justify-between gap-2 hover:border-primary-fixed-dim transition-all">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-body-md font-body-md font-bold text-text-primary">
+<span>السلام</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted rotate-180">arrow_right_alt</span>
+<span>كعبيش</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">مسافة تقريبية: ٧ كم</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface p-1 rounded-xl border border-border-subtle shadow-sm">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="flex items-center px-1">
+<span class="text-currency-body font-currency-body text-primary-container">10.00</span>
+<span class="text-label-sm font-label-sm text-text-muted mr-1">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-surface flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="p-3 rounded-xl bg-surface-bright border border-border-subtle flex items-center justify-between gap-2 hover:border-primary-fixed-dim transition-all">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-body-md font-body-md font-bold text-text-primary">
+<span>السلام</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted rotate-180">arrow_right_alt</span>
+<span>كوبري غمرة</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">مسافة تقريبية: ١٤ كم</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface p-1 rounded-xl border border-border-subtle shadow-sm">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="flex items-center px-1">
+<span class="text-currency-body font-currency-body text-primary-container">12.00</span>
+<span class="text-label-sm font-label-sm text-text-muted mr-1">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-surface flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Row 3 (FULL FARE - HIGHLIGHTED HERO BADGE) -->
+<div class="p-3.5 rounded-xl bg-gradient-to-r from-primary-container/10 via-surface to-secondary/10 border-2 border-primary-container flex items-center justify-between gap-2 relative shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-bold text-text-primary">السلام</span>
+<span class="material-symbols-outlined text-[14px] text-secondary rotate-180">arrow_right_alt</span>
+<span class="text-body-md font-body-md font-bold text-text-primary">ميدان رمسيس</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-primary-container text-surface">
+<span class="material-symbols-outlined text-[12px]">star</span>
+                  الخط كاملاً (الأجرة القصوى)
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-surface p-1 rounded-xl border-2 border-primary-container shadow">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="flex items-center px-1">
+<span class="text-currency-body font-currency-body text-primary-container font-extrabold">15.00</span>
+<span class="text-label-sm font-label-sm text-primary-container font-bold mr-1">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-surface flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="p-3 rounded-xl bg-surface-bright border border-border-subtle flex items-center justify-between gap-2 hover:border-primary-fixed-dim transition-all">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-body-md font-body-md font-bold text-text-primary">
+<span>كعبيش</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted rotate-180">arrow_right_alt</span>
+<span>رمسيس</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">مسار وسطي: ٨ كم</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface p-1 rounded-xl border border-border-subtle shadow-sm">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="flex items-center px-1">
+<span class="text-currency-body font-currency-body text-primary-container">8.00</span>
+<span class="text-label-sm font-label-sm text-text-muted mr-1">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-surface flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="p-3 rounded-xl bg-surface-bright border border-border-subtle flex items-center justify-between gap-2 hover:border-primary-fixed-dim transition-all">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-body-md font-body-md font-bold text-text-primary">
+<span>كوبري غمرة</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted rotate-180">arrow_right_alt</span>
+<span>رمسيس</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">أجرة محطة أخيرة: ٣.٥ كم</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface p-1 rounded-xl border border-border-subtle shadow-sm">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="flex items-center px-1">
+<span class="text-currency-body font-currency-body text-primary-container">5.00</span>
+<span class="text-label-sm font-label-sm text-text-muted mr-1">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-surface flex items-center justify-center active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- EXTRA BAGGAGE & DIGITAL INCENTIVES CARD -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-sm space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">luggage</span>
+<h3 class="text-headline-sm font-headline-sm font-bold text-text-primary">الحقائب والخصومات الرقمية</h3>
+</div>
+<!-- Baggage Fee Switch -->
+<div class="p-3 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-between">
+<div class="flex flex-col pr-1">
+<span class="text-body-md font-body-md font-bold text-text-primary">تفعيل احتساب أجرة للحقائب الكبيرة</span>
+<span class="text-label-sm font-label-sm text-secondary font-medium">المعتمد: 5.00 ج.م / شنطة إضافية بالشنطة الخلفية</span>
+</div>
+<!-- Switch Toggle (Active ON) -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- FinTech Digital Payment Discount Toggle -->
+<div class="p-3 rounded-xl bg-secondary-fixed/20 border border-secondary/30 flex items-center justify-between">
+<div class="flex items-start gap-2 pr-1">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">contactless</span>
+<div class="flex flex-col">
+<span class="text-body-md font-body-md font-bold text-text-primary">خصم الدفع الإلكتروني (NFC / QR) بنسبة 5%</span>
+<span class="text-body-sm font-body-sm text-text-secondary">يتحمله صندوق دعم التحول الرقمي لحارث دون التأثير على إيراد السائق الصافي.</span>
+</div>
+</div>
+<!-- Switch Toggle (Active ON) -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mr-2">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</section>
+<!-- DEPARTURE SCHEDULE & OPERATING DAYS CARD -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm font-bold text-text-primary">جدولة مواعيد القيام اليومية</h3>
+<p class="text-body-sm font-body-sm text-text-secondary">حدد أيام وورديات عمل المركبة على المسار</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-secondary bg-secondary-fixed/30 px-2 py-1 rounded-lg">منتظم</span>
+</div>
+<!-- Days Selector Chips (RTL Ordered) -->
+<div>
+<label class="text-label-md font-label-md text-text-secondary mb-2 block font-medium">أيام التشغيل الأسبوعية:</label>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">السبت</button>
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">الأحد</button>
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">الإثنين</button>
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">الثلاثاء</button>
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">الأربعاء</button>
+<button class="px-3 py-1.5 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold shadow-sm" type="button">الخميس</button>
+<button class="px-3 py-1.5 rounded-xl bg-surface-subtle border border-border-subtle text-text-muted text-label-md font-label-md hover:border-outline" type="button">الجمعة</button>
+</div>
+</div>
+<!-- Daily Shifts & Cadence Bento -->
+<div class="space-y-2.5 pt-1">
+<!-- Shift 1 -->
+<div class="p-3 rounded-xl border border-secondary/30 bg-surface-bright flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary-fixed/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+</span>
+<div>
+<span class="text-body-md font-body-md font-bold text-text-primary block">الوردية الصباحية</span>
+<span class="text-label-sm font-label-sm text-text-secondary">06:30 ص حتى 02:00 م</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              مفعلة
+            </span>
+</div>
+<!-- Shift 2 -->
+<div class="p-3 rounded-xl border border-secondary/30 bg-surface-bright flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-secondary-fixed/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+</span>
+<div>
+<span class="text-body-md font-body-md font-bold text-text-primary block">الوردية المسائية</span>
+<span class="text-label-sm font-label-sm text-text-secondary">02:30 م حتى 11:00 م</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              مفعلة
+            </span>
+</div>
+<!-- Departure Rule Notice -->
+<div class="p-3 rounded-xl bg-surface-subtle border border-border-subtle flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0 mt-0.5">pace</span>
+<div class="text-body-sm font-body-sm text-text-secondary">
+<span class="font-bold text-text-primary block">قاعدة التحرك من الموقف:</span>
+              التحرك فور اكتمال الصالون (14 راكب) أو عند انقضاء 15 دقيقة بحد أقصى لمنع التكدس.
+            </div>
+</div>
+</div>
+</section>
+<!-- CTA ACTION BUTTON SECTION -->
+<section class="pt-2 pb-2">
+<button class="w-full h-12 bg-primary-container text-surface rounded-xl font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20 hover:bg-primary active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span>حفظ واعتماد خط السير وتوليد الملصقات الرسمية</span>
+</button>
+<!-- Compliance & Security Trust Footer -->
+<div class="flex items-center justify-center gap-2 mt-3 text-label-sm font-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+<span>بيانات مشفرة ومعتمدة من إدارة المرور العامة ومحافظة القاهرة</span>
+</div>
+</section>
+</main>
+<!-- LOCKED GLOBAL BOTTOM NAVIGATION BAR (Strictly RTL Layout & JSON Spec) -->
+<!-- JSON Blueprint: ["الرئيسية", "المسارات", "مسح الملصق", "التسعير", "الطلبات"] -->
+<!-- Active Tab: "التسعير" (Semantic Match for Pricing & Schedules) -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-border-subtle flex justify-around items-center h-[76px] px-2 shadow-md max-w-md right-0 mx-auto rounded-t-3xl">
+<!-- Item 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted font-medium hover:text-primary-container transition-all active:scale-95" href="#home">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: المسارات -->
+<a class="flex flex-col items-center justify-center text-text-muted font-medium hover:text-primary-container transition-all active:scale-95" href="#routes">
+<span class="material-symbols-outlined text-[24px]">alt_route</span>
+<span class="text-label-sm font-label-sm mt-0.5">المسارات</span>
+</a>
+<!-- Item 3: مسح الملصق (Center Elevated Action Dock) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="مسح الملصق الذكي" class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-lg shadow-secondary/35 active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-primary font-bold mt-1">مسح الملصق</span>
+</div>
+<!-- Item 4: التسعير (ACTIVE TAB) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95 transition-all" href="#pricing">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">table_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5 text-primary-container font-bold">التسعير</span>
+</a>
+<!-- Item 5: الطلبات -->
+<a class="flex flex-col items-center justify-center text-text-muted font-medium hover:text-primary-container transition-all active:scale-95" href="#orders">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">الطلبات</span>
+</a>
+</nav>
+</div>
+</body></html>

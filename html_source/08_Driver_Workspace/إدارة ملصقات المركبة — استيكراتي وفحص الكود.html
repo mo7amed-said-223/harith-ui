@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة المسار والملصقات - حارس</title>
+<!-- IBM Plex Sans Arabic font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#2a1700",
+            "on-background": "#181c1d",
+            "surface-container-high": "#e5e9ea",
+            "border-subtle": "#E2E8F0",
+            "primary": "#00272a",
+            "inverse-primary": "#a1cfd3",
+            "secondary": "#006c49",
+            "primary-fixed": "#bcebef",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#341e00",
+            "tertiary-container": "#513100",
+            "tertiary-fixed": "#ffddb8",
+            "outline-variant": "#c0c8c9",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-subtle": "#F1F5F9",
+            "secondary-container": "#6cf8bb",
+            "error": "#ba1a1a",
+            "surface-tint": "#396569",
+            "surface-dim": "#d7dadb",
+            "error-container": "#ffdad6",
+            "surface-container": "#ebeeef",
+            "text-secondary": "#475569",
+            "surface-variant": "#e0e3e4",
+            "background": "#f7fafb",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-primary-fixed": "#002022",
+            "text-muted": "#94A3B8",
+            "on-tertiary-container": "#e19000",
+            "surface": "#FFFFFF",
+            "on-surface": "#181c1d",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary": "#ffffff",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-container": "#7ca9ad",
+            "surface-bright": "#f7fafb",
+            "on-error-container": "#93000a",
+            "primary-container": "#0b3e42",
+            "text-primary": "#0F172A",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-container": "#00714d",
+            "surface-container-low": "#f1f4f5",
+            "inverse-on-surface": "#eef1f2",
+            "on-secondary-fixed": "#002113",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#2d3132",
+            "on-surface-variant": "#404849",
+            "danger-debit": "#EF4444"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    @keyframes scanAnimation {
+      0% { top: 6%; opacity: 0.3; }
+      50% { top: 88%; opacity: 1; }
+      100% { top: 6%; opacity: 0.3; }
+    }
+    .scanner-line {
+      animation: scanAnimation 2.4s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28">
+<!-- Shared TopAppBar Component -->
+<header class="bg-surface border-b border-border-subtle sticky top-0 z-40">
+<div class="flex justify-between items-center w-full h-16 px-4 max-w-md mx-auto">
+<!-- Trailing Action in RTL (Physical Right = Trailing Icon arrow_forward representing Back in RTL) -->
+<button aria-label="الرجوع للخلف" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Centered Screen Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary text-center">
+        إدارة المسار والملصقات
+      </h1>
+<!-- Leading Action in RTL (Physical Left = Help/Support headset) -->
+<button aria-label="المساعدة والدعم" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="max-w-md mx-auto px-4 pt-4 space-y-4">
+<!-- Segmented 3-Tab Bar -->
+<section class="bg-surface-subtle p-1 rounded-xl flex items-center border border-border-subtle">
+<button class="flex-1 py-2 text-center rounded-lg bg-surface text-primary-container font-headline-sm text-[13px] shadow-[0_2px_8px_rgba(11,62,66,0.08)] font-bold transition-all">
+        استيكراتي المعتمدة (2)
+      </button>
+<button class="flex-1 py-2 text-center rounded-lg text-text-muted hover:text-text-primary text-[13px] font-label-md transition-colors">
+        كاميرا فحص الملصق
+      </button>
+<button class="flex-1 py-2 text-center rounded-lg text-text-muted hover:text-text-primary text-[13px] font-label-md transition-colors">
+        طلب استيكر جديد
+      </button>
+</section>
+<!-- Card 1: Official Harith Transit QR & NFC Sticker Card -->
+<article class="bg-surface rounded-2xl border-2 border-primary-container p-4 shadow-[0_12px_28px_rgba(11,62,66,0.12)] relative overflow-hidden">
+<!-- Watermark background texture badge -->
+<div class="absolute -top-12 -left-12 w-36 h-36 bg-surface-subtle rounded-full opacity-60 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant text-[72px]">directions_bus</span>
+</div>
+<!-- Sticker Card Header -->
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-headline-sm font-headline-sm text-primary-container">حــــارس</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label-sm px-1.5 py-0.5 rounded-full font-bold">معتمد 2025</span>
+</div>
+<p class="text-[11px] font-label-sm text-text-secondary">منظومة النقل الذكي والدفع اللاتلامسي NFC</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-label-sm text-text-muted">حالة الملصق</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-label-md text-secondary font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            نشط وساري
+          </span>
+</div>
+</div>
+<!-- Sticker Visual Payload (QR & NFC) -->
+<div class="my-4 bg-background border border-border-subtle rounded-xl p-3.5 flex flex-col items-center">
+<div class="relative bg-surface p-3 rounded-xl border border-border-subtle shadow-sm flex items-center justify-center">
+<!-- Real Scalable Vector Simulation of QR Code with Harith Center Shield -->
+<svg class="w-44 h-44" fill="none" viewbox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+<!-- Outer Position Markers -->
+<rect fill="#00272A" height="40" rx="4" width="40" x="8" y="8"></rect>
+<rect fill="#FFFFFF" height="28" rx="2" width="28" x="14" y="14"></rect>
+<rect fill="#00272A" height="16" rx="2" width="16" x="20" y="20"></rect>
+<rect fill="#00272A" height="40" rx="4" width="40" x="112" y="8"></rect>
+<rect fill="#FFFFFF" height="28" rx="2" width="28" x="118" y="14"></rect>
+<rect fill="#00272A" height="16" rx="2" width="16" x="124" y="20"></rect>
+<rect fill="#00272A" height="40" rx="4" width="40" x="8" y="112"></rect>
+<rect fill="#FFFFFF" height="28" rx="2" width="28" x="14" y="118"></rect>
+<rect fill="#00272A" height="16" rx="2" width="16" x="20" y="124"></rect>
+<!-- Pattern Elements -->
+<rect fill="#00272A" height="8" width="8" x="56" y="12"></rect>
+<rect fill="#00272A" height="8" width="16" x="72" y="12"></rect>
+<rect fill="#00272A" height="8" width="8" x="96" y="12"></rect>
+<rect fill="#00272A" height="8" width="12" x="56" y="28"></rect>
+<rect fill="#00272A" height="8" width="24" x="80" y="28"></rect>
+<rect fill="#00272A" height="8" width="20" x="56" y="44"></rect>
+<rect fill="#00272A" height="8" width="12" x="84" y="44"></rect>
+<rect fill="#00272A" height="8" width="8" x="104" y="44"></rect>
+<rect fill="#00272A" height="16" width="8" x="12" y="56"></rect>
+<rect fill="#00272A" height="8" width="16" x="28" y="56"></rect>
+<rect fill="#00272A" height="8" width="20" x="12" y="80"></rect>
+<rect fill="#00272A" height="12" width="12" x="40" y="72"></rect>
+<rect fill="#00272A" height="8" width="16" x="116" y="56"></rect>
+<rect fill="#00272A" height="16" width="8" x="140" y="56"></rect>
+<rect fill="#00272A" height="8" width="16" x="124" y="72"></rect>
+<rect fill="#00272A" height="12" width="12" x="112" y="88"></rect>
+<rect fill="#00272A" height="8" width="16" x="132" y="88"></rect>
+<rect fill="#00272A" height="16" width="12" x="56" y="104"></rect>
+<rect fill="#00272A" height="8" width="20" x="76" y="104"></rect>
+<rect fill="#00272A" height="16" width="8" x="104" y="104"></rect>
+<rect fill="#00272A" height="8" width="20" x="64" y="128"></rect>
+<rect fill="#00272A" height="12" width="12" x="92" y="120"></rect>
+<rect fill="#00272A" height="24" width="8" x="120" y="112"></rect>
+<rect fill="#00272A" height="16" width="16" x="136" y="128"></rect>
+<rect fill="#00272A" height="8" width="32" x="56" y="144"></rect>
+<rect fill="#00272A" height="12" width="16" x="96" y="140"></rect>
+<!-- Harith Center Badge Shield -->
+<rect fill="#0B3E42" height="36" rx="8" width="36" x="62" y="62"></rect>
+<path d="M72 72h16v16H72z" fill="#10B981" rx="4"></path>
+<circle cx="80" cy="80" fill="#FFFFFF" r="5"></circle>
+</svg>
+<!-- Micro Hologram Label -->
+<span class="absolute bottom-1 right-2 text-[8px] tracking-wider text-text-muted font-bold">H-NFC-SECURE</span>
+</div>
+<!-- NFC Zone Indicator Bar -->
+<div class="mt-3 w-full flex items-center justify-between px-3 py-2 bg-surface rounded-lg border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">contactless</span>
+<div>
+<p class="text-[12px] font-label-md text-text-primary">منطقة ملامسة كروت وبطاقات الركاب (NFC)</p>
+<p class="text-[10px] font-body-sm text-text-muted">ادفع بالهاتف أو الكارت الموحد بلمسة واحدة</p>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_8px_#10B981]"></span>
+</div>
+</div>
+<!-- Vehicle Metadata Bento Details -->
+<div class="grid grid-cols-2 gap-2 text-[12px] bg-surface-subtle p-3 rounded-xl border border-border-subtle">
+<div class="flex flex-col">
+<span class="text-[10px] font-label-sm text-text-muted">رقم اللوحة الرسمي</span>
+<span class="font-currency-body text-[14px] text-text-primary">ق ط ع 458</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label-sm text-text-muted">كود المركبة الذكية</span>
+<span class="font-headline-sm text-[13px] text-primary-container">#CAR-458</span>
+</div>
+<div class="flex flex-col border-t border-border-subtle/80 pt-1.5">
+<span class="text-[10px] font-label-sm text-text-muted">اسم السائق المعتمد</span>
+<span class="font-label-md text-text-primary">كابتن حسن عبد الله</span>
+</div>
+<div class="flex flex-col border-t border-border-subtle/80 pt-1.5">
+<span class="text-[10px] font-label-sm text-text-muted">خط السير والتعريفة</span>
+<span class="font-label-md text-text-primary">موقف السلام ⬅ رمسيس (خط 88)</span>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3.5">
+<button class="h-12 bg-secondary text-on-secondary rounded-xl font-label-lg flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(16,185,129,0.25)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>تحميل PDF عالي الدقة للطباعة</span>
+</button>
+<button class="h-12 bg-surface text-primary-container border border-border-subtle rounded-xl font-label-lg flex items-center justify-center gap-2 hover:bg-surface-subtle active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px] text-secondary">share</span>
+<span>مشاركة الملصق واتساب</span>
+</button>
+</div>
+</article>
+<!-- Section 2: Quick Sticker Scanner Tool -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary text-[15px]">
+            أداة فحص صلاحية الملصق السريعة
+          </h2>
+</div>
+<span class="text-[11px] font-label-sm bg-surface-container text-text-secondary px-2 py-0.5 rounded-md">كاميرا AI</span>
+</div>
+<p class="text-[12px] font-body-sm text-text-secondary mb-3">
+        وجّه الكاميرا نحو ملصق المركبة للتأكد من سلامة كود الـ QR وسريان الخط الرسمي وتطابق بيانات الترخيص اللحظية.
+      </p>
+<!-- Simulated Viewfinder Card -->
+<div class="relative w-full h-44 rounded-xl bg-inverse-surface overflow-hidden flex items-center justify-center shadow-inner">
+<!-- Target Frame with Green Laser Pulse -->
+<div class="relative w-36 h-36 border border-white/20 rounded-lg flex items-center justify-center">
+<!-- Targeting Corners in Emerald -->
+<span class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-secondary rounded-tr-md"></span>
+<span class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-secondary rounded-tl-md"></span>
+<span class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-secondary rounded-br-md"></span>
+<span class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-secondary rounded-bl-md"></span>
+<!-- Animated Scanning Line -->
+<div class="scanner-line absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent shadow-[0_0_12px_#10B981]"></div>
+<!-- Micro QR Ghost Target -->
+<span class="material-symbols-outlined text-white/30 text-[48px]">qr_code_2</span>
+</div>
+<!-- Scanning Status Badge -->
+<div class="absolute bottom-2.5 bg-inverse-surface/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[11px] font-label-sm text-white font-medium">جاهز للمسح • دقة القراءة 100%</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-3 w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-lg flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-[0_4px_12px_rgba(11,62,66,0.18)]">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<span>فتح كاميرا المسح الكاملة</span>
+</button>
+</section>
+<!-- Card 3: Approved Sticker Placement Guidelines -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary text-[15px]">
+          إرشادات وضع الملصق المعتمدة
+        </h3>
+</div>
+<ul class="space-y-2.5">
+<li class="flex items-start gap-2.5 p-2 rounded-xl bg-background border border-border-subtle">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">meeting_room</span>
+<div>
+<p class="text-[13px] font-label-md text-text-primary">بجوار باب ركوب الركاب</p>
+<p class="text-[11px] font-body-sm text-text-secondary">على ارتفاع 1.2 متر لتسهيل مسح الكود وهواتف الركاب قبل الصعود.</p>
+</div>
+</li>
+<li class="flex items-start gap-2.5 p-2 rounded-xl bg-background border border-border-subtle">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">dashboard_customize</span>
+<div>
+<p class="text-[13px] font-label-md text-text-primary">على التابلوه الأمامي الداخلي</p>
+<p class="text-[11px] font-body-sm text-text-secondary">في مكان واضح أمام كرسي الركاب الأمامي للدفع السريع أثناء الرحلة.</p>
+</div>
+</li>
+<li class="flex items-start gap-2.5 p-2 rounded-xl bg-background border border-border-subtle">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">shield</span>
+<div>
+<p class="text-[13px] font-label-md text-text-primary">على الزجاج الخلفي للمركبة</p>
+<p class="text-[11px] font-body-sm text-text-secondary">لحماية تجربة الركاب، وإبراز رقم خط السير لتجنب المخالفات المرورية.</p>
+</div>
+</li>
+</ul>
+</article>
+</main>
+<!-- Shared BottomNavBar Component (Locked 5-Tab HarithBottomNav with 5th tab active) -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-[24px] shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1 (Rightmost in RTL): الرئيسية (Home) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm mt-1">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي وكروتي (Wallet / Cards) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="text-label-sm font-label-sm mt-1">محفظتي وكروتي</span>
+</a>
+<!-- Item 3: Center Floating Scan Dock (ادفع / امسح) -->
+<a aria-label="ادفع أو امسح" class="flex flex-col items-center justify-center -mt-5 active:scale-95 transition-transform duration-150" href="#">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] ring-4 ring-surface">
+<span class="material-symbols-outlined text-[26px]">qr_code_scanner</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary font-bold mt-1">ادفع / امسح</span>
+</a>
+<!-- Item 4: المواصلات (Transit) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-1">المواصلات</span>
+</a>
+<!-- Item 5 (Leftmost in RTL): حسابي (Profile - ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary-container relative font-bold active:scale-95 duration-150" href="#">
+<!-- Active Pill Indicator in Emerald -->
+<span class="absolute -top-1 w-6 h-1 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+</body></html>

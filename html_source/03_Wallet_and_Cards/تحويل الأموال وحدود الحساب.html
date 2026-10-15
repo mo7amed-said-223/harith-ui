@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - تحويل الأموال والحدود</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-subtle": "#F1F5F9",
+            "surface-container": "#ebeeef",
+            "surface-variant": "#e0e3e4",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#513100",
+            "danger-debit": "#EF4444",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary": "#ffffff",
+            "surface": "#FFFFFF",
+            "primary": "#00272a",
+            "secondary": "#006c49",
+            "on-error": "#ffffff",
+            "surface-bright": "#f7fafb",
+            "inverse-surface": "#2d3132",
+            "surface-container-highest": "#e0e3e4",
+            "on-surface": "#181c1d",
+            "text-muted": "#94A3B8",
+            "surface-container-low": "#f1f4f5",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed-variant": "#1f4d51",
+            "border-subtle": "#E2E8F0",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed": "#bcebef",
+            "on-surface-variant": "#404849",
+            "text-primary": "#0F172A",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "outline": "#707979",
+            "surface-tint": "#396569",
+            "tertiary-fixed": "#ffddb8",
+            "on-secondary-container": "#00714d",
+            "on-primary-container": "#7ca9ad",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-container": "#e19000",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "on-background": "#181c1d",
+            "tertiary": "#341e00",
+            "text-secondary": "#475569",
+            "outline-variant": "#c0c8c9",
+            "on-error-container": "#93000a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-fixed": "#002022",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-dim": "#d7dadb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Tabular numbers for financial precision */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary selection:text-surface">
+<!-- Mobile Device Shell Wrapper -->
+<main class="w-full max-w-md min-h-screen bg-background relative flex flex-col pb-28 shadow-xl">
+<!-- Top App Bar (Task-Focused: Suppresses standard bottom navigation bar) -->
+<header class="bg-surface sticky top-0 z-40 w-full h-16 border-b border-border-subtle flex items-center justify-between px-4">
+<!-- Right Side (RTL Start): Back Navigation Button -->
+<button aria-label="رجوع للرئيسية" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary hover:bg-surface-container active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<!-- Center Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary">
+        تحويل الأموال
+      </h1>
+<!-- Left Side (RTL End): Daily Limit & Usage Modal Trigger -->
+<button aria-label="حدود الاستخدام" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary hover:text-primary active:scale-95 transition-transform duration-150 relative" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<div class="px-4 py-3.5 space-y-3.5 flex-1">
+<!-- Source Selector Pill Bar -->
+<section aria-label="مصدر التحويل">
+<button class="w-full bg-surface border border-border-subtle rounded-xl p-3 flex items-center justify-between shadow-[0_2px_8px_rgba(11,62,66,0.03)] hover:border-primary-container/30 active:scale-[0.99] transition-all" type="button">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="text-right">
+<div class="text-label-sm font-label-sm text-text-muted">التحويل من الحساب</div>
+<div class="text-label-lg font-label-lg text-text-primary flex items-center gap-1.5 mt-0.5">
+<span>المحفظة الأساسية</span>
+<span class="text-body-sm font-body-sm text-text-secondary tabular-nums">(6,420.50 ج.م)</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]">expand_more</span>
+</button>
+</section>
+<!-- Recipient Bento Section -->
+<section aria-label="بيانات المستفيد" class="bg-surface border border-border-subtle rounded-2xl p-4 shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-4">
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-2" for="recipient-input">
+            رقم محفظة المستفيد أو رقم الهاتف
+          </label>
+<div class="relative flex items-center">
+<!-- Leading Wallet/Phone Icon -->
+<div class="absolute right-3.5 text-text-muted pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-[20px]">send_to_mobile</span>
+</div>
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle pr-11 pl-24 text-left font-body-lg text-body-lg text-text-primary placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all tabular-nums" dir="ltr" id="recipient-input" placeholder="010xxxxxxxx" type="tel" value="01098452173"/>
+<!-- Dual Action Icon Buttons inside/flanking input -->
+<div class="absolute left-1.5 flex items-center gap-1">
+<button aria-label="مسح كود الاستجابة السريعة" class="w-9 h-9 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center hover:bg-surface-container active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+</button>
+<button aria-label="دفتر جهات الاتصال" class="w-9 h-9 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center hover:bg-surface-container active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">contacts</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recent Recipients Quick Select Row -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-label-sm font-label-sm text-text-muted">المستفيدون المقربون (تحويل سريع)</span>
+<button class="text-label-sm font-label-sm text-secondary hover:underline" type="button">عرض الكل</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Contact 1 (Active Selected) -->
+<button class="flex flex-col items-center gap-1.5 group p-1 rounded-xl bg-surface-bright border border-secondary/30 transition-all" type="button">
+<div class="relative w-12 h-12 rounded-full ring-2 ring-secondary bg-surface-container flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A dignified portrait of a young Egyptian female professional wearing an elegant seafoam green headscarf, soft ambient studio lighting, high key light teal tones, ultra-crisp clean mobile finTech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_nNAcqdnQScXRC20ix_LmuPHY0vu9HWDjX1TAD58PPeyKroJWp6HyscLDrUwwK4LiTxi_rVWxjtW9zUYVUwVFumqvvAwv4u4KUYv3XRxavLPqsvpWNE7tkN9FTsaVpT2lSwvCC6p___rC5uy9ek6lHDj_kz-o4ACh_H1ZUSVwnq4TcjgZmwcqcBn32rln2rXa5lTKXRmLzLqN_i63DWVOPGXPVwXu_NiwlPPUCYjmKLFBFSSMK6hFbQ')"></div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary border-2 border-surface rounded-full"></span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary font-bold">روضة</span>
+</button>
+<!-- Contact 2 -->
+<button class="flex flex-col items-center gap-1.5 group p-1 rounded-xl hover:bg-surface-subtle transition-all" type="button">
+<div class="relative w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close up modern headshot of a friendly young Middle Eastern woman with spectacles, subtle daylight illumination, warm corporate style with minimalist soft teal background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfmV-zIP5JTsSx1IdEA3CtCE8eOoY1r_VCprUk92-OxYECeyG4s25x-hOiza_8nN5P_MM4pT_7BJevWm9bDF6tNkKrURa8ce2n2Lyhf5YKIYWXkKofDxbijrt8FhsBEnuFZjQJBRFnqVYENanHcQYkvt4oF_BJNd6cT0V8lRKQz84GLQ90KNHqdOS45O2-mVuy1Ar_bFmE00vil-T5kaBwS4YzdF5QwFAnhD_NATiAV-BniTxmelU5Qg')"></div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary border-2 border-surface rounded-full"></span>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary group-hover:text-text-primary">مريم</span>
+</button>
+<!-- Contact 3 -->
+<button class="flex flex-col items-center gap-1.5 group p-1 rounded-xl hover:bg-surface-subtle transition-all" type="button">
+<div class="relative w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sophisticated portrait of a contemporary Egyptian young man in a clean white linen shirt, natural warm sunlight, calm expression with modern minimalist teal-accented aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLKcmC35VVqSsM0C6n7GJ47MmVmAyRnrFxH6Tah9fn77iADYs_cJxumdgZGG1zrQrHoc3cxacUEw4rmKc3luOB7Rv0F-fof6ssNvxWAUZ2JeAR7coAzRSCxO6__GxwD6yknl31o6JkvinDJNzdpaFGr-YdKrw196-M3n_RERajXosvVvr8J2NFpTJbDiaweL7voBbD9z3WDFR2j5t5idaO8bybQw7CsDYGWQagG0tjbZZZeKEPpFxddw')"></div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary border-2 border-surface rounded-full"></span>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary group-hover:text-text-primary">أحمد</span>
+</button>
+<!-- Contact 4 -->
+<button class="flex flex-col items-center gap-1.5 group p-1 rounded-xl hover:bg-surface-subtle transition-all" type="button">
+<div class="relative w-12 h-12 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Profile portrait photo of a stylish North African male professional with a trimmed beard, wearing a charcoal blazer, illuminated by crisp studio light with a subtle deep green backdrop." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGoDFuFpO5r8EP3HCapwsqClAIstJrUn6wjW334CYgI49_VBKIZjxywg7HiD6B9lLVfSQHXQW6x_O59r5driV7ii5BZVH3rEFlvpxFEtYL5K6Ki-MwlBWItCQpcbq48Bs0boCs8-_wOhjWibsWDHB0xzQzB7gK524kG3NvCNPaMSo2eTSFqU2PVU9QwmO1ZVD-VVdKqE4yGPfDafozT1SAmKczR2TWeuBdUSEIwZkd-TOFcUMssaWlZg')"></div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary border-2 border-surface rounded-full"></span>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary group-hover:text-text-primary">محمود</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Amount Counter Box -->
+<section aria-label="تحديد مبلغ التحويل" class="bg-surface border border-border-subtle rounded-2xl p-4 shadow-[0_4px_12px_rgba(11,62,66,0.04)] text-center">
+<span class="text-label-sm font-label-sm text-text-muted block mb-3">حدد القيمة المراد إرسالها</span>
+<!-- Large Amount with Circular Stepper Controls -->
+<div class="flex items-center justify-between px-2 py-1">
+<!-- Minus Stepper -->
+<button aria-label="إنقاص 50 جنيه" class="w-12 h-12 rounded-full bg-surface-subtle text-primary-container border border-border-subtle flex items-center justify-center hover:bg-surface-container active:scale-90 transition-transform" id="btn-minus" type="button">
+<span class="material-symbols-outlined text-[24px]">remove</span>
+</button>
+<!-- Tabular Currency Display -->
+<div class="flex items-baseline justify-center gap-1.5" dir="ltr">
+<span class="text-currency-display font-currency-display text-text-primary tracking-tight tabular-nums" id="amount-display">500.00</span>
+<span class="text-label-lg font-label-lg text-primary-container font-bold" dir="rtl">ج.م</span>
+</div>
+<!-- Plus Stepper -->
+<button aria-label="زيادة 50 جنيه" class="w-12 h-12 rounded-full bg-surface-subtle text-primary-container border border-border-subtle flex items-center justify-center hover:bg-surface-container active:scale-90 transition-transform" id="btn-plus" type="button">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+</div>
+<p class="text-label-sm font-label-sm text-secondary font-medium mt-2">
+          رسوم التحويل: مجانًا عبر شبكة حارث اللحظية
+        </p>
+<!-- Quick Denomination Chips -->
+<div class="grid grid-cols-4 gap-2 mt-4 pt-3 border-t border-border-subtle/80">
+<button class="denom-chip h-9 rounded-xl border border-border-subtle bg-surface text-label-md font-label-md text-text-secondary hover:border-primary-container transition-all" type="button">
+            100 ج.م
+          </button>
+<button class="denom-chip h-9 rounded-xl border border-border-subtle bg-surface text-label-md font-label-md text-text-secondary hover:border-primary-container transition-all" type="button">
+            200 ج.م
+          </button>
+<button class="denom-chip h-9 rounded-xl border border-primary-container bg-primary-container text-label-md font-label-md text-on-primary font-bold shadow-sm transition-all" type="button">
+            500 ج.م
+          </button>
+<button class="denom-chip h-9 rounded-xl border border-border-subtle bg-surface text-label-md font-label-md text-text-secondary hover:border-primary-container transition-all" type="button">
+            1000 ج.م
+          </button>
+</div>
+</section>
+<!-- Notes Input Section -->
+<section aria-label="ملاحظات التحويل" class="bg-surface border border-border-subtle rounded-2xl p-3.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<label class="block text-label-sm font-label-sm text-text-muted mb-1.5" for="notes-field">
+          تفاصيل أو ملاحظات التحويل (اختياري)
+        </label>
+<div class="relative flex items-center">
+<div class="absolute right-3 text-text-muted pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</div>
+<input class="w-full h-11 bg-surface-subtle/60 rounded-xl border border-border-subtle pr-10 pl-3 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:bg-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container/20 transition-all" id="notes-field" placeholder="أجرة سكن / مصاريف مشتركة..." type="text"/>
+</div>
+</section>
+<!-- Daily Limit Progress Strip -->
+<section aria-label="الحدود والامتثال المالي" class="bg-surface border border-border-subtle rounded-2xl p-3.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)] space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-md font-label-md text-text-primary">حد السحب والتحويل اليومي</span>
+</div>
+<!-- Official Verified Badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/10 text-on-tertiary-container text-label-sm font-label-sm border border-tertiary-container/20">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+            حساب موثق رسمي
+          </span>
+</div>
+<!-- Metric Text and Values -->
+<div class="flex items-baseline justify-between text-label-sm font-label-sm">
+<span class="text-text-muted">الاستهلاك بعد المعاملة:</span>
+<span class="text-text-primary font-bold tabular-nums">
+<span class="text-secondary">3,000</span> / 30,000 ج.م
+          </span>
+</div>
+<!-- Progress Bar Meter -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-300" style="width: 10%;"></div>
+</div>
+<p class="text-[11px] leading-4 text-text-muted text-right">
+          يُعاد تعيين الحد اليومي في تمام الساعة 12:00 منتصف الليل بتوقيت القاهرة.
+        </p>
+</section>
+</div>
+<!-- Fixed Bottom Primary Action Button (Docked with Safe Area support) -->
+<aside class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-surface/95 backdrop-blur-md border-t border-border-subtle z-50">
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary active:scale-[0.98] shadow-md transition-all" type="button">
+<span>متابعة ومراجعة التحويل</span>
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+</aside>
+</main>
+<!-- Lightweight Micro-interaction Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentAmount = 500;
+      const amountDisplay = document.getElementById('amount-display');
+      const btnMinus = document.getElementById('btn-minus');
+      const btnPlus = document.getElementById('btn-plus');
+      const denomChips = document.querySelectorAll('.denom-chip');
+
+      function updateAmount(val) {
+        currentAmount = Math.max(50, val);
+        amountDisplay.textContent = currentAmount.toFixed(2);
+      }
+
+      btnMinus.addEventListener('click', () => {
+        updateAmount(currentAmount - 50);
+      });
+
+      btnPlus.addEventListener('click', () => {
+        updateAmount(currentAmount + 50);
+      });
+
+      denomChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          denomChips.forEach(c => {
+            c.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'border-primary-container');
+            c.classList.add('bg-surface', 'text-text-secondary', 'border-border-subtle');
+          });
+          chip.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'border-primary-container');
+          chip.classList.remove('bg-surface', 'text-text-secondary', 'border-border-subtle');
+          
+          const rawNum = parseInt(chip.textContent.replace(/[^\d]/g, ''), 10);
+          if (!isNaN(rawNum)) {
+            updateAmount(rawNum);
+          }
+        });
+      });
+    });
+  </script>
+</body></html>

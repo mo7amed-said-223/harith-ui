@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إعدادات الأمان الحساسة للمحفظة — حارث</title>
+<!-- IBM Plex Sans Arabic & Latin Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#002022",
+            "inverse-surface": "#2d3132",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-subtle": "#F1F5F9",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface-variant": "#404849",
+            "surface-container-low": "#f1f4f5",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-container": "#7ca9ad",
+            "surface-dim": "#d7dadb",
+            "on-error": "#ffffff",
+            "outline-variant": "#c0c8c9",
+            "surface-container": "#ebeeef",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "on-surface": "#181c1d",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "background": "#f7fafb",
+            "primary": "#00272a",
+            "surface-variant": "#e0e3e4",
+            "primary-container": "#0b3e42",
+            "tertiary": "#341e00",
+            "tertiary-container": "#513100",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#e5e9ea",
+            "on-tertiary-container": "#e19000",
+            "danger-debit": "#EF4444",
+            "on-secondary-container": "#00714d",
+            "on-background": "#181c1d",
+            "error": "#ba1a1a",
+            "primary-fixed": "#bcebef",
+            "text-primary": "#0F172A",
+            "text-muted": "#94A3B8",
+            "surface-container-highest": "#e0e3e4",
+            "on-error-container": "#93000a",
+            "text-secondary": "#475569",
+            "tertiary-fixed": "#ffddb8",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "border-subtle": "#E2E8F0",
+            "secondary": "#006c49",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-fixed-variant": "#1f4d51",
+            "surface-tint": "#396569",
+            "outline": "#707979",
+            "on-secondary-fixed": "#002113"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      background-color: #f7fafb;
+      color: #0F172A;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-secondary selection:text-surface">
+<!-- Mobile Viewport Shell (Constraint: max-w-md mx-auto) -->
+<div class="w-full max-w-md bg-background flex flex-col min-h-screen relative shadow-2xl pb-28">
+<!-- TopAppBar (Based on Shared Components JSON) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full px-4 border-b border-border-subtle flex justify-between items-center transition-colors">
+<!-- Right (RTL Start): Return/Back Action (chevron_right reflects back trajectory in RTL) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center: Screen Headline -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">الأمان وكلمات السر للمحفظة</h1>
+<span class="text-label-sm font-label-sm text-text-muted">حماية الحساب المشفرة</span>
+</div>
+<!-- Left (RTL End): CBE Certified Sovereign Shield Icon -->
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container relative group">
+<span class="material-symbols-outlined fill-icon text-[22px] text-primary-container">support_agent</span>
+<span class="absolute -top-1 -start-1 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span>
+</div>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-4">
+<!-- Sovereign Status & Security Score Hero Banner -->
+<div class="bg-primary-container rounded-2xl p-4 text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.18)] relative overflow-hidden border border-primary-container/20">
+<!-- Ambient Decorative Waves -->
+<div class="absolute -left-12 -top-12 w-40 h-40 bg-secondary/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary/25 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between gap-3 mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center ring-1 ring-white/20">
+<span class="material-symbols-outlined text-secondary-fixed text-[24px] fill-icon">shield</span>
+</div>
+<div>
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary text-surface text-label-sm font-label-sm mb-0.5">
+                  معتمد بنك مصر المركزي CBE
+                </span>
+<h2 class="text-headline-sm font-headline-sm text-on-primary">مستوى حماية الحساب: ممتاز</h2>
+</div>
+</div>
+<!-- Score Circular Badge Metric -->
+<div class="relative flex items-center justify-center w-14 h-14">
+<svg class="w-14 h-14 -rotate-90 transform" viewbox="0 0 48 48">
+<circle cx="24" cy="24" fill="none" r="20" stroke="rgba(255,255,255,0.15)" stroke-width="4"></circle>
+<circle cx="24" cy="24" fill="none" r="20" stroke="#10B981" stroke-dasharray="125.6" stroke-dashoffset="6.28" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-label-lg font-label-lg font-bold text-white tracking-tighter">95%</span>
+</div>
+</div>
+<!-- Audit Checkpoints Bento Grid -->
+<div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/10 text-center">
+<div class="bg-white/5 rounded-xl p-2 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] fill-icon">verified_user</span>
+<p class="text-label-sm font-label-sm text-on-primary-container mt-1">2FA نشط</p>
+</div>
+<div class="bg-white/5 rounded-xl p-2 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] fill-icon">fingerprint</span>
+<p class="text-label-sm font-label-sm text-on-primary-container mt-1">بيومتري موثق</p>
+</div>
+<div class="bg-white/5 rounded-xl p-2 border border-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px] fill-icon">lock</span>
+<p class="text-label-sm font-label-sm text-on-primary-container mt-1">تشفير 256-bit</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Sensitive Actions Header -->
+<div class="flex items-center justify-between px-1 pt-1">
+<h3 class="text-headline-sm font-headline-sm text-text-primary">إعدادات المصادقة والدفع</h3>
+<span class="text-label-sm font-label-sm text-text-secondary">مستوى الأمان: فائق الحساسية</span>
+</div>
+<!-- Card 1: Wallet PIN Management (4 Digits) -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] transition-all">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/10 text-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined fill-icon text-[22px]">pin</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-label-lg font-label-lg text-text-primary">الرقم السري للمحفظة (Wallet PIN)</h4>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded-full font-bold">4 أرقام</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary mt-1">
+                يُطلب لتأكيد المعاملات الفورية، تحويلات إنستاباي، ودفع تذاكر المترو وحافلات حارث الذكية.
+              </p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle flex flex-col gap-3">
+<!-- Action: Change Current PIN Button -->
+<button class="w-full h-12 rounded-xl border border-border-subtle bg-surface text-primary-container flex items-center justify-between px-4 hover:bg-surface-subtle active:scale-[0.99] transition-all" type="button">
+<span class="flex items-center gap-2 text-label-lg font-label-lg">
+<span class="material-symbols-outlined text-[20px] text-primary-container">password</span>
+              تغيير الرقم السري الحالي للمحفظة
+            </span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">chevron_left</span>
+</button>
+<!-- Action: Biometric Toggle Replacement for Micro-transactions -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle/80">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[22px] fill-icon">fingerprint</span>
+<div>
+<p class="text-label-md font-label-md text-text-primary">بصمة الإصبع والوجه للمدفوعات السريعة</p>
+<p class="text-label-sm font-label-sm text-text-muted">تخطي الـ PIN للمعاملات الأقل من 500 جنيه</p>
+</div>
+</div>
+<!-- Custom Accessible Toggle Switch (Active Emerald) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Card 2: Login Password & Session Revocation -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/10 text-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined fill-icon text-[22px]">key</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-label-lg font-label-lg text-text-primary">كلمة مرور الدخول للتطبيق</h4>
+<span class="text-label-sm font-label-sm text-text-muted">مُحدّثة منذ 3 أشهر</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary mt-1">
+              تُستخدم لتسجيل الدخول للحساب عبر الأجهزة الجديدة واستعادة البيانات المشفرة.
+            </p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border-subtle space-y-3">
+<!-- Password Requirements Pills -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm font-bold text-text-secondary">شروط كلمة المرور الآمنة:</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> مطابقة للمواصفات
+              </span>
+</div>
+<div class="flex flex-wrap gap-1.5 text-label-sm font-label-sm">
+<span class="px-2 py-0.5 rounded-md bg-surface text-text-secondary border border-border-subtle">8+ أحرف</span>
+<span class="px-2 py-0.5 rounded-md bg-surface text-text-secondary border border-border-subtle">رموز خاصة (!@#)</span>
+<span class="px-2 py-0.5 rounded-md bg-surface text-text-secondary border border-border-subtle">أرقام وحروف كابيتال</span>
+</div>
+</div>
+<!-- Buttons: Update Password & Revoke Remote Devices -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<button class="h-11 rounded-xl bg-primary-container text-on-primary flex items-center justify-center gap-2 text-label-md font-label-md active:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+              تحديث كلمة المرور
+            </button>
+<button class="h-11 rounded-xl border border-border-subtle bg-surface text-text-primary flex items-center justify-center gap-2 text-label-md font-label-md hover:bg-surface-subtle transition-colors" type="button">
+<span class="material-symbols-outlined text-danger-debit text-[18px]">logout</span>
+              تسجيل الخروج من بقية الأجهزة
+            </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Registered Phone Number & Verified OTP Binding -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/10 text-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined fill-icon text-[22px]">phone_android</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h4 class="text-label-lg font-label-lg text-text-primary">رقم الهاتف المرتبط بالمحفظة</h4>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> موثّق بالرقم القومي
+              </span>
+</div>
+<!-- Masked Phone Display -->
+<div class="mt-2 flex items-center justify-between bg-surface-subtle px-3 py-2.5 rounded-xl border border-border-subtle">
+<span class="font-mono text-body-lg font-bold tracking-wider text-text-primary" dir="ltr">+20 010 **** 4376</span>
+<span class="text-label-sm font-label-sm text-text-secondary bg-surface px-2 py-0.5 rounded border border-border-subtle">شبكة فودافون مصر</span>
+</div>
+</div>
+</div>
+<!-- Security Warning & Change Procedure Notice -->
+<div class="mt-3 p-3 rounded-xl bg-surface-subtle/80 border border-border-subtle flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px] flex-shrink-0 mt-0.5">info</span>
+<p class="text-body-sm font-body-sm text-text-secondary">
+            يتطلب تغيير الرقم استلام رمز <span class="font-bold text-text-primary">OTP</span> على رقمك الحالي وتأكيد هويتك عبر تطبيق واتساب الموثّق لحارث لحماية حسابك البنكي من الاستيلاء غير المصرح به.
+          </p>
+</div>
+<button class="mt-3 w-full h-11 rounded-xl border border-primary-container text-primary-container bg-surface flex items-center justify-center gap-2 text-label-md font-label-md hover:bg-primary-container/5 active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">phonelink_setup</span>
+          طلب نقل وتغيير رقم الهاتف المسجل
+        </button>
+</div>
+<!-- Card 4: Active Trusted Sessions & Live Hardware Identity -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">devices</span>
+<h4 class="text-label-lg font-label-lg text-text-primary">الجلسات النشطة والأجهزة الموثوقة</h4>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold">1 جهاز نشط</span>
+</div>
+<!-- Current Active Device Tile -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white flex items-center justify-center text-primary-container shadow-xs">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<p class="text-label-md font-label-md text-text-primary">Samsung Galaxy S24 Ultra</p>
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>
+</div>
+<p class="text-label-sm font-label-sm text-text-muted">القاهرة، مصر • تطبيق حارث v4.8 (نشط الآن)</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary/10 px-2 py-0.5 rounded-md font-bold">هذا الجهاز</span>
+</div>
+</div>
+<!-- Emergency Panic Zone: Freeze Account & Wallet -->
+<div class="bg-error-container/20 rounded-2xl p-4 border border-error-container/60 mb-2">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-danger-debit/10 text-danger-debit flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined fill-icon text-[22px]">gpp_bad</span>
+</div>
+<div class="flex-1">
+<h4 class="text-label-lg font-label-lg text-danger-debit">تجميد الحساب والمحفظة الفوري</h4>
+<p class="text-body-sm font-body-sm text-text-secondary mt-1">
+              في حالة سرقة أو ضياع الهاتف، يمكنك فوراً تعطيل بطاقاتك الرقمية ورصيد المحفظة لحين استرداد الشريحة.
+            </p>
+<button class="mt-3 w-full h-11 rounded-xl bg-danger-debit text-white flex items-center justify-center gap-2 text-label-md font-label-md hover:bg-error active:scale-[0.99] transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+              تجميد الحساب والمحفظة مؤقتاً للطوارئ
+            </button>
+</div>
+</div>
+</div>
+<!-- Sovereign CBE Regulatory Footer Disclaimer -->
+<div class="text-center py-2 px-4">
+<p class="text-label-sm font-label-sm text-text-muted leading-relaxed">
+          حارث هي منصة للمدفوعات الرقمية مرخصة من البنك المركزي المصري (CBE). جميع المعاملات ومفاتيح التشفير تخضع للمعايير الأمنية المصرفية الدولية PCI-DSS.
+        </p>
+</div>
+</main>
+<!-- BottomNavBar (Shared Components JSON Anchor) -->
+<!-- 
+      Active State Logic:
+      - JSON items: ["الرئيسية", "محفظتي", "ادفع", "المواصلات", "حسابي"]
+      - Page intent: Sensitive security settings inside account ("حسابي")
+      - Exact Match / Intent Lock: "حسابي" is the ACTIVE tab.
+    -->
+<nav aria-label="شريط التنقل الرئيسي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#home">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Tab 2: محفظتي (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#wallet">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- Tab 3: ادفع (Central Elevated Quick Scan Dock Button) -->
+<div class="relative -top-4 flex flex-col items-center">
+<button aria-label="ادفع عبر QR أو NFC" class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-95 transition-transform duration-150 ring-4 ring-surface" type="button">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-secondary mt-1 font-bold">ادفع</span>
+</div>
+<!-- Tab 4: المواصلات (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#transport">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Tab 5: حسابي (ACTIVE TAB per Contextual Logic) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150" href="#profile">
+<span class="material-symbols-outlined fill-icon text-[24px] text-primary">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

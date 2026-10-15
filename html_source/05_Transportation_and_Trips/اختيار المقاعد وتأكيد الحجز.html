@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>اختيار المقاعد والحجز — حارث</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002022",
+            "on-background": "#181c1d",
+            "primary-container": "#0b3e42",
+            "border-subtle": "#E2E8F0",
+            "outline-variant": "#c0c8c9",
+            "text-secondary": "#475569",
+            "tertiary": "#341e00",
+            "on-secondary-fixed": "#002113",
+            "error": "#ba1a1a",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "surface-tint": "#396569",
+            "secondary": "#006c49",
+            "primary": "#00272a",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "primary-fixed": "#bcebef",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f5",
+            "surface-container-highest": "#e0e3e4",
+            "text-primary": "#0F172A",
+            "outline": "#707979",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-container": "#7ca9ad",
+            "tertiary-fixed-dim": "#ffb95f",
+            "text-muted": "#94A3B8",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#181c1d",
+            "secondary-container": "#6cf8bb",
+            "on-surface-variant": "#404849",
+            "surface-bright": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-container": "#ebeeef",
+            "on-tertiary-container": "#e19000",
+            "danger-debit": "#EF4444",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "surface-variant": "#e0e3e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Custom clean scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-44 flex flex-col items-center">
+<!-- Mobile Shell Wrapper -->
+<div class="w-full max-w-md bg-background min-h-screen relative flex flex-col shadow-xl">
+<!-- TopAppBar (Locked Global Anchor) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle h-16 px-4 flex items-center justify-between shadow-none">
+<!-- Right (RTL Start): Return/Back Button -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[22px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center Title -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight font-bold">اختيار المقاعد والحجز</h1>
+<p class="text-[10px] text-text-muted leading-tight">رحلة رقم HR-8840 • خط الساحل</p>
+</div>
+<!-- Left (RTL End): Support / Agent Trigger -->
+<div class="flex items-center gap-1.5">
+<button aria-label="المساعدة والدعم" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="p-4 space-y-4 flex-1">
+<!-- Bento 1: Trip Summary Ticket Card -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] relative overflow-hidden">
+<!-- Background Decor Geometric Accent -->
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-primary-container/5 rounded-full pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container/40 text-secondary font-bold">
+                VIP سوبر جيت
+              </span>
+<span class="flex items-center text-label-sm font-label-sm text-tertiary-container gap-0.5">
+<span class="material-symbols-outlined text-sm fill-icon text-[#F59E0B]" data-icon="star">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-text-muted">(1,240 تقييم)</span>
+</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold">الغردقة وسهل حشيش</h2>
+</div>
+<div class="text-left bg-surface-subtle px-2.5 py-1.5 rounded-xl border border-border-subtle">
+<span class="text-[11px] text-text-muted block font-medium">سعر المقعد</span>
+<span class="text-currency-body font-currency-body text-primary font-bold">350.00 <span class="text-xs font-normal text-text-secondary">ج.م</span></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 py-3 border-y border-border-subtle/80">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<span class="text-[10px] text-text-muted block">موعد الانطلاق</span>
+<span class="text-body-sm font-body-sm text-text-primary font-semibold">الجمعة 24 أكتوبر • 06:00 ص</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="badge">badge</span>
+</div>
+<div>
+<span class="text-[10px] text-text-muted block">الكابتن المعتمد</span>
+<span class="text-body-sm font-body-sm text-text-primary font-semibold">محمود عبد المنعم</span>
+</div>
+</div>
+</div>
+<!-- Bus Perks Bar -->
+<div class="flex items-center justify-between pt-3 text-[11px] text-text-secondary font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-secondary" data-icon="wifi">wifi</span> واي فاي فائق</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-secondary" data-icon="ac_unit">ac_unit</span> تكييف فردي</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-secondary" data-icon="power">power</span> مخارج USB-C</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-secondary" data-icon="airline_seat_recline_extra">airline_seat_recline_extra</span> كراسي مريحة</span>
+</div>
+</section>
+<!-- Bento 2: Boarding Point Selector -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<label class="text-label-lg font-label-lg text-text-primary flex items-center gap-1.5 font-bold">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="location_on">location_on</span>
+            محطة الصعود المفضلة
+          </label>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-md font-semibold">تأكيد الموعد</span>
+</div>
+<div class="space-y-2">
+<!-- Option 1: Selected -->
+<label class="flex items-center justify-between p-3 rounded-xl border-2 border-primary-container bg-surface-subtle/70 cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-text-muted focus:ring-primary-container focus:ring-2" name="boarding" type="radio"/>
+<div>
+<span class="text-body-md font-body-md text-text-primary font-bold block">موقف السلام النموذجي (بوابة 3)</span>
+<span class="text-[11px] text-text-secondary">موعد التواجد: 05:40 ص • التحرك 06:00 ص دقيقاً</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold px-2 py-1 bg-white rounded-lg border border-border-subtle shadow-sm">المحطة 1</span>
+</label>
+<!-- Option 2 -->
+<label class="flex items-center justify-between p-3 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle/50 cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-primary-container border-text-muted focus:ring-primary-container focus:ring-2" name="boarding" type="radio"/>
+<div>
+<span class="text-body-md font-body-md text-text-primary font-semibold block">ميدان التحرير (أمام المتحف المصري)</span>
+<span class="text-[11px] text-text-secondary">الوصول للتحرير: 06:45 ص • التوقف 10 دقائق فقط</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted px-2 py-1 bg-surface-subtle rounded-lg">المحطة 2</span>
+</label>
+</div>
+</section>
+<!-- Bento 3: Bus Seating Salon Architecture -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h3 class="text-label-lg font-label-lg text-text-primary font-bold">مخطط صالون الحافلة</h3>
+<p class="text-[11px] text-text-muted">اختر مقاعدك المفضلة (تم تحديد مقعدين)</p>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-primary bg-primary-fixed/40 px-2.5 py-1 rounded-full">
+            صالون الطابق السفلي VIP
+          </span>
+</div>
+<!-- Legend -->
+<div class="grid grid-cols-4 gap-2 bg-surface-subtle p-2.5 rounded-xl border border-border-subtle mb-4 text-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-6 h-6 rounded-md bg-white border-2 border-border-subtle flex items-center justify-center text-[10px] font-bold text-text-secondary">01</div>
+<span class="text-[10px] text-text-secondary font-medium">متاح</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-6 h-6 rounded-md bg-[#10B981] text-white flex items-center justify-center shadow-[0_2px_8px_rgba(16,185,129,0.4)]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+<span class="text-[10px] text-secondary font-bold">محدد (أنت)</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-6 h-6 rounded-md bg-[#334155] text-slate-300 flex items-center justify-center text-[10px] opacity-75">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock">lock</span>
+</div>
+<span class="text-[10px] text-text-muted font-medium">محجوز</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-6 h-6 rounded-md bg-[#FEF3C7] border border-[#F59E0B] text-[#B45309] flex items-center justify-center text-[10px] font-bold">
+              ★
+            </div>
+<span class="text-[10px] text-tertiary-container font-semibold">مميز VIP</span>
+</div>
+</div>
+<!-- Bus Isometric Mockup Frame -->
+<div class="relative bg-surface-subtle/50 rounded-2xl border-2 border-dashed border-border-subtle p-3 pt-4">
+<!-- Front of Bus Cockpit / Driver Cabin -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle bg-white/70 px-3 py-2 rounded-xl">
+<!-- Driver Area (Physical Right in RTL) -->
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="sports_motorsports">sports_motorsports</span>
+</div>
+<span class="text-[11px] font-bold text-primary">كابينة السائق</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-text-muted text-lg rotate-180" data-icon="arrow_upward">arrow_upward</span>
+<span class="text-[9px] text-text-muted block">مقدمة الحافلة</span>
+</div>
+<!-- Main Door Area (Physical Left in RTL) -->
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-bold text-text-secondary">باب الركاب</span>
+<div class="w-8 h-8 rounded-lg bg-surface border border-border-subtle flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="sensor_door">sensor_door</span>
+</div>
+</div>
+</div>
+<!-- Bus Seats Layout Rows (2 Right - Corridor - 2 Left) -->
+<div class="space-y-2.5 max-h-[300px] overflow-y-auto px-1 py-1">
+<!-- Row 1 (VIP Front) -->
+<div class="flex items-center justify-between gap-1">
+<!-- Right Side (Window + Aisle) -->
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-[#FEF3C7] border border-[#F59E0B] text-[#B45309] font-bold text-xs flex flex-col items-center justify-center active:scale-95 transition-transform" title="مقعد 01 VIP">
+<span>01</span>
+<span class="text-[8px] leading-none">VIP</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-[#FEF3C7] border border-[#F59E0B] text-[#B45309] font-bold text-xs flex flex-col items-center justify-center active:scale-95 transition-transform" title="مقعد 02 VIP">
+<span>02</span>
+<span class="text-[8px] leading-none">VIP</span>
+</button>
+</div>
+<!-- Corridor Label -->
+<span class="text-[10px] font-bold text-slate-300 tracking-widest px-2">مـمـر</span>
+<!-- Left Side (Aisle + Window) -->
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+<span>03</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+<span>04</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between gap-1">
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  05
+                </button>
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  06
+                </button>
+</div>
+<span class="text-[10px] text-slate-300 px-2">•</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+                  07
+                </button>
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  08
+                </button>
+</div>
+</div>
+<!-- Row 3 (ACTIVE SELECTED ROW: Seats 11 & 12 Window/Aisle) -->
+<div class="flex items-center justify-between gap-1 bg-[#ECFDF5] p-1.5 rounded-xl border border-secondary/20">
+<!-- Right Side: Selected Seats -->
+<div class="flex gap-2">
+<!-- Seat 11: Selected Window -->
+<button class="w-10 h-10 rounded-xl bg-[#10B981] text-white font-bold text-xs flex flex-col items-center justify-center shadow-[0_4px_12px_rgba(16,185,129,0.35)] ring-2 ring-[#10B981] ring-offset-1 transform scale-105 active:scale-95 transition-transform" title="مقعد 11 (محدد)">
+<span class="leading-none">11</span>
+<span class="material-symbols-outlined text-[13px] mt-0.5" data-icon="check">check</span>
+</button>
+<!-- Seat 12: Selected Aisle -->
+<button class="w-10 h-10 rounded-xl bg-[#10B981] text-white font-bold text-xs flex flex-col items-center justify-center shadow-[0_4px_12px_rgba(16,185,129,0.35)] ring-2 ring-[#10B981] ring-offset-1 transform scale-105 active:scale-95 transition-transform" title="مقعد 12 (محدد)">
+<span class="leading-none">12</span>
+<span class="material-symbols-outlined text-[13px] mt-0.5" data-icon="check">check</span>
+</button>
+</div>
+<!-- Corridor -->
+<span class="text-[10px] font-bold text-secondary px-2">أنت</span>
+<!-- Left Side -->
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+                  13
+                </button>
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+                  14
+                </button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between gap-1">
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  15
+                </button>
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  16
+                </button>
+</div>
+<span class="text-[10px] text-slate-300 px-2">•</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  17
+                </button>
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  18
+                </button>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center justify-between gap-1">
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+                  19
+                </button>
+<button class="w-10 h-10 rounded-xl bg-[#334155] text-slate-300 font-medium text-xs flex items-center justify-center cursor-not-allowed opacity-80" disabled="">
+                  20
+                </button>
+</div>
+<span class="text-[10px] text-slate-300 px-2">•</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  21
+                </button>
+<button class="w-10 h-10 rounded-xl bg-white border border-border-subtle text-text-primary font-bold text-xs flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                  22
+                </button>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 text-center border-t border-border-subtle">
+<span class="text-[11px] text-text-muted flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="touch_app">touch_app</span>
+              انقر على أي مقعد أبيض لإلغاء التحديد أو استبداله
+            </span>
+</div>
+</div>
+</section>
+<!-- Bento 4: Passengers Quick Profile Entry -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-white flex items-center justify-center text-sm font-bold">2</span>
+<h3 class="text-label-lg font-label-lg text-text-primary font-bold">بيانات المسافرين</h3>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary bg-surface-subtle px-2 py-1 rounded-md font-medium">مقعد 11 (نافذة) + مقعد 12 (ممر)</span>
+</div>
+<!-- Toggle Quick Option -->
+<div class="bg-surface-subtle p-1 rounded-xl flex mb-3 text-xs font-semibold">
+<button class="flex-1 py-1.5 rounded-lg bg-white text-primary shadow-sm text-center">حجز لنفسي ولمرافق</button>
+<button class="flex-1 py-1.5 rounded-lg text-text-muted hover:text-text-primary transition-colors text-center">حجز لركاب آخرين</button>
+</div>
+<!-- Passenger 1 (Primary User) -->
+<div class="p-3 rounded-xl border border-border-subtle bg-background mb-3">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="person">person</span>
+              المسافر الأول (مقعد 11 - أنت)
+            </span>
+<span class="text-[10px] text-secondary font-bold bg-secondary-container/30 px-1.5 py-0.5 rounded">بيانات موثقة</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div>
+<span class="text-[10px] text-text-muted block">الاسم الكامل</span>
+<span class="font-semibold text-text-primary">أحمد مصطفى السعيد</span>
+</div>
+<div>
+<span class="text-[10px] text-text-muted block">رقم الهاتف</span>
+<span class="font-semibold text-text-primary dir-ltr text-right">01098765432</span>
+</div>
+</div>
+</div>
+<!-- Passenger 2 (Companion Input) -->
+<div class="p-3 rounded-xl border border-border-subtle bg-surface">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="group_add">group_add</span>
+              المسافر الثاني (مقعد 12 - المرافق)
+            </span>
+<span class="text-[10px] text-text-muted">مطلوب لإصدار التذكرة</span>
+</div>
+<div class="space-y-2">
+<div>
+<input class="w-full text-xs h-10 px-3 rounded-lg border-border-subtle bg-surface-subtle focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="اسم المرافق الثلاثي" type="text" value="كريم مصطفى السعيد"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<input class="text-xs h-10 px-3 rounded-lg border-border-subtle bg-surface-subtle focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="رقم الهاتف المحمول" type="tel" value="01123456789"/>
+<input class="text-xs h-10 px-3 rounded-lg border-border-subtle bg-surface-subtle focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="الرقم القومي (اختياري)" type="text" value="29801011234567"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento 5: Payment Source Selector (Tier-1 FinTech Metaphor) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-label-lg font-label-lg text-text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="account_balance_wallet">account_balance_wallet</span>
+            طريقة السداد والخصم
+          </h3>
+<span class="text-label-sm font-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs fill-icon text-[#10B981]" data-icon="verified_user">verified_user</span>
+            دفع آمن وفوري
+          </span>
+</div>
+<div class="space-y-2">
+<!-- Primary Harith Wallet (Selected) -->
+<label class="p-3.5 rounded-xl border-2 border-primary-container bg-surface-subtle/80 flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 text-primary-container border-text-muted focus:ring-primary-container" name="payment_source" type="radio"/>
+<div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-xl" data-icon="wallet">wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-body-md font-body-md text-text-primary font-bold">محفظة حارث الأساسية</span>
+<span class="bg-[#ECFDF5] text-[#006C49] text-[10px] font-bold px-1.5 py-0.5 rounded">رصيد كافٍ</span>
+</div>
+<span class="text-body-sm font-body-sm text-text-secondary">الرصيد المتاح: <span class="font-bold text-primary">6,420.50 ج.م</span></span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-container fill-icon text-xl" data-icon="check_circle">check_circle</span>
+</label>
+<!-- Secondary: Harith Smart NFC Card -->
+<label class="p-3 rounded-xl border border-border-subtle bg-white hover:bg-surface-subtle/50 flex items-center justify-between cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-primary-container border-text-muted focus:ring-primary-container" name="payment_source" type="radio"/>
+<div class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-subtle">
+<span class="material-symbols-outlined text-xl" data-icon="contactless">contactless</span>
+</div>
+<div>
+<span class="text-body-md font-body-md text-text-primary font-semibold block">كارت حارث الذكي (Harith Pass)</span>
+<span class="text-body-sm font-body-sm text-text-muted">الخصم عند البوابة عبر NFC التلقائي</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">•••• 4892</span>
+</label>
+<!-- Third: Bank Cards / Fawry Pay -->
+<label class="p-3 rounded-xl border border-border-subtle bg-white hover:bg-surface-subtle/50 flex items-center justify-between cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 text-primary-container border-text-muted focus:ring-primary-container" name="payment_source" type="radio"/>
+<div class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0 border border-border-subtle">
+<span class="material-symbols-outlined text-xl" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<span class="text-body-md font-body-md text-text-primary font-semibold block">بطاقة بنكية / فوري باي</span>
+<span class="text-body-sm font-body-sm text-text-muted">فيزا، ماستركارد، ميزة الوطنية</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-lg" data-icon="chevron_left">chevron_left</span>
+</label>
+</div>
+</section>
+<!-- Security & Harith Guarantee Notice -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#10B981] text-xl shrink-0 mt-0.5 fill-icon" data-icon="shield">shield</span>
+<div>
+<span class="text-body-sm font-body-sm font-bold text-text-primary block">ضمان حارث لرحلات الركاب</span>
+<p class="text-[11px] text-text-secondary leading-relaxed">
+            استرداد نقدي فوري 100% في حال تأخر الحافلة أكثر من 20 دقيقة، مع تغطية تأمينية كاملة وتتبع مباشر بالـ GPS طوال خط السير.
+          </p>
+</div>
+</div>
+</main>
+<!-- Sticky Floating Action Checkout Dock (Above Bottom Bar) -->
+<div class="sticky bottom-[76px] z-30 bg-surface/95 backdrop-blur-md border-t border-border-subtle px-4 py-3 shadow-[0_-4px_16px_rgba(11,62,66,0.06)]">
+<div class="flex items-center justify-between mb-2">
+<div>
+<span class="text-[11px] text-text-muted block">الإجمالي لعدد (2 مقعد شامل التأمين)</span>
+<div class="flex items-baseline gap-1">
+<span class="text-currency-display font-currency-display text-primary font-bold">700.00</span>
+<span class="text-body-sm font-body-sm text-text-secondary font-bold">جنيه مصري</span>
+</div>
+</div>
+<div class="text-left">
+<span class="text-[10px] text-secondary font-semibold bg-secondary-container/40 px-2 py-0.5 rounded-full block text-center">لا توجد رسوم خفية</span>
+<span class="text-[10px] text-text-muted">خصم مباشر من المحفظة</span>
+</div>
+</div>
+<!-- Primary Action CTA Button -->
+<button class="w-full h-12 bg-primary-container text-white rounded-xl font-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(11,62,66,0.25)] hover:bg-[#082C2F] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+<span>تأكيد الحجز والدفع الفوري (700.00 ج.م)</span>
+</button>
+</div>
+<!-- BottomNavBar (Shared Component Blueprint - Active State: المواصلات) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</button>
+<!-- Tab 2: محفظتي -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</button>
+<!-- Tab 3 (Center Floating Dock CTA): ادفع -->
+<button class="relative -top-4 w-14 h-14 rounded-full bg-primary-container text-white flex flex-col items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-95 transition-transform duration-150 border-2 border-white">
+<span class="material-symbols-outlined text-[26px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="text-[9px] font-bold leading-none mt-0.5 text-secondary-fixed">ادفع</span>
+</button>
+<!-- Tab 4: المواصلات (ACTIVE TAB - Selected destination) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[24px] fill-icon text-primary-container" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</button>
+<!-- Tab 5: حسابي -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</button>
+</nav>
+</div>
+</body></html>

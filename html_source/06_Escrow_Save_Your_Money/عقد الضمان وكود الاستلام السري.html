@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث — عقد ضمان وكود الاستلام السري</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#6ffbbe",
+            "surface-variant": "#e0e3e4",
+            "surface-dim": "#d7dadb",
+            "on-surface-variant": "#404849",
+            "inverse-surface": "#2d3132",
+            "on-primary": "#ffffff",
+            "on-surface": "#181c1d",
+            "surface-container": "#ebeeef",
+            "secondary": "#006c49",
+            "outline-variant": "#c0c8c9",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary": "#ffffff",
+            "text-muted": "#94A3B8",
+            "surface-container-lowest": "#ffffff",
+            "text-primary": "#0F172A",
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "tertiary": "#341e00",
+            "surface-tint": "#396569",
+            "surface-container-highest": "#e0e3e4",
+            "primary": "#00272a",
+            "danger-debit": "#EF4444",
+            "on-primary-fixed": "#002022",
+            "on-secondary-container": "#00714d",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f5",
+            "text-secondary": "#475569",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "background": "#f7fafb",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "inverse-on-surface": "#eef1f2",
+            "tertiary-container": "#513100",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-container-high": "#e5e9ea",
+            "on-error-container": "#93000a",
+            "surface-subtle": "#F1F5F9",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-tertiary-container": "#e19000",
+            "secondary-container": "#6cf8bb",
+            "outline": "#707979",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-background": "#181c1d"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem"
+          },
+          fontFamily: {
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          fontSize: {
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+            "headline-lg": ["24px", { lineHeight: "34px", fontWeight: "700" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "500" }],
+            "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }],
+            "display-lg": ["36px", { lineHeight: "48px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "currency-body": ["18px", { lineHeight: "26px", letterSpacing: "0px", fontWeight: "700" }],
+            "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "0px", fontWeight: "700" }],
+            "display-lg-mobile": ["28px", { lineHeight: "38px", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      background-color: #f7fafb;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .tabular-nums {
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile Simulator Container (max-w-md 430px) -->
+<main class="w-full max-w-md bg-surface min-h-screen flex flex-col relative pb-36 shadow-xl border-x border-border-subtle">
+<!-- 1. Top AppBar (Destination suppression active: focused transaction screen with back chevron) -->
+<header class="h-16 px-4 flex items-center justify-between bg-surface border-b border-border-subtle sticky top-0 z-40">
+<!-- Right: Back button (In RTL, back is forward-facing right chevron) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container flex items-center justify-center text-text-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center: Title -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">
+          عقد ضمان رقم #ESC-8042
+        </h1>
+<span class="text-label-sm font-label-sm text-text-muted">نظام حارث للضمان المالي والتحكيم</span>
+</div>
+<!-- Left: Share / Print Utility -->
+<div class="flex items-center gap-1.5">
+<button aria-label="مشاركة أو طباعة العقد" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container flex items-center justify-center text-text-primary transition-all active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="px-4 pt-4 space-y-4">
+<!-- 2. Hero Security Status Card -->
+<section class="rounded-xl bg-primary-container text-on-primary p-4 border border-[#0e4b50] shadow-sm relative overflow-hidden">
+<!-- Ambient atmospheric corner glow -->
+<div class="absolute -left-12 -top-12 w-32 h-32 bg-secondary-container opacity-10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-3 relative z-10">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-on-primary/10 flex items-center justify-center shrink-0 border border-on-primary/15">
+<span class="material-symbols-outlined text-[#F59E0B] text-[24px] fill" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h2 class="text-label-lg font-label-lg text-on-primary font-bold leading-tight">
+                الأموال مؤمنة بالكامل في خزنة حارث
+              </h2>
+<p class="text-body-sm font-body-sm text-on-primary-container mt-1">
+                المرحلة الحالية: <span class="text-white font-medium">جاري الشحن والتسليم والفحص</span>
+</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30 text-secondary-fixed text-label-sm font-label-sm font-bold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+            نشطة ومحمية
+          </span>
+</div>
+</section>
+<!-- 3. 6-Digit Secret Confirmation Code Box (Vault Security Box) -->
+<section class="rounded-[24px] border-2 border-amber-400 bg-amber-50/70 p-5 text-center shadow-[0_4px_16px_rgba(245,158,11,0.08)] relative">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white border border-amber-300 shadow-sm text-tertiary-container mb-2.5">
+<span class="material-symbols-outlined text-[26px] fill" data-icon="lock">lock</span>
+</div>
+<h3 class="text-label-lg font-label-lg font-bold text-text-primary">
+          كود الاستلام السري الخاص بك (Buyer Secret Code)
+        </h3>
+<p class="text-label-sm font-label-sm text-text-secondary mt-0.5">
+          مُشفّر بتقنية التحقق الفوري الأحادي — صالح فقط لهذه المعاملة
+        </p>
+<!-- 6 Distinct Digit Blocks -->
+<div class="my-4 flex items-center justify-center gap-2" dir="ltr" id="code-container">
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">8</span>
+</div>
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">4</span>
+</div>
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">1</span>
+</div>
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">9</span>
+</div>
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">2</span>
+</div>
+<div class="digit-box w-12 h-14 bg-surface border border-amber-300 rounded-xl shadow-sm flex items-center justify-center text-display-lg-mobile font-bold text-text-primary tabular-nums">
+<span class="digit-char">6</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-center gap-3">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface border border-amber-300 text-label-md font-label-md text-text-primary hover:bg-amber-100/50 transition-colors active:scale-95" id="toggle-code-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility_off" id="eye-icon">visibility_off</span>
+<span id="eye-text">إخفاء الكود</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface border border-amber-300 text-label-md font-label-md text-text-primary hover:bg-amber-100/50 transition-colors active:scale-95" id="copy-code-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+<span id="copy-feedback">نسخ الكود</span>
+</button>
+</div>
+<!-- High-priority Warning Box -->
+<div class="bg-red-50 border border-red-200 rounded-xl p-3.5 mt-4 flex items-start gap-2.5 text-right text-error text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-danger-debit text-[20px] shrink-0 mt-0.5 fill" data-icon="warning">warning</span>
+<p class="leading-relaxed">
+<strong class="font-bold text-danger-debit">تحذير أمني صارم:</strong> لا تشارك هذا الرمز إطلاقاً مع البائع أو مندوب الشحن إلا بعد استلام السلعة ومعاينتها والتأكد التام من مطابقتها لكافة الشروط. إعطاء الرمز للبائع يعني تحويل المبلغ لحسابه فوراً وبشكل نهائي.
+          </p>
+</div>
+</section>
+<!-- 4. Contract Breakdown & Party Details Card -->
+<section class="rounded-xl bg-surface border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Parties Header & Visual Flow -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-label-lg font-label-lg font-bold text-text-primary">أطراف العقد الموثق</h3>
+<span class="text-label-sm font-label-sm text-text-muted">عقد بيع قطعي معلق على الفحص</span>
+</div>
+<div class="space-y-2">
+<!-- Party 1: Buyer -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-label-md">
+                  ١
+                </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-bold text-text-primary">محمد سعيد عبد الرحمن</span>
+<span class="px-1.5 py-0.5 rounded text-label-sm font-label-sm bg-secondary-fixed/30 text-secondary font-bold">أنت</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted tabular-nums">010xxxx4376 (طرف أول - المشتري)</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px] fill" data-icon="check_circle">check_circle</span>
+<span>تم السداد بالخزنة</span>
+</div>
+</div>
+<!-- Party 2: Seller -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-subtle border border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-label-md">
+                  ٢
+                </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-md font-body-md font-bold text-text-primary">كريم عادل مصطفى</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted tabular-nums">010xxxx8821 (طرف ثانٍ - البائع)</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-text-secondary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px] text-secondary fill" data-icon="verified">verified</span>
+<span>هوية موثقة</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-border-subtle"></div>
+<!-- Financial Summary Bento Grid -->
+<div>
+<h4 class="text-label-md font-label-md font-bold text-text-secondary mb-2">الملخص المالي والجدول الزمني</h4>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-3 rounded-xl bg-surface-subtle border border-border-subtle flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-text-muted">المبلغ المحجوز في الخزنة:</span>
+<div class="text-currency-body font-currency-body text-primary font-bold tabular-nums mt-1">
+                45,000.00 <span class="text-label-sm font-normal text-text-secondary">ج.م</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-subtle border border-border-subtle flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-text-muted">الشرط الجزائي المتفق عليه:</span>
+<div class="text-currency-body font-currency-body text-text-primary font-bold tabular-nums mt-1">
+                1,000.00 <span class="text-label-sm font-normal text-text-secondary">ج.م</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<span class="text-label-sm font-label-sm text-text-muted">تاريخ البدء:</span>
+<p class="text-body-sm font-body-sm font-semibold text-text-primary mt-1 leading-snug">
+                15 أكتوبر 2026<br/><span class="text-label-sm font-normal text-text-muted">02:30 م</span>
+</p>
+</div>
+<div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200">
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="text-label-sm font-label-sm font-bold">مهلة الفحص الأقصى:</span>
+</div>
+<p class="text-body-sm font-body-sm font-bold text-text-primary mt-1 leading-snug">
+                18 أكتوبر 2026<br/><span class="text-label-sm font-normal text-error">11:59 م (متبقي 42 ساعة)</span>
+</p>
+</div>
+</div>
+</div>
+<div class="h-px bg-border-subtle"></div>
+<!-- Expandable Terms Box (Accordion) -->
+<div class="rounded-xl border border-border-subtle bg-surface-subtle overflow-hidden transition-all">
+<button class="w-full p-3 flex items-center justify-between text-right hover:bg-surface-container transition-colors" id="accordion-toggle" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="description">description</span>
+<span class="text-label-md font-label-md font-bold text-text-primary">
+                الشروط والمواصفات المتفق عليها (MacBook Pro M3)
+              </span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-text-muted transition-transform duration-200" data-icon="expand_more" id="accordion-chevron">expand_more</span>
+</button>
+<div class="px-3 pb-3 pt-1 text-body-sm font-body-sm text-text-secondary border-t border-border-subtle/50 leading-relaxed bg-surface" id="accordion-content">
+<p>
+              لابتوب ماك بوك برو M3، رام 18 جيجا، هارد 512 SSD، بطارية 98%، مع الشاحن الأصلي، فترة تجربة 48 ساعة لفحص الأداء والشاشة. يشمل الفحص المعاينة الدقيقة للهيكل الخارجي، سلامة لوحة المفاتيح والـ Trackpad، والتحقق من عدم وجود حساب iCloud مسجل سابقاً.
+            </p>
+<div class="mt-2.5 pt-2 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm text-text-muted">
+<span>رقم التسلسل الضامن: HTH-M3-9082-EG</span>
+<a class="text-secondary font-bold hover:underline inline-flex items-center gap-0.5" href="#">
+                تحميل نسخة PDF
+                <span class="material-symbols-outlined text-[14px]" data-icon="file_download">file_download</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 5. Bottom Action Panel (Docked at bottom of viewport / container) -->
+<footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-surface/95 backdrop-blur-md border-t border-border-subtle shadow-[0_-4px_20px_rgba(11,62,66,0.06)] z-50">
+<!-- Button 1: Primary Release Escrow Funds -->
+<button class="w-full h-12 rounded-xl bg-secondary hover:bg-[#005a3c] text-on-primary text-label-lg font-label-lg font-bold shadow-[0_4px_16px_rgba(0,108,73,0.25)] flex items-center justify-center gap-2 transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[22px] fill" data-icon="check_circle">check_circle</span>
+<span>تأكيد الاستلام وتحرير الأموال للبائع الآن</span>
+</button>
+<!-- Button 2: Secondary Dispute Trigger -->
+<button class="w-full h-11 rounded-xl border border-danger-debit text-danger-debit hover:bg-red-50 text-label-md font-label-md font-bold mt-2 flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="flag">flag</span>
+<span>تقديم بلاغ / فتح نزاع تحكيم رسمي</span>
+</button>
+<div class="text-center mt-2">
+<span class="text-label-sm font-label-sm text-text-muted">تخضع هذه المعاملة لبنود الحماية المعتمدة من البنك المركزي المصري وحارث</span>
+</div>
+</footer>
+</main>
+<!-- Interactive Logic for Eye toggle, Copy Code, and Accordion -->
+<script>
+    // 1. Secret Code Visibility Toggle
+    const toggleBtn = document.getElementById('toggle-code-btn');
+    const eyeIcon = document.getElementById('eye-icon');
+    const eyeText = document.getElementById('eye-text');
+    const digitChars = document.querySelectorAll('.digit-char');
+    const originalDigits = Array.from(digitChars).map(el => el.textContent);
+    let isHidden = false;
+
+    toggleBtn.addEventListener('click', () => {
+      isHidden = !isHidden;
+      if (isHidden) {
+        digitChars.forEach(el => el.textContent = '•');
+        eyeIcon.textContent = 'visibility';
+        eyeText.textContent = 'إظهار الكود';
+      } else {
+        digitChars.forEach((el, index) => el.textContent = originalDigits[index]);
+        eyeIcon.textContent = 'visibility_off';
+        eyeText.textContent = 'إخفاء الكود';
+      }
+    });
+
+    // 2. Copy Code to Clipboard
+    const copyBtn = document.getElementById('copy-code-btn');
+    const copyFeedback = document.getElementById('copy-feedback');
+    const rawCode = "841926";
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(rawCode).then(() => {
+        copyFeedback.textContent = 'تم النسخ!';
+        copyFeedback.classList.add('text-secondary', 'font-bold');
+        setTimeout(() => {
+          copyFeedback.textContent = 'نسخ الكود';
+          copyFeedback.classList.remove('text-secondary', 'font-bold');
+        }, 2000);
+      }).catch(() => {
+        copyFeedback.textContent = rawCode;
+      });
+    });
+
+    // 3. Terms Accordion Toggle
+    const accordionToggle = document.getElementById('accordion-toggle');
+    const accordionContent = document.getElementById('accordion-content');
+    const accordionChevron = document.getElementById('accordion-chevron');
+    let isOpen = true;
+
+    accordionToggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      if (isOpen) {
+        accordionContent.classList.remove('hidden');
+        accordionChevron.style.transform = 'rotate(0deg)';
+      } else {
+        accordionContent.classList.add('hidden');
+        accordionChevron.style.transform = 'rotate(180deg)';
+      }
+    });
+  </script>
+</body></html>

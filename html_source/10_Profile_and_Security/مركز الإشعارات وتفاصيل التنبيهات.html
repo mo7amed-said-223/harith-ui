@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - مركز الإشعارات والتنبيهات</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration with Design Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006c49",
+            "on-primary-fixed": "#002022",
+            "surface-tint": "#396569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-container": "#00714d",
+            "surface-subtle": "#F1F5F9",
+            "outline": "#707979",
+            "primary-container": "#0b3e42",
+            "inverse-on-surface": "#eef1f2",
+            "surface-container-low": "#f1f4f5",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary": "#00272a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "text-primary": "#0F172A",
+            "on-error": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-bright": "#f7fafb",
+            "secondary-fixed": "#6ffbbe",
+            "text-secondary": "#475569",
+            "on-surface": "#181c1d",
+            "outline-variant": "#c0c8c9",
+            "border-subtle": "#E2E8F0",
+            "surface-container-high": "#e5e9ea",
+            "danger-debit": "#EF4444",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-container": "#6cf8bb",
+            "on-background": "#181c1d",
+            "inverse-surface": "#2d3132",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "surface-container": "#ebeeef",
+            "secondary-fixed-dim": "#4edea3",
+            "surface": "#FFFFFF",
+            "text-muted": "#94A3B8",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-container": "#e19000",
+            "primary-fixed-dim": "#a1cfd3",
+            "tertiary": "#341e00",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary-container": "#513100",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e0e3e4",
+            "on-secondary-fixed": "#002113"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-start antialiased selection:bg-secondary-container">
+<!-- Mobile App Frame Container -->
+<div class="relative w-full max-w-md bg-background min-h-screen flex flex-col shadow-2xl overflow-hidden pb-28">
+<!-- Top Status Bar Simulation -->
+<div class="h-10 px-6 pt-2 flex justify-between items-center text-text-primary bg-surface select-none z-40">
+<span class="font-currency-body text-currency-body">9:41</span>
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- SHARED COMPONENT: TopAppBar -->
+<header class="bg-surface sticky top-0 z-40 h-16 border-b border-border-subtle shadow-none flex justify-between items-center w-full px-4 max-w-md mx-auto">
+<!-- Right: Chevron Right for RTL Back Action -->
+<button aria-label="الرجوع للخلف" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" onclick="history.back()">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center: Screen Headline -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">مركز الإشعارات والتنبيهات</h1>
+<span class="text-label-sm font-label-sm text-text-muted">محدّث لحظياً • 3 جديدة</span>
+</div>
+<!-- Left: Mark all as read / Clear -->
+<button class="h-10 px-3 rounded-xl bg-surface-subtle flex items-center gap-1 text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" id="markAllReadBtn" title="تحديد الكل كمقروء">
+<span class="material-symbols-outlined text-[18px]" data-icon="done_all">done_all</span>
+<span class="text-label-sm font-label-sm">قراءة</span>
+</button>
+</header>
+<!-- Category Filter: 4 Segmented Tabs -->
+<div class="bg-surface px-4 py-3 border-b border-border-subtle sticky top-16 z-30 shadow-[0_2px_8px_rgba(11,62,66,0.02)]">
+<div class="flex items-center gap-2 overflow-x-auto hide-scrollbar scroll-smooth py-1">
+<!-- Tab 1: Active with Badge -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-container text-on-primary shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-md font-label-md">رصيد ومحفظة حارث</span>
+<span class="w-5 h-5 rounded-full bg-danger-debit text-on-primary text-[11px] font-bold flex items-center justify-center -mr-0.5">2</span>
+</button>
+<!-- Tab 2: Bills & Utilities -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary border border-border-subtle transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-md font-label-md">فواتير ومرافق</span>
+</button>
+<!-- Tab 3: Escrow / Guarantee -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary border border-border-subtle transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user">verified_user</span>
+<span class="text-label-md font-label-md">حافظ على فلوسك</span>
+</button>
+<!-- Tab 4: Transport & Trips -->
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-subtle text-text-secondary hover:text-text-primary border border-border-subtle transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-md font-label-md">مواصلات ورحلات</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area: Notifications Stream -->
+<main class="flex-1 px-4 py-4 space-y-3.5">
+<!-- Timestamp Header -->
+<div class="flex items-center justify-between px-1">
+<span class="text-label-md font-label-md text-text-muted">اليوم • الأحد 18 مايو</span>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-container/25 px-2 py-0.5 rounded-full">نظام المعاملات الفوري IPN</span>
+</div>
+<!-- Notification 1: Financial Unread (Instant Transfer In) -->
+<div class="cursor-pointer group relative bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-secondary transition-all duration-150 active:scale-[0.99]" onclick="openNotificationDetail('deposit')">
+<!-- Unread Glow Indicator -->
+<div class="absolute top-4 left-4 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-secondary-container/40 animate-pulse"></div>
+<div class="flex items-start gap-3.5">
+<!-- Icon Plaque -->
+<div class="w-11 h-11 rounded-xl bg-secondary-container/40 flex items-center justify-center text-on-secondary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div class="flex-1 min-w-0 pr-0.5">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                حوالة مالية مستلمة
+              </span>
+<span class="text-label-sm font-label-sm text-text-muted pl-4">منذ 10 دقائق</span>
+</div>
+<h2 class="text-body-lg font-body-lg text-text-primary leading-tight font-bold mb-1">
+              تم استلام حوالة فورية +1,000 ج.م
+            </h2>
+<p class="text-body-sm font-body-sm text-text-secondary line-clamp-2 leading-relaxed">
+              تم إيداع المبلغ بنجاح في محفظتك الإلكترونية لحسابك لدى حارث، مرسلة من <strong class="text-text-primary">محفظة روضة كمال</strong> عبر شبكة إنستاباي.
+            </p>
+<!-- Card Bottom Bar: Quick CTA -->
+<div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-text-muted">الرصيد المتاح: 4,850.50 ج.م</span>
+<button class="h-8 px-3 rounded-lg bg-primary-container text-on-primary text-label-sm font-label-sm flex items-center gap-1 hover:bg-primary transition-colors" onclick="event.stopPropagation(); openNotificationDetail('deposit')">
+<span>عرض الإيصال</span>
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification 2: Low Balance Warning (Smart NFC Card) -->
+<div class="cursor-pointer group relative bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-tertiary-fixed-dim transition-all duration-150 active:scale-[0.99]" onclick="openNotificationDetail('card_warning')">
+<!-- Warning Status Pip -->
+<div class="absolute top-4 left-4 w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="flex items-start gap-3.5">
+<!-- Icon Plaque -->
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center text-on-tertiary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="contactless" style="font-variation-settings: 'FILL' 1;">contactless</span>
+</div>
+<div class="flex-1 min-w-0 pr-0.5">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-on-tertiary-container bg-tertiary-fixed/50 px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                تنبيه رصيد الحافلات
+              </span>
+<span class="text-label-sm font-label-sm text-text-muted pl-4">منذ ساعة</span>
+</div>
+<h2 class="text-body-lg font-body-lg text-text-primary leading-tight font-bold mb-1">
+              تنبيه انخفاض رصيد كارت حارث الذكي (NFC)
+            </h2>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+              الرصيد المتبقي على بطاقة المواصلات الذكية الخاصة بك هو <strong class="text-danger-debit font-bold">15 ج.م فقط</strong>. يرجى الشحن الفوري لتفادي تعطل بوابات المترو وحافلات العاصمة.
+            </p>
+<!-- Card Bottom Bar: Immediate Top-up Button -->
+<div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-text-muted">كارت رقم: **** 4819</span>
+<button class="h-8 px-3 rounded-lg bg-secondary text-on-secondary text-label-sm font-label-sm flex items-center gap-1 hover:bg-on-secondary-container transition-colors shadow-sm" onclick="event.stopPropagation(); openNotificationDetail('card_warning')">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>شحن فوري</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification 3: Escrow / Guarantee Inspection Alert -->
+<div class="cursor-pointer group relative bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container transition-all duration-150 active:scale-[0.99]" onclick="openNotificationDetail('escrow')">
+<div class="flex items-start gap-3.5">
+<!-- Icon Plaque -->
+<div class="w-11 h-11 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield_lock" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+</div>
+<div class="flex-1 min-w-0 pr-0.5">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-text-secondary bg-surface-container px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[13px]">timer</span>
+                خدمة الضمان التجاري
+              </span>
+<span class="text-label-sm font-label-sm text-text-muted">منذ 3 ساعات</span>
+</div>
+<h2 class="text-body-lg font-body-lg text-text-primary leading-tight font-bold mb-1">
+              تأكيد فحص بضاعة ملابس جملة (#ESC-9120)
+            </h2>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+              وصلت الشحنة لمقر متجرك؛ متبقي <strong class="text-on-tertiary-container font-bold">مهلة 24 ساعة فقط</strong> لفحص المنتجات وتحرير مبلغ 32,400 ج.م للبائع المحمي في خزينة حارث.
+            </p>
+<!-- Card Bottom Bar -->
+<div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-text-muted">المبلغ المحجوز: 32,400 ج.م</span>
+<button class="h-8 px-3 rounded-lg bg-surface-subtle text-primary border border-border-subtle text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-high transition-colors" onclick="event.stopPropagation(); openNotificationDetail('escrow')">
+<span>إدارة أمر الضمان</span>
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Earlier Timeframe Indicator -->
+<div class="pt-3 pb-1 flex items-center justify-center">
+<div class="h-px bg-border-subtle flex-1"></div>
+<span class="px-3 text-label-sm font-label-sm text-text-muted">سجل الأمس</span>
+<div class="h-px bg-border-subtle flex-1"></div>
+</div>
+<!-- Notification 4: Public Transport Route Update -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] opacity-85 hover:opacity-100 transition-opacity">
+<div class="flex items-start gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="route">route</span>
+</div>
+<div class="flex-1 min-w-0 pr-0.5">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="inline-flex items-center text-[11px] font-medium text-text-secondary bg-surface-container-high px-2 py-0.5 rounded-md">
+                مواصلات مصر • خط M7
+              </span>
+<span class="text-label-sm font-label-sm text-text-muted">الأمس 08:30 م</span>
+</div>
+<h2 class="text-body-lg font-body-lg text-text-primary leading-tight font-medium mb-1">
+              تم خصم قيمة تذكرة حافلة ذكية (-12.00 ج.م)
+            </h2>
+<p class="text-body-sm font-body-sm text-text-secondary">
+              محطة الصعود: التجمع الخامس (الداون تاون) - تم التحقق بواسطة ماسح البوابة الرقمي.
+            </p>
+</div>
+</div>
+</div>
+</main>
+<!-- INTERACTIVE BOTTOM SHEET MODAL (Notification Detail View) -->
+<div class="fixed inset-0 z-50 flex items-end justify-center bg-primary/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none" id="detailBottomSheet">
+<!-- Backdrop Click Area -->
+<div class="absolute inset-0" onclick="closeNotificationDetail()"></div>
+<!-- Modal Card Body -->
+<div class="relative w-full max-w-md bg-surface rounded-t-[32px] p-6 shadow-2xl border-t border-border-subtle transform translate-y-full transition-transform duration-300 ease-out z-10 max-h-[751px] overflow-y-auto" id="sheetContent">
+<!-- Sheet Handle -->
+<div class="w-12 h-1.5 bg-border-subtle rounded-full mx-auto mb-5"></div>
+<!-- Sheet Header -->
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container/40 flex items-center justify-center text-on-secondary-container" id="modalIconContainer">
+<span class="material-symbols-outlined text-[26px]" data-icon="check_circle" id="modalIcon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-md font-bold" id="modalBadge">
+                إيداع بنكي ناجح
+              </span>
+<h3 class="text-headline-sm font-headline-sm text-text-primary mt-1" id="modalTitle">
+                تفاصيل الإشعار المالي
+              </h3>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-subtle text-text-muted hover:text-text-primary flex items-center justify-center transition-colors" onclick="closeNotificationDetail()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Receipt Box / Detailed Metadata Bento -->
+<div class="bg-surface-subtle rounded-2xl p-4 border border-border-subtle my-4 space-y-3">
+<!-- Amount Highlight Row -->
+<div class="text-center py-2 border-b border-border-subtle">
+<span class="text-label-md font-label-md text-text-secondary">المبلغ الإجمالي المودع</span>
+<div class="text-currency-display font-currency-display text-primary-container mt-0.5" id="modalAmount">
+              +1,500.00 <span class="text-body-md font-body-md font-normal text-text-secondary">ج.م</span>
+</div>
+</div>
+<!-- Structured Details Grid -->
+<div class="grid grid-cols-2 gap-3 pt-1 text-right">
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">مسار العملية</span>
+<span class="text-body-md font-body-md font-semibold text-text-primary" id="modalNetwork">شبكة IPN (إنستاباي)</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">رقم المرجع</span>
+<span class="text-body-md font-body-md font-semibold text-text-primary font-mono" id="modalRef">#DEP-8841</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">المرسل</span>
+<span class="text-body-md font-body-md font-semibold text-text-primary" id="modalSender">روضة كمال محمود</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">توقيت المعاملة</span>
+<span class="text-body-md font-body-md font-semibold text-text-primary">18 مايو 2025 • 09:31 ص</span>
+</div>
+</div>
+<!-- Guarantee / Transit Context Note -->
+<div class="bg-surface rounded-xl p-3 border border-border-subtle flex items-start gap-2.5 mt-2" id="modalContextAlert">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0" data-icon="verified">verified</span>
+<p class="text-body-sm font-body-sm text-text-secondary leading-tight">
+              تم تدقيق التوقيع الرقمي للبنك المركزي المصري ومطابقة رصيد محفظة حارث بشكل فوري ودون أي مصاريف إدارية إضافية.
+            </p>
+</div>
+</div>
+<!-- Action Buttons Inside Sheet -->
+<div class="space-y-2.5 pt-2">
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-body-lg text-body-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-md" onclick="alert('جاري نقلك لتفاصيل المعاملة في دفتر الحسابات'); closeNotificationDetail();">
+<span class="material-symbols-outlined text-[20px]">receipt</span>
+<span>الانتقال للمعاملة في السجل</span>
+</button>
+<button class="w-full h-12 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:text-text-primary hover:bg-surface-subtle font-body-lg text-body-lg flex items-center justify-center transition-colors" onclick="closeNotificationDetail()">
+<span>إغلاق النافذة</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SHARED COMPONENT: HarithBottomNav (Docked Full-Width Bottom Bar) -->
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)] rounded-t-3xl select-none" style="right: 50%; transform: translateX(50%);">
+<!-- 1. الرئيسية (Home) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 flex-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- 2. محفظتي (Wallet & Cards) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 flex-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- 3. ادفع / امسح (Center Floating Dock QR/NFC Button) -->
+<div class="flex flex-col items-center justify-center -mt-7 flex-1">
+<button aria-label="ادفع أو امسح كود QR" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] ring-4 ring-surface active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined text-[28px] text-secondary-container" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm font-bold text-primary-container mt-1">ادفع</span>
+</div>
+<!-- 4. المواصلات (Smart Transit) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 flex-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- 5. حسابي (Profile & Settings) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 flex-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    const bottomSheet = document.getElementById('detailBottomSheet');
+    const sheetContent = document.getElementById('sheetContent');
+    const markAllReadBtn = document.getElementById('markAllReadBtn');
+
+    // Data variants for dynamic bottom sheet modal
+    const notificationDetails = {
+      deposit: {
+        title: "تفاصيل الإشعار المالي: إيداع بنكي ناجح",
+        badge: "إيداع بنكي ناجح",
+        badgeClass: "text-secondary bg-secondary-container/30",
+        icon: "payments",
+        iconBgClass: "bg-secondary-container/40 text-on-secondary-container",
+        amount: "+1,000.00",
+        network: "شبكة IPN (إنستاباي)",
+        ref: "#DEP-8841",
+        sender: "محفظة روضة كمال",
+        note: "تم تدقيق التوقيع الرقمي للبنك المركزي المصري ومطابقة رصيد محفظة حارث بشكل فوري ودون أي مصاريف إدارية إضافية."
+      },
+      card_warning: {
+        title: "تنبيه انخفاض رصيد كارت المواصلات",
+        badge: "تحذير رصيد حرج",
+        badgeClass: "text-on-tertiary-container bg-tertiary-fixed/50",
+        icon: "contactless",
+        iconBgClass: "bg-tertiary-fixed/40 text-on-tertiary-container",
+        amount: "15.00",
+        network: "بوابات النقل الذكي (NFC)",
+        ref: "#CRD-4819",
+        sender: "كارت حارث الذكي الموحد",
+        note: "الحد الأدنى المطلوب لركوب مترو الأنفاق والقطار الكهربائي الخفيف (LRT) هو 20 ج.م. يرجى الشحن الفوري لتجنب الغرامة."
+      },
+      escrow: {
+        title: "مهلة فحص بضاعة الضمان التجاري",
+        badge: "أمر ضمان ساري",
+        badgeClass: "text-primary bg-primary-fixed/50",
+        icon: "shield_lock",
+        iconBgClass: "bg-primary-fixed/40 text-primary-container",
+        amount: "32,400.00",
+        network: "خزينة حارth للوساطة الآمنة",
+        ref: "#ESC-9120",
+        sender: "شركة الشروق للملابس الجاهزة",
+        note: "الأموال محفوظة بحساب وسيط حتى انتهاء مدة المعاينة (24 ساعة) أو تأكيدك لاستلام الشحنة وتطابق المواصفات."
+      }
+    };
+
+    function openNotificationDetail(type) {
+      const data = notificationDetails[type] || notificationDetails.deposit;
+      
+      // Update DOM inside modal
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBadge').textContent = data.badge;
+      document.getElementById('modalBadge').className = `text-label-sm font-label-sm px-2 py-0.5 rounded-md font-bold ${data.badgeClass}`;
+      document.getElementById('modalIcon').textContent = data.icon;
+      document.getElementById('modalIconContainer').className = `w-12 h-12 rounded-2xl flex items-center justify-center ${data.iconBgClass}`;
+      document.getElementById('modalAmount').innerHTML = `${data.amount} <span class="text-body-md font-body-md font-normal text-text-secondary">ج.م</span>`;
+      document.getElementById('modalNetwork').textContent = data.network;
+      document.getElementById('modalRef').textContent = data.ref;
+      document.getElementById('modalSender').textContent = data.sender;
+      document.querySelector('#modalContextAlert p').textContent = data.note;
+
+      // Reveal bottom sheet
+      bottomSheet.classList.remove('pointer-events-none', 'opacity-0');
+      bottomSheet.classList.add('opacity-100');
+      sheetContent.classList.remove('translate-y-full');
+      sheetContent.classList.add('translate-y-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNotificationDetail() {
+      sheetContent.classList.remove('translate-y-0');
+      sheetContent.classList.add('translate-y-full');
+      bottomSheet.classList.remove('opacity-100');
+      bottomSheet.classList.add('opacity-0');
+      setTimeout(() => {
+        bottomSheet.classList.add('pointer-events-none');
+        document.body.style.overflow = '';
+      }, 250);
+    }
+
+    // Mark all as read micro-action
+    markAllReadBtn.addEventListener('click', () => {
+      document.querySelectorAll('.animate-pulse').forEach(el => el.remove());
+      const headerText = document.querySelector('header span.text-label-sm');
+      if (headerText) {
+        headerText.textContent = 'جميع الإشعارات مقروءة';
+      }
+      markAllReadBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[18px] text-secondary">check</span>
+        <span class="text-label-sm font-label-sm text-secondary font-bold">تم</span>
+      `;
+      markAllReadBtn.disabled = true;
+    });
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNotificationDetail();
+    });
+  </script>
+</body></html>

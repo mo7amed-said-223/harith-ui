@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إحصائيات الأداء وسجل الأرباح — حارث</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary": "#00272a",
+            "surface-container-high": "#e5e9ea",
+            "surface-container": "#ebeeef",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-fixed": "#bcebef",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "text-primary": "#0F172A",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "surface-subtle": "#F1F5F9",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-bright": "#f7fafb",
+            "inverse-on-surface": "#eef1f2",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "background": "#f7fafb",
+            "surface-dim": "#d7dadb",
+            "tertiary-container": "#513100",
+            "surface-tint": "#396569",
+            "outline-variant": "#c0c8c9",
+            "tertiary": "#341e00",
+            "inverse-surface": "#2d3132",
+            "on-secondary-fixed": "#002113",
+            "on-surface": "#181c1d",
+            "on-primary-container": "#7ca9ad",
+            "surface-variant": "#e0e3e4",
+            "on-primary-fixed": "#002022",
+            "border-subtle": "#E2E8F0",
+            "on-error-container": "#93000a",
+            "text-muted": "#94A3B8",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f1f4f5",
+            "inverse-primary": "#a1cfd3",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "surface-container-highest": "#e0e3e4",
+            "text-secondary": "#475569",
+            "surface": "#FFFFFF",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed-variant": "#005236",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-tertiary-container": "#e19000",
+            "on-background": "#181c1d",
+            "on-secondary-container": "#00714d",
+            "danger-debit": "#EF4444",
+            "secondary": "#006c49"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .specular-card {
+      box-shadow: 0 12px 28px rgba(11, 62, 66, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+    .bento-card {
+      box-shadow: 0 4px 12px rgba(11, 62, 66, 0.05);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col justify-between items-center antialiased select-none pb-28">
+<!-- Mobile Wrapper Viewport Container (Max 448px) -->
+<div class="w-full max-w-md mx-auto min-h-screen bg-background relative flex flex-col">
+<!-- TOP APP BAR -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle w-full h-16">
+<div class="flex justify-between items-center w-full px-4 max-w-md mx-auto h-full">
+<!-- Back Navigation Button (Physical Right in RTL) -->
+<button aria-label="الرجوع للرئيسية" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container-high active:scale-95 transition-all flex items-center justify-center text-primary" type="button">
+<span class="material-symbols-outlined text-headline-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Screen Title -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">إحصائيات الأداء والأرباح</h1>
+<p class="text-label-sm font-label-sm text-text-muted mt-0.5">لوحة تحكم الوكيل المعتمد</p>
+</div>
+<!-- Period Selector Filter Button (Physical Left in RTL) -->
+<button aria-label="تحديد الفترة" class="h-10 px-3 rounded-xl bg-surface-subtle hover:bg-surface-container-high active:scale-95 transition-all flex items-center gap-1.5 text-primary border border-border-subtle" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="calendar_month">calendar_month</span>
+<span class="text-label-md font-label-md text-text-primary">أكتوبر 2026</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 px-4 pt-4 space-y-4">
+<!-- SECTION 1: EARNINGS HERO METAPHOR CARD -->
+<section class="rounded-2xl p-5 bg-gradient-to-br from-[#0B3E42] via-[#082C2F] to-[#041A1C] text-on-secondary specular-card relative overflow-hidden">
+<!-- Ambient Radial Glow Highlights -->
+<div class="absolute -top-16 -left-16 w-44 h-44 bg-secondary-fixed opacity-15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -right-20 w-48 h-48 bg-[#F59E0B] opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header Row: Shield & Settlement badge -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface/10 border border-white/20 flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-on-primary-container block">حساب الوكيل الذهبي</span>
+<span class="text-label-md font-label-md text-white font-semibold">حارث برو كاش</span>
+</div>
+</div>
+<!-- Settlement Cycle Tag -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-label-sm text-surface-bright backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+            دورة تسوية أسبوعية تلقائية
+          </span>
+</div>
+<!-- Profit Display Cluster -->
+<div class="mt-5 relative z-10">
+<p class="text-body-sm font-body-sm text-on-primary-container font-medium">أرباحك وعمولاتك الجاهزة للصرف:</p>
+<div class="flex items-baseline gap-2 mt-1.5">
+<span class="text-currency-display font-currency-display text-white tracking-tight">3,850.00</span>
+<span class="text-headline-sm font-headline-sm text-secondary-fixed-dim">ج.م</span>
+</div>
+<!-- Growth & Next Payout Row -->
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-[#10B981]/25 border border-[#10B981]/40 text-[#4edea3] text-label-md font-label-md">
+<span class="material-symbols-outlined text-[15px]" data-icon="trending_up">trending_up</span>
+<span>+18.4% عن الشهر السابق</span>
+</span>
+<span class="text-label-sm font-label-sm text-on-primary-container">
+              • الاستحقاق القادم: الخميس 29 أكتوبر
+            </span>
+</div>
+</div>
+<!-- Primary CTA: Payout Button -->
+<div class="mt-5 pt-3 border-t border-white/10 relative z-10">
+<button class="w-full h-12 rounded-xl bg-[#10B981] hover:bg-[#0ea372] active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-white font-label-lg text-label-lg shadow-[0_8px_20px_rgba(16,185,129,0.32)]" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>تحويل الأرباح لمحفظتي الأساسية فوراً</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: MERCHANT NETWORK KPI METRIC BADGES (4-Column Bento Grid) -->
+<section class="space-y-2">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-label-lg font-label-lg text-text-primary font-bold">مؤشرات أداء شبكة التجار</h2>
+<span class="text-label-sm font-label-sm text-secondary font-medium">محدث منذ 10 دقائق</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- KPI 1: Volume -->
+<div class="bento-card bg-surface p-3.5 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-secondary">إجمالي التداول</span>
+<div class="w-7 h-7 rounded-lg bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md text-text-primary font-bold">245,000</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary font-medium mt-0.5">حجم المعاملات المكتملة</p>
+</div>
+</div>
+<!-- KPI 2: Operations Count -->
+<div class="bento-card bg-surface p-3.5 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-secondary">العمليات المنفذة</span>
+<div class="w-7 h-7 rounded-lg bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]" data-icon="receipt_long">receipt_long</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md text-text-primary font-bold">1,420</span>
+<span class="text-label-sm font-label-sm text-text-muted">عملية</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary font-medium mt-0.5">معدل نجاح 99.8%</p>
+</div>
+</div>
+<!-- KPI 3: Average Commission -->
+<div class="bento-card bg-surface p-3.5 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-secondary">متوسط العمولة</span>
+<div class="w-7 h-7 rounded-lg bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]" data-icon="percent">percent</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md text-text-primary font-bold">2.71</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+<p class="text-label-sm font-label-sm text-text-secondary mt-0.5">لكل عملية مفردة</p>
+</div>
+</div>
+<!-- KPI 4: Merchant Activity Rate -->
+<div class="bento-card bg-surface p-3.5 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-secondary">نشاط التجار</span>
+<div class="w-7 h-7 rounded-lg bg-[#10B981]/15 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+</div>
+<div class="mt-2.5">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md text-secondary font-bold">94.4%</span>
+<span class="text-label-sm font-label-sm text-text-muted">نشط</span>
+</div>
+<p class="text-label-sm font-label-sm text-text-secondary mt-0.5">17 من 18 تاجر نشط اليوم</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: WEEKLY SALES VOLUME CHART -->
+<section class="bento-card bg-surface rounded-2xl p-4 border border-border-subtle space-y-3.5">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-label-lg font-label-lg text-text-primary font-bold">مخطط حجم المبيعات الأسبوعي</h2>
+<p class="text-label-sm font-label-sm text-text-muted">مقارنة التداولات اليومية بالجنيه المصري</p>
+</div>
+<!-- Peak Tag -->
+<div class="text-left bg-surface-subtle px-2 py-1 rounded-lg border border-border-subtle">
+<span class="text-[10px] font-label-sm text-text-muted block">ذروة المبيعات</span>
+<span class="text-label-sm font-label-sm text-secondary font-bold">الخميس (48k)</span>
+</div>
+</div>
+<!-- Micro Bar Chart Representation (Sat to Fri) -->
+<div class="pt-4 pb-1">
+<div class="flex items-end justify-between gap-2 h-36 border-b border-border-subtle px-1 pb-1">
+<!-- Sat (22k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">22k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 46%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">السبت</span>
+</div>
+<!-- Sun (28k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">28k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 58%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">الأحد</span>
+</div>
+<!-- Mon (31k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">31k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 64%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">الإثنين</span>
+</div>
+<!-- Tue (35k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">35k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 72%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">الثلاثاء</span>
+</div>
+<!-- Wed (39k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">39k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 80%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">الأربعاء</span>
+</div>
+<!-- Thu (48k - PEAK) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end relative">
+<div class="absolute -top-6 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-label-sm font-bold shadow-sm">
+                48,000
+              </div>
+<div class="w-full bg-gradient-to-t from-primary-container to-[#10B981] rounded-t-md shadow-sm" style="height: 100%;"></div>
+<span class="text-label-sm font-label-sm text-primary font-bold mt-2">الخميس</span>
+</div>
+<!-- Fri (18k) -->
+<div class="flex flex-col items-center flex-1 h-full justify-end group">
+<span class="text-[10px] font-label-sm text-text-muted mb-1 opacity-0 group-hover:opacity-100 transition-opacity">18k</span>
+<div class="w-full bg-surface-container rounded-t-md transition-all hover:bg-primary-container" style="height: 38%;"></div>
+<span class="text-label-sm font-label-sm text-text-muted mt-2">الجمعة</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-text-secondary pt-1 px-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-gradient-to-t from-primary-container to-[#10B981]"></span>
+            أعلى تداول أسبوعي مسجل
+          </span>
+<span class="text-text-muted">إجمالي الأسبوع: 221,000 ج.م</span>
+</div>
+</section>
+<!-- SECTION 4: COMMISSION LEDGER (Detailed Ledger) -->
+<section class="space-y-2.5 pb-2">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<h2 class="text-label-lg font-label-lg text-text-primary font-bold">سجل العمولات التفصيلي</h2>
+<span class="text-label-sm font-label-sm px-2 py-0.5 bg-surface-subtle text-text-secondary rounded-full font-semibold">4 بنود</span>
+</div>
+<button class="text-label-sm font-label-sm text-primary font-semibold hover:underline" type="button">
+            تصدير كشف حساب (PDF)
+          </button>
+</div>
+<div class="space-y-2">
+<!-- Item 1: Bills & Utilities -->
+<article class="bento-card bg-surface rounded-xl p-3.5 border border-border-subtle flex items-center justify-between hover:border-primary-fixed-dim transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h3 class="text-body-md font-body-md text-text-primary font-semibold">عمولات سداد فواتير الكهرباء والمرافق</h3>
+<div class="flex items-center gap-2 mt-0.5 text-label-sm font-label-sm text-text-muted">
+<span>140 معاملة مكتملة</span>
+<span>•</span>
+<span>عمولة ثابتة ونسبية</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold block">+420.00</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+</article>
+<!-- Item 2: Mobile Top-Up & Telecom -->
+<article class="bento-card bg-surface rounded-xl p-3.5 border border-border-subtle flex items-center justify-between hover:border-primary-fixed-dim transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="sim_card">sim_card</span>
+</div>
+<div>
+<h3 class="text-body-md font-body-md text-text-primary font-semibold">عمولات كروت الشحن وشبكات المحمول</h3>
+<div class="flex items-center gap-2 mt-0.5 text-label-sm font-label-sm text-text-muted">
+<span>310 عملية شحن</span>
+<span>•</span>
+<span>أورنج، فودافون، اتصالات، وي</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold block">+680.50</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+</article>
+<!-- Item 3: Harith NFC Transit Card Top-ups -->
+<article class="bento-card bg-surface rounded-xl p-3.5 border border-border-subtle flex items-center justify-between hover:border-primary-fixed-dim transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#0B3E42]/10 flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="contactless">contactless</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="text-body-md font-body-md text-text-primary font-semibold">عمولات شحن كروت حارث للمواصلات NFC</h3>
+<span class="px-1.5 py-0.2 bg-primary-fixed text-primary text-[10px] font-label-sm rounded font-bold">الأعلى نمواً</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-label-sm font-label-sm text-text-muted">
+<span>520 عملية تفعيل وباقة</span>
+<span>•</span>
+<span>خطوط مترو وباصات</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-headline-sm font-headline-sm text-secondary font-bold block">+1,250.00</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+</article>
+<!-- Item 4: Quarterly Target Bonus -->
+<article class="bento-card bg-gradient-to-l from-surface via-surface to-[#FFFBEB] rounded-xl p-3.5 border border-[#FDE68A] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#FEF3C7] flex items-center justify-center text-[#D97706] shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="text-body-md font-body-md text-[#92400E] font-bold">مكافأة تحقيق هدف الربع الحالي (Target Bonus)</h3>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-label-sm font-label-sm text-[#B45309]">
+<span>إنجاز 105% من المستهدف</span>
+<span>•</span>
+<span>حافز تميز الوكلاء</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-headline-sm font-headline-sm text-[#D97706] font-bold block">+1,500.00</span>
+<span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BOTTOM APP NAVIGATION (Harith Standard 5 Destination Dock) -->
+<!-- Content logic: "محفظتي" is the financial earnings/wallet section -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Destination 1: الرئيسية (Home) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Destination 2: محفظتي (My Wallet / Profits) - ACTIVE -->
+<!-- Matches JSON style_active_navigation: text-primary font-bold relative after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 -->
+<a class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px] text-primary" data-icon="credit_card" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- Destination 3: ادفع / امسح (Pay / QR Floating Central Button) -->
+<div class="relative -top-4 flex flex-col items-center">
+<button aria-label="ادفع" class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[28px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-secondary mt-1 font-semibold">ادفع</span>
+</div>
+<!-- Destination 4: المواصلات (Transit) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Destination 5: حسابي (Profile) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

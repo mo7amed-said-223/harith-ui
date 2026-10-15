@@ -1,0 +1,1133 @@
+{
+  "02_Home_and_System": [
+    {
+      "title": "الرئيسية ولوحة التحكم",
+      "category": "02_Home_and_System",
+      "width": 780,
+      "height": 2636,
+      "img_bytes": 447653,
+      "html_bytes": 28381,
+      "rel_img_path": "02_Home_and_System/الرئيسية ولوحة التحكم.png",
+      "rel_html_path": "html_source/02_Home_and_System/الرئيسية ولوحة التحكم.html",
+      "id": "6181a813b83c4512b2e42b316e02c29b"
+    },
+    {
+      "title": "نوافذ العروض وتقييم التطبيق",
+      "category": "02_Home_and_System",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 346928,
+      "html_bytes": 23131,
+      "rel_img_path": "02_Home_and_System/نوافذ العروض وتقييم التطبيق.png",
+      "rel_html_path": "html_source/02_Home_and_System/نوافذ العروض وتقييم التطبيق.html",
+      "id": "0d3ea1a725e24c30aad5b93c0ba6f4ab"
+    },
+    {
+      "title": "وضع الصيانة وحالة عدم الاتصال",
+      "category": "02_Home_and_System",
+      "width": 780,
+      "height": 2468,
+      "img_bytes": 290440,
+      "html_bytes": 20293,
+      "rel_img_path": "02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.png",
+      "rel_html_path": "html_source/02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.html",
+      "id": "304d5332916d40f7bb58047c1037daf6"
+    }
+  ],
+  "08_Driver_Workspace": [
+    {
+      "title": "إدارة الملصقات وفحص الأكواد",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3020,
+      "img_bytes": 357562,
+      "html_bytes": 23418,
+      "rel_img_path": "08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.html",
+      "id": "7840169b26f94f2eb86e7f3618dd18a4"
+    },
+    {
+      "title": "إدارة رحلات السائق العامة وبدء رحلة",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3334,
+      "img_bytes": 484624,
+      "html_bytes": 28554,
+      "rel_img_path": "08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.html",
+      "id": "3ccef558ade049df902f2eb43ddc45f3"
+    },
+    {
+      "title": "إدارة رحلات السائق والتذاكر",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 2530,
+      "img_bytes": 419660,
+      "html_bytes": 30116,
+      "rel_img_path": "08_Driver_Workspace/إدارة رحلات السائق والتذاكر.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/إدارة رحلات السائق والتذاكر.html",
+      "id": "e424d461e81746f0884e951b26c53a0a"
+    },
+    {
+      "title": "إدارة ملصقات المركبة — استيكراتي وفحص الكود",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3198,
+      "img_bytes": 265629,
+      "html_bytes": 23408,
+      "rel_img_path": "08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.html",
+      "id": "658987ba7e754185a8f2c2a6b8a7cd7a"
+    },
+    {
+      "title": "إعداد خط السير واستيكرات المركبة",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3594,
+      "img_bytes": 344031,
+      "html_bytes": 29208,
+      "rel_img_path": "08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.html",
+      "id": "7a35145696c640de82e99127e76cffc5"
+    },
+    {
+      "title": "ترقية الحساب لسائق معتمد",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 4740,
+      "img_bytes": 606690,
+      "html_bytes": 32751,
+      "rel_img_path": "08_Driver_Workspace/ترقية الحساب لسائق معتمد.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/ترقية الحساب لسائق معتمد.html",
+      "id": "f25f199e8bfa479dbd502d03936786d3"
+    },
+    {
+      "title": "تقرير الرحلات والأرباح اليومية للسائق",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3030,
+      "img_bytes": 331962,
+      "html_bytes": 28290,
+      "rel_img_path": "08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.html",
+      "id": "8983963e71fd4c5d919508ec6f943260"
+    },
+    {
+      "title": "حاسبة الأجرة ورد الفكة الإلكترونية",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 2672,
+      "img_bytes": 437227,
+      "html_bytes": 26597,
+      "rel_img_path": "08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.html",
+      "id": "41a5b158908b4aeca26f5325e3607722"
+    },
+    {
+      "title": "خطوط السير — إنشاء وتحديد المحطات",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3174,
+      "img_bytes": 260560,
+      "html_bytes": 25572,
+      "rel_img_path": "08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.html",
+      "id": "2787b63c280f43b5be3c0f41077d9b4d"
+    },
+    {
+      "title": "طلبات التوصيل الخاصة ورحلات السائق",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3578,
+      "img_bytes": 414511,
+      "html_bytes": 27180,
+      "rel_img_path": "08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.html",
+      "id": "408a037e7bb8400aa4546f9f820c920a"
+    },
+    {
+      "title": "فحص الملصقات ورد باقي الأجرة للراكب",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 180509,
+      "html_bytes": 33713,
+      "rel_img_path": "08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.html",
+      "id": "457bbd243b664f2f93100a0fbf9244b9"
+    },
+    {
+      "title": "لوحة قيادة السائق وإدارة الرحلة",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 219262,
+      "html_bytes": 27726,
+      "rel_img_path": "08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.html",
+      "id": "3415f2b4910c48199abcb9b5b1fa610a"
+    },
+    {
+      "title": "مصفوفة التسعير وجدولة المواعيد",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3584,
+      "img_bytes": 394984,
+      "html_bytes": 29075,
+      "rel_img_path": "08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.html",
+      "id": "f726108c62284b31ab56f871a333d8a9"
+    },
+    {
+      "title": "معالج خط السير — تحديد المسار والمحطات",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 2936,
+      "img_bytes": 262325,
+      "html_bytes": 26989,
+      "rel_img_path": "08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.html",
+      "id": "0df259c2916c4094a3a9ba6fd9d11e7b"
+    },
+    {
+      "title": "معالج خط السير — مصفوفة التسعير والجدولة",
+      "category": "08_Driver_Workspace",
+      "width": 780,
+      "height": 3796,
+      "img_bytes": 413156,
+      "html_bytes": 29130,
+      "rel_img_path": "08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.png",
+      "rel_html_path": "html_source/08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.html",
+      "id": "964eb5833fe64f4a9c7e264f14438c34"
+    }
+  ],
+  "10_Profile_and_Security": [
+    {
+      "title": "إحصائيات الأداء وسجل الأرباح",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3322,
+      "img_bytes": 497738,
+      "html_bytes": 27521,
+      "rel_img_path": "10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.html",
+      "id": "968953a43be94aad92cb29ffb4c86dc9"
+    },
+    {
+      "title": "إعداد وتغيير الرقم السري للمحفظة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 2454,
+      "img_bytes": 184166,
+      "html_bytes": 20309,
+      "rel_img_path": "10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.html",
+      "id": "a83fba97c2e94a1aa0fd66426d59d188"
+    },
+    {
+      "title": "إعدادات الأمان الحساسة للمحفظة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3420,
+      "img_bytes": 372530,
+      "html_bytes": 25532,
+      "rel_img_path": "10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.html",
+      "id": "e0cefeb1364f404e87bd0c73de8583f6"
+    },
+    {
+      "title": "التحديث الإجباري للتطبيق",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 297241,
+      "html_bytes": 18845,
+      "rel_img_path": "10_Profile_and_Security/التحديث الإجباري للتطبيق.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/التحديث الإجباري للتطبيق.html",
+      "id": "81450533b5e347ec85d7f6ee954d3154"
+    },
+    {
+      "title": "التفاصيل المالية لرحلة واحدة وكشف الركاب",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 5422,
+      "img_bytes": 814500,
+      "html_bytes": 47732,
+      "rel_img_path": "10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.html",
+      "id": "1ce0bab04b7749d0bf3cce6b2db9e7bb"
+    },
+    {
+      "title": "العمليات اللحظية والتقرير الشهري",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 200539,
+      "html_bytes": 23970,
+      "rel_img_path": "10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.html",
+      "id": "12e31d92b81a4cf5aa1c507c896138f6"
+    },
+    {
+      "title": "المذكرات المالية والتقويم المجدول",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3604,
+      "img_bytes": 484294,
+      "html_bytes": 30390,
+      "rel_img_path": "10_Profile_and_Security/المذكرات المالية والتقويم المجدول.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/المذكرات المالية والتقويم المجدول.html",
+      "id": "667e1bbc95a941558f33e5b560b0b12f"
+    },
+    {
+      "title": "الملف الشخصي وتعديل البيانات",
+      "category": "10_Profile_and_Security",
+      "width": 1884,
+      "height": 2724,
+      "img_bytes": 368476,
+      "html_bytes": 22465,
+      "rel_img_path": "10_Profile_and_Security/الملف الشخصي وتعديل البيانات.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/الملف الشخصي وتعديل البيانات.html",
+      "id": "4b86e48f3f00451f8fd3efd55080a66e"
+    },
+    {
+      "title": "تأكيد الدفع والرقم السري",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 124450,
+      "html_bytes": 21653,
+      "rel_img_path": "10_Profile_and_Security/تأكيد الدفع والرقم السري.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/تأكيد الدفع والرقم السري.html",
+      "id": "74f23a6ce16c48579deeff2c28cad6e7"
+    },
+    {
+      "title": "ترقية الحساب لتاجر معتمد",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3890,
+      "img_bytes": 415866,
+      "html_bytes": 25134,
+      "rel_img_path": "10_Profile_and_Security/ترقية الحساب لتاجر معتمد.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/ترقية الحساب لتاجر معتمد.html",
+      "id": "bb840b56c42548f9baee96da8e5f8deb"
+    },
+    {
+      "title": "توثيق الهوية وترقية الحساب",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3166,
+      "img_bytes": 439753,
+      "html_bytes": 22574,
+      "rel_img_path": "10_Profile_and_Security/توثيق الهوية وترقية الحساب.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/توثيق الهوية وترقية الحساب.html",
+      "id": "695ecd1b3910408a84035efbd9f2cfee"
+    },
+    {
+      "title": "حالات توثيق الهوية والحساب",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3094,
+      "img_bytes": 305034,
+      "html_bytes": 23615,
+      "rel_img_path": "10_Profile_and_Security/حالات توثيق الهوية والحساب.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/حالات توثيق الهوية والحساب.html",
+      "id": "4e757d77e49545ddb6b8085f79124c30"
+    },
+    {
+      "title": "حسابي والإعدادات والأمان",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3016,
+      "img_bytes": 310253,
+      "html_bytes": 27506,
+      "rel_img_path": "10_Profile_and_Security/حسابي والإعدادات والأمان.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/حسابي والإعدادات والأمان.html",
+      "id": "6e2327f14b444883bfee16bc41d20cf1"
+    },
+    {
+      "title": "خدمات الكهرباء وشركات التوزيع",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3214,
+      "img_bytes": 466625,
+      "html_bytes": 29221,
+      "rel_img_path": "10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.html",
+      "id": "311e220f6aa3493caeb7764967e27d94"
+    },
+    {
+      "title": "دليل التجار التابعين وتحويل السيولة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 4042,
+      "img_bytes": 423956,
+      "html_bytes": 31571,
+      "rel_img_path": "10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.html",
+      "id": "e9bd71d5f7a9456a8e133703dc452f51"
+    },
+    {
+      "title": "طلب استيكر حراري جديد للمركبة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3324,
+      "img_bytes": 347041,
+      "html_bytes": 24353,
+      "rel_img_path": "10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.html",
+      "id": "0ac84aa10975449b8dfdce50b3823a24"
+    },
+    {
+      "title": "طلب استيكر حراري جديد وسجل الطلبات",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3848,
+      "img_bytes": 429255,
+      "html_bytes": 28211,
+      "rel_img_path": "10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.html",
+      "id": "8aef8b1ed1284dd6a50cdd1b8cae190a"
+    },
+    {
+      "title": "طلب رحلة خاصة لمجموعة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 3830,
+      "img_bytes": 562944,
+      "html_bytes": 31326,
+      "rel_img_path": "10_Profile_and_Security/طلب رحلة خاصة لمجموعة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/طلب رحلة خاصة لمجموعة.html",
+      "id": "9c74cb41f8054f07a3b2c79bc718c949"
+    },
+    {
+      "title": "لوحة نظام التصميم والمكونات",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 7456,
+      "img_bytes": 933458,
+      "html_bytes": 30742,
+      "rel_img_path": "10_Profile_and_Security/لوحة نظام التصميم والمكونات.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/لوحة نظام التصميم والمكونات.html",
+      "id": "48857d82067a4bb8a3ef639ca3c49365"
+    },
+    {
+      "title": "مركز الإشعارات وتفاصيل التنبيهات",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 2364,
+      "img_bytes": 245273,
+      "html_bytes": 32296,
+      "rel_img_path": "10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.html",
+      "id": "8b195e6d714b47059b4b2af204539ca3"
+    },
+    {
+      "title": "مركز المساعدة والدعم الفني",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 4016,
+      "img_bytes": 416620,
+      "html_bytes": 30178,
+      "rel_img_path": "10_Profile_and_Security/مركز المساعدة والدعم الفني.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة والدعم الفني.html",
+      "id": "317657e053e74b8d83287cd502ec47c8"
+    },
+    {
+      "title": "مركز المساعدة — الأسئلة الشائعة",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 4270,
+      "img_bytes": 461355,
+      "html_bytes": 27199,
+      "rel_img_path": "10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.html",
+      "id": "c8986169a5ab42eda2513fe4df1af20f"
+    },
+    {
+      "title": "مركز المساعدة — الدليل المصور وطرق الاستخدام",
+      "category": "10_Profile_and_Security",
+      "width": 780,
+      "height": 4282,
+      "img_bytes": 427640,
+      "html_bytes": 28292,
+      "rel_img_path": "10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.png",
+      "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.html",
+      "id": "ca986a4ac2fb457c9fd679b930ebfdcc"
+    }
+  ],
+  "03_Wallet_and_Cards": [
+    {
+      "title": "المحفظة الأساسية وحدود الاستخدام",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 3102,
+      "img_bytes": 433916,
+      "html_bytes": 26159,
+      "rel_img_path": "03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.html",
+      "id": "c387a723ad8441d89b6f8718e1d0a84e"
+    },
+    {
+      "title": "تحويل الأموال وحدود الحساب",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 1930,
+      "img_bytes": 196665,
+      "html_bytes": 23107,
+      "rel_img_path": "03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.html",
+      "id": "cf9468d480714d2ea29c37c5bb75a836"
+    },
+    {
+      "title": "سجل جميع المعاملات والفلترة",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 2268,
+      "img_bytes": 290896,
+      "html_bytes": 23867,
+      "rel_img_path": "03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.html",
+      "id": "71c3638e5d3a48c6903357e3c289450f"
+    },
+    {
+      "title": "سحب الأموال من المحفظة",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 2798,
+      "img_bytes": 347387,
+      "html_bytes": 21257,
+      "rel_img_path": "03_Wallet_and_Cards/سحب الأموال من المحفظة.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/سحب الأموال من المحفظة.html",
+      "id": "f8690947a8dd4a219fd89acddc99dd1c"
+    },
+    {
+      "title": "شحن المحفظة وتأكيد الإيداع",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 3032,
+      "img_bytes": 281412,
+      "html_bytes": 20799,
+      "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.html",
+      "id": "c8891207a8a24527b355f392bef215bc"
+    },
+    {
+      "title": "شحن المحفظة — الدفع الفوري أونلاين بالبطاقات",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 2416,
+      "img_bytes": 285056,
+      "html_bytes": 19198,
+      "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.html",
+      "id": "a6c92bb1fcd247319c4e28a5c805424e"
+    },
+    {
+      "title": "شحن المحفظة — سجل طلبات الشحن",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 3270,
+      "img_bytes": 445997,
+      "html_bytes": 24562,
+      "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.html",
+      "id": "09e1ca46e09a4441abf07d453edcd578"
+    },
+    {
+      "title": "شحن المحفظة — فوري باي والمحافظ الإلكترونية",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 3770,
+      "img_bytes": 399613,
+      "html_bytes": 26546,
+      "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.html",
+      "id": "b4fdae66d4c14c5d9a03db0fbf6faee5"
+    },
+    {
+      "title": "طلب وإصدار كارت ذكي",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 3468,
+      "img_bytes": 553915,
+      "html_bytes": 25722,
+      "rel_img_path": "03_Wallet_and_Cards/طلب وإصدار كارت ذكي.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/طلب وإصدار كارت ذكي.html",
+      "id": "1f01627ed05342ec8d58c4a3a3c68170"
+    },
+    {
+      "title": "مركز المحفظة والكروت الذكية",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 2354,
+      "img_bytes": 340622,
+      "html_bytes": 26679,
+      "rel_img_path": "03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.html",
+      "id": "17b070b1188243428070c87b63a7c6b7"
+    },
+    {
+      "title": "نافذة الدفع اللاتلامسي NFC وكارت حارث",
+      "category": "03_Wallet_and_Cards",
+      "width": 780,
+      "height": 1972,
+      "img_bytes": 341420,
+      "html_bytes": 18703,
+      "rel_img_path": "03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.png",
+      "rel_html_path": "html_source/03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.html",
+      "id": "c23b20c26e8f40829f2ea13d58e739cd"
+    }
+  ],
+  "05_Transportation_and_Trips": [
+    {
+      "title": "إدارة المقاعد والنزول اللحظي",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 4266,
+      "img_bytes": 431374,
+      "html_bytes": 42286,
+      "rel_img_path": "05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.html",
+      "id": "17aa77a33e0b407d95d34a617674e171"
+    },
+    {
+      "title": "اختيار المقاعد وتأكيد الحجز",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 5052,
+      "img_bytes": 429736,
+      "html_bytes": 35775,
+      "rel_img_path": "05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.html",
+      "id": "366c0f6579374603a3ce4efeba07ac97"
+    },
+    {
+      "title": "الماسح الذكي الموحد والدفع اللاتلامسي",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 348200,
+      "html_bytes": 20336,
+      "rel_img_path": "05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.html",
+      "id": "fb0af657047d41139349720f1d5b5251"
+    },
+    {
+      "title": "تذاكري وحجوزاتي السياحية",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3344,
+      "img_bytes": 455929,
+      "html_bytes": 29422,
+      "rel_img_path": "05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.html",
+      "id": "d198de7da69b49b09b1b07f47b90b9fb"
+    },
+    {
+      "title": "تذكرة صعود وبطاقة الرحلة الرقمية",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3270,
+      "img_bytes": 252226,
+      "html_bytes": 29058,
+      "rel_img_path": "05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.html",
+      "id": "4dbd1e2f6f2b4ea19f2dae1c4870bf51"
+    },
+    {
+      "title": "تفاصيل الرحلة السياحية والحجز",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3420,
+      "img_bytes": 545262,
+      "html_bytes": 25964,
+      "rel_img_path": "05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.html",
+      "id": "afa4419dc86147599f4a8cbef15a49fb"
+    },
+    {
+      "title": "تفاصيل الرحلة وطلب حافلة خاصة",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3440,
+      "img_bytes": 340132,
+      "html_bytes": 26808,
+      "rel_img_path": "05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.html",
+      "id": "1be07182daf34cfc89110a6058e81d05"
+    },
+    {
+      "title": "حجز مقاعد الأتوبيس والبيانات",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3438,
+      "img_bytes": 316437,
+      "html_bytes": 32051,
+      "rel_img_path": "05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.html",
+      "id": "d6e6920ef7124171b2a5fd50abf41a25"
+    },
+    {
+      "title": "حجز مقاعد الرحلة ومخطط المركبة",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 2322,
+      "img_bytes": 225356,
+      "html_bytes": 28915,
+      "rel_img_path": "05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.html",
+      "id": "a0c33f0cad1e406597638eba8b850323"
+    },
+    {
+      "title": "سفرية وتذاكر الرحلات",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 2780,
+      "img_bytes": 311419,
+      "html_bytes": 26872,
+      "rel_img_path": "05_Transportation_and_Trips/سفرية وتذاكر الرحلات.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/سفرية وتذاكر الرحلات.html",
+      "id": "a15ac26bc0204e5baf272f090cd5b1b4"
+    },
+    {
+      "title": "طوارئ ونش الإنقاذ وإيجار السيارات",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 2368,
+      "img_bytes": 407987,
+      "html_bytes": 25334,
+      "rel_img_path": "05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.html",
+      "id": "b3c091070e904fa38d3691696119df41"
+    },
+    {
+      "title": "فئات الرحلات والسياحة وتذاكر الخطوط",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3564,
+      "img_bytes": 840371,
+      "html_bytes": 29760,
+      "rel_img_path": "05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.html",
+      "id": "c5f65fa7ca7e40a3b3babdae4a92633c"
+    },
+    {
+      "title": "قائمة الرحلات السياحية النشطة",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3808,
+      "img_bytes": 454750,
+      "html_bytes": 33047,
+      "rel_img_path": "05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.html",
+      "id": "9b7e51f7987b4da28d7fcaf27496d0eb"
+    },
+    {
+      "title": "مركز المساعدة — تقديم شكوى ومتابعة التذاكر",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 3502,
+      "img_bytes": 349261,
+      "html_bytes": 24115,
+      "rel_img_path": "05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.html",
+      "id": "fc5edf798cf64188938a95c7b2e5c07e"
+    },
+    {
+      "title": "مركز المواصلات الموحد",
+      "category": "05_Transportation_and_Trips",
+      "width": 780,
+      "height": 2800,
+      "img_bytes": 536806,
+      "html_bytes": 24290,
+      "rel_img_path": "05_Transportation_and_Trips/مركز المواصلات الموحد.png",
+      "rel_html_path": "html_source/05_Transportation_and_Trips/مركز المواصلات الموحد.html",
+      "id": "3db909033ac74f30a1d2c5688e12088c"
+    }
+  ],
+  "01_Onboarding_and_Auth": [
+    {
+      "title": "إنشاء حساب جديد — الخطوة الأولى",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1950,
+      "img_bytes": 160935,
+      "html_bytes": 18425,
+      "rel_img_path": "01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.html",
+      "id": "d46d58e5836b4064b92537d0382fb30b"
+    },
+    {
+      "title": "استعادة وتعيين كلمة المرور",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 2660,
+      "img_bytes": 223360,
+      "html_bytes": 21085,
+      "rel_img_path": "01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.html",
+      "id": "3af6d2afac9f4572bd413e9a23b7b11e"
+    },
+    {
+      "title": "استكمال البيانات الشخصية",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 2360,
+      "img_bytes": 313011,
+      "html_bytes": 18842,
+      "rel_img_path": "01_Onboarding_and_Auth/استكمال البيانات الشخصية.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/استكمال البيانات الشخصية.html",
+      "id": "a6e6b90dbca34a1eb43297fb11683604"
+    },
+    {
+      "title": "التحقق من كود واتساب",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 213186,
+      "html_bytes": 14125,
+      "rel_img_path": "01_Onboarding_and_Auth/التحقق من كود واتساب.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/التحقق من كود واتساب.html",
+      "id": "433f5268d94147b6b8fae8474bc805cb"
+    },
+    {
+      "title": "تسجيل الدخول والمصادقة البيومترية",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 146910,
+      "html_bytes": 15078,
+      "rel_img_path": "01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.html",
+      "id": "09d1a52578fc446bb47f8ab996f70c70"
+    },
+    {
+      "title": "تغيير كلمة المرور ورقم الهاتف",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 146818,
+      "html_bytes": 26280,
+      "rel_img_path": "01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.html",
+      "id": "81ed5c3f7ba844b9874132191cd37d44"
+    },
+    {
+      "title": "تفعيل الدخول السريع بالبصمة",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1878,
+      "img_bytes": 277014,
+      "html_bytes": 16599,
+      "rel_img_path": "01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.html",
+      "id": "81b0e1fd6abb48a2819dc6054426ab46"
+    },
+    {
+      "title": "شاشة الترحيب وبوابة الدخول",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 362393,
+      "html_bytes": 17027,
+      "rel_img_path": "01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.html",
+      "id": "eeb2c87d2e1a47a4b221786717e765d6"
+    },
+    {
+      "title": "شاشة الجولة التعريفية",
+      "category": "01_Onboarding_and_Auth",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 306471,
+      "html_bytes": 21077,
+      "rel_img_path": "01_Onboarding_and_Auth/شاشة الجولة التعريفية.png",
+      "rel_html_path": "html_source/01_Onboarding_and_Auth/شاشة الجولة التعريفية.html",
+      "id": "0f36cb35df264bc4a6cf3e9846f52a15"
+    }
+  ],
+  "04_Bills_and_Receipts": [
+    {
+      "title": "إعدادات طابعة الفواتير الحرارية",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2988,
+      "img_bytes": 265525,
+      "html_bytes": 23829,
+      "rel_img_path": "04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.html",
+      "id": "5cf5f09f74e54a68961e9aad30d14d8d"
+    },
+    {
+      "title": "بيانات فاتورة الكهرباء",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2022,
+      "img_bytes": 181569,
+      "html_bytes": 22847,
+      "rel_img_path": "04_Bills_and_Receipts/بيانات فاتورة الكهرباء.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/بيانات فاتورة الكهرباء.html",
+      "id": "f57faea43b9441588f14ac637a69d845"
+    },
+    {
+      "title": "تأكيد سداد الفاتورة وإدخال الرقم السري",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2322,
+      "img_bytes": 202775,
+      "html_bytes": 22498,
+      "rel_img_path": "04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.html",
+      "id": "09aa7ec0e0a74703a13754020d7579af"
+    },
+    {
+      "title": "تشريح إيصال تحويل محفظة لمحفظة",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2828,
+      "img_bytes": 397218,
+      "html_bytes": 23928,
+      "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.html",
+      "id": "8dd7c89159004ac3a83d6eb4dd0f1718"
+    },
+    {
+      "title": "تشريح إيصال سداد فاتورة",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 3260,
+      "img_bytes": 280747,
+      "html_bytes": 23387,
+      "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.html",
+      "id": "f21bb714cabc464d8f53e471fd6779b1"
+    },
+    {
+      "title": "تشريح إيصال شحن المحفظة والإيداع",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 3382,
+      "img_bytes": 476896,
+      "html_bytes": 25556,
+      "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.html",
+      "id": "7d32dc63ecb744c7ab03ebd208083971"
+    },
+    {
+      "title": "تفاصيل الفاتورة وتأكيد السداد",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2794,
+      "img_bytes": 272155,
+      "html_bytes": 24031,
+      "rel_img_path": "04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.html",
+      "id": "965efc7466aa4e85ad0edea07b96f5e4"
+    },
+    {
+      "title": "تفاصيل المعاملة والإيصال",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2578,
+      "img_bytes": 265675,
+      "html_bytes": 23924,
+      "rel_img_path": "04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.html",
+      "id": "04a3d9b04bac4c218e21f315bc566f9b"
+    },
+    {
+      "title": "فواتيري المحفوظة وإدارة المفضلة",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 3834,
+      "img_bytes": 429977,
+      "html_bytes": 32293,
+      "rel_img_path": "04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.html",
+      "id": "12fdae90bb7545528b006f24c674c2e6"
+    },
+    {
+      "title": "مركز الفواتير والمفضلة",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2364,
+      "img_bytes": 256902,
+      "html_bytes": 30025,
+      "rel_img_path": "04_Bills_and_Receipts/مركز الفواتير والمفضلة.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/مركز الفواتير والمفضلة.html",
+      "id": "1a7e2aceeae64d4a953677f224b2b3d7"
+    },
+    {
+      "title": "نتيجة سداد الفاتورة والطباعة الحرارية",
+      "category": "04_Bills_and_Receipts",
+      "width": 780,
+      "height": 2816,
+      "img_bytes": 309144,
+      "html_bytes": 27145,
+      "rel_img_path": "04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.png",
+      "rel_html_path": "html_source/04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.html",
+      "id": "3dbcbc6eb8b84dc79ea0e2eed47d9632"
+    }
+  ],
+  "09_Agent_and_POS": [
+    {
+      "title": "إدارة ماكينات POS الخاصة بالتاجر",
+      "category": "09_Agent_and_POS",
+      "width": 780,
+      "height": 3248,
+      "img_bytes": 390340,
+      "html_bytes": 27595,
+      "rel_img_path": "09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.png",
+      "rel_html_path": "html_source/09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.html",
+      "id": "45899167330d4303806e4cca1b3357b9"
+    },
+    {
+      "title": "بوابة الوكيل وماكينة نقاط البيع",
+      "category": "09_Agent_and_POS",
+      "width": 780,
+      "height": 2564,
+      "img_bytes": 302389,
+      "html_bytes": 26539,
+      "rel_img_path": "09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.png",
+      "rel_html_path": "html_source/09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.html",
+      "id": "68222b6e499045269c74e2ff66b20734"
+    },
+    {
+      "title": "تفاصيل ماكينة POS وسجل العمليات والتسوية",
+      "category": "09_Agent_and_POS",
+      "width": 780,
+      "height": 3222,
+      "img_bytes": 435981,
+      "html_bytes": 27781,
+      "rel_img_path": "09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.png",
+      "rel_html_path": "html_source/09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.html",
+      "id": "058255cb0221463c9ca11736d8794f77"
+    }
+  ],
+  "07_Salafni_Credit": [
+    {
+      "title": "إنذارات سلفني وحالات القوائم الفارغة",
+      "category": "07_Salafni_Credit",
+      "width": 780,
+      "height": 3524,
+      "img_bytes": 389529,
+      "html_bytes": 23714,
+      "rel_img_path": "07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.png",
+      "rel_html_path": "html_source/07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.html",
+      "id": "7ff46c474d5b4342b8d1dc5e14a00444"
+    },
+    {
+      "title": "خدمة سلفني والائتمان",
+      "category": "07_Salafni_Credit",
+      "width": 780,
+      "height": 2662,
+      "img_bytes": 465047,
+      "html_bytes": 24453,
+      "rel_img_path": "07_Salafni_Credit/خدمة سلفني والائتمان.png",
+      "rel_html_path": "html_source/07_Salafni_Credit/خدمة سلفني والائتمان.html",
+      "id": "2ad1001b65114480ad87052cfec9792f"
+    },
+    {
+      "title": "لوحة التاجر وإدارة سلفني",
+      "category": "07_Salafni_Credit",
+      "width": 780,
+      "height": 2842,
+      "img_bytes": 311343,
+      "html_bytes": 26777,
+      "rel_img_path": "07_Salafni_Credit/لوحة التاجر وإدارة سلفني.png",
+      "rel_html_path": "html_source/07_Salafni_Credit/لوحة التاجر وإدارة سلفني.html",
+      "id": "442d3792bc014b55be18dc90c3898ba7"
+    },
+    {
+      "title": "نوافذ التاجر لإدارة عملاء سلفني",
+      "category": "07_Salafni_Credit",
+      "width": 780,
+      "height": 3626,
+      "img_bytes": 371547,
+      "html_bytes": 28634,
+      "rel_img_path": "07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.png",
+      "rel_html_path": "html_source/07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.html",
+      "id": "74b67a03608b4725aded027fbf14bb25"
+    },
+    {
+      "title": "نوافذ طلب وسداد سلفني",
+      "category": "07_Salafni_Credit",
+      "width": 780,
+      "height": 4184,
+      "img_bytes": 368054,
+      "html_bytes": 26211,
+      "rel_img_path": "07_Salafni_Credit/نوافذ طلب وسداد سلفني.png",
+      "rel_html_path": "html_source/07_Salafni_Credit/نوافذ طلب وسداد سلفني.html",
+      "id": "6077e6103b6644caa824cc2eb19116d4"
+    }
+  ],
+  "06_Escrow_Save_Your_Money": [
+    {
+      "title": "إنشاء معاملة ضمان جديدة",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 2456,
+      "img_bytes": 252571,
+      "html_bytes": 22514,
+      "rel_img_path": "06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.html",
+      "id": "464c36530ef84292b9f5b86538ebc45f"
+    },
+    {
+      "title": "حافظ على فلوسك والوساطة",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 2952,
+      "img_bytes": 381414,
+      "html_bytes": 28878,
+      "rel_img_path": "06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.html",
+      "id": "5deec4f4d91e4e21b1e44fce18a73316"
+    },
+    {
+      "title": "حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 2906,
+      "img_bytes": 360270,
+      "html_bytes": 22737,
+      "rel_img_path": "06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.html",
+      "id": "9a10bba552534c5bb0adcb88586b2a09"
+    },
+    {
+      "title": "عقد الضمان وكود الاستلام السري",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 2924,
+      "img_bytes": 305199,
+      "html_bytes": 23879,
+      "rel_img_path": "06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.html",
+      "id": "a526214de33741b79e16669d7d20b5df"
+    },
+    {
+      "title": "نافذة إنهاء المعاملة وتحرير الأموال",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 2324,
+      "img_bytes": 247011,
+      "html_bytes": 18362,
+      "rel_img_path": "06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.html",
+      "id": "fbbcd4bdd36a4bf9bea6f0b1af827419"
+    },
+    {
+      "title": "نافذة تقديم بلاغ وفتح نزاع تحكيم",
+      "category": "06_Escrow_Save_Your_Money",
+      "width": 780,
+      "height": 1768,
+      "img_bytes": 189521,
+      "html_bytes": 20747,
+      "rel_img_path": "06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.png",
+      "rel_html_path": "html_source/06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.html",
+      "id": "42fb8fefb8b54e1680cd3bff60e6ca82"
+    }
+  ]
+}

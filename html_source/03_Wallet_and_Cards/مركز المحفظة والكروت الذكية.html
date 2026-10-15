@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-text-primary" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - محفظتي وكروتي الذكية</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbar for smooth carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#002113",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#e19000",
+            "outline-variant": "#c0c8c9",
+            "surface-dim": "#d7dadb",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "text-secondary": "#475569",
+            "surface-container-highest": "#e0e3e4",
+            "tertiary": "#341e00",
+            "surface-container": "#ebeeef",
+            "surface": "#FFFFFF",
+            "on-secondary-container": "#00714d",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-background": "#181c1d",
+            "surface-variant": "#e0e3e4",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-high": "#e5e9ea",
+            "text-primary": "#0F172A",
+            "surface-container-low": "#f1f4f5",
+            "surface-tint": "#396569",
+            "secondary-container": "#6cf8bb",
+            "on-surface": "#181c1d",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-on-surface": "#eef1f2",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "secondary": "#006c49",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "outline": "#707979",
+            "background": "#f7fafb",
+            "tertiary-container": "#513100",
+            "danger-debit": "#EF4444",
+            "surface-subtle": "#F1F5F9",
+            "primary-fixed": "#bcebef",
+            "on-primary-container": "#7ca9ad",
+            "on-primary-fixed": "#002022",
+            "on-error": "#ffffff",
+            "primary": "#00272a",
+            "tertiary-fixed": "#ffddb8",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#f7fafb",
+            "text-muted": "#94A3B8",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "inverse-surface": "#2d3132",
+            "on-surface-variant": "#404849"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans Arabic"],
+            "body-lg": ["IBM Plex Sans Arabic"],
+            "headline-md": ["IBM Plex Sans Arabic"],
+            "headline-lg": ["IBM Plex Sans Arabic"],
+            "label-md": ["IBM Plex Sans Arabic"],
+            "headline-sm": ["IBM Plex Sans Arabic"],
+            "currency-body": ["IBM Plex Sans Arabic"],
+            "label-sm": ["IBM Plex Sans Arabic"],
+            "display-lg": ["IBM Plex Sans Arabic"],
+            "currency-display": ["IBM Plex Sans Arabic"],
+            "label-lg": ["IBM Plex Sans Arabic"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic"],
+            "body-sm": ["IBM Plex Sans Arabic"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-background flex justify-center selection:bg-secondary selection:text-white">
+<!-- Mobile App Wrapper Frame -->
+<div class="w-full max-w-md bg-background min-h-screen flex flex-col pb-28 relative shadow-xl overflow-x-hidden">
+<!-- 1. شريط التنقل العلوي (DefaultAppBar) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle h-16 px-4 flex items-center justify-between transition-all">
+<!-- Right (RTL Start): Return/Back Icon in 40x40 Surface Container -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform hover:bg-border-subtle" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight font-bold">
+        محفظتي وكروتي الذكية
+      </h1>
+<!-- Left (RTL End): Action Button (+ طلب كارت جديد) -->
+<button class="flex items-center gap-1 bg-surface-subtle hover:bg-border-subtle text-primary-container px-2.5 py-1.5 rounded-xl border border-border-subtle active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="text-label-md font-label-md">كارت جديد</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-4 pt-3.5 space-y-4">
+<!-- 2. محول العرض العلوي (Segmented Pill Switcher) -->
+<nav aria-label="أنماط العرض" class="bg-surface-subtle p-1 rounded-2xl flex items-center border border-border-subtle">
+<button class="flex-1 py-2 text-center rounded-xl bg-primary-container text-white shadow-sm font-label-lg text-label-lg transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span>كروت حارث الذكية (3)</span>
+</button>
+<button class="flex-1 py-2 text-center rounded-xl text-text-secondary hover:text-text-primary font-label-lg text-label-lg transition-all flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>المحفظة الأساسية (6,420 ج.م)</span>
+</button>
+</nav>
+<!-- 3. معرض الكروت الذكية التفاعلي (Card Carousel & Stack) -->
+<section aria-label="معرض الكروت" class="relative -mx-4 px-4 overflow-hidden py-1">
+<div class="flex items-stretch gap-3 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pt-1 pb-2 px-1">
+<!-- New Card Shortcut (Right Side in RTL) -->
+<div class="snap-start shrink-0 w-14 rounded-2xl border-2 border-dashed border-border-subtle hover:border-primary-container bg-surface flex flex-col items-center justify-center text-center p-2 cursor-pointer transition-colors active:scale-95 group">
+<div class="w-8 h-8 rounded-full bg-surface-subtle group-hover:bg-primary-container group-hover:text-white text-text-muted flex items-center justify-center transition-colors mb-1">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<span class="text-[11px] font-bold text-text-secondary leading-tight [writing-mode:vertical-rl] rotate-180">إضافة كارت</span>
+</div>
+<!-- Main Focused Card: كارت محمد الشخصي -->
+<article class="snap-center shrink-0 w-[295px] h-[184px] rounded-2xl p-4 flex flex-col justify-between text-white relative overflow-hidden shadow-[0_12px_28px_rgba(11,62,66,0.20)] border border-primary-container select-none" style="background: linear-gradient(135deg, #0B3E42 0%, #062325 100%);">
+<!-- Subtle Specular Inset & Tech Pattern Overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Card Header: Brand, Card Name, NFC and Status -->
+<div class="relative z-10 flex items-start justify-between">
+<div class="flex items-center gap-2">
+<!-- Gold Accent Shield Badge -->
+<div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-white leading-tight">كارت محمد الشخصي</h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-[#10B981] font-bold">نشط وفعّال</span>
+</div>
+</div>
+</div>
+<!-- NFC & Brand Signature -->
+<div class="flex items-center gap-1.5 text-white/80">
+<span class="material-symbols-outlined text-[22px]">contactless</span>
+<span class="font-bold text-headline-sm tracking-wide text-white">حارث</span>
+</div>
+</div>
+<!-- Card Center: Encrypted Card Number & EMV Chip -->
+<div class="relative z-10 flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 text-white/90 font-mono tracking-widest text-[15px] font-semibold" dir="ltr">
+<span>••••</span>
+<span>••••</span>
+<span>••••</span>
+<span class="text-[#F59E0B]">4512</span>
+</div>
+<!-- Mini Smart QR Badge -->
+<div class="bg-white/10 p-1 rounded-md backdrop-blur-md border border-white/15">
+<span class="material-symbols-outlined text-white text-[18px]">qr_code_2</span>
+</div>
+</div>
+<!-- Card Bottom: Balance Details -->
+<div class="relative z-10 flex items-end justify-between border-t border-white/10 pt-2">
+<div>
+<p class="text-label-sm font-label-sm text-white/70">رصيد الكارت المتاح</p>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="text-currency-display font-currency-display text-white tracking-tight">120.00</span>
+<span class="text-label-md font-label-md text-white/80 font-bold">ج.م</span>
+</div>
+</div>
+<div class="text-left" dir="ltr">
+<span class="text-[10px] font-mono text-white/60 block">EXP 08/28</span>
+<span class="text-label-sm font-bold text-white/90">Harith Pass</span>
+</div>
+</div>
+</article>
+<!-- Peeking Secondary Card: كارت الجامعة (Left Side in RTL) -->
+<article class="snap-start shrink-0 w-[240px] h-[184px] rounded-2xl p-4 flex flex-col justify-between text-white relative overflow-hidden shadow-md border border-border-subtle opacity-90 hover:opacity-100 transition-opacity select-none" style="background: linear-gradient(135deg, #006C49 0%, #004D34 100%);">
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-bold text-body-lg text-white">كارت الجامعة</h4>
+<span class="text-label-sm text-white/80">طالب - خصم 40%</span>
+</div>
+<span class="material-symbols-outlined text-[22px] text-white/80">contactless</span>
+</div>
+<div class="flex items-center gap-2 font-mono text-sm text-white/80" dir="ltr">
+<span>••••</span>
+<span>8823</span>
+</div>
+<div class="border-t border-white/15 pt-2 flex items-end justify-between">
+<div>
+<p class="text-[11px] text-white/70">الرصيد</p>
+<p class="font-currency-body text-currency-body text-white">65.00 <span class="text-xs">ج.م</span></p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-white/20 text-[10px] font-bold">نشط</span>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. صف الإجراءات السريعة للكارت المحدد (Quick Actions Bento Row) -->
+<section aria-label="الإجراءات السريعة" class="bg-surface rounded-2xl p-3 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<div class="grid grid-cols-4 gap-2">
+<!-- Action 1: شحن الكارت -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-surface-subtle active:scale-95 transition-all group" type="button">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center mb-1.5 group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">add_card</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary text-center font-bold">شحن الكارت</span>
+</button>
+<!-- Action 2: سحب للمحفظة -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-surface-subtle active:scale-95 transition-all group" type="button">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed/50 text-primary-container flex items-center justify-center mb-1.5 group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary text-center font-bold">سحب للمحفظة</span>
+</button>
+<!-- Action 3: تحويل لكارت -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-surface-subtle active:scale-95 transition-all group" type="button">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle text-text-secondary flex items-center justify-center mb-1.5 group-hover:bg-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">sync_alt</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary text-center font-bold">تحويل لكارت</span>
+</button>
+<!-- Action 4: تجميد الكارت -->
+<button class="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-error-container/40 active:scale-95 transition-all group" type="button">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle text-error flex items-center justify-center mb-1.5 group-hover:bg-error group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<span class="text-label-sm font-label-sm text-error text-center font-bold">تجميد الكارت</span>
+</button>
+</div>
+</section>
+<!-- 5. صندوق إعدادات الأمان والعتاد (Security & Hardware Controls) -->
+<section aria-label="إعدادات الأمان والعتاد" class="bg-surface rounded-2xl p-3.5 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">security</span>
+<h3 class="text-label-lg font-label-lg text-text-primary font-bold">إعدادات الأمان ومنافذ الدفع</h3>
+</div>
+<span class="text-label-sm font-label-sm text-[#006C49] bg-secondary-fixed/30 px-2 py-0.5 rounded-full font-bold">مؤمن بالكامل</span>
+</div>
+<!-- Toggle Item 1: NFC -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">contactless</span>
+</div>
+<div>
+<p class="text-body-md font-body-md font-bold text-text-primary leading-tight">الدفع السريع عبر NFC</p>
+<p class="text-label-sm font-label-sm text-text-muted">تلامسي مباشر ببوابات المترو والأتوبيس</p>
+</div>
+</div>
+<!-- Custom Active Switcher (#10B981) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:-translate-x-full rtl:peer-checked:after:-translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#10B981]"></div>
+</label>
+</div>
+<!-- Toggle Item 2: QR Code Payment -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+</div>
+<div>
+<p class="text-body-md font-body-md font-bold text-text-primary leading-tight">الدفع عبر رمز QR المباشر</p>
+<p class="text-label-sm font-label-sm text-text-muted">مسح باركود الكارت لدى ماكينات السائقين</p>
+</div>
+</div>
+<!-- Custom Active Switcher (#10B981) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:-translate-x-full rtl:peer-checked:after:-translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#10B981]"></div>
+</label>
+</div>
+</section>
+<!-- 6. سجل عمليات الكارت المحدد (Transactions History Hub) -->
+<section aria-label="سجل العمليات" class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-3.5">
+<!-- Header & Filter Pills -->
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold">سجل العمليات</h3>
+<p class="text-label-sm font-label-sm text-text-muted">كارت محمد الشخصي (آخر 7 أيام)</p>
+</div>
+<button class="text-label-md font-label-md text-primary-container font-bold hover:underline flex items-center gap-0.5" type="button">
+<span>عرض الكل</span>
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+</div>
+<!-- Filter Pills Segment -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded-full bg-primary-container text-white text-label-sm font-label-sm font-bold shadow-sm" type="button">
+            الكل
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-subtle text-text-secondary hover:text-text-primary text-label-sm font-label-sm font-medium border border-border-subtle transition-colors" type="button">
+            مواصلات
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-subtle text-text-secondary hover:text-text-primary text-label-sm font-label-sm font-medium border border-border-subtle transition-colors" type="button">
+            شحن وسحب
+          </button>
+</div>
+<!-- Transactions List -->
+<div class="space-y-3 pt-1">
+<!-- Transaction 1: ميكروباص خط السلام (Debit) -->
+<article class="flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-subtle transition-colors border border-transparent hover:border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-error-container/40 text-danger-debit flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_bus</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-bold text-text-primary leading-tight">أجرة مواصلات عامة - ميكروباص</h4>
+<p class="text-label-sm font-label-sm text-text-muted mt-0.5">موقف السلام ← رمسيس</p>
+</div>
+</div>
+<div class="text-left" dir="ltr">
+<span class="text-body-lg font-currency-body text-danger-debit font-bold">-12.00 ج.م</span>
+<span class="block text-[11px] text-text-muted text-right mt-0.5">منذ ساعتين</span>
+</div>
+</article>
+<!-- Transaction 2: شحن الكارت من المحفظة (Credit) -->
+<article class="flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-subtle transition-colors border border-transparent hover:border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-bold text-text-primary leading-tight">شحن الكارت من المحفظة</h4>
+<p class="text-label-sm font-label-sm text-text-muted mt-0.5">إيداع رصيد فوري ناجح</p>
+</div>
+</div>
+<div class="text-left" dir="ltr">
+<span class="text-body-lg font-currency-body text-[#006C49] font-bold">+100.00 ج.م</span>
+<span class="block text-[11px] text-text-muted text-right mt-0.5">اليوم 10:15 ص</span>
+</div>
+</article>
+<!-- Transaction 3: رد باقي أجرة من السائق (Credit) -->
+<article class="flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-subtle transition-colors border border-transparent hover:border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-bold text-text-primary leading-tight">رد باقي أجرة من السائق</h4>
+<p class="text-label-sm font-label-sm text-text-muted mt-0.5">الكابتن: أحمد محمود</p>
+</div>
+</div>
+<div class="text-left" dir="ltr">
+<span class="text-body-lg font-currency-body text-[#006C49] font-bold">+5.00 ج.م</span>
+<span class="block text-[11px] text-text-muted text-right mt-0.5">أمس 04:30 م</span>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- 7. شريط التنقل السفلي الموحد (HarithBottomNav - Shared Component) -->
+<!-- Destination count: 5 | Active item: "محفظتي وكروتي" with emerald indicator -->
+<nav aria-label="شريط التنقل الرئيسي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface rounded-t-3xl border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.06)] backdrop-blur-md">
+<!-- Item 1 (Rightmost in RTL): الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" href="#home">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm mt-1">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي وكروتي (ACTIVE TAB) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold relative py-1 active:scale-95 duration-150 after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1" href="#wallet">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span class="text-label-sm font-label-sm mt-1 font-bold text-primary-container">محفظتي</span>
+</a>
+<!-- Item 3 (Center Floating Dock Button): ادفع / امسح -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع أو امسح الباركود" class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-90 transition-all border-2 border-white ring-2 ring-secondary/20" type="button">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-primary-container font-bold mt-1">ادفع</span>
+</div>
+<!-- Item 4: المواصلات -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" href="#transit">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-1">المواصلات</span>
+</a>
+<!-- Item 5 (Leftmost in RTL): حسابي -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" href="#profile">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-label-sm font-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

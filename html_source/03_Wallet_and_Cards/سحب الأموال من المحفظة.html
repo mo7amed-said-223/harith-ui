@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>حارث - سحب الأموال من المحفظة</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e0e3e4",
+            "primary-fixed-dim": "#a1cfd3",
+            "secondary-fixed": "#6ffbbe",
+            "text-primary": "#0F172A",
+            "tertiary-fixed": "#ffddb8",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary-container": "#00714d",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e5e9ea",
+            "error-container": "#ffdad6",
+            "surface-tint": "#396569",
+            "surface-bright": "#f7fafb",
+            "on-primary-container": "#7ca9ad",
+            "tertiary-container": "#513100",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "background": "#f7fafb",
+            "tertiary": "#341e00",
+            "secondary-fixed-dim": "#4edea3",
+            "surface": "#FFFFFF",
+            "text-muted": "#94A3B8",
+            "secondary-container": "#6cf8bb",
+            "outline-variant": "#c0c8c9",
+            "text-secondary": "#475569",
+            "inverse-surface": "#2d3132",
+            "on-secondary-fixed-variant": "#005236",
+            "danger-debit": "#EF4444",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e0e3e4",
+            "surface-container-low": "#f1f4f5",
+            "on-secondary-fixed": "#002113",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-dim": "#d7dadb",
+            "on-surface": "#181c1d",
+            "on-surface-variant": "#404849",
+            "on-primary-fixed": "#002022",
+            "surface-subtle": "#F1F5F9",
+            "secondary": "#006c49",
+            "border-subtle": "#E2E8F0",
+            "surface-container": "#ebeeef",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-tertiary-container": "#e19000",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-on-surface": "#eef1f2",
+            "primary": "#00272a",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "on-background": "#181c1d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Tabular numbers for financial precision */
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile Frame Container (Max width 448px) -->
+<div class="w-full max-w-md mx-auto flex flex-col flex-1 pb-10">
+<!-- Top Navigation Bar (Shared Component Style Hierarchy) -->
+<header class="bg-surface sticky top-0 z-40 h-16 border-b border-border-subtle shadow-none">
+<div class="flex justify-between items-center w-full px-4 h-full">
+<!-- Right (RTL Start): Back Navigation -->
+<button aria-label="الرجوع للخلف" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold text-center">
+          سحب الأموال من المحفظة
+        </h1>
+<!-- Left (RTL End): Action / History Badge -->
+<button aria-label="سجل السحب" class="h-10 px-3 rounded-xl bg-surface-subtle flex items-center gap-1.5 text-text-secondary hover:text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span class="text-label-md font-label-md">السجل</span>
+</button>
+</div>
+</header>
+<!-- Main Content Stream -->
+<main class="flex-1 px-4 pt-4 pb-6 space-y-4">
+<!-- Hero Withdrawable Balance Banner -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-container to-primary text-on-primary p-5 shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary-container/40">
+<!-- Subtle Specular & Atmospheric Highlights -->
+<div class="absolute -top-12 -left-12 w-36 h-36 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -right-8 w-28 h-28 bg-secondary-fixed/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-primary-fixed-dim flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">account_balance_wallet</span>
+              الرصيد القابل للسحب حالياً من محفظتك
+            </span>
+<!-- CBE Compliant Instant Badge -->
+<span class="inline-flex items-center gap-1 bg-surface/15 backdrop-blur-md px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-secondary-fixed border border-white/10">
+<span class="material-symbols-outlined text-[12px] fill-icon">verified_user</span>
+              سحب لحظي 24/7
+            </span>
+</div>
+<div class="flex items-baseline justify-between pt-1">
+<div class="flex items-baseline gap-1.5 tabular-nums">
+<span class="text-display-lg-mobile font-display-lg-mobile font-bold tracking-tight text-white">6,420.50</span>
+<span class="text-label-lg font-label-lg text-primary-fixed-dim">ج.م</span>
+</div>
+<div class="text-end">
+<span class="text-label-sm font-label-sm text-text-muted bg-primary-container/60 px-2 py-1 rounded-lg border border-white/5">
+                حد السحب اليومي المتبقي: 45,000 ج.م
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Channel Selection Section -->
+<section class="space-y-2.5 pt-1">
+<div class="flex items-center justify-between">
+<h2 class="text-label-lg font-label-lg text-text-primary">
+            اختر وجهة تحويل الأموال
+          </h2>
+<span class="text-label-sm font-label-sm text-secondary font-semibold">مضمون ومعتمد</span>
+</div>
+<div class="space-y-2.5">
+<!-- Channel 1: InstaPay (Selected State) -->
+<div class="relative bg-surface rounded-2xl p-3.5 border-2 border-primary-container bg-surface-subtle/50 shadow-[0_4px_16px_rgba(11,62,66,0.06)] cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<!-- InstaPay / Network Icon Badge -->
+<div class="w-11 h-11 rounded-xl bg-primary-container flex items-center justify-center text-white shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">contactless</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-headline-sm font-headline-sm text-text-primary font-bold">
+                      حساب إنستاباي (InstaPay IPA / هاتف)
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">
+                    تحويل فوري لحظي لأي بنك أو محفظة بالرقم أو العنوان
+                  </p>
+<div class="pt-1">
+<span class="inline-flex items-center gap-1 bg-secondary/10 text-secondary border border-secondary/20 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px] fill-icon">bolt</span>
+                      سحب مجاني فوراً (0% عمولة)
+                    </span>
+</div>
+</div>
+</div>
+<!-- Selection Checkmark Indicator -->
+<div class="w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Channel 2: Smart Wallets (Unselected State) -->
+<div class="relative bg-surface rounded-2xl p-3.5 border border-border-subtle hover:border-outline-variant shadow-[0_4px_12px_rgba(11,62,66,0.03)] cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-center text-text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">phone_android</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-headline-sm font-headline-sm text-text-primary font-semibold">
+                    محفظة إلكترونية ذكية
+                  </span>
+<p class="text-body-sm font-body-sm text-text-muted">
+                    فودافون كاش، أورانج، اتصالات، وي باي
+                  </p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-border-subtle shrink-0"></div>
+</div>
+</div>
+<!-- Channel 3: Bank Account / IBAN (Unselected State) -->
+<div class="relative bg-surface rounded-2xl p-3.5 border border-border-subtle hover:border-outline-variant shadow-[0_4px_12px_rgba(11,62,66,0.03)] cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-center text-text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-headline-sm font-headline-sm text-text-primary font-semibold">
+                    حساب بنكي مباشر (IBAN)
+                  </span>
+<p class="text-body-sm font-body-sm text-text-muted">
+                    التحويل لأي بنك مصري برقم الآيبان (خلال ساعتين)
+                  </p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-border-subtle shrink-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Withdrawal Form Card -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-4">
+<div class="flex items-center gap-2 pb-1 border-b border-border-subtle">
+<span class="material-symbols-outlined text-[18px] text-primary">badge</span>
+<h2 class="text-label-lg font-label-lg text-text-primary font-bold">
+            بيانات الحساب المستلم والمبلغ
+          </h2>
+</div>
+<!-- Field 1: Recipient IPA or Phone -->
+<div class="space-y-1.5">
+<label class="text-label-md font-label-md text-text-secondary block" for="recipient-identifier">
+            عنوان إنستاباي (IPA) أو رقم الهاتف المسجل
+          </label>
+<div class="relative flex items-center">
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle pr-4 pl-24 text-body-lg font-body-lg text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-colors tabular-nums" id="recipient-identifier" placeholder="username@instapay أو 01xxxxxxxxx" type="text" value="01019842517"/>
+<div class="absolute left-2 flex items-center gap-1">
+<button class="px-2.5 py-1.5 text-label-sm font-label-sm bg-surface-subtle hover:bg-surface-container-high rounded-lg text-text-secondary transition-colors" type="button">
+                لصق
+              </button>
+<button aria-label="جهات الاتصال" class="w-8 h-8 rounded-lg bg-surface-subtle hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">contacts</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Field 2: Account Holder Name -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="text-label-md font-label-md text-text-secondary block" for="account-holder">
+              اسم صاحب الحساب المستلم (كما يظهر بالبنك)
+            </label>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px] fill-icon">check_circle</span>
+              تم التحقق
+            </span>
+</div>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface-container-low/40 rounded-xl border-[1.5px] border-border-subtle px-4 text-body-lg font-body-lg text-text-primary font-medium focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-colors" id="account-holder" type="text" value="محمد سعيد محمود أحمد"/>
+</div>
+</div>
+<!-- Field 3: Withdrawal Amount -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-text-secondary block" for="withdrawal-amount">
+              المبلغ المراد سحبه (ج.م)
+            </label>
+<span class="text-label-sm font-label-sm text-text-muted">الحد الأدنى: 20 ج.م</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full h-[54px] bg-surface rounded-xl border-2 border-primary-container pr-4 pl-14 text-headline-lg font-headline-lg text-primary font-bold focus:ring-2 focus:ring-primary-container/10 outline-none tabular-nums" id="withdrawal-amount" type="text" value="1,500.00"/>
+<span class="absolute left-4 text-body-lg font-body-lg font-bold text-text-secondary">
+              ج.م
+            </span>
+</div>
+<!-- Quick Fill Chips -->
+<div class="grid grid-cols-4 gap-1.5 pt-1">
+<button class="h-9 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-primary text-label-md font-label-md font-semibold transition-colors active:scale-95 duration-150 tabular-nums" type="button">
+              500 ج.م
+            </button>
+<button class="h-9 rounded-xl border border-primary-container bg-primary-container/10 text-primary text-label-md font-label-md font-bold transition-colors active:scale-95 duration-150 tabular-nums" type="button">
+              1,000 ج.م
+            </button>
+<button class="h-9 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-primary text-label-md font-label-md font-semibold transition-colors active:scale-95 duration-150 tabular-nums" type="button">
+              2,000 ج.م
+            </button>
+<button class="h-9 rounded-xl border border-secondary/40 bg-secondary/10 text-secondary text-label-md font-label-md font-bold transition-colors active:scale-95 duration-150" type="button">
+              كامل الرصيد
+            </button>
+</div>
+</div>
+<!-- Financial Deduction Breakdown Sub-Card -->
+<div class="rounded-xl bg-surface-subtle p-3.5 space-y-2 border border-border-subtle text-body-sm font-body-sm">
+<div class="flex justify-between items-center text-text-secondary">
+<span>المبلغ المسحوب:</span>
+<span class="font-bold text-text-primary tabular-nums">1,500.00 ج.م</span>
+</div>
+<div class="flex justify-between items-center text-text-secondary">
+<span>رسوم عملية السحب:</span>
+<span class="font-bold text-secondary tabular-nums">0.00 ج.م (مجاناً عبر InstaPay)</span>
+</div>
+<div class="border-t border-border-subtle/80 pt-2 flex justify-between items-center">
+<span class="font-bold text-text-primary text-label-lg font-label-lg">صافي المبلغ المحول لحسابك:</span>
+<span class="font-bold text-primary text-headline-sm font-headline-sm tabular-nums">1,500.00 ج.م</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-text-muted pt-0.5">
+<span>الرصيد المتبقي بمحفظة حارث:</span>
+<span class="font-medium tabular-nums text-text-secondary">4,920.50 ج.م</span>
+</div>
+</div>
+</section>
+<!-- CBE Security Regulatory Disclaimer -->
+<div class="rounded-xl bg-surface p-3 border border-border-subtle flex items-start gap-2.5 text-text-secondary">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5 fill-icon">shield</span>
+<p class="text-body-sm font-body-sm leading-relaxed">
+          المعاملة خاضعة لمعايير البنك المركزي المصري (CBE) وتتطلب تأكيد الـ PIN المكون من 4 أرقام في الخطوة التالية.
+        </p>
+</div>
+</main>
+<!-- Bottom Action Footer (Focused Sub-journey: Shell bottom navigation suppressed) -->
+<div class="sticky bottom-0 z-40 bg-surface/95 backdrop-blur-md p-4 border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<button class="w-full h-12 rounded-xl bg-primary-container text-white flex items-center justify-between px-5 font-bold text-label-lg font-label-lg shadow-md hover:bg-primary active:scale-[0.99] transition-all duration-150 group" type="button">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>تأكيد طلب السحب (1,500.00 ج.م)</span>
+</span>
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">
+          arrow_back
+        </span>
+</button>
+</div>
+</div>
+</body></html>

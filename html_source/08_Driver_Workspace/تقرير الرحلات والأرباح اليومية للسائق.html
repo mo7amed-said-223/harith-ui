@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تقرير أرباح وتوريد الوردية اليومية - حارث</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-subtle": "#F1F5F9",
+            "tertiary-container": "#513100",
+            "inverse-primary": "#a1cfd3",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "on-secondary-fixed-variant": "#005236",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-container": "#e19000",
+            "outline-variant": "#c0c8c9",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-container": "#00714d",
+            "primary-fixed-dim": "#a1cfd3",
+            "danger-debit": "#EF4444",
+            "on-error": "#ffffff",
+            "background": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "surface-container-low": "#f1f4f5",
+            "on-tertiary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed": "#002022",
+            "primary-container": "#0b3e42",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffddb8",
+            "secondary": "#006c49",
+            "on-surface-variant": "#404849",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "on-primary-fixed-variant": "#1f4d51",
+            "text-secondary": "#475569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-tint": "#396569",
+            "primary": "#00272a",
+            "surface-container-high": "#e5e9ea",
+            "on-secondary-fixed": "#002113",
+            "text-muted": "#94A3B8",
+            "on-surface": "#181c1d",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-container": "#7ca9ad",
+            "tertiary": "#341e00",
+            "secondary-container": "#6cf8bb",
+            "text-primary": "#0F172A",
+            "on-background": "#181c1d",
+            "surface-variant": "#e0e3e4",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen pb-28 antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- ========================================== -->
+<!-- Top App Bar (Shared Component Execution)  -->
+<!-- ========================================== -->
+<header class="fixed top-0 inset-x-0 z-40 h-16 flex items-center justify-between px-margin w-full bg-surface shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-variant active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-primary-container" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-primary tracking-tight">أرباح وتوريد الوردية اليومية</h1>
+<p class="text-label-sm font-label-sm text-text-muted flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          الوردية النشطة • خط رمسيس - السلام
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<!-- Calendar selector pill -->
+<button class="h-10 px-3 rounded-xl bg-surface-subtle hover:bg-surface-variant flex items-center gap-1.5 text-text-primary text-label-md font-label-md active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-primary-container text-[18px]" data-icon="calendar_today">calendar_today</span>
+<span class="hidden sm:inline">الأربعاء 14 أكتوبر</span>
+</button>
+<!-- Print icon button -->
+<button aria-label="طباعة التقرير" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-variant flex items-center justify-center text-primary-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-primary-container" data-icon="print">print</span>
+</button>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- Main Canvas Bento Layout                    -->
+<!-- ========================================== -->
+<main class="max-w-md mx-auto pt-20 px-margin flex flex-col gap-space-lg">
+<!-- Date Strip Banner for Mobile View -->
+<div class="flex items-center justify-between bg-surface px-4 py-2.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 text-text-secondary text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg fill" data-icon="event" style="font-variation-settings: 'FILL' 1;">event</span>
+<span>تقرير اليوم: <strong class="text-text-primary font-semibold">الأربعاء 14 أكتوبر 2026</strong></span>
+</div>
+<span class="text-label-sm font-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">وردية صباحية</span>
+</div>
+<!-- ======================================================== -->
+<!-- Hero Revenue Card (#0B3E42 FinTech Metaphor & Bento split) -->
+<!-- ======================================================== -->
+<section class="relative overflow-hidden rounded-3xl bg-primary-container text-surface p-space-lg shadow-xl" style="box-shadow: 0 12px 28px rgba(11, 62, 66, 0.22);">
+<!-- Ambient Graphic & Texture -->
+<div class="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-secondary opacity-20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-44 h-44 rounded-full bg-on-tertiary-container opacity-15 blur-2xl pointer-events-none"></div>
+<!-- Header: Title & Target Progress -->
+<div class="relative z-10 flex items-start justify-between pb-3 border-b border-primary/40">
+<div>
+<span class="text-label-sm font-label-sm text-on-primary-container tracking-wider block">صافي إيراد الوردية اليومية</span>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="text-currency-display font-currency-display text-surface">2,150.00</span>
+<span class="text-label-lg font-label-lg text-primary-fixed">ج.م</span>
+</div>
+</div>
+<!-- Target Chip Indicator -->
+<div class="bg-surface/10 backdrop-blur-md px-3 py-1.5 rounded-xl text-left border border-surface/15">
+<div class="flex items-center gap-1 text-secondary-fixed text-label-md font-label-md font-bold">
+<span class="material-symbols-outlined text-sm fill" data-icon="trending_up" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span>107%</span>
+</div>
+<span class="text-[10px] text-surface/75 block">من الهدف (2,000 ج.م)</span>
+</div>
+</div>
+<!-- Target Progress Bar -->
+<div class="relative z-10 mt-3 mb-4">
+<div class="w-full bg-primary/60 h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full transition-all duration-500" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1 text-[11px] text-surface/70">
+<span>المحقق: 2,150 ج.م</span>
+<span>المستهدف: 2,000 ج.م (+150 ج.م فائض)</span>
+</div>
+</div>
+<!-- Bento 3-Column Payment Source Split -->
+<div class="relative z-10 grid grid-cols-3 gap-2 py-3 border-t border-primary/40">
+<!-- Source 1: Harith Wallet & Cards -->
+<div class="bg-surface/10 backdrop-blur-md p-2.5 rounded-2xl flex flex-col justify-between border border-surface/10">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px] fill" data-icon="credit_card" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span class="text-[10px] text-surface/90 font-medium">كروت حارث</span>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-surface font-bold leading-tight">1,420</div>
+<span class="text-[9px] text-secondary-fixed block mt-0.5 font-medium leading-none">جاهزة للسحب</span>
+</div>
+</div>
+<!-- Source 2: Cash in Hand -->
+<div class="bg-surface/10 backdrop-blur-md p-2.5 rounded-2xl flex flex-col justify-between border border-surface/10">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-tertiary-fixed text-[16px] fill" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[10px] text-surface/90 font-medium">نقدي (كاش)</span>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-surface font-bold leading-tight">730</div>
+<span class="text-[9px] text-surface/75 block mt-0.5 leading-none">في يدك بالسيارة</span>
+</div>
+</div>
+<!-- Source 3: Digital Change (Fakka) -->
+<div class="bg-surface/10 backdrop-blur-md p-2.5 rounded-2xl flex flex-col justify-between border border-surface/10">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-on-tertiary-container text-[16px] fill" data-icon="toll" style="font-variation-settings: 'FILL' 1;">toll</span>
+<span class="text-[10px] text-surface/90 font-medium">فكة رقمية</span>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-surface font-bold leading-tight">115</div>
+<span class="text-[9px] text-surface/75 block mt-0.5 leading-none">بدون كسر معدني</span>
+</div>
+</div>
+</div>
+<!-- Instant Cash-Out Primary CTA -->
+<div class="relative z-10 mt-3">
+<button class="w-full h-12 bg-secondary text-surface rounded-xl flex items-center justify-center gap-2 font-bold text-label-lg hover:bg-on-secondary-container active:scale-[0.98] transition-all shadow-md" style="box-shadow: 0 4px 16px rgba(0, 108, 73, 0.35);" type="button">
+<span class="material-symbols-outlined text-surface text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>سحب أرباح حارث (1,420 ج.م) لحسابك أو إنستاباي فوراً</span>
+<span class="material-symbols-outlined text-sm rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- Shift Quick Performance Metrics Bento Grid -->
+<!-- ========================================== -->
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="text-headline-sm font-headline-sm text-text-primary">أداء الوردية وتشغيل الخط</h2>
+<span class="text-label-sm font-label-sm text-text-secondary">تحديث مباشر</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Metric 1: Completed Trips -->
+<div class="bg-surface p-3.5 rounded-2xl shadow-sm border border-border-subtle flex flex-col items-center text-center">
+<div class="w-9 h-9 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="alt_route">alt_route</span>
+</div>
+<span class="text-headline-sm font-headline-sm text-text-primary">6</span>
+<span class="text-label-sm font-label-sm text-text-muted mt-0.5">رحلات مكتملة</span>
+</div>
+<!-- Metric 2: Transported Passengers -->
+<div class="bg-surface p-3.5 rounded-2xl shadow-sm border border-border-subtle flex flex-col items-center text-center">
+<div class="w-9 h-9 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+</div>
+<span class="text-headline-sm font-headline-sm text-text-primary">78</span>
+<span class="text-label-sm font-label-sm text-text-muted mt-0.5">راكب منقول</span>
+</div>
+<!-- Metric 3: Shift Working Hours -->
+<div class="bg-surface p-3.5 rounded-2xl shadow-sm border border-border-subtle flex flex-col items-center text-center">
+<div class="w-9 h-9 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container mb-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">schedule</span>
+</div>
+<span class="text-headline-sm font-headline-sm text-text-primary">7س 15د</span>
+<span class="text-label-sm font-label-sm text-text-muted mt-0.5">ساعات العمل</span>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- Detailed Trip Logs List                    -->
+<!-- ========================================== -->
+<section>
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<h2 class="text-headline-sm font-headline-sm text-text-primary">سجل رحلات اليوم</h2>
+<span class="text-label-sm font-label-sm bg-surface-subtle text-text-secondary px-2 py-0.5 rounded-full font-bold">3 ورديات مسجلة</span>
+</div>
+<button class="text-secondary text-label-md font-label-md font-bold hover:underline" type="button">عرض الكل</button>
+</div>
+<div class="space-y-3">
+<!-- Trip 1 (Latest/Active) -->
+<article class="bg-surface rounded-2xl p-4 shadow-sm border border-secondary/30 relative overflow-hidden transition-all hover:shadow-md">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-secondary"></div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-lg font-label-lg font-bold text-text-primary">رحلة #4820</span>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-md">الأخيرة مكتملة</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary text-body-sm font-body-sm mt-1">
+<span class="font-semibold text-primary">موقف السلام</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted" data-icon="arrow_back">arrow_back</span>
+<span class="font-semibold text-primary">ميدان رمسيس</span>
+</div>
+</div>
+<div class="text-left">
+<span class="text-currency-body font-currency-body text-primary-container block">210.00 ج.م</span>
+<span class="text-label-sm font-label-sm text-text-muted block mt-0.5">08:30 ص</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-2 text-body-sm font-body-sm text-text-secondary">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[12px] text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px] fill" data-icon="airline_seat_recline_normal" style="font-variation-settings: 'FILL' 1;">airline_seat_recline_normal</span>
+                14 راكب (حمولة كاملة)
+              </span>
+<span class="text-[12px] text-text-muted">• كروت: 150 ج.م | كاش: 60 ج.م</span>
+</div>
+<button aria-label="تفاصيل الرحلة #4820" class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] rotate-180" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Trip 2 -->
+<article class="bg-surface rounded-2xl p-4 shadow-sm border border-border-subtle transition-all hover:shadow-md">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-lg font-label-lg font-bold text-text-primary">رحلة #4819</span>
+<span class="bg-surface-subtle text-text-secondary text-[11px] font-medium px-2 py-0.5 rounded-md">مكتملة</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary text-body-sm font-body-sm mt-1">
+<span class="font-semibold text-primary">ميدان رمسيس</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted" data-icon="arrow_back">arrow_back</span>
+<span class="font-semibold text-primary">موقف السلام</span>
+</div>
+</div>
+<div class="text-left">
+<span class="text-currency-body font-currency-body text-text-primary block">195.00 ج.م</span>
+<span class="text-label-sm font-label-sm text-text-muted block mt-0.5">07:10 ص</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-2 text-body-sm font-body-sm text-text-secondary">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[12px] text-text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="airline_seat_recline_normal">airline_seat_recline_normal</span>
+                13 راكب
+              </span>
+<span class="text-[12px] text-text-muted">• كروت: 135 ج.م | كاش: 60 ج.م</span>
+</div>
+<button aria-label="تفاصيل الرحلة #4819" class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] rotate-180" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Trip 3 -->
+<article class="bg-surface rounded-2xl p-4 shadow-sm border border-border-subtle transition-all hover:shadow-md">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-lg font-label-lg font-bold text-text-primary">رحلة #4818</span>
+<span class="bg-surface-subtle text-text-secondary text-[11px] font-medium px-2 py-0.5 rounded-md">مكتملة</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary text-body-sm font-body-sm mt-1">
+<span class="font-semibold text-primary">موقف السلام</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted" data-icon="arrow_back">arrow_back</span>
+<span class="font-semibold text-primary">رمسيس</span>
+</div>
+</div>
+<div class="text-left">
+<span class="text-currency-body font-currency-body text-text-primary block">210.00 ج.م</span>
+<span class="text-label-sm font-label-sm text-text-muted block mt-0.5">05:45 ص</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-border-subtle mt-2 text-body-sm font-body-sm text-text-secondary">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[12px] text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px] fill" data-icon="airline_seat_recline_normal" style="font-variation-settings: 'FILL' 1;">airline_seat_recline_normal</span>
+                14 راكب (حمولة كاملة)
+              </span>
+<span class="text-[12px] text-text-muted">• كروت: 165 ج.م | كاش: 45 ج.م</span>
+</div>
+<button aria-label="تفاصيل الرحلة #4818" class="w-7 h-7 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] rotate-180" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- Thermal Print & Review Tools Section       -->
+<!-- ========================================== -->
+<section class="bg-surface rounded-3xl p-5 shadow-sm border border-border-subtle space-y-4 mb-2">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary">أدوات التوريد والطباعة الحرارية</h3>
+<p class="text-body-sm font-body-sm text-text-secondary">تسليم الإيراد لمسؤول الموقف أو مالك المركبة</p>
+</div>
+<!-- Bluetooth Printer Status Indicator Badge -->
+<div class="flex items-center gap-1.5 bg-surface-subtle px-3 py-1.5 rounded-full border border-border-subtle">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[11px] font-bold text-text-primary">XP-P300 متصل</span>
+</div>
+</div>
+<div class="space-y-2.5 pt-1">
+<!-- Thermal Print Primary Button -->
+<button class="w-full h-12 bg-primary-container text-surface rounded-xl flex items-center justify-center gap-2.5 font-bold text-label-lg hover:bg-primary active:scale-[0.98] transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-surface text-xl" data-icon="print">print</span>
+<span>طباعة كشف حساب الوردية اليومي (طابعة البلوتوث الحرارية)</span>
+</button>
+<!-- Share PDF Button -->
+<button class="w-full h-12 bg-surface text-primary-container border border-border-subtle rounded-xl flex items-center justify-center gap-2 font-bold text-label-lg hover:bg-surface-subtle active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-text-secondary text-xl" data-icon="share">share</span>
+<span>مشاركة تقرير الوردية PDF مع مالك السيارة أو النقابة</span>
+</button>
+</div>
+</section>
+</main>
+<!-- ======================================================== -->
+<!-- HarithBottomNav (Locked Global Nav with 5 Target Dest.) -->
+<!-- Active State: 'أنشطتي / المواصلات'                     -->
+<!-- ======================================================== -->
+<nav aria-label="شريط التنقل الرئيسي" class="fixed bottom-0 inset-x-0 z-50 h-[76px] flex items-center justify-around px-margin w-full bg-surface rounded-t-3xl border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1 (Rightmost): الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- Item 3: Floating Scan Center Dock (ادفع / امسح) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع أو امسح الكود" class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-lg active:scale-90 transition-transform" style="box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);" type="button">
+<span class="material-symbols-outlined text-2xl text-surface" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-primary font-bold mt-1">ادفع / امسح</span>
+</div>
+<!-- Item 4: المواصلات (أنشطتي والتشغيل - ACTIVE TAB) -->
+<a class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl fill text-primary-container" data-icon="directions_bus" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Item 5 (Leftmost): حسابي -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+<!-- Lightweight Micro-Interactions Script -->
+<script>
+    // Micro-interactions for buttons and thermal print trigger feedback
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        // Simple tactile pulse ripple
+        const circle = document.createElement('span');
+        circle.classList.add('absolute', 'inset-0', 'bg-surface/20', 'rounded-xl', 'animate-ping', 'pointer-events-none');
+        this.classList.add('relative');
+        this.appendChild(circle);
+        setTimeout(() => circle.remove(), 400);
+      });
+    });
+  </script>
+</body></html>

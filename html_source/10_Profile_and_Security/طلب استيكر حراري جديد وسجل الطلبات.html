@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>طلب استيكر حراري جديد وسجل الطلبات — حارث</title>
+<!-- Google Font: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-fixed": "#6ffbbe",
+            "secondary": "#006c49",
+            "surface-variant": "#e0e3e4",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "outline-variant": "#c0c8c9",
+            "primary-fixed": "#bcebef",
+            "border-subtle": "#E2E8F0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "text-secondary": "#475569",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "text-primary": "#0F172A",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary": "#ffffff",
+            "primary-container": "#0b3e42",
+            "on-primary-container": "#7ca9ad",
+            "on-surface": "#181c1d",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "danger-debit": "#EF4444",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#396569",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f1f4f5",
+            "secondary-container": "#6cf8bb",
+            "primary": "#00272a",
+            "tertiary-fixed": "#ffddb8",
+            "surface-subtle": "#F1F5F9",
+            "on-surface-variant": "#404849",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "tertiary": "#341e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-28 antialiased selection:bg-secondary-fixed selection:text-primary-container">
+<!-- TopAppBar (Matches JSON & Guidance specs) -->
+<header class="bg-surface dark:bg-surface-container-high border-b border-border-subtle dark:border-outline-variant shadow-sm sticky top-0 z-40 w-full transition-all">
+<div class="flex justify-between items-center w-full h-16 px-4 max-w-md mx-auto">
+<!-- Start in RTL: Physical Right -> Back Chevron -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle dark:bg-inverse-surface flex items-center justify-center text-primary dark:text-inverse-primary hover:bg-surface-variant active:scale-95 transition-all duration-200" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Screen Title -->
+<h1 class="text-headline-sm font-headline-sm font-bold text-text-primary dark:text-inverse-on-surface text-center truncate px-2">
+        طلب ملصقات حرارية للمركبة
+      </h1>
+<!-- End in RTL: Physical Left -> Trailing Action -->
+<button aria-label="سجل المتابعة والمساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle dark:bg-inverse-surface flex items-center justify-center text-text-muted hover:text-text-primary dark:hover:text-inverse-on-surface active:scale-95 transition-all duration-200 relative" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="receipt_long">receipt_long</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 pt-3 space-y-4">
+<!-- 3 Mode Tabs Selector -->
+<section class="bg-surface p-1.5 rounded-2xl border border-border-subtle shadow-sm flex items-center justify-between gap-1">
+<button class="flex-1 py-2 px-1 text-center rounded-xl text-label-sm font-label-sm text-text-muted hover:text-text-primary transition-all active:scale-95" type="button">
+        استيكراتي الرسمية
+      </button>
+<button class="flex-1 py-2 px-1 text-center rounded-xl text-label-sm font-label-sm text-text-muted hover:text-text-primary transition-all active:scale-95 flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>كاميرا الفحص</span>
+</button>
+<button class="flex-1 py-2 px-2 text-center rounded-xl text-label-sm font-label-sm font-bold bg-primary-container text-surface shadow-sm transition-all active:scale-95" type="button">
+        طلب ملصق جديد
+      </button>
+</section>
+<!-- Hero Promo Banner -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-bl from-primary-container via-[#0b3e42] to-[#044e45] text-surface p-4 shadow-md border border-white/10">
+<div class="absolute -top-12 -left-12 w-36 h-36 bg-secondary-fixed/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="p-1.5 bg-secondary/30 rounded-lg backdrop-blur-sm border border-secondary-fixed/20 text-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+</span>
+<span class="text-label-md font-label-md font-bold text-surface">ملصقات حارث الحرارية الذكية الأصلية</span>
+</div>
+<span class="text-label-sm font-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">
+            إصدار معتمد
+          </span>
+</div>
+<p class="text-body-sm font-body-sm text-surface-container-high leading-relaxed">
+          مقاومة للشمس والحرارة وعوامل الطقس • مزودة بشريحة NFC مخفية مدمجة وكود QR عالي التباين • توصيل سريع للموقف أو المنزل خلال 48 ساعة.
+        </p>
+<div class="flex items-center gap-3 pt-1 border-t border-white/10 text-label-sm font-label-sm text-primary-fixed">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed" data-icon="nfc">nfc</span>
+<span>دفع بملامسة الهاتف</span>
+</div>
+<span class="text-white/30">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed" data-icon="local_shipping">local_shipping</span>
+<span>توصيل للموقف مجاناً</span>
+</div>
+</div>
+</div>
+</section>
+<!-- New Sticker Order Form Card -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-sm space-y-4">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment">assignment</span>
+</span>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold">بيانات طلب الاستيكر الجديد</h2>
+<p class="text-body-sm font-body-sm text-text-muted">مخصصة لمركبتك المسجلة برقم (ط أ س ٤٩١٨)</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Field 1: Sticker Type & Size Selector -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-text-primary">
+            نوع ومقاس الملصق المطلوب <span class="text-error">*</span>
+</label>
+<div class="space-y-2">
+<!-- Option A: Selected -->
+<label class="relative flex items-start gap-3 p-3 rounded-xl border-2 border-primary-container bg-surface-subtle/60 cursor-pointer transition-all">
+<input checked="" class="mt-1 h-4 w-4 text-primary-container focus:ring-primary-container" name="sticker_type" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-primary-container">ملصق زجاج أمامي وتابلوه (15x15 سم - معتمد للميكروباص)</span>
+<span class="text-label-sm font-label-sm font-bold text-primary-container">50 ج.م</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">شريحة NFC مدمجة وزجاج عاكس مضاد للحرارة</p>
+</div>
+</label>
+<!-- Option B -->
+<label class="relative flex items-start gap-3 p-3 rounded-xl border border-border-subtle hover:border-outline-variant bg-surface cursor-pointer transition-all">
+<input class="mt-1 h-4 w-4 text-primary-container focus:ring-primary-container" name="sticker_type" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-text-primary">ملصق صالون الركاب الجانبي (10x10 سم)</span>
+<span class="text-label-sm font-label-sm font-bold text-text-primary">30 ج.م</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">QR كود ممسوح مخصص لكل مقعد نافذة داخلية</p>
+</div>
+</label>
+<!-- Option C: Most Popular -->
+<label class="relative flex items-start gap-3 p-3 rounded-xl border border-border-subtle hover:border-outline-variant bg-surface cursor-pointer transition-all">
+<input class="mt-1 h-4 w-4 text-primary-container focus:ring-primary-container" name="sticker_type" type="radio"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-label-md font-label-md font-bold text-text-primary">طقم كامل (2 للزجاج + 4 لصالون الركاب + استيكر تابلوه)</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">الأكثر طلباً</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-text-primary">110 ج.م</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">حماية كاملة وتغطية لجميع ركاب السيارة مع بطاقة طوارئ</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Field 2: Copies Stepper -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<div>
+<label class="text-label-md font-label-md font-bold text-text-primary block">عدد النسخ المطلوبة</label>
+<span class="text-body-sm font-body-sm text-text-muted">الحد الأقصى 5 أطقم لكل سائق شهرياً</span>
+</div>
+<div class="flex items-center gap-2 bg-surface rounded-lg p-1 border border-border-subtle shadow-sm" id="stepper-wrapper">
+<button aria-label="إنقاص الكمية" class="w-8 h-8 rounded-md bg-surface-subtle hover:bg-surface-variant text-text-primary font-bold flex items-center justify-center active:scale-95 transition-all" id="btn-decrement" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-8 text-center text-headline-sm font-headline-sm font-bold text-primary-container" id="copies-count">2</span>
+<button aria-label="زيادة الكمية" class="w-8 h-8 rounded-md bg-surface-subtle hover:bg-surface-variant text-text-primary font-bold flex items-center justify-center active:scale-95 transition-all" id="btn-increment" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Field 3: Delivery Location Mode & Selection -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-text-primary">مكان ومحافظة التوصيل <span class="text-error">*</span></label>
+<!-- Toggle Hub / Home -->
+<div class="grid grid-cols-2 gap-2 p-1 bg-surface-subtle rounded-xl border border-border-subtle text-label-sm font-label-sm">
+<button class="py-2 rounded-lg bg-surface font-bold text-primary-container shadow-xs flex items-center justify-center gap-1.5 border border-border-subtle" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="directions_bus">directions_bus</span>
+<span>مكتب مشرف الموقف (مجاني)</span>
+</button>
+<button class="py-2 rounded-lg text-text-muted hover:text-text-primary flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="home_pin">home_pin</span>
+<span>عنوان المنزل الشخصي</span>
+</button>
+</div>
+<!-- Selected Location Field -->
+<div class="relative">
+<div class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3 flex items-center justify-between text-body-md font-body-md text-text-primary focus-within:border-primary-container focus-within:ring-2 focus-within:ring-primary-container/10 transition-all">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="location_on">location_on</span>
+<span class="truncate font-medium">موقف السلام النموذجي — استلام من مكتب مشرف الموقف</span>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+<span class="text-[11px] text-text-muted px-1 mt-1 block">يتم التوزيع يومياً من الساعة 8:00 صباحاً حتى 7:00 مساءً</span>
+</div>
+</div>
+<!-- Field 4: Phone Contact -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-text-primary">رقم هاتف للتواصل مع مندوب التوصيل <span class="text-error">*</span></label>
+<div class="relative flex items-center">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3 pr-10 text-body-md font-body-md font-semibold text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all" dir="ltr" type="tel" value="01022964376"/>
+<span class="absolute right-3 text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+</span>
+<span class="absolute left-3 text-label-sm font-label-sm bg-secondary-container/60 text-on-secondary-container px-2 py-0.5 rounded-md font-bold">
+              موثق بحسابك
+            </span>
+</div>
+</div>
+<!-- Field 5: Notes -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-text-primary">ملاحظات إضافية للتسليم</label>
+<textarea class="w-full p-3 rounded-xl border border-border-subtle text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all resize-none" placeholder="أرجو التسليم صباحاً قبل موعد الوردية الأولى..." rows="2"></textarea>
+</div>
+<!-- Cost Summary Row -->
+<div class="p-3.5 rounded-xl bg-surface-subtle border border-border-subtle space-y-2">
+<div class="flex items-center justify-between text-body-sm font-body-sm text-text-secondary">
+<span>تكلفة الملصقات:</span>
+<div class="flex items-center gap-1.5">
+<span class="line-through text-text-muted text-[11px]">100.00 ج.م</span>
+<span class="font-bold text-text-primary">50.00 ج.م</span>
+<span class="text-[10px] bg-secondary-container text-on-secondary-container px-1 rounded font-bold">دعم 50%</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-text-secondary">
+<span>التوصيل للموقف:</span>
+<span class="font-bold text-secondary">مجاني</span>
+</div>
+<div class="border-t border-border-subtle pt-2 flex items-center justify-between">
+<div>
+<span class="text-label-md font-label-md font-bold text-text-primary block">الإجمالي المطلوب:</span>
+<span class="text-[11px] text-text-muted">يخصم مباشرة من محفظة حارث السائق</span>
+</div>
+<div class="text-right">
+<span class="text-currency-body font-currency-body text-primary-container">50.00</span>
+<span class="text-label-md font-label-md font-bold text-primary-container mr-1">ج.م</span>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full h-12 bg-primary-container hover:bg-[#082C2F] active:scale-95 text-surface rounded-xl font-headline-sm text-label-lg font-bold shadow-md flex items-center justify-center gap-2 transition-all duration-200" type="submit">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+<span>تأكيد طلب الملصقات وخصم 50.00 ج.م</span>
+</button>
+<p class="text-center text-[11px] text-text-muted flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+<span>عملية دفع آمنة ومشفرة عبر البنك المركزي ومحفظة حارث الذكية</span>
+</p>
+</form>
+</section>
+<!-- Previous Orders History Card -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-subtle text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+</span>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold">سجل طلبات الملصقات السابقة</h2>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">طلبين مسجلين</span>
+</div>
+<div class="space-y-3">
+<!-- Order 1: Completed -->
+<article class="p-3 rounded-xl border border-border-subtle bg-surface hover:border-outline-variant transition-all space-y-2">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="qr_code_2">qr_code_2</span>
+<h3 class="text-label-md font-label-md font-bold text-text-primary">طلب طقم ملصقات كامل #STK-8812</h3>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">تاريخ الطلب: 10 سبتمبر 2026</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-bold bg-secondary-container text-on-secondary-container">
+<span>تم التوصيل والاستلام بنجاح ✓</span>
+</span>
+</div>
+<div class="pt-2 border-t border-border-subtle/80 flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-text-secondary">الموقع: كشك إشراف موقف السلام</span>
+<button class="text-label-sm font-label-sm font-bold text-primary-container hover:underline flex items-center gap-1" type="button">
+<span>إعادة الطلب بنفس المواصفات</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="replay">replay</span>
+</button>
+</div>
+</article>
+<!-- Order 2: Cancelled & Refunded -->
+<article class="p-3 rounded-xl border border-border-subtle bg-surface-subtle/40 space-y-2">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="layers">layers</span>
+<h3 class="text-label-md font-label-md font-bold text-text-secondary">ملصق تابلوه حراري #STK-7041</h3>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-0.5">تاريخ الطلب: 14 يوليو 2026</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-bold bg-surface-variant text-text-secondary">
+<span>ملغي ومسترد للمحفظة</span>
+</span>
+</div>
+<div class="pt-2 border-t border-border-subtle/80 flex items-center justify-between text-body-sm font-body-sm text-text-muted">
+<span>تم استرداد 30.00 ج.م إلى رصيدك الرئيسي</span>
+<span class="text-label-sm font-label-sm font-semibold">مغلق</span>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Locked BottomNavBar (Strictly matches Shared Components JSON: 5 items, right to left) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-safe bg-surface dark:bg-surface-container-high border-t border-border-subtle dark:border-outline-variant rounded-t-3xl shadow-md transition-all">
+<!-- Item 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline font-medium hover:text-primary-container dark:hover:text-secondary-fixed active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: المسارات -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline font-medium hover:text-primary-container dark:hover:text-secondary-fixed active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="alt_route">alt_route</span>
+<span class="text-label-sm font-label-sm mt-0.5">المسارات</span>
+</a>
+<!-- Item 3: مسح الملصق -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline font-medium hover:text-primary-container dark:hover:text-secondary-fixed active:scale-95 transition-all duration-150" href="#">
+<div class="w-12 h-12 -mt-5 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-lg border-2 border-surface">
+<span class="material-symbols-outlined text-[26px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="text-label-sm font-label-sm mt-0.5">مسح الملصق</span>
+</a>
+<!-- Item 4: التسعير -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline font-medium hover:text-primary-container dark:hover:text-secondary-fixed active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="table_chart">table_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">التسعير</span>
+</a>
+<!-- Item 5: الطلبات (ACTIVE - Closest match to sticker ordering & activity history) -->
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-secondary-fixed font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">الطلبات</span>
+</a>
+</nav>
+<!-- Interactive micro-interactions: Quantity stepper -->
+<script>
+    (function() {
+      const decrementBtn = document.getElementById('btn-decrement');
+      const incrementBtn = document.getElementById('btn-increment');
+      const countEl = document.getElementById('copies-count');
+      let count = 2;
+
+      decrementBtn.addEventListener('click', () => {
+        if (count > 1) {
+          count--;
+          countEl.textContent = count;
+        }
+      });
+
+      incrementBtn.addEventListener('click', () => {
+        if (count < 5) {
+          count++;
+          countEl.textContent = count;
+        }
+      });
+    })();
+  </script>
+</body></html>

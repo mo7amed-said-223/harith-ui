@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - تحديث إجباري مطلوب للتطبيق</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary-container": "#7ca9ad",
+            "background": "#f7fafb",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "border-subtle": "#E2E8F0",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed-variant": "#005236",
+            "primary-fixed": "#bcebef",
+            "surface-subtle": "#F1F5F9",
+            "on-error": "#ffffff",
+            "surface-bright": "#f7fafb",
+            "surface-container-high": "#e5e9ea",
+            "outline-variant": "#c0c8c9",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#00714d",
+            "secondary": "#006c49",
+            "on-tertiary": "#ffffff",
+            "surface": "#FFFFFF",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-secondary-fixed": "#002113",
+            "surface-container": "#ebeeef",
+            "primary-fixed-dim": "#a1cfd3",
+            "text-secondary": "#475569",
+            "inverse-on-surface": "#eef1f2",
+            "surface-container-low": "#f1f4f5",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary-fixed": "#ffddb8",
+            "surface-variant": "#e0e3e4",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "on-background": "#181c1d",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#513100",
+            "on-primary-fixed": "#002022",
+            "on-surface": "#181c1d",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "tertiary": "#341e00",
+            "inverse-primary": "#a1cfd3",
+            "surface-container-highest": "#e0e3e4",
+            "surface-tint": "#396569",
+            "danger-debit": "#EF4444",
+            "on-surface-variant": "#404849",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "inverse-surface": "#2d3132",
+            "tertiary-fixed-dim": "#ffb95f",
+            "text-primary": "#0F172A",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary": "#00272a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    @keyframes pulseAura {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.35;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 0.65;
+      }
+    }
+    .emerald-pulse {
+      animation: pulseAura 3s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-[#f4f7f8] text-text-primary antialiased flex justify-center selection:bg-secondary selection:text-white">
+<!-- Mobile-first App Viewport Shell (Intercept Screen: Strict Modal Lockdown, Bottom Nav and Back Trigger are Suppressed) -->
+<div class="relative w-full max-w-md min-h-screen bg-[#f4f7f8] flex flex-col justify-between overflow-x-hidden shadow-2xl">
+<!-- Top Sovereign Atmospheric Glow -->
+<div class="absolute -top-24 inset-x-0 h-72 bg-gradient-to-b from-primary-container/15 via-primary-container/5 to-transparent pointer-events-none z-0"></div>
+<!-- Interceptor Top Bar (Non-dismissible: Strictly No Back / Close Buttons) -->
+<header class="relative z-10 w-full px-5 pt-4 pb-3 flex items-center justify-between border-b border-border-subtle bg-surface/90 backdrop-blur-md">
+<!-- Right: Sovereign Emblem & Brand Anchor -->
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-sm ring-1 ring-white/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-none">حارث</span>
+<span class="font-label-sm text-[10px] text-text-secondary mt-1">منظومة حارث الوطنية للمدفوعات والنقل</span>
+</div>
+</div>
+<!-- Left: Tamper-proof Status Pill -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-error border border-error/20">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-label-sm text-label-sm font-semibold">تحديث إلزامي</span>
+</div>
+</header>
+<!-- Scrollable Educational and Critical Alert Canvas -->
+<main class="relative z-10 flex-1 px-5 pt-5 pb-32 overflow-y-auto">
+<!-- Dynamic Hero Centerpiece -->
+<div class="relative flex flex-col items-center text-center mt-2">
+<!-- Multilayered Upgrade Glow Rings -->
+<div class="relative w-36 h-36 flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-secondary-fixed-dim blur-2xl opacity-40 emerald-pulse"></div>
+<div class="absolute inset-2 rounded-full border border-secondary/25 border-dashed animate-[spin_18s_linear_infinite]"></div>
+<div class="absolute inset-5 rounded-full bg-gradient-to-tr from-primary-container via-[#0e4e53] to-secondary shadow-[0_12px_28px_rgba(11,62,66,0.25)] flex items-center justify-center ring-4 ring-white">
+<!-- Interceptor Hero Icon: Rocket Transiting from Secure Shielded Smartphone -->
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[48px]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-md ring-2 ring-white">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Badges Stack -->
+<div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-md text-label-md border border-secondary/20 shadow-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>إصدار جديد كلياً v3.0 متوفر الآن</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error/10 text-error font-label-sm text-label-sm font-bold border border-error/20">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>تحديث أمني إجباري مطلوب للاستمرار</span>
+</span>
+</div>
+<!-- Headlines and Descriptive Copy -->
+<h1 class="font-headline-lg text-headline-lg text-text-primary mt-4 font-bold tracking-tight">
+          تحديث هام وإجباري متوفر الآن
+        </h1>
+<p class="font-body-md text-body-md text-text-secondary mt-2.5 leading-relaxed max-w-sm">
+          قمنا بتطوير منظومة الكروت المتعددة وإضافة تحسينات أمنية هامة لمحفظتك الذكية وفق تعليمات حماية البيانات. يرجى تحديث التطبيق الآن للاستمرار في الاستمتاع بكافة خدمات حارث ومواصلاتك دون انقطاع.
+        </p>
+</div>
+<!-- Version Audit Comparison Bento Card -->
+<section class="mt-6 bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">system_update_alt</span>
+<span class="font-label-lg text-label-lg text-text-primary font-bold">حالة توافق الإصدار</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">data_saver_on</span>
+<span class="font-label-sm text-label-sm font-semibold">حجم التحديث: 28 ميجابايت</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<!-- Current Outdated Version -->
+<div class="p-3 rounded-xl bg-surface-subtle/80 border border-error/20 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-text-muted">الإصدار الحالي لديك</span>
+<div class="flex items-baseline justify-between mt-1.5">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold dir-ltr font-mono">v2.4.0</span>
+<span class="text-error font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">block</span>
+<span>غير مدعوم</span>
+</span>
+</div>
+<div class="w-full bg-error/20 h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-error w-full h-full"></div>
+</div>
+</div>
+<!-- Target New Version -->
+<div class="p-3 rounded-xl bg-secondary-fixed/15 border border-secondary/30 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-medium">الإصدار الأحدث المتوفر</span>
+<div class="flex items-baseline justify-between mt-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold dir-ltr font-mono">v3.0.2</span>
+<span class="text-secondary font-label-sm text-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>موصى به</span>
+</span>
+</div>
+<div class="w-full bg-secondary-container h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary w-full h-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key New Features Matrix (Tactile Bento Modules) -->
+<section class="mt-5 space-y-2.5">
+<h2 class="font-label-lg text-label-lg text-text-primary font-bold flex items-center gap-1.5 pr-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">auto_awesome</span>
+<span>أبرز ما يقدمه التحديث الجديد v3.0:</span>
+</h2>
+<!-- Feature 1: Multi-card Support -->
+<article class="p-3.5 rounded-xl bg-surface border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.03)] flex items-start gap-3 transition-transform active:scale-[0.99]">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">style</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">منظومة الكروت المتعددة الذكية</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 leading-snug">
+              إضافة دعم امتلاك وإدارة أكثر من كارت مواصلات ذكي في حساب واحد مع ربط سريع وتعبئة فورية.
+            </p>
+</div>
+</article>
+<!-- Feature 2: NFC & QR Supercharged -->
+<article class="p-3.5 rounded-xl bg-surface border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.03)] flex items-start gap-3 transition-transform active:scale-[0.99]">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">contactless</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">دفع لاتلامسي فائق السرعة</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 leading-snug">
+              مضاعفة سرعة الدفع اللاتلامسي عبر الـ NFC وتقليل زمن قراءة الـ QR عند بوابات النقل إلى أقل من 0.2 ثانية.
+            </p>
+</div>
+</article>
+<!-- Feature 3: Sovereign Banking Security -->
+<article class="p-3.5 rounded-xl bg-surface border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.03)] flex items-start gap-3 transition-transform active:scale-[0.99]">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/40 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-text-primary font-bold">حماية مشفرة 256-bit سيادية</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 leading-snug">
+              تحديثات أمان مصرفية سيادية مشفرة بالكامل لحماية معاملاتك وأموالك وسجل رحلاتك ضد التهديدات المستجدة.
+            </p>
+</div>
+</article>
+</section>
+<!-- Security Notice Card -->
+<aside class="mt-5 p-3 rounded-xl bg-primary-container/[0.04] border border-primary-container/15 flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px]">info</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-normal">
+          لن تتمكن من شحن الرصيد أو استخدام كروت المواصلات حتى اكتمال التحديث للحفاظ على سلامة أموالك وبياناتك.
+        </p>
+</aside>
+</main>
+<!-- Fixed Bottom Sticky Action Dock (Non-dismissible Action Tray) -->
+<footer class="fixed bottom-0 inset-x-0 w-full max-w-md mx-auto bg-surface/95 backdrop-blur-xl border-t border-border-subtle px-5 pt-3 pb-6 shadow-[0_-8px_24px_rgba(11,62,66,0.08)] z-40">
+<!-- Primary Action CTA to App Stores -->
+<a class="w-full h-12 bg-primary-container hover:bg-[#082C2F] active:scale-[0.98] transition-all rounded-xl text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.28)]" href="https://play.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>تحديث الآن من المتجر (Google Play / App Store)</span>
+</a>
+<!-- Support Fallback Link -->
+<div class="mt-3 flex items-center justify-center">
+<a class="inline-flex items-center gap-1.5 text-text-secondary hover:text-primary transition-colors font-label-md text-label-md" href="#support">
+<span class="material-symbols-outlined text-[16px]">headset_mic</span>
+<span>هل تواجه مشكلة في التحديث؟ تواصل مع الدعم الفني</span>
+</a>
+</div>
+<!-- Regulatory Compliance & Central Bank Trust Seal -->
+<div class="mt-3 pt-2.5 border-t border-border-subtle flex items-center justify-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+<span class="font-label-sm text-[11px] font-medium text-text-secondary">
+          متوافق مع أحدث بروتوكولات الأمان للبنك المركزي المصري
+        </span>
+</div>
+</footer>
+</div>
+</body></html>

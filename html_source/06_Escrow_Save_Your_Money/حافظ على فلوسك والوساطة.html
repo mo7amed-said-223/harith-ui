@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حافظ على فلوسك (الوساطة والضمان) — حارث</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration strictly matching design system -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#002113",
+            "secondary-fixed": "#6ffbbe",
+            "surface-variant": "#e0e3e4",
+            "surface-dim": "#d7dadb",
+            "on-surface-variant": "#404849",
+            "inverse-surface": "#2d3132",
+            "on-primary": "#ffffff",
+            "on-surface": "#181c1d",
+            "surface-container": "#ebeeef",
+            "secondary": "#006c49",
+            "outline-variant": "#c0c8c9",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary": "#ffffff",
+            "text-muted": "#94A3B8",
+            "surface-container-lowest": "#ffffff",
+            "text-primary": "#0F172A",
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "tertiary": "#341e00",
+            "surface-tint": "#396569",
+            "surface-container-highest": "#e0e3e4",
+            "primary": "#00272a",
+            "danger-debit": "#EF4444",
+            "on-primary-fixed": "#002022",
+            "on-secondary-container": "#00714d",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f5",
+            "text-secondary": "#475569",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#005236",
+            "background": "#f7fafb",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "inverse-on-surface": "#eef1f2",
+            "tertiary-container": "#513100",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-container-high": "#e5e9ea",
+            "on-error-container": "#93000a",
+            "surface-subtle": "#F1F5F9",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-tertiary-container": "#e19000",
+            "secondary-container": "#6cf8bb",
+            "outline": "#707979",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-background": "#181c1d"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem"
+          },
+          fontFamily: {
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          fontSize: {
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+            "headline-lg": ["24px", { lineHeight: "34px", fontWeight: "700" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "500" }],
+            "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }],
+            "display-lg": ["36px", { lineHeight: "48px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "currency-body": ["18px", { lineHeight: "26px", letterSpacing: "0px", fontWeight: "700" }],
+            "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "0px", fontWeight: "700" }],
+            "display-lg-mobile": ["28px", { lineHeight: "38px", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbar for tabs and chips row */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile Device Shell (Max-w-md viewport) -->
+<div class="w-full max-w-md min-h-screen bg-background flex flex-col relative pb-32">
+<!-- 1. Top AppBar (Predicted Component TopAppBar standard format) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full px-4 flex justify-between items-center shadow-none border-b border-border-subtle">
+<!-- RTL Start (Right): Back Chevron inside 40x40 container -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight font-bold text-center truncate px-2">
+        حافظ على فلوسك (الوساطة والضمان)
+      </h1>
+<!-- RTL End (Left): Info Button -->
+<button aria-label="معلومات ومساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary active:scale-95 transition-transform duration-150 hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-text-secondary text-xl" data-icon="help_outline">help_outline</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-4 pt-4 flex-1 space-y-4">
+<!-- 2. Escrow Hero Summary Banner -->
+<section class="relative overflow-hidden rounded-[20px] bg-gradient-to-br from-primary-container via-primary-container to-primary p-5 text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.16)] ring-1 ring-white/10">
+<!-- Subtle Gold Shield Watermark Decoration -->
+<div class="absolute -left-6 -bottom-8 opacity-10 pointer-events-none select-none">
+<span class="material-symbols-outlined text-tertiary-fixed text-[140px]" data-icon="shield">shield</span>
+</div>
+<div class="relative z-10 flex flex-col gap-3">
+<!-- Top Tag: Escrow Vault Label & Gold Shield Icon -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 backdrop-blur-sm flex items-center justify-center text-tertiary-fixed ring-1 ring-tertiary-fixed/30">
+<span class="material-symbols-outlined text-tertiary-fixed text-xl" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<span class="text-label-md font-label-md text-primary-fixed tracking-wide">الخزنة الرقمية المؤمنة لحارث</span>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<!-- Balance Readout -->
+<div class="mt-1">
+<div class="flex items-baseline gap-1.5">
+<span class="text-display-lg-mobile font-display-lg-mobile font-bold tracking-tight text-on-primary">12,500.00</span>
+<span class="text-currency-body font-currency-body text-primary-fixed font-bold">ج.م</span>
+</div>
+<p class="text-body-sm font-body-sm text-surface-container mt-0.5 leading-relaxed">
+              إجمالي المبالغ المؤمنة في الضمان حالياً عبر 2 معاملات نشطة
+            </p>
+</div>
+<!-- Bottom Guaranteed Badge -->
+<div class="pt-2 border-t border-white/10 flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/20 border border-secondary-fixed/30">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-secondary-fixed font-semibold">وساطة مالية مرخصة وآمنة 100%</span>
+</div>
+<div class="text-label-sm font-label-sm text-on-primary-container flex items-center gap-0.5">
+<span>برعاية البنك المركزي</span>
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Simplified 2-Tab Switcher (Segmented Control Pill) -->
+<section>
+<div class="h-12 rounded-full bg-surface-variant/50 p-1 flex items-center border border-border-subtle" role="tablist">
+<!-- Tab 1: Selected -->
+<button aria-selected="true" class="flex-1 h-full rounded-full bg-surface text-primary shadow-sm flex items-center justify-center gap-1.5 text-label-lg font-label-lg font-bold transition-all" role="tab" type="button">
+<span>معاملات نشطة</span>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary text-[10px] font-bold flex items-center justify-center">2</span>
+</button>
+<!-- Tab 2: Inactive -->
+<button aria-selected="false" class="flex-1 h-full rounded-full text-text-muted hover:text-text-primary flex items-center justify-center gap-1.5 text-label-lg font-label-lg font-medium transition-all" role="tab" type="button">
+<span>المكتملة والأرشيف</span>
+<span class="text-text-muted text-xs font-medium">(14)</span>
+</button>
+</div>
+</section>
+<!-- 4. Search & Role Filter Row -->
+<section class="space-y-2.5">
+<!-- Search Input Field -->
+<div class="relative flex items-center">
+<input class="w-full h-[48px] bg-surface rounded-xl border border-border-subtle text-body-md font-body-md text-text-primary placeholder:text-text-muted pr-11 pl-4 focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all shadow-[0_2px_8px_rgba(11,62,66,0.03)]" placeholder="ابحث برقم الهاتف أو عنوان المعاملة..." type="search"/>
+<div class="absolute right-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+</div>
+</div>
+<!-- Filter Chips Row (Horizontally scrollable) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<!-- Active Filter Chip -->
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary text-label-md font-label-md font-semibold shrink-0 shadow-sm transition-all active:scale-95" type="button">
+            الكل (2)
+          </button>
+<!-- Filter: Buyer -->
+<button class="px-3.5 py-1.5 rounded-full bg-surface border border-border-subtle text-text-secondary hover:border-primary-container text-label-md font-label-md font-medium shrink-0 flex items-center gap-1 transition-all active:scale-95" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>أنا المشتري</span>
+</button>
+<!-- Filter: Seller -->
+<button class="px-3.5 py-1.5 rounded-full bg-surface border border-border-subtle text-text-secondary hover:border-primary-container text-label-md font-label-md font-medium shrink-0 flex items-center gap-1 transition-all active:scale-95" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-variant"></span>
+<span>أنا البائع</span>
+</button>
+<!-- Filter: Category badge shortcut -->
+<button class="px-3 py-1.5 rounded-full bg-surface border border-border-subtle text-text-muted hover:text-text-primary text-label-md font-label-md shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+<span>تصفية</span>
+</button>
+</div>
+</section>
+<!-- 5. Active Escrow Deal Cards -->
+<section class="space-y-4">
+<!-- CARD 1: MacBook Pro M3 (User is Buyer) -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_16px_rgba(11,62,66,0.05)] hover:shadow-md transition-shadow relative">
+<!-- Top Row: Title, Role Badge, Amount -->
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/10 text-primary-container text-label-sm font-label-sm font-bold">
+                  أنت المشتري
+                </span>
+<span class="text-body-sm font-body-sm text-text-muted">#TRX-8820</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+                شراء لابتوب MacBook Pro M3
+              </h2>
+</div>
+<div class="text-left shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">
+                45,000 <span class="text-label-sm font-label-sm font-semibold">ج.م</span>
+</div>
+<span class="text-[10px] font-label-sm text-secondary font-semibold flex items-center justify-end gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+                مؤمن بالكامل
+              </span>
+</div>
+</div>
+<!-- Details Grid Container -->
+<div class="mt-3.5 bg-surface-subtle/80 rounded-xl p-3 border border-border-subtle/80 text-body-sm font-body-sm space-y-1.5 text-text-secondary">
+<div class="flex items-center justify-between">
+<span class="text-text-muted">الطرف الثاني (البائع):</span>
+<span class="font-semibold text-text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="person">person</span>
+                كريم عادل (010xxxx8821)
+              </span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted">تاريخ انتهاء الفحص:</span>
+<span class="font-medium text-text-primary">18 أكتوبر 2026</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted">الشرط الجزائي المتفق عليه:</span>
+<span class="font-semibold text-error">1,000 ج.م</span>
+</div>
+</div>
+<!-- Embedded 4-Step Visual Progress Stepper -->
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md font-bold text-text-primary">حالة المعاملة الحالية</span>
+<span class="text-label-sm font-label-sm text-secondary font-bold">خطوة 2 من 4</span>
+</div>
+<!-- Visual Stepper Progress Bar -->
+<div class="relative py-2">
+<!-- Connecting Baseline Bar -->
+<div class="absolute top-[18px] right-3 left-3 h-0.5 bg-border-subtle -z-0"></div>
+<!-- Completed Portion of Bar -->
+<div class="absolute top-[18px] right-3 w-1/3 h-0.5 bg-secondary -z-0"></div>
+<!-- Steps Grid -->
+<div class="grid grid-cols-4 relative z-10 text-center">
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-base font-bold" data-icon="check">check</span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-primary font-bold">موافقة الطرفين</span>
+</div>
+<!-- Step 2 (Active Current) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border-2 border-secondary text-secondary flex items-center justify-center shadow-[0_0_12px_rgba(0,108,73,0.35)] relative">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-secondary font-bold">جاري التسليم والفحص</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border border-outline-variant text-text-muted flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-muted">كود الاستلام</span>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border border-outline-variant text-text-muted flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-muted">تحرير الأموال</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<div class="mt-4 pt-2">
+<button class="w-full h-11 rounded-xl bg-primary-container text-on-primary font-label-lg font-bold flex items-center justify-center gap-2 hover:bg-primary active:scale-[0.99] transition-all shadow-sm" type="button">
+<span>عرض كود الاستلام وتفاصيل العقد</span>
+<span class="material-symbols-outlined text-lg rtl:rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Aluminum Kitchen (User is Seller) -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_16px_rgba(11,62,66,0.05)] hover:shadow-md transition-shadow relative">
+<!-- Top Row: Title, Role Badge, Amount -->
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-label-sm font-bold">
+                  أنت البائع
+                </span>
+<span class="text-body-sm font-body-sm text-text-muted">#TRX-7104</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+                تصميم وتوريد مطبخ ألوميتال
+              </h2>
+</div>
+<div class="text-left shrink-0">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">
+                18,000 <span class="text-label-sm font-label-sm font-semibold">ج.م</span>
+</div>
+<span class="text-[10px] font-label-sm text-on-tertiary-container font-semibold flex items-center justify-end gap-0.5">
+<span class="material-symbols-outlined text-[12px]" data-icon="pending" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pending</span>
+                في انتظار التأكيد
+              </span>
+</div>
+</div>
+<!-- Details Grid Container -->
+<div class="mt-3.5 bg-surface-subtle/80 rounded-xl p-3 border border-border-subtle/80 text-body-sm font-body-sm space-y-1.5 text-text-secondary">
+<div class="flex items-center justify-between">
+<span class="text-text-muted">الطرف الثاني (المشتري):</span>
+<span class="font-semibold text-text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container" data-icon="person">person</span>
+                د. أحمد سمير
+              </span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted">تاريخ التسليم المتوقع:</span>
+<span class="font-medium text-text-primary">25 نوفمبر 2026</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-muted">الشرط الجزائي المتفق عليه:</span>
+<span class="font-semibold text-error">2,500 ج.م</span>
+</div>
+</div>
+<!-- Embedded 4-Step Visual Progress Stepper -->
+<div class="mt-4 pt-3 border-t border-border-subtle">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md font-bold text-text-primary">حالة المعاملة الحالية</span>
+<span class="text-label-sm font-label-sm text-on-tertiary-container font-bold">خطوة 1 من 4</span>
+</div>
+<!-- Visual Stepper Progress Bar -->
+<div class="relative py-2">
+<!-- Connecting Baseline Bar -->
+<div class="absolute top-[18px] right-3 left-3 h-0.5 bg-border-subtle -z-0"></div>
+<!-- Steps Grid -->
+<div class="grid grid-cols-4 relative z-10 text-center">
+<!-- Step 1 (Active Amber) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border-2 border-on-tertiary-container text-on-tertiary-container flex items-center justify-center shadow-[0_0_10px_rgba(225,144,0,0.25)]">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="schedule">schedule</span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-on-tertiary-container font-bold">بانتظار الموافقة</span>
+</div>
+<!-- Step 2 (Pending) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border border-outline-variant text-text-muted flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-muted">جاري التنفيذ والتسليم</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border border-outline-variant text-text-muted flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-muted">كود الاستلام</span>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface border border-outline-variant text-text-muted flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+</div>
+<span class="mt-1.5 text-[10px] leading-tight font-label-sm text-text-muted">تحرير الأموال</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<div class="mt-4 pt-2 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-surface border border-border-subtle text-primary font-label-lg font-bold flex items-center justify-center gap-1.5 hover:bg-surface-subtle active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+<span>مشاركة رابط المعاملة</span>
+</button>
+<button aria-label="خيارات إضافية" class="w-11 h-11 rounded-xl bg-surface-subtle border border-border-subtle text-text-secondary flex items-center justify-center hover:text-error active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Trust Assurance Box -->
+<section class="bg-surface rounded-xl p-3.5 border border-border-subtle flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/30 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="policy">policy</span>
+</div>
+<div class="text-body-sm font-body-sm text-text-secondary">
+<strong class="text-text-primary block font-bold">كيف نحمي أموالك؟</strong>
+          لا يتم تحرير أي قرش للبائع إلا بعد تأكيدك لإدخال كود الاستلام بعد الفحص التام للمنتج أو الخدمة.
+        </div>
+</section>
+</main>
+<!-- 6. Floating Action Button (FAB for creating new escrow contract) -->
+<div class="fixed bottom-24 left-0 right-0 z-40 px-4 max-w-md mx-auto pointer-events-none flex justify-center">
+<button class="pointer-events-auto h-12 px-6 rounded-full bg-primary-container text-on-primary font-label-lg font-bold shadow-[0_8px_24px_rgba(11,62,66,0.35)] hover:bg-primary active:scale-95 transition-all flex items-center gap-2 border border-white/20" type="button">
+<span class="material-symbols-outlined text-tertiary-fixed text-xl" data-icon="add_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>إنشاء معاملة ضمان جديدة</span>
+</button>
+</div>
+<!-- 7. Locked HarithBottomNav (Bottom Navigation Bar) -->
+<!-- Predicted Component BottomNavBar strictly honoring source JSON structure -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية (Home) -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</button>
+<!-- Tab 2: محفظتي (Wallet & Escrow - Active Tab) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="credit_card" data-weight="fill" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5 text-primary">محفظتي</span>
+</button>
+<!-- Tab 3: ادفع (Center QR Pay Dock) -->
+<div class="relative -top-4">
+<button aria-label="امسح وادفع" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] border-4 border-surface active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="block text-center text-label-sm font-label-sm font-bold text-primary mt-0.5">ادفع</span>
+</div>
+<!-- Tab 4: المواصلات (Transit) -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</button>
+<!-- Tab 5: حسابي (Profile) -->
+<button class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</button>
+</nav>
+</div>
+</body></html>

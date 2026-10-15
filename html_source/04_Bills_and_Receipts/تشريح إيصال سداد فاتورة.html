@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - إيصال سداد فاتورة رسمي</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface-variant": "#404849",
+            "on-primary-fixed-variant": "#1f4d51",
+            "surface-container": "#ebeeef",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "surface": "#FFFFFF",
+            "text-secondary": "#475569",
+            "error": "#ba1a1a",
+            "background": "#f7fafb",
+            "surface-container-low": "#f1f4f5",
+            "text-primary": "#0F172A",
+            "primary-fixed": "#bcebef",
+            "surface-tint": "#396569",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#2d3132",
+            "tertiary": "#341e00",
+            "tertiary-container": "#513100",
+            "secondary-container": "#6cf8bb",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-on-surface": "#eef1f2",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-error-container": "#93000a",
+            "outline-variant": "#c0c8c9",
+            "on-primary": "#ffffff",
+            "danger-debit": "#EF4444",
+            "border-subtle": "#E2E8F0",
+            "surface-subtle": "#F1F5F9",
+            "on-surface": "#181c1d",
+            "on-background": "#181c1d",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-container": "#7ca9ad",
+            "inverse-primary": "#a1cfd3",
+            "primary": "#00272a",
+            "on-secondary-container": "#00714d",
+            "on-secondary-fixed-variant": "#005236",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#e5e9ea",
+            "surface-bright": "#f7fafb",
+            "surface-variant": "#e0e3e4",
+            "error-container": "#ffdad6",
+            "outline": "#707979",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed": "#002022",
+            "primary-container": "#0b3e42",
+            "surface-dim": "#d7dadb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans"],
+            "label-lg": ["IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .barcode-strip {
+      background: repeating-linear-gradient(
+        90deg,
+        #0b3e42,
+        #0b3e42 2px,
+        transparent 2px,
+        transparent 5px,
+        #0b3e42 5px,
+        #0b3e42 9px,
+        transparent 9px,
+        transparent 11px,
+        #0b3e42 11px,
+        #0b3e42 14px,
+        transparent 14px,
+        transparent 18px
+      );
+    }
+    .receipt-perforation {
+      background-image: radial-gradient(circle at 10px -5px, transparent 12px, #ffffff 13px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen pb-12 flex justify-center selection:bg-secondary-container">
+<!-- Mobile Viewport Container -->
+<main class="w-full max-w-md bg-surface-container-low min-h-screen relative shadow-2xl flex flex-col border-x border-border-subtle">
+<!-- 1. الشريط العلوي والترويسة (Top AppBar & Header) -->
+<header class="bg-surface border-b border-border-subtle sticky top-0 z-40 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container-high transition-colors flex items-center justify-center text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-text-primary leading-tight">إيصال سداد فاتورة رسمي</h1>
+<p class="text-label-sm font-label-sm text-text-secondary">إيصال خدمة مرافق معتمد • تأكيد فوري</p>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+</div>
+</header>
+<!-- Success Badge Ribbon -->
+<section class="bg-surface px-4 pb-4 pt-2 border-b border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.03)]">
+<div class="bg-secondary-container/30 border border-secondary/30 rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<span class="text-label-lg font-label-lg text-secondary block font-bold">تم السداد بنجاح ✓</span>
+<span class="text-label-sm font-label-sm text-text-secondary">تم توثيق الدفع لدى المرفق والبنك</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm bg-surface px-2.5 py-1 rounded-md border border-border-subtle font-semibold text-text-secondary">كود: 200 OK</span>
+</div>
+</section>
+<!-- Content Sections Body -->
+<div class="p-4 space-y-4 flex-1">
+<!-- 2. القسم الأول (مسار حركة الأموال) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<h2 class="text-label-lg font-label-lg text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="swap_vert">swap_vert</span>
+            مسار حركة المعاملة
+          </h2>
+<span class="text-label-sm font-label-sm text-secondary font-semibold bg-secondary-container/20 px-2 py-0.5 rounded-full">تحويل معتمد</span>
+</div>
+<div class="relative pl-1">
+<!-- Step 1: Source -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/40 border border-secondary/30 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="account_balance_wallet" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div class="flex-1">
+<span class="text-label-sm font-label-sm text-text-muted block">خرجت من (المصدر)</span>
+<p class="text-body-md font-body-md font-semibold text-text-primary">المحفظة الأساسية لحارث</p>
+<p class="text-label-sm font-label-sm text-text-secondary font-mono tracking-wide" dir="ltr">+20 01022964376</p>
+</div>
+</div>
+<!-- Vertical Connector Line -->
+<div class="mr-5 my-1 h-7 border-r-2 border-dashed border-secondary/40"></div>
+<!-- Step 2: Destination -->
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[22px]" data-icon="bolt">bolt</span>
+</div>
+<div class="flex-1">
+<span class="text-label-sm font-label-sm text-text-muted block">رايحة إلى (الجهة المستلمة)</span>
+<p class="text-body-md font-body-md font-semibold text-text-primary">شركة شمال القاهرة لتوزيع الكهرباء</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-label-sm font-label-sm bg-surface-subtle text-primary-container px-2 py-0.5 rounded font-medium border border-border-subtle">سداد فواتير الاستهلاك</span>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-container/30 px-2 py-0.5 rounded font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+                  جهة معتمدة رسمياً
+                </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. القسم الثاني (بيانات الفاتورة والمشترك) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-border-subtle">
+<h2 class="text-label-lg font-label-lg text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="badge">badge</span>
+            بيانات الفاتورة والمشترك
+          </h2>
+<span class="text-label-sm font-label-sm text-text-muted">نظام الدفع الموحد</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5 text-body-md font-body-md">
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle/60">
+<span class="text-text-secondary text-label-md font-label-md">اسم المشترك:</span>
+<span class="font-bold text-text-primary">محمد سعيد محمود أحمد</span>
+</div>
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle/60">
+<span class="text-text-secondary text-label-md font-label-md">رقم العداد / السداد:</span>
+<span class="font-mono font-bold text-primary tracking-wider" dir="ltr">10492841229014</span>
+</div>
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle/60">
+<span class="text-text-secondary text-label-md font-label-md">إصدار شهر:</span>
+<span class="font-semibold text-text-primary bg-surface-subtle px-2.5 py-0.5 rounded-md border border-border-subtle">أكتوبر 2026</span>
+</div>
+<div class="flex items-center justify-between py-1.5 border-b border-border-subtle/60">
+<span class="text-text-secondary text-label-md font-label-md">رقم العملية المرجعي (Ref ID):</span>
+<div class="flex items-center gap-1.5">
+<span class="font-mono font-bold text-primary-container" id="ref-id">#BL-559102</span>
+<button class="p-1 rounded bg-surface-subtle hover:bg-surface-container-high transition-colors active:scale-95 text-text-secondary" onclick="navigator.clipboard?.writeText('BL-559102')" title="نسخ الرقم" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5">
+<span class="text-text-secondary text-label-md font-label-md">التاريخ والوقت:</span>
+<span class="font-medium text-text-primary text-label-md font-label-md">14 أكتوبر 2026 — 07:35 م</span>
+</div>
+</div>
+</section>
+<!-- 4. القسم الثالث (تفصيل المبلغ والرسوم) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<h2 class="text-label-lg font-label-lg text-text-primary mb-3 flex items-center gap-2 pb-2 border-b border-border-subtle">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="receipt_long">receipt_long</span>
+          تفصيل المبالغ والرسوم الإدارية
+        </h2>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-body-md font-body-md">
+<div>
+<span class="text-text-primary font-medium block">قيمة استهلاك الفاتورة</span>
+<span class="text-label-sm font-label-sm text-text-muted">استهلاك مسجل: 320 ك.و.س (الشريحة الرابعة)</span>
+</div>
+<span class="font-currency-body text-currency-body text-text-primary">420.00 <span class="text-label-sm font-label-sm font-normal text-text-secondary">ج.م</span></span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md">
+<div class="flex items-center gap-2">
+<span class="text-text-primary font-medium">غرامة تأخير:</span>
+<span class="text-label-sm font-label-sm bg-secondary-container/30 text-secondary px-2 py-0.5 rounded font-semibold">لا توجد غرامات</span>
+</div>
+<span class="font-currency-body text-currency-body text-text-secondary">0.00 <span class="text-label-sm font-label-sm font-normal text-text-secondary">ج.م</span></span>
+</div>
+<div class="flex justify-between items-center text-body-md font-body-md">
+<div>
+<span class="text-text-primary font-medium block">رسوم الخدمة والدمغات الحكومية</span>
+<span class="text-label-sm font-label-sm text-text-muted">شاملة ضريبة القيمة المضافة ومصروفات التحصيل</span>
+</div>
+<span class="font-currency-body text-currency-body text-text-primary">5.50 <span class="text-label-sm font-label-sm font-normal text-text-secondary">ج.م</span></span>
+</div>
+</div>
+</section>
+<!-- 5. القسم الرابع (الملخص المالي والباركود الحراري) -->
+<section class="bg-primary-container text-on-primary rounded-2xl p-5 shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary/20 relative overflow-hidden">
+<!-- Specular Highlight Top Line -->
+<div class="absolute inset-x-0 top-0 h-[1px] bg-white/20"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm bg-secondary text-on-secondary px-2.5 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+            تم الخصم فوراً
+          </span>
+<span class="text-label-sm font-label-sm text-primary-fixed font-mono tracking-widest uppercase">AUTH: HTH-ELEC-442</span>
+</div>
+<div class="mb-4">
+<span class="text-label-md font-label-md text-on-primary-container block mb-1">إجمالي المبلغ المخصوم</span>
+<div class="flex items-baseline gap-2">
+<h3 class="font-currency-display text-currency-display text-white tracking-tight">425.50</h3>
+<span class="text-headline-sm font-headline-sm text-primary-fixed">جنيه مصري</span>
+</div>
+</div>
+<div class="p-3 bg-primary/40 rounded-xl border border-white/10 flex items-center justify-between mb-5">
+<span class="text-label-md font-label-md text-primary-fixed-dim">الرصيد المتبقي في المحفظة:</span>
+<span class="font-currency-body text-currency-body text-white font-bold">5,995.00 <span class="text-label-sm font-label-sm text-primary-fixed font-normal">ج.م</span></span>
+</div>
+<!-- Electronic Thermal Stamp & QR Block -->
+<div class="bg-surface rounded-xl p-3.5 text-text-primary flex items-center justify-between gap-3 shadow-inner">
+<div class="flex-1">
+<span class="text-label-sm font-label-sm text-text-muted font-bold block mb-1">الباركود الحراري للسداد الفوري</span>
+<div class="w-full h-8 barcode-strip rounded border border-border-subtle mb-1"></div>
+<p class="font-mono text-label-sm font-label-sm text-text-secondary text-center tracking-widest" dir="ltr">2026-1049-2841-5591</p>
+</div>
+<div class="w-20 h-20 bg-surface-subtle border border-border-subtle rounded-lg p-1.5 flex flex-col items-center justify-center shrink-0">
+<!-- Structured SVG Matrix QR representation for Egypt Tax compliance -->
+<svg class="w-full h-full text-primary-container" fill="currentColor" viewbox="0 0 100 100">
+<rect fill="currentColor" height="26" rx="4" width="26" x="5" y="5"></rect>
+<rect fill="#fff" height="18" rx="2" width="18" x="9" y="9"></rect>
+<rect fill="currentColor" height="10" rx="1" width="10" x="13" y="13"></rect>
+<rect fill="currentColor" height="26" rx="4" width="26" x="69" y="5"></rect>
+<rect fill="#fff" height="18" rx="2" width="18" x="73" y="9"></rect>
+<rect fill="currentColor" height="10" rx="1" width="10" x="77" y="13"></rect>
+<rect fill="currentColor" height="26" rx="4" width="26" x="5" y="69"></rect>
+<rect fill="#fff" height="18" rx="2" width="18" x="9" y="73"></rect>
+<rect fill="currentColor" height="10" rx="1" width="10" x="13" y="77"></rect>
+<!-- Data dots pattern -->
+<rect fill="currentColor" height="8" rx="1" width="8" x="36" y="8"></rect>
+<rect fill="currentColor" height="6" rx="1" width="12" x="49" y="12"></rect>
+<rect fill="currentColor" height="14" rx="1" width="6" x="38" y="24"></rect>
+<rect fill="currentColor" height="6" rx="1" width="14" x="52" y="32"></rect>
+<rect fill="currentColor" height="8" rx="1" width="18" x="10" y="42"></rect>
+<rect fill="currentColor" height="8" rx="1" width="24" x="38" y="48"></rect>
+<rect fill="currentColor" height="10" rx="1" width="20" x="70" y="42"></rect>
+<rect fill="currentColor" height="16" rx="1" width="8" x="70" y="62"></rect>
+<rect fill="currentColor" height="8" rx="1" width="16" x="40" y="68"></rect>
+<rect fill="currentColor" height="10" rx="1" width="22" x="40" y="82"></rect>
+<rect fill="currentColor" height="12" rx="1" width="10" x="84" y="80"></rect>
+</svg>
+<span class="text-[9px] font-bold text-text-secondary mt-0.5">مصلحة الضرائب</span>
+</div>
+</div>
+</section>
+<!-- 6. القسم الخامس (شريط القوة والطباعة الحرارية للتجار والإجراءات) -->
+<section class="space-y-3 pt-1">
+<!-- Main Primary Thermal Action -->
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-primary transition-all active:scale-[0.98] duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="print">print</span>
+          طباعة الإيصال (5 نسخ - بلوتوث)
+        </button>
+<!-- Secondary Utility Row -->
+<div class="grid grid-cols-3 gap-2">
+<button class="h-11 bg-surface border border-border-subtle rounded-xl text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-subtle active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+            مشاركة PDF
+          </button>
+<button class="h-11 bg-surface border border-border-subtle rounded-xl text-tertiary-container font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-subtle active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+            حفظ بالمفضلة
+          </button>
+<button class="h-11 bg-surface border border-border-subtle rounded-xl text-error font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 hover:bg-error-container/20 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="flag">flag</span>
+            إبلاغ / شكوى
+          </button>
+</div>
+</section>
+<!-- Official Sovereign Trust Footnote -->
+<footer class="pt-3 pb-6 text-center space-y-1">
+<div class="inline-flex items-center gap-1.5 text-text-secondary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>معتمد رسمياً وخاضع لمنظومة الفاتورة الإلكترونية والبنك المركزي المصري</span>
+</div>
+<p class="text-[10px] text-text-muted">الرقم الضريبي الموحد للمرفق: 301-449-812 • حارث تكنولوجيز مصر ش.م.م</p>
+</footer>
+</div>
+</main>
+<script>
+    // Copy feedback interaction
+    const refBtn = document.querySelector('button[title="نسخ الرقم"]');
+    if (refBtn) {
+      refBtn.addEventListener('click', () => {
+        const icon = refBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = 'done';
+          setTimeout(() => {
+            icon.textContent = 'content_copy';
+          }, 1500);
+        }
+      });
+    }
+  </script>
+</body></html>

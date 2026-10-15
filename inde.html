@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض شاشات تطبيق حارث — Harith UI Gallery (دقة أصلية كاملة)</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0B3E42;
+            --primary-light: #13585E;
+            --emerald: #10B981;
+            --emerald-glow: rgba(16, 185, 129, 0.3);
+            --accent: #F59E0B;
+            --bg: #0B1120;
+            --card-bg: #1E293B;
+            --card-hover: #24344D;
+            --text: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 24px;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 28px 24px;
+            background: linear-gradient(135deg, #072629 0%, #0B3E42 50%, #134B51 100%);
+            border-radius: 18px;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+        }
+        p.subtitle {
+            color: var(--emerald);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .header-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34D399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .badge.accent {
+            background: rgba(245, 158, 11, 0.15);
+            color: #FBBF24;
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        /* Search and Filters */
+        .controls-bar {
+            max-width: 1200px;
+            margin: 0 auto 32px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .search-box {
+            width: 100%;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 14px 44px 14px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .search-input:focus {
+            border-color: var(--emerald);
+            box-shadow: 0 0 0 3px var(--emerald-glow);
+        }
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover {
+            background: var(--card-hover);
+            color: #fff;
+            border-color: #475569;
+        }
+        .filter-btn.active {
+            background: var(--primary-light);
+            color: #fff;
+            border-color: var(--emerald);
+            font-weight: 600;
+        }
+
+        /* Category Section */
+        .category-section {
+            max-width: 1350px;
+            margin: 0 auto 48px auto;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+        }
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .category-count {
+            font-size: 13px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Screens Grid */
+        .screen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 24px;
+        }
+        .screen-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, box-shadow 0.25s;
+            cursor: pointer;
+            position: relative;
+        }
+        .screen-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--emerald);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--emerald-glow);
+        }
+        .img-container {
+            background: #060911;
+            height: 380px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            padding: 12px 12px 0 12px;
+        }
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.3s;
+        }
+        .screen-card:hover .img-container img {
+            transform: scale(1.02);
+        }
+        .card-body {
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            background: var(--card-bg);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .screen-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+        .screen-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: auto;
+            padding-top: 8px;
+        }
+        .screen-dim {
+            background: rgba(16, 185, 129, 0.1);
+            color: #34D399;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .action-link {
+            flex: 1;
+            text-align: center;
+            padding: 6px 8px;
+            font-size: 11px;
+            font-weight: 500;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .action-link.html-link {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60A5FA;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .action-link.html-link:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+        .action-link.download-link {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34D399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .action-link.download-link:hover {
+            background: rgba(16, 185, 129, 0.3);
+        }
+
+        /* Fullscreen Interactive Modal / Lightbox */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 9, 18, 0.94);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        /* Modal Top Header */
+        .modal-header {
+            height: 64px;
+            padding: 0 24px;
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            gap: 16px;
+            z-index: 100;
+        }
+        .modal-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+        .modal-screen-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .modal-screen-count {
+            font-size: 12px;
+            padding: 3px 10px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34D399;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        .modal-screen-dim {
+            font-size: 12px;
+            color: #FBBF24;
+            background: rgba(245, 158, 11, 0.15);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        .modal-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .zoom-toolbar {
+            display: flex;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .zoom-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .zoom-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .zoom-level {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--emerald);
+            padding: 0 8px;
+            min-width: 48px;
+            text-align: center;
+            font-family: monospace;
+        }
+        .mode-btn {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #fff;
+            padding: 6px 14px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .mode-btn.active {
+            background: var(--primary-light);
+            border-color: var(--emerald);
+            color: #fff;
+            font-weight: 600;
+        }
+        .mode-btn:hover {
+            background: var(--card-hover);
+        }
+        .btn-html-view {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #60A5FA;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .btn-html-view:hover {
+            background: rgba(59, 130, 246, 0.35);
+        }
+        .close-btn {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #F87171;
+            border-radius: 8px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .close-btn:hover {
+            background: #EF4444;
+            color: #fff;
+        }
+
+        /* Modal Body Viewport with Scroll */
+        .modal-body {
+            flex: 1;
+            position: relative;
+            overflow: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 24px;
+            cursor: grab;
+            user-select: none;
+        }
+        .modal-body.grabbing {
+            cursor: grabbing;
+        }
+
+        /* Image Container Styles for Modes */
+        .modal-img-container {
+            position: relative;
+            transition: width 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0B1120;
+            margin: auto;
+        }
+        .modal-img-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Mode 1: Fit Width (Natural scrolling for tall screens) */
+        .view-fit-width .modal-img-container {
+            width: 480px;
+            max-width: 90vw;
+        }
+
+        /* Mode 2: Fit Screen Height */
+        .view-fit-screen .modal-img-container {
+            width: auto;
+            max-height: calc(100vh - 120px);
+        }
+        .view-fit-screen .modal-img-container img {
+            max-height: calc(100vh - 120px);
+            width: auto;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 50;
+            transition: all 0.2s;
+            position: fixed;
+        }
+        .nav-arrow:hover {
+            background: var(--primary);
+            border-color: var(--emerald);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .nav-arrow.prev { right: 24px; }
+        .nav-arrow.next { left: 24px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مكتبة شاشات تصميم تطبيق "حارث" — Harith UI Design System</h1>
+        <p class="subtitle">النسخة الأصلية فائقة الوضوح (100% Native Retina Quality) المسحوبة من Google Stitch</p>
+        <div class="header-meta">
+            <span class="badge">💎 101 شاشة أصلية كاملة</span>
+            <span class="badge accent">🚀 دقة تصل إلى 780×3808 px</span>
+            <span class="badge">📁 10 فئات وموديولات متكاملة</span>
+            <span class="badge accent">✨ متضمن كود HTML / Tailwind</span>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls-bar">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث باسم الشاشة أو الموديول..." oninput="filterScreens()">
+        </div>
+        <div class="filter-chips">
+            <button class="filter-btn active" onclick="filterCategory('all', this)">الكل (101)</button>
+            <button class="filter-btn" onclick="filterCategory('01_Onboarding_and_Auth', this)">Onboarding and Auth (9)</button>
+            <button class="filter-btn" onclick="filterCategory('02_Home_and_System', this)">Home and System (3)</button>
+            <button class="filter-btn" onclick="filterCategory('03_Wallet_and_Cards', this)">Wallet and Cards (11)</button>
+            <button class="filter-btn" onclick="filterCategory('04_Bills_and_Receipts', this)">Bills and Receipts (11)</button>
+            <button class="filter-btn" onclick="filterCategory('05_Transportation_and_Trips', this)">Transportation and Trips (15)</button>
+            <button class="filter-btn" onclick="filterCategory('06_Escrow_Save_Your_Money', this)">Escrow Save Your Money (6)</button>
+            <button class="filter-btn" onclick="filterCategory('07_Salafni_Credit', this)">Salafni Credit (5)</button>
+            <button class="filter-btn" onclick="filterCategory('08_Driver_Workspace', this)">Driver Workspace (15)</button>
+            <button class="filter-btn" onclick="filterCategory('09_Agent_and_POS', this)">Agent and POS (3)</button>
+            <button class="filter-btn" onclick="filterCategory('10_Profile_and_Security', this)">Profile and Security (23)</button>
+        </div>
+    </div>
+
+    <!-- Gallery Categories -->
+
+    <section class="category-section" data-cat="01_Onboarding_and_Auth">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Onboarding and Auth</span>
+            </div>
+            <span class="category-count">9 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="0" data-title="إنشاء حساب جديد — الخطوة الأولى" data-cat="01_Onboarding_and_Auth" onclick="openModal(0)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.png" alt="إنشاء حساب جديد — الخطوة الأولى" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إنشاء حساب جديد — الخطوة الأولى</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1950 px</span>
+                        <span>157 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.png" download="إنشاء حساب جديد — الخطوة الأولى.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="1" data-title="استعادة وتعيين كلمة المرور" data-cat="01_Onboarding_and_Auth" onclick="openModal(1)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.png" alt="استعادة وتعيين كلمة المرور" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">استعادة وتعيين كلمة المرور</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2660 px</span>
+                        <span>218 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.png" download="استعادة وتعيين كلمة المرور.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="2" data-title="استكمال البيانات الشخصية" data-cat="01_Onboarding_and_Auth" onclick="openModal(2)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/استكمال البيانات الشخصية.png" alt="استكمال البيانات الشخصية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">استكمال البيانات الشخصية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2360 px</span>
+                        <span>305 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/استكمال البيانات الشخصية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/استكمال البيانات الشخصية.png" download="استكمال البيانات الشخصية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="3" data-title="التحقق من كود واتساب" data-cat="01_Onboarding_and_Auth" onclick="openModal(3)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/التحقق من كود واتساب.png" alt="التحقق من كود واتساب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">التحقق من كود واتساب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>208 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/التحقق من كود واتساب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/التحقق من كود واتساب.png" download="التحقق من كود واتساب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="4" data-title="تسجيل الدخول والمصادقة البيومترية" data-cat="01_Onboarding_and_Auth" onclick="openModal(4)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.png" alt="تسجيل الدخول والمصادقة البيومترية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تسجيل الدخول والمصادقة البيومترية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>143 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.png" download="تسجيل الدخول والمصادقة البيومترية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="5" data-title="تغيير كلمة المرور ورقم الهاتف" data-cat="01_Onboarding_and_Auth" onclick="openModal(5)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.png" alt="تغيير كلمة المرور ورقم الهاتف" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تغيير كلمة المرور ورقم الهاتف</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>143 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.png" download="تغيير كلمة المرور ورقم الهاتف.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="6" data-title="تفعيل الدخول السريع بالبصمة" data-cat="01_Onboarding_and_Auth" onclick="openModal(6)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.png" alt="تفعيل الدخول السريع بالبصمة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفعيل الدخول السريع بالبصمة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1878 px</span>
+                        <span>270 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.png" download="تفعيل الدخول السريع بالبصمة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="7" data-title="شاشة الترحيب وبوابة الدخول" data-cat="01_Onboarding_and_Auth" onclick="openModal(7)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.png" alt="شاشة الترحيب وبوابة الدخول" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شاشة الترحيب وبوابة الدخول</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>353 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.png" download="شاشة الترحيب وبوابة الدخول.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="8" data-title="شاشة الجولة التعريفية" data-cat="01_Onboarding_and_Auth" onclick="openModal(8)">
+                <div class="img-container">
+                    <img src="01_Onboarding_and_Auth/شاشة الجولة التعريفية.png" alt="شاشة الجولة التعريفية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شاشة الجولة التعريفية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>299 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/01_Onboarding_and_Auth/شاشة الجولة التعريفية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="01_Onboarding_and_Auth/شاشة الجولة التعريفية.png" download="شاشة الجولة التعريفية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="02_Home_and_System">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Home and System</span>
+            </div>
+            <span class="category-count">3 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="9" data-title="الرئيسية ولوحة التحكم" data-cat="02_Home_and_System" onclick="openModal(9)">
+                <div class="img-container">
+                    <img src="02_Home_and_System/الرئيسية ولوحة التحكم.png" alt="الرئيسية ولوحة التحكم" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">الرئيسية ولوحة التحكم</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2636 px</span>
+                        <span>437 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/02_Home_and_System/الرئيسية ولوحة التحكم.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="02_Home_and_System/الرئيسية ولوحة التحكم.png" download="الرئيسية ولوحة التحكم.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="10" data-title="نوافذ العروض وتقييم التطبيق" data-cat="02_Home_and_System" onclick="openModal(10)">
+                <div class="img-container">
+                    <img src="02_Home_and_System/نوافذ العروض وتقييم التطبيق.png" alt="نوافذ العروض وتقييم التطبيق" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نوافذ العروض وتقييم التطبيق</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>338 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/02_Home_and_System/نوافذ العروض وتقييم التطبيق.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="02_Home_and_System/نوافذ العروض وتقييم التطبيق.png" download="نوافذ العروض وتقييم التطبيق.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="11" data-title="وضع الصيانة وحالة عدم الاتصال" data-cat="02_Home_and_System" onclick="openModal(11)">
+                <div class="img-container">
+                    <img src="02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.png" alt="وضع الصيانة وحالة عدم الاتصال" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">وضع الصيانة وحالة عدم الاتصال</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2468 px</span>
+                        <span>283 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.png" download="وضع الصيانة وحالة عدم الاتصال.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="03_Wallet_and_Cards">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Wallet and Cards</span>
+            </div>
+            <span class="category-count">11 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="12" data-title="المحفظة الأساسية وحدود الاستخدام" data-cat="03_Wallet_and_Cards" onclick="openModal(12)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.png" alt="المحفظة الأساسية وحدود الاستخدام" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">المحفظة الأساسية وحدود الاستخدام</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3102 px</span>
+                        <span>423 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.png" download="المحفظة الأساسية وحدود الاستخدام.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="13" data-title="تحويل الأموال وحدود الحساب" data-cat="03_Wallet_and_Cards" onclick="openModal(13)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.png" alt="تحويل الأموال وحدود الحساب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تحويل الأموال وحدود الحساب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1930 px</span>
+                        <span>192 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.png" download="تحويل الأموال وحدود الحساب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="14" data-title="سجل جميع المعاملات والفلترة" data-cat="03_Wallet_and_Cards" onclick="openModal(14)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.png" alt="سجل جميع المعاملات والفلترة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">سجل جميع المعاملات والفلترة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2268 px</span>
+                        <span>284 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.png" download="سجل جميع المعاملات والفلترة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="15" data-title="سحب الأموال من المحفظة" data-cat="03_Wallet_and_Cards" onclick="openModal(15)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/سحب الأموال من المحفظة.png" alt="سحب الأموال من المحفظة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">سحب الأموال من المحفظة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2798 px</span>
+                        <span>339 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/سحب الأموال من المحفظة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/سحب الأموال من المحفظة.png" download="سحب الأموال من المحفظة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="16" data-title="شحن المحفظة وتأكيد الإيداع" data-cat="03_Wallet_and_Cards" onclick="openModal(16)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.png" alt="شحن المحفظة وتأكيد الإيداع" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شحن المحفظة وتأكيد الإيداع</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3032 px</span>
+                        <span>274 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.png" download="شحن المحفظة وتأكيد الإيداع.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="17" data-title="شحن المحفظة — الدفع الفوري أونلاين بالبطاقات" data-cat="03_Wallet_and_Cards" onclick="openModal(17)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.png" alt="شحن المحفظة — الدفع الفوري أونلاين بالبطاقات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شحن المحفظة — الدفع الفوري أونلاين بالبطاقات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2416 px</span>
+                        <span>278 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.png" download="شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="18" data-title="شحن المحفظة — سجل طلبات الشحن" data-cat="03_Wallet_and_Cards" onclick="openModal(18)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.png" alt="شحن المحفظة — سجل طلبات الشحن" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شحن المحفظة — سجل طلبات الشحن</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3270 px</span>
+                        <span>435 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.png" download="شحن المحفظة — سجل طلبات الشحن.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="19" data-title="شحن المحفظة — فوري باي والمحافظ الإلكترونية" data-cat="03_Wallet_and_Cards" onclick="openModal(19)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.png" alt="شحن المحفظة — فوري باي والمحافظ الإلكترونية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">شحن المحفظة — فوري باي والمحافظ الإلكترونية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3770 px</span>
+                        <span>390 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.png" download="شحن المحفظة — فوري باي والمحافظ الإلكترونية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="20" data-title="طلب وإصدار كارت ذكي" data-cat="03_Wallet_and_Cards" onclick="openModal(20)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/طلب وإصدار كارت ذكي.png" alt="طلب وإصدار كارت ذكي" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طلب وإصدار كارت ذكي</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3468 px</span>
+                        <span>540 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/طلب وإصدار كارت ذكي.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/طلب وإصدار كارت ذكي.png" download="طلب وإصدار كارت ذكي.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="21" data-title="مركز المحفظة والكروت الذكية" data-cat="03_Wallet_and_Cards" onclick="openModal(21)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.png" alt="مركز المحفظة والكروت الذكية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المحفظة والكروت الذكية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2354 px</span>
+                        <span>332 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.png" download="مركز المحفظة والكروت الذكية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="22" data-title="نافذة الدفع اللاتلامسي NFC وكارت حارث" data-cat="03_Wallet_and_Cards" onclick="openModal(22)">
+                <div class="img-container">
+                    <img src="03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.png" alt="نافذة الدفع اللاتلامسي NFC وكارت حارث" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نافذة الدفع اللاتلامسي NFC وكارت حارث</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1972 px</span>
+                        <span>333 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.png" download="نافذة الدفع اللاتلامسي NFC وكارت حارث.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="04_Bills_and_Receipts">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Bills and Receipts</span>
+            </div>
+            <span class="category-count">11 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="23" data-title="إعدادات طابعة الفواتير الحرارية" data-cat="04_Bills_and_Receipts" onclick="openModal(23)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.png" alt="إعدادات طابعة الفواتير الحرارية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إعدادات طابعة الفواتير الحرارية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2988 px</span>
+                        <span>259 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.png" download="إعدادات طابعة الفواتير الحرارية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="24" data-title="بيانات فاتورة الكهرباء" data-cat="04_Bills_and_Receipts" onclick="openModal(24)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/بيانات فاتورة الكهرباء.png" alt="بيانات فاتورة الكهرباء" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">بيانات فاتورة الكهرباء</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2022 px</span>
+                        <span>177 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/بيانات فاتورة الكهرباء.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/بيانات فاتورة الكهرباء.png" download="بيانات فاتورة الكهرباء.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="25" data-title="تأكيد سداد الفاتورة وإدخال الرقم السري" data-cat="04_Bills_and_Receipts" onclick="openModal(25)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.png" alt="تأكيد سداد الفاتورة وإدخال الرقم السري" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تأكيد سداد الفاتورة وإدخال الرقم السري</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2322 px</span>
+                        <span>198 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.png" download="تأكيد سداد الفاتورة وإدخال الرقم السري.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="26" data-title="تشريح إيصال تحويل محفظة لمحفظة" data-cat="04_Bills_and_Receipts" onclick="openModal(26)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.png" alt="تشريح إيصال تحويل محفظة لمحفظة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تشريح إيصال تحويل محفظة لمحفظة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2828 px</span>
+                        <span>387 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.png" download="تشريح إيصال تحويل محفظة لمحفظة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="27" data-title="تشريح إيصال سداد فاتورة" data-cat="04_Bills_and_Receipts" onclick="openModal(27)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.png" alt="تشريح إيصال سداد فاتورة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تشريح إيصال سداد فاتورة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3260 px</span>
+                        <span>274 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.png" download="تشريح إيصال سداد فاتورة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="28" data-title="تشريح إيصال شحن المحفظة والإيداع" data-cat="04_Bills_and_Receipts" onclick="openModal(28)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.png" alt="تشريح إيصال شحن المحفظة والإيداع" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تشريح إيصال شحن المحفظة والإيداع</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3382 px</span>
+                        <span>465 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.png" download="تشريح إيصال شحن المحفظة والإيداع.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="29" data-title="تفاصيل الفاتورة وتأكيد السداد" data-cat="04_Bills_and_Receipts" onclick="openModal(29)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.png" alt="تفاصيل الفاتورة وتأكيد السداد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفاصيل الفاتورة وتأكيد السداد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2794 px</span>
+                        <span>265 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.png" download="تفاصيل الفاتورة وتأكيد السداد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="30" data-title="تفاصيل المعاملة والإيصال" data-cat="04_Bills_and_Receipts" onclick="openModal(30)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.png" alt="تفاصيل المعاملة والإيصال" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفاصيل المعاملة والإيصال</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2578 px</span>
+                        <span>259 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.png" download="تفاصيل المعاملة والإيصال.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="31" data-title="فواتيري المحفوظة وإدارة المفضلة" data-cat="04_Bills_and_Receipts" onclick="openModal(31)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.png" alt="فواتيري المحفوظة وإدارة المفضلة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">فواتيري المحفوظة وإدارة المفضلة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3834 px</span>
+                        <span>419 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.png" download="فواتيري المحفوظة وإدارة المفضلة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="32" data-title="مركز الفواتير والمفضلة" data-cat="04_Bills_and_Receipts" onclick="openModal(32)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/مركز الفواتير والمفضلة.png" alt="مركز الفواتير والمفضلة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز الفواتير والمفضلة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2364 px</span>
+                        <span>250 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/مركز الفواتير والمفضلة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/مركز الفواتير والمفضلة.png" download="مركز الفواتير والمفضلة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="33" data-title="نتيجة سداد الفاتورة والطباعة الحرارية" data-cat="04_Bills_and_Receipts" onclick="openModal(33)">
+                <div class="img-container">
+                    <img src="04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.png" alt="نتيجة سداد الفاتورة والطباعة الحرارية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نتيجة سداد الفاتورة والطباعة الحرارية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2816 px</span>
+                        <span>301 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.png" download="نتيجة سداد الفاتورة والطباعة الحرارية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="05_Transportation_and_Trips">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Transportation and Trips</span>
+            </div>
+            <span class="category-count">15 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="34" data-title="إدارة المقاعد والنزول اللحظي" data-cat="05_Transportation_and_Trips" onclick="openModal(34)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.png" alt="إدارة المقاعد والنزول اللحظي" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة المقاعد والنزول اللحظي</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4266 px</span>
+                        <span>421 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.png" download="إدارة المقاعد والنزول اللحظي.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="35" data-title="اختيار المقاعد وتأكيد الحجز" data-cat="05_Transportation_and_Trips" onclick="openModal(35)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.png" alt="اختيار المقاعد وتأكيد الحجز" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">اختيار المقاعد وتأكيد الحجز</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 5052 px</span>
+                        <span>419 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.png" download="اختيار المقاعد وتأكيد الحجز.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="36" data-title="الماسح الذكي الموحد والدفع اللاتلامسي" data-cat="05_Transportation_and_Trips" onclick="openModal(36)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.png" alt="الماسح الذكي الموحد والدفع اللاتلامسي" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">الماسح الذكي الموحد والدفع اللاتلامسي</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>340 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.png" download="الماسح الذكي الموحد والدفع اللاتلامسي.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="37" data-title="تذاكري وحجوزاتي السياحية" data-cat="05_Transportation_and_Trips" onclick="openModal(37)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.png" alt="تذاكري وحجوزاتي السياحية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تذاكري وحجوزاتي السياحية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3344 px</span>
+                        <span>445 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.png" download="تذاكري وحجوزاتي السياحية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="38" data-title="تذكرة صعود وبطاقة الرحلة الرقمية" data-cat="05_Transportation_and_Trips" onclick="openModal(38)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.png" alt="تذكرة صعود وبطاقة الرحلة الرقمية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تذكرة صعود وبطاقة الرحلة الرقمية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3270 px</span>
+                        <span>246 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.png" download="تذكرة صعود وبطاقة الرحلة الرقمية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="39" data-title="تفاصيل الرحلة السياحية والحجز" data-cat="05_Transportation_and_Trips" onclick="openModal(39)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.png" alt="تفاصيل الرحلة السياحية والحجز" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفاصيل الرحلة السياحية والحجز</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3420 px</span>
+                        <span>532 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.png" download="تفاصيل الرحلة السياحية والحجز.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="40" data-title="تفاصيل الرحلة وطلب حافلة خاصة" data-cat="05_Transportation_and_Trips" onclick="openModal(40)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.png" alt="تفاصيل الرحلة وطلب حافلة خاصة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفاصيل الرحلة وطلب حافلة خاصة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3440 px</span>
+                        <span>332 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.png" download="تفاصيل الرحلة وطلب حافلة خاصة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="41" data-title="حجز مقاعد الأتوبيس والبيانات" data-cat="05_Transportation_and_Trips" onclick="openModal(41)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.png" alt="حجز مقاعد الأتوبيس والبيانات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حجز مقاعد الأتوبيس والبيانات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3438 px</span>
+                        <span>309 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.png" download="حجز مقاعد الأتوبيس والبيانات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="42" data-title="حجز مقاعد الرحلة ومخطط المركبة" data-cat="05_Transportation_and_Trips" onclick="openModal(42)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.png" alt="حجز مقاعد الرحلة ومخطط المركبة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حجز مقاعد الرحلة ومخطط المركبة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2322 px</span>
+                        <span>220 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.png" download="حجز مقاعد الرحلة ومخطط المركبة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="43" data-title="سفرية وتذاكر الرحلات" data-cat="05_Transportation_and_Trips" onclick="openModal(43)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/سفرية وتذاكر الرحلات.png" alt="سفرية وتذاكر الرحلات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">سفرية وتذاكر الرحلات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2780 px</span>
+                        <span>304 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/سفرية وتذاكر الرحلات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/سفرية وتذاكر الرحلات.png" download="سفرية وتذاكر الرحلات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="44" data-title="طوارئ ونش الإنقاذ وإيجار السيارات" data-cat="05_Transportation_and_Trips" onclick="openModal(44)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.png" alt="طوارئ ونش الإنقاذ وإيجار السيارات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طوارئ ونش الإنقاذ وإيجار السيارات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2368 px</span>
+                        <span>398 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.png" download="طوارئ ونش الإنقاذ وإيجار السيارات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="45" data-title="فئات الرحلات والسياحة وتذاكر الخطوط" data-cat="05_Transportation_and_Trips" onclick="openModal(45)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.png" alt="فئات الرحلات والسياحة وتذاكر الخطوط" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">فئات الرحلات والسياحة وتذاكر الخطوط</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3564 px</span>
+                        <span>820 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.png" download="فئات الرحلات والسياحة وتذاكر الخطوط.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="46" data-title="قائمة الرحلات السياحية النشطة" data-cat="05_Transportation_and_Trips" onclick="openModal(46)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.png" alt="قائمة الرحلات السياحية النشطة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">قائمة الرحلات السياحية النشطة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3808 px</span>
+                        <span>444 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.png" download="قائمة الرحلات السياحية النشطة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="47" data-title="مركز المساعدة — تقديم شكوى ومتابعة التذاكر" data-cat="05_Transportation_and_Trips" onclick="openModal(47)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.png" alt="مركز المساعدة — تقديم شكوى ومتابعة التذاكر" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المساعدة — تقديم شكوى ومتابعة التذاكر</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3502 px</span>
+                        <span>341 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.png" download="مركز المساعدة — تقديم شكوى ومتابعة التذاكر.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="48" data-title="مركز المواصلات الموحد" data-cat="05_Transportation_and_Trips" onclick="openModal(48)">
+                <div class="img-container">
+                    <img src="05_Transportation_and_Trips/مركز المواصلات الموحد.png" alt="مركز المواصلات الموحد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المواصلات الموحد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2800 px</span>
+                        <span>524 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/05_Transportation_and_Trips/مركز المواصلات الموحد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="05_Transportation_and_Trips/مركز المواصلات الموحد.png" download="مركز المواصلات الموحد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="06_Escrow_Save_Your_Money">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Escrow Save Your Money</span>
+            </div>
+            <span class="category-count">6 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="49" data-title="إنشاء معاملة ضمان جديدة" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(49)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.png" alt="إنشاء معاملة ضمان جديدة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إنشاء معاملة ضمان جديدة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2456 px</span>
+                        <span>246 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.png" download="إنشاء معاملة ضمان جديدة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="50" data-title="حافظ على فلوسك والوساطة" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(50)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.png" alt="حافظ على فلوسك والوساطة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حافظ على فلوسك والوساطة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2952 px</span>
+                        <span>372 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.png" download="حافظ على فلوسك والوساطة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="51" data-title="حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(51)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.png" alt="حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2906 px</span>
+                        <span>351 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.png" download="حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="52" data-title="عقد الضمان وكود الاستلام السري" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(52)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.png" alt="عقد الضمان وكود الاستلام السري" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">عقد الضمان وكود الاستلام السري</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2924 px</span>
+                        <span>298 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.png" download="عقد الضمان وكود الاستلام السري.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="53" data-title="نافذة إنهاء المعاملة وتحرير الأموال" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(53)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.png" alt="نافذة إنهاء المعاملة وتحرير الأموال" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نافذة إنهاء المعاملة وتحرير الأموال</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2324 px</span>
+                        <span>241 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.png" download="نافذة إنهاء المعاملة وتحرير الأموال.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="54" data-title="نافذة تقديم بلاغ وفتح نزاع تحكيم" data-cat="06_Escrow_Save_Your_Money" onclick="openModal(54)">
+                <div class="img-container">
+                    <img src="06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.png" alt="نافذة تقديم بلاغ وفتح نزاع تحكيم" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نافذة تقديم بلاغ وفتح نزاع تحكيم</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>185 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.png" download="نافذة تقديم بلاغ وفتح نزاع تحكيم.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="07_Salafni_Credit">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Salafni Credit</span>
+            </div>
+            <span class="category-count">5 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="55" data-title="إنذارات سلفني وحالات القوائم الفارغة" data-cat="07_Salafni_Credit" onclick="openModal(55)">
+                <div class="img-container">
+                    <img src="07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.png" alt="إنذارات سلفني وحالات القوائم الفارغة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إنذارات سلفني وحالات القوائم الفارغة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3524 px</span>
+                        <span>380 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.png" download="إنذارات سلفني وحالات القوائم الفارغة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="56" data-title="خدمة سلفني والائتمان" data-cat="07_Salafni_Credit" onclick="openModal(56)">
+                <div class="img-container">
+                    <img src="07_Salafni_Credit/خدمة سلفني والائتمان.png" alt="خدمة سلفني والائتمان" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">خدمة سلفني والائتمان</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2662 px</span>
+                        <span>454 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/07_Salafni_Credit/خدمة سلفني والائتمان.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="07_Salafni_Credit/خدمة سلفني والائتمان.png" download="خدمة سلفني والائتمان.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="57" data-title="لوحة التاجر وإدارة سلفني" data-cat="07_Salafni_Credit" onclick="openModal(57)">
+                <div class="img-container">
+                    <img src="07_Salafni_Credit/لوحة التاجر وإدارة سلفني.png" alt="لوحة التاجر وإدارة سلفني" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">لوحة التاجر وإدارة سلفني</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2842 px</span>
+                        <span>304 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/07_Salafni_Credit/لوحة التاجر وإدارة سلفني.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="07_Salafni_Credit/لوحة التاجر وإدارة سلفني.png" download="لوحة التاجر وإدارة سلفني.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="58" data-title="نوافذ التاجر لإدارة عملاء سلفني" data-cat="07_Salafni_Credit" onclick="openModal(58)">
+                <div class="img-container">
+                    <img src="07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.png" alt="نوافذ التاجر لإدارة عملاء سلفني" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نوافذ التاجر لإدارة عملاء سلفني</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3626 px</span>
+                        <span>362 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.png" download="نوافذ التاجر لإدارة عملاء سلفني.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="59" data-title="نوافذ طلب وسداد سلفني" data-cat="07_Salafni_Credit" onclick="openModal(59)">
+                <div class="img-container">
+                    <img src="07_Salafni_Credit/نوافذ طلب وسداد سلفني.png" alt="نوافذ طلب وسداد سلفني" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">نوافذ طلب وسداد سلفني</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4184 px</span>
+                        <span>359 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/07_Salafni_Credit/نوافذ طلب وسداد سلفني.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="07_Salafni_Credit/نوافذ طلب وسداد سلفني.png" download="نوافذ طلب وسداد سلفني.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="08_Driver_Workspace">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Driver Workspace</span>
+            </div>
+            <span class="category-count">15 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="60" data-title="إدارة الملصقات وفحص الأكواد" data-cat="08_Driver_Workspace" onclick="openModal(60)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.png" alt="إدارة الملصقات وفحص الأكواد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة الملصقات وفحص الأكواد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3020 px</span>
+                        <span>349 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.png" download="إدارة الملصقات وفحص الأكواد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="61" data-title="إدارة رحلات السائق العامة وبدء رحلة" data-cat="08_Driver_Workspace" onclick="openModal(61)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.png" alt="إدارة رحلات السائق العامة وبدء رحلة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة رحلات السائق العامة وبدء رحلة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3334 px</span>
+                        <span>473 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.png" download="إدارة رحلات السائق العامة وبدء رحلة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="62" data-title="إدارة رحلات السائق والتذاكر" data-cat="08_Driver_Workspace" onclick="openModal(62)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/إدارة رحلات السائق والتذاكر.png" alt="إدارة رحلات السائق والتذاكر" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة رحلات السائق والتذاكر</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2530 px</span>
+                        <span>409 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/إدارة رحلات السائق والتذاكر.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/إدارة رحلات السائق والتذاكر.png" download="إدارة رحلات السائق والتذاكر.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="63" data-title="إدارة ملصقات المركبة — استيكراتي وفحص الكود" data-cat="08_Driver_Workspace" onclick="openModal(63)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.png" alt="إدارة ملصقات المركبة — استيكراتي وفحص الكود" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة ملصقات المركبة — استيكراتي وفحص الكود</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3198 px</span>
+                        <span>259 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.png" download="إدارة ملصقات المركبة — استيكراتي وفحص الكود.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="64" data-title="إعداد خط السير واستيكرات المركبة" data-cat="08_Driver_Workspace" onclick="openModal(64)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.png" alt="إعداد خط السير واستيكرات المركبة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إعداد خط السير واستيكرات المركبة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3594 px</span>
+                        <span>335 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.png" download="إعداد خط السير واستيكرات المركبة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="65" data-title="ترقية الحساب لسائق معتمد" data-cat="08_Driver_Workspace" onclick="openModal(65)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/ترقية الحساب لسائق معتمد.png" alt="ترقية الحساب لسائق معتمد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">ترقية الحساب لسائق معتمد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4740 px</span>
+                        <span>592 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/ترقية الحساب لسائق معتمد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/ترقية الحساب لسائق معتمد.png" download="ترقية الحساب لسائق معتمد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="66" data-title="تقرير الرحلات والأرباح اليومية للسائق" data-cat="08_Driver_Workspace" onclick="openModal(66)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.png" alt="تقرير الرحلات والأرباح اليومية للسائق" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تقرير الرحلات والأرباح اليومية للسائق</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3030 px</span>
+                        <span>324 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.png" download="تقرير الرحلات والأرباح اليومية للسائق.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="67" data-title="حاسبة الأجرة ورد الفكة الإلكترونية" data-cat="08_Driver_Workspace" onclick="openModal(67)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.png" alt="حاسبة الأجرة ورد الفكة الإلكترونية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حاسبة الأجرة ورد الفكة الإلكترونية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2672 px</span>
+                        <span>426 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.png" download="حاسبة الأجرة ورد الفكة الإلكترونية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="68" data-title="خطوط السير — إنشاء وتحديد المحطات" data-cat="08_Driver_Workspace" onclick="openModal(68)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.png" alt="خطوط السير — إنشاء وتحديد المحطات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">خطوط السير — إنشاء وتحديد المحطات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3174 px</span>
+                        <span>254 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.png" download="خطوط السير — إنشاء وتحديد المحطات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="69" data-title="طلبات التوصيل الخاصة ورحلات السائق" data-cat="08_Driver_Workspace" onclick="openModal(69)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.png" alt="طلبات التوصيل الخاصة ورحلات السائق" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طلبات التوصيل الخاصة ورحلات السائق</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3578 px</span>
+                        <span>404 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.png" download="طلبات التوصيل الخاصة ورحلات السائق.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="70" data-title="فحص الملصقات ورد باقي الأجرة للراكب" data-cat="08_Driver_Workspace" onclick="openModal(70)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.png" alt="فحص الملصقات ورد باقي الأجرة للراكب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">فحص الملصقات ورد باقي الأجرة للراكب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>176 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.png" download="فحص الملصقات ورد باقي الأجرة للراكب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="71" data-title="لوحة قيادة السائق وإدارة الرحلة" data-cat="08_Driver_Workspace" onclick="openModal(71)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.png" alt="لوحة قيادة السائق وإدارة الرحلة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">لوحة قيادة السائق وإدارة الرحلة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>214 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.png" download="لوحة قيادة السائق وإدارة الرحلة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="72" data-title="مصفوفة التسعير وجدولة المواعيد" data-cat="08_Driver_Workspace" onclick="openModal(72)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.png" alt="مصفوفة التسعير وجدولة المواعيد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مصفوفة التسعير وجدولة المواعيد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3584 px</span>
+                        <span>385 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.png" download="مصفوفة التسعير وجدولة المواعيد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="73" data-title="معالج خط السير — تحديد المسار والمحطات" data-cat="08_Driver_Workspace" onclick="openModal(73)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.png" alt="معالج خط السير — تحديد المسار والمحطات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">معالج خط السير — تحديد المسار والمحطات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2936 px</span>
+                        <span>256 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.png" download="معالج خط السير — تحديد المسار والمحطات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="74" data-title="معالج خط السير — مصفوفة التسعير والجدولة" data-cat="08_Driver_Workspace" onclick="openModal(74)">
+                <div class="img-container">
+                    <img src="08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.png" alt="معالج خط السير — مصفوفة التسعير والجدولة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">معالج خط السير — مصفوفة التسعير والجدولة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3796 px</span>
+                        <span>403 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.png" download="معالج خط السير — مصفوفة التسعير والجدولة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="09_Agent_and_POS">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Agent and POS</span>
+            </div>
+            <span class="category-count">3 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="75" data-title="إدارة ماكينات POS الخاصة بالتاجر" data-cat="09_Agent_and_POS" onclick="openModal(75)">
+                <div class="img-container">
+                    <img src="09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.png" alt="إدارة ماكينات POS الخاصة بالتاجر" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إدارة ماكينات POS الخاصة بالتاجر</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3248 px</span>
+                        <span>381 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.png" download="إدارة ماكينات POS الخاصة بالتاجر.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="76" data-title="بوابة الوكيل وماكينة نقاط البيع" data-cat="09_Agent_and_POS" onclick="openModal(76)">
+                <div class="img-container">
+                    <img src="09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.png" alt="بوابة الوكيل وماكينة نقاط البيع" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">بوابة الوكيل وماكينة نقاط البيع</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2564 px</span>
+                        <span>295 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.png" download="بوابة الوكيل وماكينة نقاط البيع.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="77" data-title="تفاصيل ماكينة POS وسجل العمليات والتسوية" data-cat="09_Agent_and_POS" onclick="openModal(77)">
+                <div class="img-container">
+                    <img src="09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.png" alt="تفاصيل ماكينة POS وسجل العمليات والتسوية" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تفاصيل ماكينة POS وسجل العمليات والتسوية</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3222 px</span>
+                        <span>425 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.png" download="تفاصيل ماكينة POS وسجل العمليات والتسوية.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section" data-cat="10_Profile_and_Security">
+        <div class="category-header">
+            <div class="category-title">
+                <span>📁</span>
+                <span>Profile and Security</span>
+            </div>
+            <span class="category-count">23 شاشة</span>
+        </div>
+        <div class="screen-grid">
+
+            <div class="screen-card" data-index="78" data-title="إحصائيات الأداء وسجل الأرباح" data-cat="10_Profile_and_Security" onclick="openModal(78)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.png" alt="إحصائيات الأداء وسجل الأرباح" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إحصائيات الأداء وسجل الأرباح</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3322 px</span>
+                        <span>486 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.png" download="إحصائيات الأداء وسجل الأرباح.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="79" data-title="إعداد وتغيير الرقم السري للمحفظة" data-cat="10_Profile_and_Security" onclick="openModal(79)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.png" alt="إعداد وتغيير الرقم السري للمحفظة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إعداد وتغيير الرقم السري للمحفظة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2454 px</span>
+                        <span>179 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.png" download="إعداد وتغيير الرقم السري للمحفظة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="80" data-title="إعدادات الأمان الحساسة للمحفظة" data-cat="10_Profile_and_Security" onclick="openModal(80)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.png" alt="إعدادات الأمان الحساسة للمحفظة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">إعدادات الأمان الحساسة للمحفظة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3420 px</span>
+                        <span>363 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.png" download="إعدادات الأمان الحساسة للمحفظة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="81" data-title="التحديث الإجباري للتطبيق" data-cat="10_Profile_and_Security" onclick="openModal(81)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/التحديث الإجباري للتطبيق.png" alt="التحديث الإجباري للتطبيق" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">التحديث الإجباري للتطبيق</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>290 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/التحديث الإجباري للتطبيق.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/التحديث الإجباري للتطبيق.png" download="التحديث الإجباري للتطبيق.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="82" data-title="التفاصيل المالية لرحلة واحدة وكشف الركاب" data-cat="10_Profile_and_Security" onclick="openModal(82)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.png" alt="التفاصيل المالية لرحلة واحدة وكشف الركاب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">التفاصيل المالية لرحلة واحدة وكشف الركاب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 5422 px</span>
+                        <span>795 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.png" download="التفاصيل المالية لرحلة واحدة وكشف الركاب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="83" data-title="العمليات اللحظية والتقرير الشهري" data-cat="10_Profile_and_Security" onclick="openModal(83)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.png" alt="العمليات اللحظية والتقرير الشهري" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">العمليات اللحظية والتقرير الشهري</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>195 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.png" download="العمليات اللحظية والتقرير الشهري.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="84" data-title="المذكرات المالية والتقويم المجدول" data-cat="10_Profile_and_Security" onclick="openModal(84)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/المذكرات المالية والتقويم المجدول.png" alt="المذكرات المالية والتقويم المجدول" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">المذكرات المالية والتقويم المجدول</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3604 px</span>
+                        <span>472 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/المذكرات المالية والتقويم المجدول.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/المذكرات المالية والتقويم المجدول.png" download="المذكرات المالية والتقويم المجدول.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="85" data-title="الملف الشخصي وتعديل البيانات" data-cat="10_Profile_and_Security" onclick="openModal(85)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/الملف الشخصي وتعديل البيانات.png" alt="الملف الشخصي وتعديل البيانات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">الملف الشخصي وتعديل البيانات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">1884 × 2724 px</span>
+                        <span>359 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/الملف الشخصي وتعديل البيانات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/الملف الشخصي وتعديل البيانات.png" download="الملف الشخصي وتعديل البيانات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="86" data-title="تأكيد الدفع والرقم السري" data-cat="10_Profile_and_Security" onclick="openModal(86)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/تأكيد الدفع والرقم السري.png" alt="تأكيد الدفع والرقم السري" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">تأكيد الدفع والرقم السري</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 1768 px</span>
+                        <span>121 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/تأكيد الدفع والرقم السري.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/تأكيد الدفع والرقم السري.png" download="تأكيد الدفع والرقم السري.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="87" data-title="ترقية الحساب لتاجر معتمد" data-cat="10_Profile_and_Security" onclick="openModal(87)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/ترقية الحساب لتاجر معتمد.png" alt="ترقية الحساب لتاجر معتمد" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">ترقية الحساب لتاجر معتمد</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3890 px</span>
+                        <span>406 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/ترقية الحساب لتاجر معتمد.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/ترقية الحساب لتاجر معتمد.png" download="ترقية الحساب لتاجر معتمد.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="88" data-title="توثيق الهوية وترقية الحساب" data-cat="10_Profile_and_Security" onclick="openModal(88)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/توثيق الهوية وترقية الحساب.png" alt="توثيق الهوية وترقية الحساب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">توثيق الهوية وترقية الحساب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3166 px</span>
+                        <span>429 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/توثيق الهوية وترقية الحساب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/توثيق الهوية وترقية الحساب.png" download="توثيق الهوية وترقية الحساب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="89" data-title="حالات توثيق الهوية والحساب" data-cat="10_Profile_and_Security" onclick="openModal(89)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/حالات توثيق الهوية والحساب.png" alt="حالات توثيق الهوية والحساب" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حالات توثيق الهوية والحساب</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3094 px</span>
+                        <span>297 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/حالات توثيق الهوية والحساب.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/حالات توثيق الهوية والحساب.png" download="حالات توثيق الهوية والحساب.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="90" data-title="حسابي والإعدادات والأمان" data-cat="10_Profile_and_Security" onclick="openModal(90)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/حسابي والإعدادات والأمان.png" alt="حسابي والإعدادات والأمان" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">حسابي والإعدادات والأمان</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3016 px</span>
+                        <span>302 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/حسابي والإعدادات والأمان.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/حسابي والإعدادات والأمان.png" download="حسابي والإعدادات والأمان.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="91" data-title="خدمات الكهرباء وشركات التوزيع" data-cat="10_Profile_and_Security" onclick="openModal(91)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.png" alt="خدمات الكهرباء وشركات التوزيع" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">خدمات الكهرباء وشركات التوزيع</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3214 px</span>
+                        <span>455 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.png" download="خدمات الكهرباء وشركات التوزيع.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="92" data-title="دليل التجار التابعين وتحويل السيولة" data-cat="10_Profile_and_Security" onclick="openModal(92)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.png" alt="دليل التجار التابعين وتحويل السيولة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">دليل التجار التابعين وتحويل السيولة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4042 px</span>
+                        <span>414 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.png" download="دليل التجار التابعين وتحويل السيولة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="93" data-title="طلب استيكر حراري جديد للمركبة" data-cat="10_Profile_and_Security" onclick="openModal(93)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.png" alt="طلب استيكر حراري جديد للمركبة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طلب استيكر حراري جديد للمركبة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3324 px</span>
+                        <span>338 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.png" download="طلب استيكر حراري جديد للمركبة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="94" data-title="طلب استيكر حراري جديد وسجل الطلبات" data-cat="10_Profile_and_Security" onclick="openModal(94)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.png" alt="طلب استيكر حراري جديد وسجل الطلبات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طلب استيكر حراري جديد وسجل الطلبات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3848 px</span>
+                        <span>419 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.png" download="طلب استيكر حراري جديد وسجل الطلبات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="95" data-title="طلب رحلة خاصة لمجموعة" data-cat="10_Profile_and_Security" onclick="openModal(95)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/طلب رحلة خاصة لمجموعة.png" alt="طلب رحلة خاصة لمجموعة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">طلب رحلة خاصة لمجموعة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 3830 px</span>
+                        <span>549 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/طلب رحلة خاصة لمجموعة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/طلب رحلة خاصة لمجموعة.png" download="طلب رحلة خاصة لمجموعة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="96" data-title="لوحة نظام التصميم والمكونات" data-cat="10_Profile_and_Security" onclick="openModal(96)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/لوحة نظام التصميم والمكونات.png" alt="لوحة نظام التصميم والمكونات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">لوحة نظام التصميم والمكونات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 7456 px</span>
+                        <span>911 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/لوحة نظام التصميم والمكونات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/لوحة نظام التصميم والمكونات.png" download="لوحة نظام التصميم والمكونات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="97" data-title="مركز الإشعارات وتفاصيل التنبيهات" data-cat="10_Profile_and_Security" onclick="openModal(97)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.png" alt="مركز الإشعارات وتفاصيل التنبيهات" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز الإشعارات وتفاصيل التنبيهات</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 2364 px</span>
+                        <span>239 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.png" download="مركز الإشعارات وتفاصيل التنبيهات.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="98" data-title="مركز المساعدة والدعم الفني" data-cat="10_Profile_and_Security" onclick="openModal(98)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/مركز المساعدة والدعم الفني.png" alt="مركز المساعدة والدعم الفني" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المساعدة والدعم الفني</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4016 px</span>
+                        <span>406 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/مركز المساعدة والدعم الفني.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/مركز المساعدة والدعم الفني.png" download="مركز المساعدة والدعم الفني.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="99" data-title="مركز المساعدة — الأسئلة الشائعة" data-cat="10_Profile_and_Security" onclick="openModal(99)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.png" alt="مركز المساعدة — الأسئلة الشائعة" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المساعدة — الأسئلة الشائعة</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4270 px</span>
+                        <span>450 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.png" download="مركز المساعدة — الأسئلة الشائعة.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screen-card" data-index="100" data-title="مركز المساعدة — الدليل المصور وطرق الاستخدام" data-cat="10_Profile_and_Security" onclick="openModal(100)">
+                <div class="img-container">
+                    <img src="10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.png" alt="مركز المساعدة — الدليل المصور وطرق الاستخدام" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <div class="screen-title">مركز المساعدة — الدليل المصور وطرق الاستخدام</div>
+                    <div class="screen-meta">
+                        <span class="screen-dim">780 × 4282 px</span>
+                        <span>417 KB</span>
+                    </div>
+                    <div class="card-actions" onclick="event.stopPropagation()">
+                        <a href="html_source/10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.html" target="_blank" class="action-link html-link" title="فتح كود HTML للشاشة">🌐 كود HTML</a>
+                        <a href="10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.png" download="مركز المساعدة — الدليل المصور وطرق الاستخدام.png" class="action-link download-link" title="تحميل الصورة الأصلية">💾 تحميل PNG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Modal -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-header">
+            <div class="modal-title-group">
+                <div id="modalTitle" class="modal-screen-title">اسم الشاشة</div>
+                <div id="modalIndex" class="modal-screen-count">1 / 101</div>
+                <div id="screenDimensions" class="modal-screen-dim">[0 × 0 px]</div>
+            </div>
+
+            <div class="modal-header-actions">
+                <div class="zoom-toolbar">
+                    <button class="zoom-btn" onclick="zoomIn()" title="تكبير (+)">➕</button>
+                    <span id="zoomLevel" class="zoom-level">100%</span>
+                    <button class="zoom-btn" onclick="zoomOut()" title="تصغير (-)">➖</button>
+                </div>
+
+                <button class="mode-btn active" id="btnFitWidth" onclick="setViewMode('fit-width')" title="عرض مريح للتمرير في الشاشات الطويلة">
+                    <span>↕️ ملائمة العرض (سكرول)</span>
+                </button>
+
+                <button class="mode-btn" id="btnFitScreen" onclick="setViewMode('fit-screen')" title="احتواء الشاشة بالكامل داخل النافذة">
+                    <span>↔️ احتواء الشاشة</span>
+                </button>
+
+                <button class="mode-btn" onclick="resetZoom()" title="إعادة ضبط الحجم (0)">
+                    <span>🔄 إعادة ضبط</span>
+                </button>
+
+                <a id="btnModalHtml" href="#" target="_blank" class="btn-html-view" title="فتح كود HTML الأصلي للشاشة في صفحة جديدة">
+                    <span>🌐 فتح HTML</span>
+                </a>
+
+                <a id="btnDownload" href="#" download class="mode-btn" style="color: var(--emerald);" title="تحميل الصورة فائقة الدقة">
+                    <span>💾 تحميل الأصلية</span>
+                </a>
+
+                <button class="close-btn" onclick="closeModal()" title="إغلاق (Esc)">✕</button>
+            </div>
+        </div>
+
+        <div id="modalBody" class="modal-body">
+            <button class="nav-arrow prev" onclick="prevScreen(event)" title="السابق (سهم يمين)">❯</button>
+            
+            <div id="modalContainer" class="modal-img-container">
+                <img id="modalImg" src="" alt="Screen Preview" onload="onImageLoaded()">
+            </div>
+
+            <button class="nav-arrow next" onclick="nextScreen(event)" title="التالي (سهم يسار)">❮</button>
+        </div>
+    </div>
+
+    <script>
+        const screensData = [{"title": "الرئيسية ولوحة التحكم", "category": "02_Home_and_System", "width": 780, "height": 2636, "img_bytes": 447653, "html_bytes": 28381, "rel_img_path": "02_Home_and_System/الرئيسية ولوحة التحكم.png", "rel_html_path": "html_source/02_Home_and_System/الرئيسية ولوحة التحكم.html", "id": "6181a813b83c4512b2e42b316e02c29b"}, {"title": "نوافذ العروض وتقييم التطبيق", "category": "02_Home_and_System", "width": 780, "height": 1768, "img_bytes": 346928, "html_bytes": 23131, "rel_img_path": "02_Home_and_System/نوافذ العروض وتقييم التطبيق.png", "rel_html_path": "html_source/02_Home_and_System/نوافذ العروض وتقييم التطبيق.html", "id": "0d3ea1a725e24c30aad5b93c0ba6f4ab"}, {"title": "وضع الصيانة وحالة عدم الاتصال", "category": "02_Home_and_System", "width": 780, "height": 2468, "img_bytes": 290440, "html_bytes": 20293, "rel_img_path": "02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.png", "rel_html_path": "html_source/02_Home_and_System/وضع الصيانة وحالة عدم الاتصال.html", "id": "304d5332916d40f7bb58047c1037daf6"}, {"title": "إدارة الملصقات وفحص الأكواد", "category": "08_Driver_Workspace", "width": 780, "height": 3020, "img_bytes": 357562, "html_bytes": 23418, "rel_img_path": "08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.png", "rel_html_path": "html_source/08_Driver_Workspace/إدارة الملصقات وفحص الأكواد.html", "id": "7840169b26f94f2eb86e7f3618dd18a4"}, {"title": "إدارة رحلات السائق العامة وبدء رحلة", "category": "08_Driver_Workspace", "width": 780, "height": 3334, "img_bytes": 484624, "html_bytes": 28554, "rel_img_path": "08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.png", "rel_html_path": "html_source/08_Driver_Workspace/إدارة رحلات السائق العامة وبدء رحلة.html", "id": "3ccef558ade049df902f2eb43ddc45f3"}, {"title": "إدارة رحلات السائق والتذاكر", "category": "08_Driver_Workspace", "width": 780, "height": 2530, "img_bytes": 419660, "html_bytes": 30116, "rel_img_path": "08_Driver_Workspace/إدارة رحلات السائق والتذاكر.png", "rel_html_path": "html_source/08_Driver_Workspace/إدارة رحلات السائق والتذاكر.html", "id": "e424d461e81746f0884e951b26c53a0a"}, {"title": "إدارة ملصقات المركبة — استيكراتي وفحص الكود", "category": "08_Driver_Workspace", "width": 780, "height": 3198, "img_bytes": 265629, "html_bytes": 23408, "rel_img_path": "08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.png", "rel_html_path": "html_source/08_Driver_Workspace/إدارة ملصقات المركبة — استيكراتي وفحص الكود.html", "id": "658987ba7e754185a8f2c2a6b8a7cd7a"}, {"title": "إعداد خط السير واستيكرات المركبة", "category": "08_Driver_Workspace", "width": 780, "height": 3594, "img_bytes": 344031, "html_bytes": 29208, "rel_img_path": "08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.png", "rel_html_path": "html_source/08_Driver_Workspace/إعداد خط السير واستيكرات المركبة.html", "id": "7a35145696c640de82e99127e76cffc5"}, {"title": "ترقية الحساب لسائق معتمد", "category": "08_Driver_Workspace", "width": 780, "height": 4740, "img_bytes": 606690, "html_bytes": 32751, "rel_img_path": "08_Driver_Workspace/ترقية الحساب لسائق معتمد.png", "rel_html_path": "html_source/08_Driver_Workspace/ترقية الحساب لسائق معتمد.html", "id": "f25f199e8bfa479dbd502d03936786d3"}, {"title": "تقرير الرحلات والأرباح اليومية للسائق", "category": "08_Driver_Workspace", "width": 780, "height": 3030, "img_bytes": 331962, "html_bytes": 28290, "rel_img_path": "08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.png", "rel_html_path": "html_source/08_Driver_Workspace/تقرير الرحلات والأرباح اليومية للسائق.html", "id": "8983963e71fd4c5d919508ec6f943260"}, {"title": "حاسبة الأجرة ورد الفكة الإلكترونية", "category": "08_Driver_Workspace", "width": 780, "height": 2672, "img_bytes": 437227, "html_bytes": 26597, "rel_img_path": "08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.png", "rel_html_path": "html_source/08_Driver_Workspace/حاسبة الأجرة ورد الفكة الإلكترونية.html", "id": "41a5b158908b4aeca26f5325e3607722"}, {"title": "خطوط السير — إنشاء وتحديد المحطات", "category": "08_Driver_Workspace", "width": 780, "height": 3174, "img_bytes": 260560, "html_bytes": 25572, "rel_img_path": "08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.png", "rel_html_path": "html_source/08_Driver_Workspace/خطوط السير — إنشاء وتحديد المحطات.html", "id": "2787b63c280f43b5be3c0f41077d9b4d"}, {"title": "طلبات التوصيل الخاصة ورحلات السائق", "category": "08_Driver_Workspace", "width": 780, "height": 3578, "img_bytes": 414511, "html_bytes": 27180, "rel_img_path": "08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.png", "rel_html_path": "html_source/08_Driver_Workspace/طلبات التوصيل الخاصة ورحلات السائق.html", "id": "408a037e7bb8400aa4546f9f820c920a"}, {"title": "فحص الملصقات ورد باقي الأجرة للراكب", "category": "08_Driver_Workspace", "width": 780, "height": 1768, "img_bytes": 180509, "html_bytes": 33713, "rel_img_path": "08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.png", "rel_html_path": "html_source/08_Driver_Workspace/فحص الملصقات ورد باقي الأجرة للراكب.html", "id": "457bbd243b664f2f93100a0fbf9244b9"}, {"title": "لوحة قيادة السائق وإدارة الرحلة", "category": "08_Driver_Workspace", "width": 780, "height": 1768, "img_bytes": 219262, "html_bytes": 27726, "rel_img_path": "08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.png", "rel_html_path": "html_source/08_Driver_Workspace/لوحة قيادة السائق وإدارة الرحلة.html", "id": "3415f2b4910c48199abcb9b5b1fa610a"}, {"title": "مصفوفة التسعير وجدولة المواعيد", "category": "08_Driver_Workspace", "width": 780, "height": 3584, "img_bytes": 394984, "html_bytes": 29075, "rel_img_path": "08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.png", "rel_html_path": "html_source/08_Driver_Workspace/مصفوفة التسعير وجدولة المواعيد.html", "id": "f726108c62284b31ab56f871a333d8a9"}, {"title": "معالج خط السير — تحديد المسار والمحطات", "category": "08_Driver_Workspace", "width": 780, "height": 2936, "img_bytes": 262325, "html_bytes": 26989, "rel_img_path": "08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.png", "rel_html_path": "html_source/08_Driver_Workspace/معالج خط السير — تحديد المسار والمحطات.html", "id": "0df259c2916c4094a3a9ba6fd9d11e7b"}, {"title": "معالج خط السير — مصفوفة التسعير والجدولة", "category": "08_Driver_Workspace", "width": 780, "height": 3796, "img_bytes": 413156, "html_bytes": 29130, "rel_img_path": "08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.png", "rel_html_path": "html_source/08_Driver_Workspace/معالج خط السير — مصفوفة التسعير والجدولة.html", "id": "964eb5833fe64f4a9c7e264f14438c34"}, {"title": "إحصائيات الأداء وسجل الأرباح", "category": "10_Profile_and_Security", "width": 780, "height": 3322, "img_bytes": 497738, "html_bytes": 27521, "rel_img_path": "10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.png", "rel_html_path": "html_source/10_Profile_and_Security/إحصائيات الأداء وسجل الأرباح.html", "id": "968953a43be94aad92cb29ffb4c86dc9"}, {"title": "إعداد وتغيير الرقم السري للمحفظة", "category": "10_Profile_and_Security", "width": 780, "height": 2454, "img_bytes": 184166, "html_bytes": 20309, "rel_img_path": "10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.png", "rel_html_path": "html_source/10_Profile_and_Security/إعداد وتغيير الرقم السري للمحفظة.html", "id": "a83fba97c2e94a1aa0fd66426d59d188"}, {"title": "إعدادات الأمان الحساسة للمحفظة", "category": "10_Profile_and_Security", "width": 780, "height": 3420, "img_bytes": 372530, "html_bytes": 25532, "rel_img_path": "10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.png", "rel_html_path": "html_source/10_Profile_and_Security/إعدادات الأمان الحساسة للمحفظة.html", "id": "e0cefeb1364f404e87bd0c73de8583f6"}, {"title": "التحديث الإجباري للتطبيق", "category": "10_Profile_and_Security", "width": 780, "height": 1768, "img_bytes": 297241, "html_bytes": 18845, "rel_img_path": "10_Profile_and_Security/التحديث الإجباري للتطبيق.png", "rel_html_path": "html_source/10_Profile_and_Security/التحديث الإجباري للتطبيق.html", "id": "81450533b5e347ec85d7f6ee954d3154"}, {"title": "التفاصيل المالية لرحلة واحدة وكشف الركاب", "category": "10_Profile_and_Security", "width": 780, "height": 5422, "img_bytes": 814500, "html_bytes": 47732, "rel_img_path": "10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.png", "rel_html_path": "html_source/10_Profile_and_Security/التفاصيل المالية لرحلة واحدة وكشف الركاب.html", "id": "1ce0bab04b7749d0bf3cce6b2db9e7bb"}, {"title": "العمليات اللحظية والتقرير الشهري", "category": "10_Profile_and_Security", "width": 780, "height": 1768, "img_bytes": 200539, "html_bytes": 23970, "rel_img_path": "10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.png", "rel_html_path": "html_source/10_Profile_and_Security/العمليات اللحظية والتقرير الشهري.html", "id": "12e31d92b81a4cf5aa1c507c896138f6"}, {"title": "المذكرات المالية والتقويم المجدول", "category": "10_Profile_and_Security", "width": 780, "height": 3604, "img_bytes": 484294, "html_bytes": 30390, "rel_img_path": "10_Profile_and_Security/المذكرات المالية والتقويم المجدول.png", "rel_html_path": "html_source/10_Profile_and_Security/المذكرات المالية والتقويم المجدول.html", "id": "667e1bbc95a941558f33e5b560b0b12f"}, {"title": "الملف الشخصي وتعديل البيانات", "category": "10_Profile_and_Security", "width": 1884, "height": 2724, "img_bytes": 368476, "html_bytes": 22465, "rel_img_path": "10_Profile_and_Security/الملف الشخصي وتعديل البيانات.png", "rel_html_path": "html_source/10_Profile_and_Security/الملف الشخصي وتعديل البيانات.html", "id": "4b86e48f3f00451f8fd3efd55080a66e"}, {"title": "تأكيد الدفع والرقم السري", "category": "10_Profile_and_Security", "width": 780, "height": 1768, "img_bytes": 124450, "html_bytes": 21653, "rel_img_path": "10_Profile_and_Security/تأكيد الدفع والرقم السري.png", "rel_html_path": "html_source/10_Profile_and_Security/تأكيد الدفع والرقم السري.html", "id": "74f23a6ce16c48579deeff2c28cad6e7"}, {"title": "ترقية الحساب لتاجر معتمد", "category": "10_Profile_and_Security", "width": 780, "height": 3890, "img_bytes": 415866, "html_bytes": 25134, "rel_img_path": "10_Profile_and_Security/ترقية الحساب لتاجر معتمد.png", "rel_html_path": "html_source/10_Profile_and_Security/ترقية الحساب لتاجر معتمد.html", "id": "bb840b56c42548f9baee96da8e5f8deb"}, {"title": "توثيق الهوية وترقية الحساب", "category": "10_Profile_and_Security", "width": 780, "height": 3166, "img_bytes": 439753, "html_bytes": 22574, "rel_img_path": "10_Profile_and_Security/توثيق الهوية وترقية الحساب.png", "rel_html_path": "html_source/10_Profile_and_Security/توثيق الهوية وترقية الحساب.html", "id": "695ecd1b3910408a84035efbd9f2cfee"}, {"title": "حالات توثيق الهوية والحساب", "category": "10_Profile_and_Security", "width": 780, "height": 3094, "img_bytes": 305034, "html_bytes": 23615, "rel_img_path": "10_Profile_and_Security/حالات توثيق الهوية والحساب.png", "rel_html_path": "html_source/10_Profile_and_Security/حالات توثيق الهوية والحساب.html", "id": "4e757d77e49545ddb6b8085f79124c30"}, {"title": "حسابي والإعدادات والأمان", "category": "10_Profile_and_Security", "width": 780, "height": 3016, "img_bytes": 310253, "html_bytes": 27506, "rel_img_path": "10_Profile_and_Security/حسابي والإعدادات والأمان.png", "rel_html_path": "html_source/10_Profile_and_Security/حسابي والإعدادات والأمان.html", "id": "6e2327f14b444883bfee16bc41d20cf1"}, {"title": "خدمات الكهرباء وشركات التوزيع", "category": "10_Profile_and_Security", "width": 780, "height": 3214, "img_bytes": 466625, "html_bytes": 29221, "rel_img_path": "10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.png", "rel_html_path": "html_source/10_Profile_and_Security/خدمات الكهرباء وشركات التوزيع.html", "id": "311e220f6aa3493caeb7764967e27d94"}, {"title": "دليل التجار التابعين وتحويل السيولة", "category": "10_Profile_and_Security", "width": 780, "height": 4042, "img_bytes": 423956, "html_bytes": 31571, "rel_img_path": "10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.png", "rel_html_path": "html_source/10_Profile_and_Security/دليل التجار التابعين وتحويل السيولة.html", "id": "e9bd71d5f7a9456a8e133703dc452f51"}, {"title": "طلب استيكر حراري جديد للمركبة", "category": "10_Profile_and_Security", "width": 780, "height": 3324, "img_bytes": 347041, "html_bytes": 24353, "rel_img_path": "10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.png", "rel_html_path": "html_source/10_Profile_and_Security/طلب استيكر حراري جديد للمركبة.html", "id": "0ac84aa10975449b8dfdce50b3823a24"}, {"title": "طلب استيكر حراري جديد وسجل الطلبات", "category": "10_Profile_and_Security", "width": 780, "height": 3848, "img_bytes": 429255, "html_bytes": 28211, "rel_img_path": "10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.png", "rel_html_path": "html_source/10_Profile_and_Security/طلب استيكر حراري جديد وسجل الطلبات.html", "id": "8aef8b1ed1284dd6a50cdd1b8cae190a"}, {"title": "طلب رحلة خاصة لمجموعة", "category": "10_Profile_and_Security", "width": 780, "height": 3830, "img_bytes": 562944, "html_bytes": 31326, "rel_img_path": "10_Profile_and_Security/طلب رحلة خاصة لمجموعة.png", "rel_html_path": "html_source/10_Profile_and_Security/طلب رحلة خاصة لمجموعة.html", "id": "9c74cb41f8054f07a3b2c79bc718c949"}, {"title": "لوحة نظام التصميم والمكونات", "category": "10_Profile_and_Security", "width": 780, "height": 7456, "img_bytes": 933458, "html_bytes": 30742, "rel_img_path": "10_Profile_and_Security/لوحة نظام التصميم والمكونات.png", "rel_html_path": "html_source/10_Profile_and_Security/لوحة نظام التصميم والمكونات.html", "id": "48857d82067a4bb8a3ef639ca3c49365"}, {"title": "مركز الإشعارات وتفاصيل التنبيهات", "category": "10_Profile_and_Security", "width": 780, "height": 2364, "img_bytes": 245273, "html_bytes": 32296, "rel_img_path": "10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.png", "rel_html_path": "html_source/10_Profile_and_Security/مركز الإشعارات وتفاصيل التنبيهات.html", "id": "8b195e6d714b47059b4b2af204539ca3"}, {"title": "مركز المساعدة والدعم الفني", "category": "10_Profile_and_Security", "width": 780, "height": 4016, "img_bytes": 416620, "html_bytes": 30178, "rel_img_path": "10_Profile_and_Security/مركز المساعدة والدعم الفني.png", "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة والدعم الفني.html", "id": "317657e053e74b8d83287cd502ec47c8"}, {"title": "مركز المساعدة — الأسئلة الشائعة", "category": "10_Profile_and_Security", "width": 780, "height": 4270, "img_bytes": 461355, "html_bytes": 27199, "rel_img_path": "10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.png", "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة — الأسئلة الشائعة.html", "id": "c8986169a5ab42eda2513fe4df1af20f"}, {"title": "مركز المساعدة — الدليل المصور وطرق الاستخدام", "category": "10_Profile_and_Security", "width": 780, "height": 4282, "img_bytes": 427640, "html_bytes": 28292, "rel_img_path": "10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.png", "rel_html_path": "html_source/10_Profile_and_Security/مركز المساعدة — الدليل المصور وطرق الاستخدام.html", "id": "ca986a4ac2fb457c9fd679b930ebfdcc"}, {"title": "المحفظة الأساسية وحدود الاستخدام", "category": "03_Wallet_and_Cards", "width": 780, "height": 3102, "img_bytes": 433916, "html_bytes": 26159, "rel_img_path": "03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.png", "rel_html_path": "html_source/03_Wallet_and_Cards/المحفظة الأساسية وحدود الاستخدام.html", "id": "c387a723ad8441d89b6f8718e1d0a84e"}, {"title": "تحويل الأموال وحدود الحساب", "category": "03_Wallet_and_Cards", "width": 780, "height": 1930, "img_bytes": 196665, "html_bytes": 23107, "rel_img_path": "03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.png", "rel_html_path": "html_source/03_Wallet_and_Cards/تحويل الأموال وحدود الحساب.html", "id": "cf9468d480714d2ea29c37c5bb75a836"}, {"title": "سجل جميع المعاملات والفلترة", "category": "03_Wallet_and_Cards", "width": 780, "height": 2268, "img_bytes": 290896, "html_bytes": 23867, "rel_img_path": "03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.png", "rel_html_path": "html_source/03_Wallet_and_Cards/سجل جميع المعاملات والفلترة.html", "id": "71c3638e5d3a48c6903357e3c289450f"}, {"title": "سحب الأموال من المحفظة", "category": "03_Wallet_and_Cards", "width": 780, "height": 2798, "img_bytes": 347387, "html_bytes": 21257, "rel_img_path": "03_Wallet_and_Cards/سحب الأموال من المحفظة.png", "rel_html_path": "html_source/03_Wallet_and_Cards/سحب الأموال من المحفظة.html", "id": "f8690947a8dd4a219fd89acddc99dd1c"}, {"title": "شحن المحفظة وتأكيد الإيداع", "category": "03_Wallet_and_Cards", "width": 780, "height": 3032, "img_bytes": 281412, "html_bytes": 20799, "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.png", "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة وتأكيد الإيداع.html", "id": "c8891207a8a24527b355f392bef215bc"}, {"title": "شحن المحفظة — الدفع الفوري أونلاين بالبطاقات", "category": "03_Wallet_and_Cards", "width": 780, "height": 2416, "img_bytes": 285056, "html_bytes": 19198, "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.png", "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — الدفع الفوري أونلاين بالبطاقات.html", "id": "a6c92bb1fcd247319c4e28a5c805424e"}, {"title": "شحن المحفظة — سجل طلبات الشحن", "category": "03_Wallet_and_Cards", "width": 780, "height": 3270, "img_bytes": 445997, "html_bytes": 24562, "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.png", "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — سجل طلبات الشحن.html", "id": "09e1ca46e09a4441abf07d453edcd578"}, {"title": "شحن المحفظة — فوري باي والمحافظ الإلكترونية", "category": "03_Wallet_and_Cards", "width": 780, "height": 3770, "img_bytes": 399613, "html_bytes": 26546, "rel_img_path": "03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.png", "rel_html_path": "html_source/03_Wallet_and_Cards/شحن المحفظة — فوري باي والمحافظ الإلكترونية.html", "id": "b4fdae66d4c14c5d9a03db0fbf6faee5"}, {"title": "طلب وإصدار كارت ذكي", "category": "03_Wallet_and_Cards", "width": 780, "height": 3468, "img_bytes": 553915, "html_bytes": 25722, "rel_img_path": "03_Wallet_and_Cards/طلب وإصدار كارت ذكي.png", "rel_html_path": "html_source/03_Wallet_and_Cards/طلب وإصدار كارت ذكي.html", "id": "1f01627ed05342ec8d58c4a3a3c68170"}, {"title": "مركز المحفظة والكروت الذكية", "category": "03_Wallet_and_Cards", "width": 780, "height": 2354, "img_bytes": 340622, "html_bytes": 26679, "rel_img_path": "03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.png", "rel_html_path": "html_source/03_Wallet_and_Cards/مركز المحفظة والكروت الذكية.html", "id": "17b070b1188243428070c87b63a7c6b7"}, {"title": "نافذة الدفع اللاتلامسي NFC وكارت حارث", "category": "03_Wallet_and_Cards", "width": 780, "height": 1972, "img_bytes": 341420, "html_bytes": 18703, "rel_img_path": "03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.png", "rel_html_path": "html_source/03_Wallet_and_Cards/نافذة الدفع اللاتلامسي NFC وكارت حارث.html", "id": "c23b20c26e8f40829f2ea13d58e739cd"}, {"title": "إدارة المقاعد والنزول اللحظي", "category": "05_Transportation_and_Trips", "width": 780, "height": 4266, "img_bytes": 431374, "html_bytes": 42286, "rel_img_path": "05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.png", "rel_html_path": "html_source/05_Transportation_and_Trips/إدارة المقاعد والنزول اللحظي.html", "id": "17aa77a33e0b407d95d34a617674e171"}, {"title": "اختيار المقاعد وتأكيد الحجز", "category": "05_Transportation_and_Trips", "width": 780, "height": 5052, "img_bytes": 429736, "html_bytes": 35775, "rel_img_path": "05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.png", "rel_html_path": "html_source/05_Transportation_and_Trips/اختيار المقاعد وتأكيد الحجز.html", "id": "366c0f6579374603a3ce4efeba07ac97"}, {"title": "الماسح الذكي الموحد والدفع اللاتلامسي", "category": "05_Transportation_and_Trips", "width": 780, "height": 1768, "img_bytes": 348200, "html_bytes": 20336, "rel_img_path": "05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.png", "rel_html_path": "html_source/05_Transportation_and_Trips/الماسح الذكي الموحد والدفع اللاتلامسي.html", "id": "fb0af657047d41139349720f1d5b5251"}, {"title": "تذاكري وحجوزاتي السياحية", "category": "05_Transportation_and_Trips", "width": 780, "height": 3344, "img_bytes": 455929, "html_bytes": 29422, "rel_img_path": "05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.png", "rel_html_path": "html_source/05_Transportation_and_Trips/تذاكري وحجوزاتي السياحية.html", "id": "d198de7da69b49b09b1b07f47b90b9fb"}, {"title": "تذكرة صعود وبطاقة الرحلة الرقمية", "category": "05_Transportation_and_Trips", "width": 780, "height": 3270, "img_bytes": 252226, "html_bytes": 29058, "rel_img_path": "05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.png", "rel_html_path": "html_source/05_Transportation_and_Trips/تذكرة صعود وبطاقة الرحلة الرقمية.html", "id": "4dbd1e2f6f2b4ea19f2dae1c4870bf51"}, {"title": "تفاصيل الرحلة السياحية والحجز", "category": "05_Transportation_and_Trips", "width": 780, "height": 3420, "img_bytes": 545262, "html_bytes": 25964, "rel_img_path": "05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.png", "rel_html_path": "html_source/05_Transportation_and_Trips/تفاصيل الرحلة السياحية والحجز.html", "id": "afa4419dc86147599f4a8cbef15a49fb"}, {"title": "تفاصيل الرحلة وطلب حافلة خاصة", "category": "05_Transportation_and_Trips", "width": 780, "height": 3440, "img_bytes": 340132, "html_bytes": 26808, "rel_img_path": "05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.png", "rel_html_path": "html_source/05_Transportation_and_Trips/تفاصيل الرحلة وطلب حافلة خاصة.html", "id": "1be07182daf34cfc89110a6058e81d05"}, {"title": "حجز مقاعد الأتوبيس والبيانات", "category": "05_Transportation_and_Trips", "width": 780, "height": 3438, "img_bytes": 316437, "html_bytes": 32051, "rel_img_path": "05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.png", "rel_html_path": "html_source/05_Transportation_and_Trips/حجز مقاعد الأتوبيس والبيانات.html", "id": "d6e6920ef7124171b2a5fd50abf41a25"}, {"title": "حجز مقاعد الرحلة ومخطط المركبة", "category": "05_Transportation_and_Trips", "width": 780, "height": 2322, "img_bytes": 225356, "html_bytes": 28915, "rel_img_path": "05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.png", "rel_html_path": "html_source/05_Transportation_and_Trips/حجز مقاعد الرحلة ومخطط المركبة.html", "id": "a0c33f0cad1e406597638eba8b850323"}, {"title": "سفرية وتذاكر الرحلات", "category": "05_Transportation_and_Trips", "width": 780, "height": 2780, "img_bytes": 311419, "html_bytes": 26872, "rel_img_path": "05_Transportation_and_Trips/سفرية وتذاكر الرحلات.png", "rel_html_path": "html_source/05_Transportation_and_Trips/سفرية وتذاكر الرحلات.html", "id": "a15ac26bc0204e5baf272f090cd5b1b4"}, {"title": "طوارئ ونش الإنقاذ وإيجار السيارات", "category": "05_Transportation_and_Trips", "width": 780, "height": 2368, "img_bytes": 407987, "html_bytes": 25334, "rel_img_path": "05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.png", "rel_html_path": "html_source/05_Transportation_and_Trips/طوارئ ونش الإنقاذ وإيجار السيارات.html", "id": "b3c091070e904fa38d3691696119df41"}, {"title": "فئات الرحلات والسياحة وتذاكر الخطوط", "category": "05_Transportation_and_Trips", "width": 780, "height": 3564, "img_bytes": 840371, "html_bytes": 29760, "rel_img_path": "05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.png", "rel_html_path": "html_source/05_Transportation_and_Trips/فئات الرحلات والسياحة وتذاكر الخطوط.html", "id": "c5f65fa7ca7e40a3b3babdae4a92633c"}, {"title": "قائمة الرحلات السياحية النشطة", "category": "05_Transportation_and_Trips", "width": 780, "height": 3808, "img_bytes": 454750, "html_bytes": 33047, "rel_img_path": "05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.png", "rel_html_path": "html_source/05_Transportation_and_Trips/قائمة الرحلات السياحية النشطة.html", "id": "9b7e51f7987b4da28d7fcaf27496d0eb"}, {"title": "مركز المساعدة — تقديم شكوى ومتابعة التذاكر", "category": "05_Transportation_and_Trips", "width": 780, "height": 3502, "img_bytes": 349261, "html_bytes": 24115, "rel_img_path": "05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.png", "rel_html_path": "html_source/05_Transportation_and_Trips/مركز المساعدة — تقديم شكوى ومتابعة التذاكر.html", "id": "fc5edf798cf64188938a95c7b2e5c07e"}, {"title": "مركز المواصلات الموحد", "category": "05_Transportation_and_Trips", "width": 780, "height": 2800, "img_bytes": 536806, "html_bytes": 24290, "rel_img_path": "05_Transportation_and_Trips/مركز المواصلات الموحد.png", "rel_html_path": "html_source/05_Transportation_and_Trips/مركز المواصلات الموحد.html", "id": "3db909033ac74f30a1d2c5688e12088c"}, {"title": "إنشاء حساب جديد — الخطوة الأولى", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1950, "img_bytes": 160935, "html_bytes": 18425, "rel_img_path": "01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/إنشاء حساب جديد — الخطوة الأولى.html", "id": "d46d58e5836b4064b92537d0382fb30b"}, {"title": "استعادة وتعيين كلمة المرور", "category": "01_Onboarding_and_Auth", "width": 780, "height": 2660, "img_bytes": 223360, "html_bytes": 21085, "rel_img_path": "01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/استعادة وتعيين كلمة المرور.html", "id": "3af6d2afac9f4572bd413e9a23b7b11e"}, {"title": "استكمال البيانات الشخصية", "category": "01_Onboarding_and_Auth", "width": 780, "height": 2360, "img_bytes": 313011, "html_bytes": 18842, "rel_img_path": "01_Onboarding_and_Auth/استكمال البيانات الشخصية.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/استكمال البيانات الشخصية.html", "id": "a6e6b90dbca34a1eb43297fb11683604"}, {"title": "التحقق من كود واتساب", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1768, "img_bytes": 213186, "html_bytes": 14125, "rel_img_path": "01_Onboarding_and_Auth/التحقق من كود واتساب.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/التحقق من كود واتساب.html", "id": "433f5268d94147b6b8fae8474bc805cb"}, {"title": "تسجيل الدخول والمصادقة البيومترية", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1768, "img_bytes": 146910, "html_bytes": 15078, "rel_img_path": "01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/تسجيل الدخول والمصادقة البيومترية.html", "id": "09d1a52578fc446bb47f8ab996f70c70"}, {"title": "تغيير كلمة المرور ورقم الهاتف", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1768, "img_bytes": 146818, "html_bytes": 26280, "rel_img_path": "01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/تغيير كلمة المرور ورقم الهاتف.html", "id": "81ed5c3f7ba844b9874132191cd37d44"}, {"title": "تفعيل الدخول السريع بالبصمة", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1878, "img_bytes": 277014, "html_bytes": 16599, "rel_img_path": "01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/تفعيل الدخول السريع بالبصمة.html", "id": "81b0e1fd6abb48a2819dc6054426ab46"}, {"title": "شاشة الترحيب وبوابة الدخول", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1768, "img_bytes": 362393, "html_bytes": 17027, "rel_img_path": "01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/شاشة الترحيب وبوابة الدخول.html", "id": "eeb2c87d2e1a47a4b221786717e765d6"}, {"title": "شاشة الجولة التعريفية", "category": "01_Onboarding_and_Auth", "width": 780, "height": 1768, "img_bytes": 306471, "html_bytes": 21077, "rel_img_path": "01_Onboarding_and_Auth/شاشة الجولة التعريفية.png", "rel_html_path": "html_source/01_Onboarding_and_Auth/شاشة الجولة التعريفية.html", "id": "0f36cb35df264bc4a6cf3e9846f52a15"}, {"title": "إعدادات طابعة الفواتير الحرارية", "category": "04_Bills_and_Receipts", "width": 780, "height": 2988, "img_bytes": 265525, "html_bytes": 23829, "rel_img_path": "04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.png", "rel_html_path": "html_source/04_Bills_and_Receipts/إعدادات طابعة الفواتير الحرارية.html", "id": "5cf5f09f74e54a68961e9aad30d14d8d"}, {"title": "بيانات فاتورة الكهرباء", "category": "04_Bills_and_Receipts", "width": 780, "height": 2022, "img_bytes": 181569, "html_bytes": 22847, "rel_img_path": "04_Bills_and_Receipts/بيانات فاتورة الكهرباء.png", "rel_html_path": "html_source/04_Bills_and_Receipts/بيانات فاتورة الكهرباء.html", "id": "f57faea43b9441588f14ac637a69d845"}, {"title": "تأكيد سداد الفاتورة وإدخال الرقم السري", "category": "04_Bills_and_Receipts", "width": 780, "height": 2322, "img_bytes": 202775, "html_bytes": 22498, "rel_img_path": "04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تأكيد سداد الفاتورة وإدخال الرقم السري.html", "id": "09aa7ec0e0a74703a13754020d7579af"}, {"title": "تشريح إيصال تحويل محفظة لمحفظة", "category": "04_Bills_and_Receipts", "width": 780, "height": 2828, "img_bytes": 397218, "html_bytes": 23928, "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال تحويل محفظة لمحفظة.html", "id": "8dd7c89159004ac3a83d6eb4dd0f1718"}, {"title": "تشريح إيصال سداد فاتورة", "category": "04_Bills_and_Receipts", "width": 780, "height": 3260, "img_bytes": 280747, "html_bytes": 23387, "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال سداد فاتورة.html", "id": "f21bb714cabc464d8f53e471fd6779b1"}, {"title": "تشريح إيصال شحن المحفظة والإيداع", "category": "04_Bills_and_Receipts", "width": 780, "height": 3382, "img_bytes": 476896, "html_bytes": 25556, "rel_img_path": "04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تشريح إيصال شحن المحفظة والإيداع.html", "id": "7d32dc63ecb744c7ab03ebd208083971"}, {"title": "تفاصيل الفاتورة وتأكيد السداد", "category": "04_Bills_and_Receipts", "width": 780, "height": 2794, "img_bytes": 272155, "html_bytes": 24031, "rel_img_path": "04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تفاصيل الفاتورة وتأكيد السداد.html", "id": "965efc7466aa4e85ad0edea07b96f5e4"}, {"title": "تفاصيل المعاملة والإيصال", "category": "04_Bills_and_Receipts", "width": 780, "height": 2578, "img_bytes": 265675, "html_bytes": 23924, "rel_img_path": "04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.png", "rel_html_path": "html_source/04_Bills_and_Receipts/تفاصيل المعاملة والإيصال.html", "id": "04a3d9b04bac4c218e21f315bc566f9b"}, {"title": "فواتيري المحفوظة وإدارة المفضلة", "category": "04_Bills_and_Receipts", "width": 780, "height": 3834, "img_bytes": 429977, "html_bytes": 32293, "rel_img_path": "04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.png", "rel_html_path": "html_source/04_Bills_and_Receipts/فواتيري المحفوظة وإدارة المفضلة.html", "id": "12fdae90bb7545528b006f24c674c2e6"}, {"title": "مركز الفواتير والمفضلة", "category": "04_Bills_and_Receipts", "width": 780, "height": 2364, "img_bytes": 256902, "html_bytes": 30025, "rel_img_path": "04_Bills_and_Receipts/مركز الفواتير والمفضلة.png", "rel_html_path": "html_source/04_Bills_and_Receipts/مركز الفواتير والمفضلة.html", "id": "1a7e2aceeae64d4a953677f224b2b3d7"}, {"title": "نتيجة سداد الفاتورة والطباعة الحرارية", "category": "04_Bills_and_Receipts", "width": 780, "height": 2816, "img_bytes": 309144, "html_bytes": 27145, "rel_img_path": "04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.png", "rel_html_path": "html_source/04_Bills_and_Receipts/نتيجة سداد الفاتورة والطباعة الحرارية.html", "id": "3dbcbc6eb8b84dc79ea0e2eed47d9632"}, {"title": "إدارة ماكينات POS الخاصة بالتاجر", "category": "09_Agent_and_POS", "width": 780, "height": 3248, "img_bytes": 390340, "html_bytes": 27595, "rel_img_path": "09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.png", "rel_html_path": "html_source/09_Agent_and_POS/إدارة ماكينات POS الخاصة بالتاجر.html", "id": "45899167330d4303806e4cca1b3357b9"}, {"title": "بوابة الوكيل وماكينة نقاط البيع", "category": "09_Agent_and_POS", "width": 780, "height": 2564, "img_bytes": 302389, "html_bytes": 26539, "rel_img_path": "09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.png", "rel_html_path": "html_source/09_Agent_and_POS/بوابة الوكيل وماكينة نقاط البيع.html", "id": "68222b6e499045269c74e2ff66b20734"}, {"title": "تفاصيل ماكينة POS وسجل العمليات والتسوية", "category": "09_Agent_and_POS", "width": 780, "height": 3222, "img_bytes": 435981, "html_bytes": 27781, "rel_img_path": "09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.png", "rel_html_path": "html_source/09_Agent_and_POS/تفاصيل ماكينة POS وسجل العمليات والتسوية.html", "id": "058255cb0221463c9ca11736d8794f77"}, {"title": "إنذارات سلفني وحالات القوائم الفارغة", "category": "07_Salafni_Credit", "width": 780, "height": 3524, "img_bytes": 389529, "html_bytes": 23714, "rel_img_path": "07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.png", "rel_html_path": "html_source/07_Salafni_Credit/إنذارات سلفني وحالات القوائم الفارغة.html", "id": "7ff46c474d5b4342b8d1dc5e14a00444"}, {"title": "خدمة سلفني والائتمان", "category": "07_Salafni_Credit", "width": 780, "height": 2662, "img_bytes": 465047, "html_bytes": 24453, "rel_img_path": "07_Salafni_Credit/خدمة سلفني والائتمان.png", "rel_html_path": "html_source/07_Salafni_Credit/خدمة سلفني والائتمان.html", "id": "2ad1001b65114480ad87052cfec9792f"}, {"title": "لوحة التاجر وإدارة سلفني", "category": "07_Salafni_Credit", "width": 780, "height": 2842, "img_bytes": 311343, "html_bytes": 26777, "rel_img_path": "07_Salafni_Credit/لوحة التاجر وإدارة سلفني.png", "rel_html_path": "html_source/07_Salafni_Credit/لوحة التاجر وإدارة سلفني.html", "id": "442d3792bc014b55be18dc90c3898ba7"}, {"title": "نوافذ التاجر لإدارة عملاء سلفني", "category": "07_Salafni_Credit", "width": 780, "height": 3626, "img_bytes": 371547, "html_bytes": 28634, "rel_img_path": "07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.png", "rel_html_path": "html_source/07_Salafni_Credit/نوافذ التاجر لإدارة عملاء سلفني.html", "id": "74b67a03608b4725aded027fbf14bb25"}, {"title": "نوافذ طلب وسداد سلفني", "category": "07_Salafni_Credit", "width": 780, "height": 4184, "img_bytes": 368054, "html_bytes": 26211, "rel_img_path": "07_Salafni_Credit/نوافذ طلب وسداد سلفني.png", "rel_html_path": "html_source/07_Salafni_Credit/نوافذ طلب وسداد سلفني.html", "id": "6077e6103b6644caa824cc2eb19116d4"}, {"title": "إنشاء معاملة ضمان جديدة", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 2456, "img_bytes": 252571, "html_bytes": 22514, "rel_img_path": "06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/إنشاء معاملة ضمان جديدة.html", "id": "464c36530ef84292b9f5b86538ebc45f"}, {"title": "حافظ على فلوسك والوساطة", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 2952, "img_bytes": 381414, "html_bytes": 28878, "rel_img_path": "06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك والوساطة.html", "id": "5deec4f4d91e4e21b1e44fce18a73316"}, {"title": "حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 2906, "img_bytes": 360270, "html_bytes": 22737, "rel_img_path": "06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/حافظ على فلوسك — حالة بانتظار الموافقة والأرشيف.html", "id": "9a10bba552534c5bb0adcb88586b2a09"}, {"title": "عقد الضمان وكود الاستلام السري", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 2924, "img_bytes": 305199, "html_bytes": 23879, "rel_img_path": "06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/عقد الضمان وكود الاستلام السري.html", "id": "a526214de33741b79e16669d7d20b5df"}, {"title": "نافذة إنهاء المعاملة وتحرير الأموال", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 2324, "img_bytes": 247011, "html_bytes": 18362, "rel_img_path": "06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/نافذة إنهاء المعاملة وتحرير الأموال.html", "id": "fbbcd4bdd36a4bf9bea6f0b1af827419"}, {"title": "نافذة تقديم بلاغ وفتح نزاع تحكيم", "category": "06_Escrow_Save_Your_Money", "width": 780, "height": 1768, "img_bytes": 189521, "html_bytes": 20747, "rel_img_path": "06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.png", "rel_html_path": "html_source/06_Escrow_Save_Your_Money/نافذة تقديم بلاغ وفتح نزاع تحكيم.html", "id": "42fb8fefb8b54e1680cd3bff60e6ca82"}];
+        let currentIndex = 0;
+        let activeCategory = 'all';
+        let currentMode = 'fit-width';
+        let currentZoomScale = 1.0;
+        const BASE_MOBILE_WIDTH = 480;
+
+        function openModal(index) {
+            currentIndex = index;
+            const screen = screensData[index];
+            if (!screen) return;
+
+            document.getElementById('modalTitle').textContent = screen.title;
+            document.getElementById('modalIndex').textContent = `${index + 1} / ${screensData.length}`;
+            document.getElementById('screenDimensions').textContent = `[${screen.width} × ${screen.height} px]`;
+            
+            const img = document.getElementById('modalImg');
+            img.src = screen.rel_img_path;
+
+            document.getElementById('btnDownload').href = screen.rel_img_path;
+            document.getElementById('btnDownload').setAttribute('download', `${screen.title}.png`);
+            
+            const btnHtml = document.getElementById('btnModalHtml');
+            if (screen.rel_html_path) {
+                btnHtml.href = screen.rel_html_path;
+                btnHtml.style.display = 'flex';
+            } else {
+                btnHtml.style.display = 'none';
+            }
+
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const modalBody = document.getElementById('modalBody');
+            modalBody.scrollTop = 0;
+            modalBody.scrollLeft = 0;
+
+            if (screen.height / screen.width > 1.8) {
+                setViewMode('fit-width');
+            } else {
+                setViewMode('fit-screen');
+            }
+        }
+
+        function onImageLoaded() {
+            const img = document.getElementById('modalImg');
+            const nw = img.naturalWidth || 780;
+            const nh = img.naturalHeight || 1768;
+            document.getElementById('screenDimensions').textContent = `[${nw} × ${nh} px]`;
+        }
+
+        function setViewMode(mode) {
+            currentMode = mode;
+            const container = document.getElementById('modalContainer');
+            const img = document.getElementById('modalImg');
+            const btnWidth = document.getElementById('btnFitWidth');
+            const btnScreen = document.getElementById('btnFitScreen');
+
+            container.classList.remove('view-fit-width', 'view-fit-screen', 'view-custom-zoom');
+            btnWidth.classList.remove('active');
+            btnScreen.classList.remove('active');
+
+            if (mode === 'fit-width') {
+                container.classList.add('view-fit-width');
+                btnWidth.classList.add('active');
+                currentZoomScale = 1.0;
+                img.style.width = BASE_MOBILE_WIDTH + 'px';
+                document.getElementById('zoomLevel').textContent = '100%';
+            } else if (mode === 'fit-screen') {
+                container.classList.add('view-fit-screen');
+                btnScreen.classList.add('active');
+                currentZoomScale = 1.0;
+                img.style.width = 'auto';
+                document.getElementById('zoomLevel').textContent = 'Fit';
+            } else if (mode === 'custom-zoom') {
+                container.classList.add('view-custom-zoom');
+                img.style.width = Math.round(BASE_MOBILE_WIDTH * currentZoomScale) + 'px';
+                document.getElementById('zoomLevel').textContent = Math.round(currentZoomScale * 100) + '%';
+            }
+        }
+
+        function zoomIn() {
+            currentZoomScale = Math.min(currentZoomScale + 0.25, 4.0);
+            setViewMode('custom-zoom');
+        }
+
+        function zoomOut() {
+            currentZoomScale = Math.max(currentZoomScale - 0.25, 0.4);
+            setViewMode('custom-zoom');
+        }
+
+        function resetZoom() {
+            const screen = screensData[currentIndex];
+            if (screen && (screen.height / screen.width > 1.8)) {
+                setViewMode('fit-width');
+            } else {
+                setViewMode('fit-screen');
+            }
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextScreen(e) {
+            if (e) e.stopPropagation();
+            if (currentIndex < screensData.length - 1) {
+                openModal(currentIndex + 1);
+            } else {
+                openModal(0);
+            }
+        }
+
+        function prevScreen(e) {
+            if (e) e.stopPropagation();
+            if (currentIndex > 0) {
+                openModal(currentIndex - 1);
+            } else {
+                openModal(screensData.length - 1);
+            }
+        }
+
+        // Keyboard navigation and shortcuts
+        document.addEventListener('keydown', function(e) {
+            const overlay = document.getElementById('modalOverlay');
+            if (!overlay.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowRight') {
+                prevScreen();
+            } else if (e.key === 'ArrowLeft') {
+                nextScreen();
+            } else if (e.key === '+' || e.key === '=') {
+                zoomIn();
+            } else if (e.key === '-' || e.key === '_') {
+                zoomOut();
+            } else if (e.key === '0') {
+                resetZoom();
+            }
+        });
+
+        // Ctrl + Mouse Wheel Zoom inside modal
+        const modalBody = document.getElementById('modalBody');
+        modalBody.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    zoomIn();
+                } else {
+                    zoomOut();
+                }
+            }
+        }, { passive: false });
+
+        // Mouse Drag / Pan capability
+        let isDown = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        modalBody.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.nav-arrow')) return;
+            isDown = true;
+            modalBody.classList.add('grabbing');
+            startX = e.pageX - modalBody.offsetLeft;
+            startY = e.pageY - modalBody.offsetTop;
+            scrollLeft = modalBody.scrollLeft;
+            scrollTop = modalBody.scrollTop;
+        });
+
+        modalBody.addEventListener('mouseleave', () => {
+            isDown = false;
+            modalBody.classList.remove('grabbing');
+        });
+
+        modalBody.addEventListener('mouseup', () => {
+            isDown = false;
+            modalBody.classList.remove('grabbing');
+        });
+
+        modalBody.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - modalBody.offsetLeft;
+            const y = e.pageY - modalBody.offsetTop;
+            const walkX = (x - startX) * 1.5;
+            const walkY = (y - startY) * 1.5;
+            modalBody.scrollLeft = scrollLeft - walkX;
+            modalBody.scrollTop = scrollTop - walkY;
+        });
+
+        // Filter by category
+        function filterCategory(cat, btn) {
+            activeCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            const sections = document.querySelectorAll('.category-section');
+            sections.forEach(sec => {
+                if (cat === 'all' || sec.dataset.cat === cat) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+            filterScreens();
+        }
+
+        // Instant search
+        function filterScreens() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.screen-card');
+
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const cat = card.dataset.cat.toLowerCase();
+                const matchesSearch = !query || title.includes(query) || cat.includes(query);
+                const matchesCat = (activeCategory === 'all' || card.dataset.cat === activeCategory);
+
+                if (matchesSearch && matchesCat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.category-section').forEach(sec => {
+                if (activeCategory !== 'all' && sec.dataset.cat !== activeCategory) {
+                    sec.style.display = 'none';
+                    return;
+                }
+                const visibleCards = sec.querySelectorAll('.screen-card:not([style*="display: none"])');
+                sec.style.display = visibleCards.length > 0 ? 'block' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>

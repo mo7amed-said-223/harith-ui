@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - العروض والتقييم</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary-container": "#7ca9ad",
+            "background": "#f7fafb",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "border-subtle": "#E2E8F0",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed-variant": "#005236",
+            "primary-fixed": "#bcebef",
+            "surface-subtle": "#F1F5F9",
+            "on-error": "#ffffff",
+            "surface-bright": "#f7fafb",
+            "surface-container-high": "#e5e9ea",
+            "outline-variant": "#c0c8c9",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#00714d",
+            "secondary": "#006c49",
+            "on-tertiary": "#ffffff",
+            "surface": "#FFFFFF",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-secondary-fixed": "#002113",
+            "surface-container": "#ebeeef",
+            "primary-fixed-dim": "#a1cfd3",
+            "text-secondary": "#475569",
+            "inverse-on-surface": "#eef1f2",
+            "surface-container-low": "#f1f4f5",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary-fixed": "#ffddb8",
+            "surface-variant": "#e0e3e4",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "on-background": "#181c1d",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#513100",
+            "on-primary-fixed": "#002022",
+            "on-surface": "#181c1d",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "tertiary": "#341e00",
+            "inverse-primary": "#a1cfd3",
+            "surface-container-highest": "#e0e3e4",
+            "surface-tint": "#396569",
+            "danger-debit": "#EF4444",
+            "on-surface-variant": "#404849",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "inverse-surface": "#2d3132",
+            "tertiary-fixed-dim": "#ffb95f",
+            "text-primary": "#0F172A",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary": "#00272a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "sans": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic"],
+            "headline-sm": ["IBM Plex Sans Arabic"],
+            "headline-md": ["IBM Plex Sans Arabic"],
+            "body-sm": ["IBM Plex Sans Arabic"],
+            "body-lg": ["IBM Plex Sans Arabic"],
+            "label-md": ["IBM Plex Sans Arabic"],
+            "label-lg": ["IBM Plex Sans Arabic"],
+            "currency-display": ["IBM Plex Sans Arabic"],
+            "headline-lg": ["IBM Plex Sans Arabic"],
+            "currency-body": ["IBM Plex Sans Arabic"],
+            "body-md": ["IBM Plex Sans Arabic"],
+            "label-sm": ["IBM Plex Sans Arabic"],
+            "display-lg": ["IBM Plex Sans Arabic"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary font-sans antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex justify-center items-start">
+<!-- Mobile Container Shell -->
+<div class="relative w-full max-w-md min-h-screen bg-background overflow-x-hidden pb-[90px] shadow-2xl">
+<!-- ==================== UNDERLYING SCREEN: HARITH HOME DASHBOARD ==================== -->
+<header class="bg-surface border-b border-border-subtle h-16 flex items-center justify-between px-4 sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">أهلاً بك</span>
+<span class="text-label-lg font-label-lg text-text-primary">أحمد الشناوي</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Background Content: Smart Wallet & Bento Grid -->
+<main class="p-4 space-y-4">
+<!-- Balance Card -->
+<div class="relative overflow-hidden rounded-3xl p-5 bg-gradient-to-br from-primary-container to-[#062325] text-on-primary shadow-xl">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-label-sm font-label-sm text-on-primary-container">إجمالي الرصيد المتاح</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-currency-display font-currency-display tracking-tight">٤,٨٥٠.٥٠</span>
+<span class="text-label-md font-label-md text-secondary-fixed-dim">ج.م</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-surface/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-white">محفظة نشطة</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">contactless</span>
+<span class="text-label-md font-label-md tracking-wider">•••• ٩٠٢١</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-primary-container">كارت حارث الذكي</span>
+</div>
+</div>
+<!-- Quick Actions Grid -->
+<div class="grid grid-cols-4 gap-2.5">
+<div class="bg-surface border border-border-subtle p-3 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">add_card</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary">شحن</span>
+</div>
+<div class="bg-surface border border-border-subtle p-3 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary">تحويل</span>
+</div>
+<div class="bg-surface border border-border-subtle p-3 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary">فواتير</span>
+</div>
+<div class="bg-surface border border-border-subtle p-3 rounded-2xl flex flex-col items-center justify-center gap-1 text-center shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">directions_bus</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-primary">مواصلات</span>
+</div>
+</div>
+<!-- Transit Quick-Pass Card Placeholder -->
+<div class="bg-surface border border-border-subtle rounded-2xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">directions_bus</span>
+</div>
+<div>
+<span class="text-label-md font-label-md text-text-primary block">سفرية القاهرة - الإسكندرية</span>
+<span class="text-body-sm font-body-sm text-text-muted">الرصيف ٤ • مقعد رقم ١٢B</span>
+</div>
+</div>
+<span class="px-2.5 py-1 bg-surface-subtle text-primary-container text-label-sm font-label-sm rounded-lg font-bold">مؤكد</span>
+</div>
+</main>
+<!-- ==================== CINEMATIC BACKDROP BLUR & OVERLAY ==================== -->
+<div class="fixed inset-0 z-40 bg-[#0B3E42]/45 backdrop-blur-[6px] transition-opacity duration-300 flex flex-col justify-between p-4 overflow-y-auto">
+<!-- MODAL 1: PROMOTIONAL CAMPAIGN POPUP (CENTER/TOP) -->
+<section class="w-full max-w-sm mx-auto bg-surface rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(11,62,66,0.35)] border border-border-subtle relative mt-2 animate-in fade-in zoom-in-95 duration-200">
+<!-- Close Button (X) -->
+<button aria-label="إغلاق الإعلان" class="absolute top-3 left-3 z-30 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-md text-text-primary flex items-center justify-center hover:bg-surface transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<!-- Banner Visual Header -->
+<div class="relative h-44 bg-gradient-to-br from-primary-container via-[#0e4d52] to-[#006c49] p-4 flex flex-col justify-between overflow-hidden">
+<!-- Subtle Decorative Grid Glow -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -top-10 w-36 h-36 bg-amber-400/20 rounded-full blur-xl pointer-events-none"></div>
+<!-- Top Badge: Golden Accent Shield -->
+<div class="self-start relative z-10">
+<div class="inline-flex items-center gap-1.5 bg-[#F59E0B] text-slate-900 px-3 py-1 rounded-full text-label-sm font-bold shadow-md shadow-amber-500/20">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span>عرض حصري لفترة محدودة</span>
+</div>
+</div>
+<!-- 3D Transportation & Smart Card Visual Composition -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="w-3/5 space-y-1">
+<span class="text-white/80 text-label-sm font-label-sm block">حملة وفر مع حارث</span>
+<div class="text-white font-headline-lg-mobile text-headline-lg-mobile leading-tight font-bold">
+                خصم <span class="text-secondary-fixed">٢٥%</span> فوري
+              </div>
+</div>
+<!-- Graphic Card & Bus Metaphor Placeholder Image -->
+<div class="w-24 h-24 relative flex items-center justify-center">
+<img class="w-full h-full object-contain drop-shadow-2xl" data-alt="A premium 3D isometric financial and mobility super-app graphic featuring a metallic emerald transit card floating beside a sleek modern passenger bus. Soft ambient teal and golden studio lighting highlights clean futuristic design with gold coin accents against a deep dark teal background, evoking modern Egyptian FinTech trust and speed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ryv5MgRjTW8eN6Gdicg4kFt4W7mQTtXIdDdwfZhgeyzN_zBBk5txd3Zgwbe9wB6zQgIq0DgQ4X_f4bb0pCkyprJpiwSkRNUceV05HwNTRQXBgBQtjfJhCmb4eRL4zO2ujjgSP8QHi8WILNnIQE1DU8oa_k2YwnigMfiTazTMqwdPe-cDkyvwQDneNwr1XFcgkBspIU3h15Y621t6oBGfk_AU1MQI_D5uBH1uD5_EEHEPY1qHBXHooYeivNPmXOHdsfweI5ewP67b"/>
+</div>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-5 text-right space-y-3.5">
+<h2 class="text-headline-sm font-headline-sm text-text-primary leading-snug">
+            خصم 25% على رحلات الأتوبيسات وأول شحنة لكارت حارث!
+          </h2>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+            استمتع بخصم فوري عند حجز تذكرتك القادمة عبر خدمة سفرية أو شحن كارت حارث الذكي للمواصلات. العرض سارٍ لجميع المستخدمين حتى نهاية الشهر.
+          </p>
+<!-- Countdown Timer Box -->
+<div class="bg-surface-subtle border border-border-subtle rounded-2xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary-container">
+<span class="material-symbols-outlined text-[20px] text-secondary">timer</span>
+<span class="text-label-sm font-label-sm text-text-secondary font-medium">ينتهي العرض خلال:</span>
+</div>
+<div class="flex items-center gap-1.5 font-bold text-label-md font-label-md text-primary-container" dir="ltr">
+<span class="bg-surface px-2 py-1 rounded-lg border border-border-subtle shadow-xs">03 <span class="text-[10px] text-text-muted font-normal">أيام</span></span>
+<span class="text-text-muted">:</span>
+<span class="bg-surface px-2 py-1 rounded-lg border border-border-subtle shadow-xs">14 <span class="text-[10px] text-text-muted font-normal">ساعة</span></span>
+<span class="text-text-muted">:</span>
+<span class="bg-surface px-2 py-1 rounded-lg border border-border-subtle shadow-xs text-secondary">22 <span class="text-[10px] text-text-muted font-normal">دقيقة</span></span>
+</div>
+</div>
+<!-- Main CTA Button -->
+<button class="w-full h-12 bg-primary-container hover:bg-[#082C2F] active:scale-98 transition-all text-white rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-lg shadow-primary-container/20" type="button">
+<span>استفد بالعرض الآن</span>
+<span class="material-symbols-outlined text-[20px] rotate-180">arrow_forward</span>
+</button>
+<!-- Dismiss Text Button -->
+<div class="text-center pt-1">
+<button class="text-label-sm font-label-sm text-text-muted hover:text-text-secondary transition-colors underline-offset-4 hover:underline" type="button">
+              لا تظهر هذا العرض مجدداً اليوم
+            </button>
+</div>
+</div>
+</section>
+<!-- MODAL 2: CUSTOM RATING DIALOG (BOTTOM SHEET/MODAL) -->
+<section class="w-full max-w-sm mx-auto bg-surface rounded-3xl p-5 shadow-[0_24px_60px_rgba(11,62,66,0.4)] border border-border-subtle mt-4 mb-2 animate-in slide-in-from-bottom-6 duration-300">
+<!-- Header & Badge -->
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-2xl bg-secondary-container/40 text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-0.5">
+<h3 class="text-headline-sm font-headline-sm text-text-primary">كيف كانت تجربتك مع حارث اليوم؟</h3>
+<p class="text-body-sm font-body-sm text-text-secondary leading-snug">رأيك يساعدنا في تحسين تجربة الدفع والمواصلات لجميع ركاب ومستخدمي مصر.</p>
+</div>
+</div>
+<!-- 5-Star Interactive Rating Row -->
+<div class="py-4 flex justify-center items-center gap-2" dir="ltr" id="star-rating-container">
+<button class="star-btn p-1 text-[#F59E0B] hover:scale-110 active:scale-95 transition-transform" data-rating="1" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn p-1 text-[#F59E0B] hover:scale-110 active:scale-95 transition-transform" data-rating="2" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn p-1 text-[#F59E0B] hover:scale-110 active:scale-95 transition-transform" data-rating="3" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn p-1 text-[#F59E0B] hover:scale-110 active:scale-95 transition-transform" data-rating="4" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn p-1 text-[#F59E0B] hover:scale-110 active:scale-95 transition-transform" data-rating="5" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<!-- Optional Fast Feedback Input -->
+<div class="mb-4">
+<textarea class="w-full bg-surface-subtle border border-border-subtle rounded-xl p-3 text-body-sm font-body-sm text-text-primary placeholder:text-text-muted focus:bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all resize-none outline-none" placeholder="أخبرنا برأيك أو أي اقتراح تود إضافته..." rows="2"></textarea>
+</div>
+<!-- Balanced Action Controls -->
+<div class="flex items-center gap-2.5">
+<button class="flex-1 h-12 bg-primary-container hover:bg-[#082C2F] text-white rounded-xl font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-md shadow-primary-container/15 active:scale-98 transition-all" type="button">
+<span>تقييم على المتجر الآن</span>
+<span>⭐</span>
+</button>
+<button class="px-5 h-12 bg-surface-subtle hover:bg-surface-container text-text-secondary rounded-xl font-label-md text-label-md active:scale-98 transition-all" type="button">
+            لاحقاً
+          </button>
+</div>
+</section>
+</div>
+<!-- ==================== SHARED COMPONENT: HARITH BOTTOM NAV BAR ==================== -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1: الرئيسية (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150" href="#home">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-150" href="#wallet">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="text-label-sm font-label-sm">محفظتي</span>
+</a>
+<!-- Item 3: ادفع (Central Floating Scan Dock) -->
+<a class="flex flex-col items-center justify-center -mt-6 active:scale-95 transition-transform duration-150 group" href="#pay">
+<div class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] group-hover:bg-[#082C2F] transition-colors border-2 border-surface">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold mt-1">ادفع</span>
+</a>
+<!-- Item 4: المواصلات -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-150" href="#transit">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm">المواصلات</span>
+</a>
+<!-- Item 5: حسابي -->
+<a class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 transition-transform duration-150" href="#account">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-label-sm font-label-sm">حسابي</span>
+</a>
+</nav>
+</div>
+<!-- Interactive Rating Micro-Interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const starButtons = document.querySelectorAll('.star-btn');
+      starButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          starButtons.forEach((s, idx) => {
+            const icon = s.querySelector('.material-symbols-outlined');
+            if (idx <= index) {
+              s.classList.add('text-[#F59E0B]');
+              s.classList.remove('text-slate-300');
+              icon.style.fontVariationSettings = "'FILL' 1";
+            } else {
+              s.classList.remove('text-[#F59E0B]');
+              s.classList.add('text-slate-300');
+              icon.style.fontVariationSettings = "'FILL' 0";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body></html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مركز المساعدة والدعم الفني - منظومة حارث</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-subtle": "#F1F5F9",
+            "surface-container-high": "#e5e9ea",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-container": "#e19000",
+            "inverse-surface": "#2d3132",
+            "on-secondary-fixed": "#002113",
+            "on-secondary-container": "#00714d",
+            "primary-fixed-dim": "#a1cfd3",
+            "border-subtle": "#E2E8F0",
+            "surface-container-low": "#f1f4f5",
+            "primary": "#00272a",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "text-muted": "#94A3B8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-on-surface": "#eef1f2",
+            "on-tertiary-fixed": "#2a1700",
+            "primary-container": "#0b3e42",
+            "outline": "#707979",
+            "surface-bright": "#f7fafb",
+            "danger-debit": "#EF4444",
+            "text-secondary": "#475569",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-container": "#7ca9ad",
+            "text-primary": "#0F172A",
+            "secondary-container": "#6cf8bb",
+            "surface-variant": "#e0e3e4",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container": "#ebeeef",
+            "tertiary-container": "#513100",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-tint": "#396569",
+            "on-primary-fixed": "#002022",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#FFFFFF",
+            "tertiary": "#341e00",
+            "primary-fixed": "#bcebef",
+            "on-surface-variant": "#404849",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c0c8c9",
+            "on-surface": "#181c1d",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "on-primary-fixed-variant": "#1f4d51"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "currency-body": ["18px", {"lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "currency-display": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "display-lg": ["36px", {"lineHeight": "48px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen pb-28 antialiased selection:bg-secondary selection:text-surface">
+<!-- TopAppBar (Based on Shared Components JSON) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full flex items-center justify-between px-space-md shadow-sm">
+<!-- RTL Start: Back Arrow inside rounded container -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary hover:bg-surface-container transition-colors duration-200 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+<!-- Center: Headline & Live Indicator -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight font-bold">
+        مركز المساعدة والدعم الفني
+      </h1>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-medium">فريق الدعم متصل الآن</span>
+</div>
+</div>
+<!-- RTL End: Customer Service Utility Icon -->
+<button aria-label="الدعم الفني" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container transition-colors duration-200 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</button>
+</header>
+<!-- Main Content Container -->
+<main class="max-w-2xl mx-auto px-space-md pt-4 space-y-5">
+<!-- Quick Support Hero Bento Card -->
+<section class="relative overflow-hidden rounded-2xl bg-primary-container text-surface p-5 shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary-container">
+<div class="absolute -top-12 -left-12 w-36 h-36 rounded-full bg-secondary opacity-15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface/10 text-primary-fixed text-label-sm font-label-sm mb-2 backdrop-blur-sm border border-surface/10">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+              استجابة فائقة السرعة
+            </span>
+<h2 class="text-headline-md font-headline-md text-surface font-bold">جاهزون لمساعدتك 24 ساعة يومياً</h2>
+<p class="text-body-sm font-body-sm text-on-primary-container mt-1">تواصل مباشر وسريع لحل جميع مشكلات العمليات ومحفظة حارث الذكية.</p>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-surface/10 border border-surface/15 flex items-center justify-center text-primary-fixed shadow-inner shrink-0 mr-3">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">headset_mic</span>
+</div>
+</div>
+<!-- Quick Action CTA Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-surface/10">
+<button class="h-11 rounded-xl bg-surface text-primary-container text-label-lg font-label-lg flex items-center justify-center gap-2 font-bold shadow-sm hover:bg-surface-subtle active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>واتساب المعتمد</span>
+</button>
+<button class="h-11 rounded-xl bg-secondary text-surface text-label-lg font-label-lg flex items-center justify-center gap-2 font-bold shadow-[0_4px_16px_rgba(16,185,129,0.3)] hover:opacity-95 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-surface text-[20px]">forum</span>
+<span>شات حي فوري</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Segmented Control Tabs -->
+<nav aria-label="أقسام الدعم" class="bg-surface-subtle p-1.5 rounded-2xl flex items-center gap-1 border border-border-subtle">
+<button class="flex-1 py-2.5 px-3 rounded-xl text-text-secondary text-label-md font-label-md text-center hover:text-text-primary transition-all" type="button">
+        دليل مصور
+      </button>
+<button class="flex-1 py-2.5 px-3 rounded-xl text-text-secondary text-label-md font-label-md text-center hover:text-text-primary transition-all" type="button">
+        الأسئلة الشائعة
+      </button>
+<!-- Active Tab: تذكرة شكوى -->
+<button aria-current="page" class="flex-1 py-2.5 px-3 rounded-xl bg-primary-container text-surface text-label-md font-label-md font-bold text-center shadow-sm transition-all" type="button">
+        تذكرة شكوى
+      </button>
+</nav>
+<!-- Tab 3 Panel: Feedback & Ticket Creation Form -->
+<section class="bg-surface rounded-2xl p-5 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<!-- Form Header -->
+<div class="flex items-center justify-between pb-4 border-b border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-surface-subtle text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold">تقديم تذكرة شكوى أو اقتراح</h3>
+<p class="text-body-sm font-body-sm text-text-muted">سيتم متابعة التذكرة وتوجيهها للمسؤول فوراً</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-primary-container text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+          متوسط الرد: 15 دقيقة
+        </span>
+</div>
+<form class="mt-5 space-y-4" onsubmit="event.preventDefault();">
+<!-- Category Dropdown -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="ticket-category">
+            نوع الطلب / التصنيف الرئيسي <span class="text-danger-debit">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[52px] bg-surface border-[1.5px] border-border-subtle rounded-xl px-4 text-body-md font-body-md text-text-primary appearance-none focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors cursor-pointer" id="ticket-category">
+<option value="1">مشكلة في شحن الكارت / NFC</option>
+<option value="2">معاملة معلقة</option>
+<option value="3">استفسار عن خدمة سلفني</option>
+<option value="4">اقتراح تحسين</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-text-muted">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Optional Transaction Number -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary" for="txn-id">
+              رقم المعاملة المتعلقة بالشكوى <span class="text-text-muted text-label-sm">(اختياري)</span>
+</label>
+<button class="text-label-sm font-label-sm text-secondary font-medium hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">content_paste</span>
+              لصق من آخر عملية
+            </button>
+</div>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface border-[1.5px] border-border-subtle rounded-xl px-4 text-left font-mono text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" dir="ltr" id="txn-id" placeholder="مثال: TXN-74920381#" type="text"/>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[18px]">tag</span>
+</div>
+</div>
+</div>
+<!-- Complaint / Suggestion Textarea -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary" for="ticket-details">
+              تفاصيل الشكوى أو الاقتراح <span class="text-danger-debit">*</span>
+</label>
+<span class="text-label-sm font-label-sm text-text-muted font-mono" id="char-counter">0/500</span>
+</div>
+<textarea class="w-full bg-surface border-[1.5px] border-border-subtle rounded-xl p-3.5 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors resize-none" id="ticket-details" maxlength="500" oninput="document.getElementById('char-counter').innerText = this.value.length + '/500'" placeholder="يرجى كتابة كافة التفاصيل لمساعدتنا على اتخاذ الإجراء السريع (اسم المحطة، توقيت المشكلة، المبلغ، إلخ)..." rows="4"></textarea>
+</div>
+<!-- Attachment Box -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5">
+            إرفاق لقطات الشاشة والمستندات الداعمة
+          </label>
+<div class="border-2 border-dashed border-border-subtle hover:border-primary-container/50 bg-background rounded-xl p-4 text-center transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center mx-auto text-text-muted group-hover:text-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[22px]">cloud_upload</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-primary font-medium mt-2">
+              اسحب وأفلت الملفات هنا، أو 
+              <span class="text-secondary font-bold underline">تصفح جهازك</span>
+</p>
+<p class="text-label-sm font-label-sm text-text-muted mt-0.5">
+              الصيغ المدعومة: JPG, PNG, PDF (الحد الأقصى 5 ميجابايت)
+            </p>
+</div>
+<!-- Uploaded File Preview Mock -->
+<div class="mt-2.5 flex items-center justify-between p-2.5 bg-surface-subtle border border-border-subtle rounded-xl">
+<div class="flex items-center gap-2.5 overflow-hidden">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">image</span>
+</div>
+<div class="truncate">
+<p class="text-label-md font-label-md text-text-primary truncate" dir="ltr">screenshot_receipt.png</p>
+<p class="text-label-sm font-label-sm text-text-muted">1.4 MB • تم الفحص بنجاح</p>
+</div>
+</div>
+<button aria-label="حذف الملف المرفق" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted hover:text-danger-debit hover:bg-error-container/20 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-surface text-label-lg font-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(11,62,66,0.15)] hover:bg-primary active:scale-[0.98] transition-all mt-2" type="submit">
+<span>إرسال التذكرة لفريق الدعم</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+</section>
+<!-- Previous Tickets Section -->
+<section class="space-y-3 pt-2">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold">سجل التذاكر السابقة</h3>
+<span class="text-label-sm font-label-sm text-text-muted font-medium">عرض جميع التذاكر (2)</span>
+</div>
+<!-- Ticket 1 (Resolved) -->
+<article class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-3">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md text-text-muted bg-surface-subtle px-2 py-0.5 rounded-md">#TKT-8942</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-container text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                تم الحل والرد
+              </span>
+</div>
+<h4 class="text-body-lg font-body-lg text-text-primary font-semibold">استفسار عن رصيد الكارت المفقود</h4>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted shrink-0">12 أكتوبر 2026</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary bg-surface-subtle p-3 rounded-xl border border-border-subtle/60 leading-relaxed">
+          «عزيزي العميل، تم فحص العملية بنجاح وتحويل المبلغ المعلق وقدره 150 ج.م إلى محفظتك الإلكترونية المسجلة.»
+        </p>
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-sm font-label-sm text-text-muted">القسم: العمليات والدفع الذكي</span>
+<button class="text-label-md font-label-md text-primary-container font-bold hover:underline flex items-center gap-1" type="button">
+<span>عرض الرد الكامل</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</article>
+<!-- Ticket 2 (In Progress) -->
+<article class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] space-y-3">
+<div class="flex items-start justify-between gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-label-md font-label-md text-text-muted bg-surface-subtle px-2 py-0.5 rounded-md">#TKT-9104</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[13px]">pending</span>
+                قيد المعالجة من المشرف
+              </span>
+</div>
+<h4 class="text-body-lg font-body-lg text-text-primary font-semibold">تأخر وصول شحنة الاستيكر الحراري</h4>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted shrink-0">أمس، 04:30 م</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+          تم توجيه رقم بوليصة الشحن مع مندوب التوصيل لمنطقة مصر الجديدة، وسيتم التحديث فور استلام كود التفعيل.
+        </p>
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-sm font-label-sm text-text-muted">القسم: بطاقات حارث والشحن</span>
+<button class="text-label-md font-label-md text-primary-container font-bold hover:underline flex items-center gap-1" type="button">
+<span>تتبع الحالة</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</article>
+</section>
+</main>
+<!-- HarithBottomNav (BottomNavBar Based on Shared Components JSON) -->
+<!-- Strict semantic mapping: Screen is Profile/Account sub-destination -> "حسابي" is Active -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 w-full z-50 h-[76px] flex justify-around items-center px-space-md pb-safe bg-surface rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)] border-t border-border-subtle">
+<!-- Item 1: الرئيسية (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm mt-1">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي وكروتي (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="text-label-sm font-label-sm mt-1">محفظتي وكروتي</span>
+</a>
+<!-- Item 3: Center Floating Dock (ادفع / امسح) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع / امسح" class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-surface shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[26px]">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm font-bold text-primary-container mt-1">ادفع / امسح</span>
+</div>
+<!-- Item 4: المواصلات (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-1">المواصلات</span>
+</a>
+<!-- Item 5: حسابي (ACTIVE STATE - Style execution matching JSON specification) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 font-bold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm font-bold">حسابي</span>
+</a>
+</nav>
+</body></html>

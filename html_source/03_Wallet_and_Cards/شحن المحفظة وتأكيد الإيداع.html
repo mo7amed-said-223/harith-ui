@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - شحن المحفظة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-subtle": "#F1F5F9",
+            "surface-container": "#ebeeef",
+            "surface-variant": "#e0e3e4",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#513100",
+            "danger-debit": "#EF4444",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary": "#ffffff",
+            "surface": "#FFFFFF",
+            "primary": "#00272a",
+            "secondary": "#006c49",
+            "on-error": "#ffffff",
+            "surface-bright": "#f7fafb",
+            "inverse-surface": "#2d3132",
+            "surface-container-highest": "#e0e3e4",
+            "on-surface": "#181c1d",
+            "text-muted": "#94A3B8",
+            "surface-container-low": "#f1f4f5",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed-variant": "#1f4d51",
+            "border-subtle": "#E2E8F0",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed": "#bcebef",
+            "on-surface-variant": "#404849",
+            "text-primary": "#0F172A",
+            "primary-container": "#0b3e42",
+            "on-tertiary-fixed": "#2a1700",
+            "outline": "#707979",
+            "surface-tint": "#396569",
+            "tertiary-fixed": "#ffddb8",
+            "on-secondary-container": "#00714d",
+            "on-primary-container": "#7ca9ad",
+            "on-secondary-fixed": "#002113",
+            "on-tertiary-container": "#e19000",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "on-background": "#181c1d",
+            "tertiary": "#341e00",
+            "text-secondary": "#475569",
+            "outline-variant": "#c0c8c9",
+            "on-error-container": "#93000a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-fixed": "#002022",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-dim": "#d7dadb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "display-lg": ["36px", {"lineHeight": "48px", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "currency-display": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "currency-body": ["18px", {"lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile Container Shell -->
+<div class="w-full max-w-md bg-surface min-h-screen flex flex-col relative shadow-[0_0_32px_rgba(11,62,66,0.06)] pb-28">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-border-subtle h-16 px-4 flex items-center justify-between transition-colors">
+<!-- RTL Start: Back Action Button (chevron_right in 40x40 container) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center Screen Title -->
+<h1 class="font-headline-sm text-headline-sm text-text-primary font-bold">شحن المحفظة</h1>
+<!-- RTL End: Charge History / Log Button -->
+<button aria-label="سجل طلبات الشحن" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container flex items-center justify-center text-primary active:scale-95 transition-all relative" title="سجل طلبات الشحن" type="button">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+</button>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<main class="flex-1 px-4 py-4 space-y-5">
+<!-- Balance Preview Capsule -->
+<section class="bg-surface-bright border border-border-subtle rounded-2xl p-4 flex items-center justify-between shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-text-muted block">رصيد محفظة حارث الحالي</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-currency-body text-currency-body text-primary font-bold">1,480.50</span>
+<span class="font-label-sm text-label-sm font-semibold text-text-secondary">ج.م</span>
+</div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          نشط وآمن
+        </span>
+</section>
+<!-- Segmented Tab Selector -->
+<section class="bg-surface-subtle p-1.5 rounded-xl border border-border-subtle flex gap-1">
+<!-- Tab 1: Selected -->
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-bold text-center shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>تحويل يدوي سريع (إنستاباي / محافظ)</span>
+</button>
+<!-- Tab 2: Inactive -->
+<button class="flex-1 py-2.5 px-3 rounded-lg text-text-secondary hover:text-text-primary font-label-lg text-label-lg font-medium text-center transition-all duration-200 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span>دفع فوري (بطاقة PayMob)</span>
+</button>
+</section>
+<!-- Gateway Selection Section -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold">اختر وسيلة الإيداع</h2>
+<span class="font-label-sm text-label-sm text-text-muted">مباشر وفوري</span>
+</div>
+<div class="space-y-2.5">
+<!-- Gateway 1: InstaPay (Active / Selected) -->
+<div class="relative bg-surface rounded-2xl border-2 border-primary-container p-3.5 shadow-[0_4px_16px_rgba(11,62,66,0.06)] cursor-pointer transition-transform active:scale-[0.99]">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5A248A] to-[#8C3AD1] text-white flex items-center justify-center shadow-sm font-bold text-base tracking-tight">
+<span class="font-currency-body text-currency-body">IPA</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-label-lg text-label-lg font-bold text-primary">InstaPay (إنستاباي)</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">بدون عمولة</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">تحويل فوري بدون عمولة على مدار 24 ساعة</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Gateway 2: Mobile Cash Wallets -->
+<div class="bg-surface rounded-2xl border border-border-subtle p-3.5 hover:border-primary-container/40 transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-subtle text-primary border border-border-subtle flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">smartphone</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-semibold text-text-primary">محافظ الموبايل كاش</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">فودافون / أورانج / اتصالات / وي كاش</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex-shrink-0"></div>
+</div>
+</div>
+<!-- Gateway 3: Direct Bank Transfer (IBAN) -->
+<div class="bg-surface rounded-2xl border border-border-subtle p-3.5 hover:border-primary-container/40 transition-all cursor-pointer">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-subtle text-primary border border-border-subtle flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-semibold text-text-primary">تحويل بنكي مباشر</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">عبر رقم الحساب الدولي (IBAN / سويفت كود)</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex-shrink-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Official Company Account Copy Box -->
+<section class="bg-surface-subtle border border-border-subtle rounded-2xl p-4 space-y-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md font-bold text-primary">عنوان الدفع الرسمي لحارث عبر إنستاباي (IPA):</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">تم التحقق ✓</span>
+</div>
+<div class="bg-surface border border-border-subtle rounded-xl p-3 flex items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-primary-container text-[20px]">alternate_email</span>
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-wide ltr-text font-mono select-all" id="instapay-handle">harith@instapay</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-white font-label-md text-label-md font-semibold hover:bg-secondary/90 active:scale-95 transition-all shadow-sm flex-shrink-0" id="copy-btn" onclick="navigator.clipboard.writeText('harith@instapay'); alert('تم نسخ عنوان الدفع الرسمي بنجاح!');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>نسخ العنوان</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-text-muted shrink-0 mt-0.5">info</span>
+<span>افتح تطبيق إنستاباي الخاص بك، حوّل المبلغ المطلوب إلى العنوان أعلاه، ثم املأ بيانات التأكيد بالأسفل.</span>
+</p>
+</section>
+<!-- Deposit Confirmation Form Card -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<div class="border-b border-border-subtle pb-3">
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">بيانات تأكيد الإيداع</h2>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">املأ الحقول التالية لتأكيد العملية ومطابقتها فوراً</p>
+</div>
+<form class="space-y-3.5" onsubmit="event.preventDefault();">
+<!-- Field 1: Amount -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md font-bold text-text-primary flex items-center justify-between">
+<span>المبلغ المحول (ج.م) *</span>
+<span class="font-label-sm text-label-sm font-normal text-text-muted">الحد الأدنى: 20 ج.م</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle px-4 text-text-primary font-body-lg text-body-lg placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-all" placeholder="مثال: 500.00" type="number"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-label-md text-label-md font-semibold text-text-muted">ج.م</span>
+</div>
+</div>
+<!-- Field 2: Sender Info -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md font-bold text-text-primary block">رقم الهاتف أو عنوان الحساب المرسل منه *</label>
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle px-4 text-text-primary font-body-md text-body-md placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-all" placeholder="010xxxxxxxx أو username@instapay" type="text"/>
+</div>
+<!-- Field 3: Reference ID -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md font-bold text-text-primary flex items-center justify-between">
+<span>رقم العملية المرجعي (Reference ID) *</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">help</span>
+                موجود بالإيصال
+              </span>
+</label>
+<input class="w-full h-[52px] bg-surface rounded-xl border-[1.5px] border-border-subtle px-4 text-text-primary font-body-md text-body-md placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-all" placeholder="الرمز المكون من 12 رقم في إيصال البنك" type="text"/>
+</div>
+<!-- Field 4: Upload Receipt Box -->
+<div class="space-y-1.5 pt-1">
+<label class="font-label-md text-label-md font-bold text-text-primary block">صورة إيصال التحويل (Screenshot) *</label>
+<div class="border-2 border-dashed border-border-subtle hover:border-primary-container/50 bg-surface-subtle/60 rounded-2xl p-5 text-center cursor-pointer transition-colors group">
+<input accept="image/*" class="hidden" id="receipt-upload" type="file"/>
+<label class="cursor-pointer flex flex-col items-center justify-center space-y-2" for="receipt-upload">
+<div class="w-12 h-12 rounded-full bg-surface text-primary-container border border-border-subtle flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary group-hover:text-primary-container">إرفاق صورة إيصال التحويل (Screenshot)</p>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">يدعم صيغ JPG, PNG حتى 5 ميجابايت</p>
+</div>
+<div class="inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm font-semibold pt-1">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+<span>اضغط للاختيار من معرض الصور</span>
+</div>
+</label>
+</div>
+</div>
+</form>
+</section>
+<!-- Trust Security Badge -->
+<section class="flex items-center justify-center gap-2 py-1 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>جميع المعاملات مشفرة ومحمية وفق معايير البنك المركزي المصري</span>
+</section>
+</main>
+<!-- Docked Primary Bottom Action Canvas -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-t border-border-subtle py-3 px-4 shadow-[0_-8px_24px_rgba(11,62,66,0.06)]">
+<div class="max-w-md mx-auto space-y-2">
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-[#082C2F] text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-[0_4px_16px_rgba(11,62,66,0.25)]" type="button">
+<span>إرسال طلب الشحن للمراجعة</span>
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<p class="text-center font-body-sm text-body-sm text-text-secondary flex items-center justify-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+<span>تتم مراجعة الطلب وإيداع الرصيد تلقائياً خلال 3 دقائق</span>
+</p>
+</div>
+</div>
+</div>
+</body></html>

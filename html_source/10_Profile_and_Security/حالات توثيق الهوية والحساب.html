@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حالة توثيق الهوية (KYC) - حارث</title>
+<!-- IBM Plex Sans Arabic font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f1f4f5",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-fixed-variant": "#005236",
+            "surface": "#FFFFFF",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary": "#341e00",
+            "secondary-container": "#6cf8bb",
+            "secondary": "#006c49",
+            "primary-container": "#0b3e42",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#bcebef",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed": "#002022",
+            "background": "#f7fafb",
+            "outline-variant": "#c0c8c9",
+            "danger-debit": "#EF4444",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#e5e9ea",
+            "inverse-primary": "#a1cfd3",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "on-surface": "#181c1d",
+            "on-tertiary-container": "#e19000",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-fixed": "#002113",
+            "outline": "#707979",
+            "inverse-surface": "#2d3132",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-subtle": "#F1F5F9",
+            "text-primary": "#0F172A",
+            "tertiary-container": "#513100",
+            "surface-dim": "#d7dadb",
+            "surface-container": "#ebeeef",
+            "text-muted": "#94A3B8",
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#404849",
+            "text-secondary": "#475569",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-variant": "#e0e3e4",
+            "on-secondary-container": "#00714d",
+            "surface-tint": "#396569",
+            "border-subtle": "#E2E8F0",
+            "surface-bright": "#f7fafb",
+            "on-background": "#181c1d",
+            "primary": "#00272a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .ambient-shadow {
+      box-shadow: 0 4px 16px rgba(11, 62, 66, 0.06);
+    }
+    .hero-shadow {
+      box-shadow: 0 12px 28px rgba(11, 62, 66, 0.12);
+    }
+    .watermark-pattern {
+      background-image: repeating-linear-gradient(-45deg, rgba(11, 62, 66, 0.05) 0px, rgba(11, 62, 66, 0.05) 1px, transparent 1px, transparent 14px);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-full bg-background flex justify-center selection:bg-secondary-fixed selection:text-primary">
+<!-- Mobile Shell Wrapper -->
+<div class="w-full max-w-md min-h-screen bg-background flex flex-col justify-between pb-8">
+<!-- Top App Bar (As specified in JSON and Design Guidance) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full px-4 flex justify-between items-center shadow-none">
+<div class="flex items-center gap-3">
+<!-- RTL Start: Right-pointing chevron indicates return in RTL flow -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-text-primary font-bold">حالة توثيق الهوية (KYC)</h1>
+<p class="font-label-sm text-label-sm text-text-muted">التحقق المالي والأمني الموحد</p>
+</div>
+</div>
+<!-- RTL End: Trailing Support Icon Container -->
+<button aria-label="الدعم والمساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+</button>
+</header>
+<!-- Main Content Bento Canvas -->
+<main class="px-4 py-4 space-y-4 flex-1">
+<!-- Hero Card: الحالة النشطة قيد المراجعة التدقيقية -->
+<section class="bg-surface rounded-2xl p-5 border border-border-subtle ambient-shadow relative overflow-hidden">
+<!-- Subtle Top Amber Accent Line -->
+<div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-l from-on-tertiary-container via-tertiary-fixed-dim to-on-tertiary-container"></div>
+<div class="flex items-start justify-between gap-3 pt-1">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-tertiary-fixed/30 flex items-center justify-center text-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[26px]" data-icon="hourglass_top" data-weight="fill" style="font-variation-settings: 'FILL' 1;">hourglass_top</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed/40 text-tertiary-container font-label-sm text-label-sm font-semibold mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+                قيد التدقيق والمراجعة
+              </div>
+<h2 class="font-headline-md text-headline-md text-text-primary font-bold leading-snug">طلب التوثيق قيد الفحص</h2>
+</div>
+</div>
+</div>
+<p class="mt-3 font-body-md text-body-md text-text-secondary leading-relaxed">
+          يقوم فريق الالتزام المالي بمراجعة ومطابقة المستندات المرفوعة وفقاً للضوابط الأمنية المصرفية.
+        </p>
+<!-- Time badge indicator -->
+<div class="mt-3.5 bg-surface-subtle rounded-xl p-3 flex items-center justify-between border border-border-subtle">
+<div class="flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" data-icon="schedule">schedule</span>
+<span class="font-label-md text-label-md">الوقت المتبقي التقريبي</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary font-bold bg-surface px-2.5 py-1 rounded-lg border border-border-subtle shadow-sm">
+            متوسط الرد: 15 دقيقة
+          </span>
+</div>
+<!-- Submitted Application Details -->
+<div class="mt-4 pt-3.5 border-t border-border-subtle grid grid-cols-2 gap-3 text-start">
+<div class="bg-surface-container-low/70 rounded-xl p-2.5 border border-border-subtle/70">
+<span class="block font-label-sm text-label-sm text-text-muted mb-0.5">الرقم القومي المسجل</span>
+<span class="font-label-lg text-label-lg text-text-primary font-bold tracking-wider font-mono">29510150102456</span>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-2.5 border border-border-subtle/70">
+<span class="block font-label-sm text-label-sm text-text-muted mb-0.5">تاريخ الإرسال</span>
+<span class="font-label-lg text-label-lg text-text-primary font-semibold">اليوم 02:40 م</span>
+</div>
+</div>
+<!-- National ID Micro Previews -->
+<div class="mt-4">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-secondary">المستندات الرقمية المرفوعة</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+              تشفير مصرفي 256-bit
+            </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Front Face ID Card Mockup -->
+<div class="relative rounded-xl border border-border-subtle p-2.5 bg-surface-subtle overflow-hidden flex flex-col justify-between h-24 watermark-pattern">
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="badge">badge</span>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 bg-surface text-text-secondary rounded border border-border-subtle">الوجه الأمامي</span>
+</div>
+<div class="z-10 flex items-center gap-2">
+<div class="w-7 h-8 rounded bg-surface border border-border-subtle flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined text-[16px]" data-icon="person">person</span>
+</div>
+<div class="space-y-1">
+<div class="w-12 h-1.5 bg-outline-variant/60 rounded-full"></div>
+<div class="w-16 h-1 bg-outline-variant/40 rounded-full"></div>
+</div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none rotate-[-12deg] select-none opacity-20">
+<span class="font-label-sm font-bold text-primary tracking-widest text-center text-[10px]">بيانات مشفرة ومحمية</span>
+</div>
+</div>
+<!-- Back Face ID Card Mockup -->
+<div class="relative rounded-xl border border-border-subtle p-2.5 bg-surface-subtle overflow-hidden flex flex-col justify-between h-24 watermark-pattern">
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-text-muted text-[18px]" data-icon="credit_card">credit_card</span>
+<span class="font-label-sm text-[10px] px-1.5 py-0.5 bg-surface text-text-secondary rounded border border-border-subtle">الوجه الخلفي</span>
+</div>
+<div class="z-10 space-y-1.5">
+<div class="h-3 bg-surface-container-high rounded flex items-center px-1">
+<div class="w-full h-1 bg-text-muted/40 rounded"></div>
+</div>
+<div class="w-14 h-1 bg-outline-variant/50 rounded-full"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none rotate-[-12deg] select-none opacity-20">
+<span class="font-label-sm font-bold text-primary tracking-widest text-center text-[10px]">بيانات مشفرة ومحمية</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stepper Component: مراحل التدقيق الثلاث -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle ambient-shadow">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold mb-4">مسار الفحص والاعتماد</h3>
+<div class="relative space-y-5">
+<!-- Continuous Vertical Tracker Line -->
+<div class="absolute top-3 right-4 -bottom-1 w-0.5 bg-border-subtle -z-0"></div>
+<!-- Step 1: Completed -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">استلام ومطابقة البيانات آلياً</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold bg-secondary-fixed/30 px-2 py-0.5 rounded-full">مكتملة</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">تم التحقق من مطابقة الأرقام والبيانات الحيوية المسجلة.</p>
+</div>
+</div>
+<!-- Step 2: In-Progress -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary-container ring-4 ring-tertiary-fixed/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending">pending</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">فحص أمان البنك المركزي والهوية</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold bg-tertiary-fixed/40 px-2 py-0.5 rounded-full">قيد التنفيذ ⏳</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">الربط المباشر مع سجلات I-Score وبوابات التحقق الحكومية.</p>
+</div>
+</div>
+<!-- Step 3: Pending Approval -->
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-subtle text-text-muted border border-border-subtle flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex-1 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-text-muted font-bold">تفعيل الحد الذهبي وإصدار الكارت</span>
+<span class="font-label-sm text-label-sm text-text-muted bg-surface-subtle px-2 py-0.5 rounded-full">بانتظار الاعتماد</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">رفع السقف المالي للمحفظة وإتاحة اشتراكات النقل الذكية.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section Header for Developer & Verification States -->
+<div class="pt-2 flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider block font-bold">محاكاة حالات النظام</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold">نماذج الاستجابة المحتملة</h4>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container text-text-secondary px-2.5 py-1 rounded-lg">دليل التوثيق</span>
+</div>
+<!-- State Card: Verified (Success Case) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle ambient-shadow relative overflow-hidden transition-all hover:border-secondary/40">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm font-bold bg-secondary-fixed/40 px-2 py-0.5 rounded-md mb-1">
+<span>موثق بالكامل (Verified)</span>
+</div>
+<h5 class="font-label-lg text-label-lg text-text-primary font-bold">حساب موثق وترقية المزايا</h5>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="shield_lock">shield_lock</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-2.5">
+          في حال القبول الفوري، يتم رفع السقف الائتماني واليومي فوراً دون الحاجة لزيارة أي فرع.
+        </p>
+<!-- Perks Bento -->
+<div class="mt-3 bg-surface-subtle rounded-xl p-3 flex items-center justify-between border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md text-text-secondary">السقف المالي اليومي:</span>
+</div>
+<span class="font-currency-body text-currency-body text-primary font-bold">
+            100,000 <span class="font-label-sm text-label-sm text-text-muted">ج.م</span>
+</span>
+</div>
+</section>
+<!-- State Card: Rejected (Failure Case & Rectification) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle ambient-shadow relative overflow-hidden transition-all hover:border-error/40">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-error-container/40 text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="error" data-weight="fill" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-1 text-error font-label-sm text-label-sm font-bold bg-error-container/50 px-2 py-0.5 rounded-md mb-1">
+<span>مرفوض (Rejected)</span>
+</div>
+<h5 class="font-label-lg text-label-lg text-text-primary font-bold">حالة الرفض وتصحيح الطلب</h5>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted" data-icon="help">help</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-2.5">
+          الأسباب الشائعة لإعادة الفحص من خلال الرقابة المالية:
+        </p>
+<!-- Common Rejection Reasons -->
+<ul class="mt-2 space-y-1.5 font-body-sm text-body-sm text-text-secondary pr-1">
+<li class="flex items-center gap-2 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>صورة البطاقة غير واضحة أو وجود انعكاس فلاش قوي.</span>
+</li>
+<li class="flex items-center gap-2 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>انتهاء سريان البطاقة الشخصية أو عدم تطابق الرقم القومي.</span>
+</li>
+</ul>
+<!-- Re-upload Action Button inside card -->
+<button class="mt-3.5 w-full h-10 rounded-xl bg-surface border border-error text-error font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-error-container/20 transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="upload_file">upload_file</span>
+<span>إعادة رفع المستندات المحدثة</span>
+</button>
+</section>
+<!-- Trust & Compliance Micro Badge -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-border-subtle flex items-center gap-3 text-start">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0" data-icon="verified_user">verified_user</span>
+<p class="font-body-sm text-body-sm text-text-secondary leading-snug">
+          تتم معالجة وتخزين البيانات وفقاً لأعلى معايير الأمن السيبراني المعتمدة من البنك المركزي المصري (CBE).
+        </p>
+</div>
+</main>
+<!-- Bottom Actions Container (Suppressing BottomNavBar as this is a focused task/sub-journey) -->
+<footer class="px-4 pt-3 pb-2 bg-surface/90 backdrop-blur-md sticky bottom-0 z-30 border-t border-border-subtle max-w-md w-full mx-auto space-y-2">
+<!-- Primary Action: Contact KYC Team -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:bg-primary transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+<span>التواصل مع فريق التوثيق المالي</span>
+</button>
+<!-- Secondary Ghost Action: Back to Settings -->
+<button class="w-full h-11 rounded-xl bg-surface text-text-primary border border-border-subtle font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-subtle transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary" data-icon="arrow_forward">arrow_forward</span>
+<span>العودة لإعدادات الحساب</span>
+</button>
+</footer>
+</div>
+</body></html>

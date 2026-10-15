@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>معالج خط السير — مصفوفة التسعير والجدولة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#2a1700",
+            "on-background": "#181c1d",
+            "surface-container-high": "#e5e9ea",
+            "border-subtle": "#E2E8F0",
+            "primary": "#00272a",
+            "inverse-primary": "#a1cfd3",
+            "secondary": "#006c49",
+            "primary-fixed": "#bcebef",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#341e00",
+            "tertiary-container": "#513100",
+            "tertiary-fixed": "#ffddb8",
+            "outline-variant": "#c0c8c9",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-subtle": "#F1F5F9",
+            "secondary-container": "#6cf8bb",
+            "error": "#ba1a1a",
+            "surface-tint": "#396569",
+            "surface-dim": "#d7dadb",
+            "error-container": "#ffdad6",
+            "surface-container": "#ebeeef",
+            "text-secondary": "#475569",
+            "surface-variant": "#e0e3e4",
+            "background": "#f7fafb",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-primary-fixed": "#002022",
+            "text-muted": "#94A3B8",
+            "on-tertiary-container": "#e19000",
+            "surface": "#FFFFFF",
+            "on-surface": "#181c1d",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary": "#ffffff",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-container": "#7ca9ad",
+            "surface-bright": "#f7fafb",
+            "on-error-container": "#93000a",
+            "primary-container": "#0b3e42",
+            "text-primary": "#0F172A",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-container": "#00714d",
+            "surface-container-low": "#f1f4f5",
+            "inverse-on-surface": "#eef1f2",
+            "on-secondary-fixed": "#002113",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#2d3132",
+            "on-surface-variant": "#404849",
+            "danger-debit": "#EF4444"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-lg": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "display-lg-mobile": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen pb-36">
+<!-- Mobile Screen Container -->
+<div class="max-w-md mx-auto bg-background min-h-screen relative flex flex-col border-x border-border-subtle shadow-sm">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="bg-surface dark:bg-surface-container border-b border-border-subtle dark:border-outline flex justify-between items-center w-full h-16 px-4 sticky top-0 z-40">
+<!-- Right in RTL: Back Navigation -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary dark:text-inverse-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+<!-- Center Headline and Subtitle -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary dark:text-on-surface font-bold tracking-tight">إدارة المسار والملصقات</h1>
+<p class="text-label-sm font-label-sm text-text-muted">مصفوفة التسعير والجدولة • خطوة 3 و 4 من 4</p>
+</div>
+<!-- Left in RTL: Help Trigger -->
+<button aria-label="المساعدة والدعم" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pt-4 space-y-6">
+<!-- Wizard Stepper Progress Bar -->
+<section class="bg-surface rounded-xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-primary font-bold">اكتمال تهيئة الخط: 85%</span>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded-full font-bold">المرحلة الأخيرة</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<!-- Step 1: Done -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-full h-1.5 rounded-full bg-secondary"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-sm font-label-sm text-text-muted">بيانات المركبة</span>
+</div>
+</div>
+<!-- Step 2: Done -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-full h-1.5 rounded-full bg-secondary"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-sm font-label-sm text-text-muted">المحطات</span>
+</div>
+</div>
+<!-- Step 3: Active -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-full h-1.5 rounded-full bg-primary-container"></div>
+<div class="flex items-center gap-1">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container text-white text-[9px] flex items-center justify-center font-bold">3</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">التسعير</span>
+</div>
+</div>
+<!-- Step 4: Active -->
+<div class="flex flex-col items-center gap-1.5">
+<div class="w-full h-1.5 rounded-full bg-primary-container"></div>
+<div class="flex items-center gap-1">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container text-white text-[9px] flex items-center justify-center font-bold">4</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">الجدولة</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Pricing Matrix -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary">مصفوفة تسعير الركاب بين المحطات</h2>
+<p class="text-label-sm font-label-sm text-text-muted">تحديد تعرفة الأجرة وفقاً للمواقف ونقاط التوقف</p>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-primary-container font-semibold bg-primary-fixed/40 px-2.5 py-1 rounded-lg">4 قطاعات</span>
+</div>
+<!-- Matrix Cards List -->
+<div class="bg-surface rounded-2xl border border-border-subtle p-3.5 space-y-3 shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<!-- Route Segment 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:border-outline-variant transition-colors">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+<span class="text-body-md font-body-md text-text-primary font-semibold">من موقف السلام إلى كعبيش</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted">
+<span>مسافة تقديرية 6.4 كم</span>
+<span>•</span>
+<span>توقف فرعي</span>
+</div>
+</div>
+<div class="w-28 relative">
+<input class="w-full h-11 bg-surface border border-border-subtle rounded-xl text-center font-currency-body text-currency-body text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-left pl-9 pr-2" type="text" value="10.00"/>
+<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-label-sm font-label-sm text-text-muted pointer-events-none">ج.م</span>
+</div>
+</div>
+<!-- Route Segment 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:border-outline-variant transition-colors">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+<span class="text-body-md font-body-md text-text-primary font-semibold">من موقف السلام إلى كوبري غمرة</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted">
+<span>مسافة تقديرية 12.8 كم</span>
+<span>•</span>
+<span>محطة وسطى</span>
+</div>
+</div>
+<div class="w-28 relative">
+<input class="w-full h-11 bg-surface border border-border-subtle rounded-xl text-center font-currency-body text-currency-body text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-left pl-9 pr-2" type="text" value="12.00"/>
+<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-label-sm font-label-sm text-text-muted pointer-events-none">ج.م</span>
+</div>
+</div>
+<!-- Route Full Journey (Official Badge) -->
+<div class="relative p-3.5 rounded-xl bg-gradient-to-br from-primary-container/5 via-secondary-container/10 to-transparent border-2 border-secondary/40 shadow-sm">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="text-body-md font-body-md text-text-primary font-bold">الأجرة الكاملة للخط (السلام ⬅ رمسيس)</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold bg-secondary/10 text-secondary px-2.5 py-0.5 rounded-full border border-secondary/20">الأجرة الرسمية</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-label-sm font-label-sm text-text-secondary max-w-[190px]">المسار المعتمد من هيئة النقل العام — شامل كود QR الملصق بالصالون</p>
+<div class="w-28 relative">
+<input class="w-full h-11 bg-surface border-2 border-secondary/50 rounded-xl text-center font-currency-body text-currency-body text-primary-container font-extrabold focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-left pl-9 pr-2" type="text" value="15.00"/>
+<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-label-sm font-label-sm text-secondary font-bold pointer-events-none">ج.م</span>
+</div>
+</div>
+</div>
+<!-- Route Segment 4 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:border-outline-variant transition-colors">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+<span class="text-body-md font-body-md text-text-primary font-semibold">من كعبيش إلى رمسيس</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-muted">
+<span>مسافة تقديرية 8.1 كم</span>
+<span>•</span>
+<span>توقف فرعي</span>
+</div>
+</div>
+<div class="w-28 relative">
+<input class="w-full h-11 bg-surface border border-border-subtle rounded-xl text-center font-currency-body text-currency-body text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-left pl-9 pr-2" type="text" value="10.00"/>
+<span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-label-sm font-label-sm text-text-muted pointer-events-none">ج.م</span>
+</div>
+</div>
+</div>
+<!-- Extra Services Bento Card -->
+<div class="bg-surface rounded-2xl border border-border-subtle p-4 space-y-4 shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">add_box</span>
+<h3 class="text-headline-sm font-headline-sm text-text-primary">الخدمات الإضافية والخصومات الرقمية</h3>
+</div>
+<!-- Luggage Counter -->
+<div class="flex items-center justify-between pt-1 border-b border-border-subtle pb-3">
+<div>
+<p class="text-body-md font-body-md text-text-primary font-semibold">سعر الحقيبة الكبيرة أو البضائع الإضافية</p>
+<p class="text-label-sm font-label-sm text-text-muted">لكل حقيبة سعة أكثر من 20 كجم بالحقيبة الخلفية</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-surface-subtle border border-border-subtle flex items-center justify-center text-text-primary hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<div class="w-16 text-center font-currency-body text-currency-body text-primary-container">
+                5.00 <span class="text-label-sm font-label-sm text-text-muted">ج.م</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-subtle border border-border-subtle flex items-center justify-center text-text-primary hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- NFC Discount Feature Toggle -->
+<div class="flex items-center justify-between bg-primary-container/5 p-3 rounded-xl border border-primary-container/15">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">contactless</span>
+</div>
+<div>
+<p class="text-body-md font-body-md text-text-primary font-bold">خصم الدفع الإلكتروني عبر كارت حارث الذكي (NFC)</p>
+<p class="text-label-sm font-label-sm text-secondary font-semibold">خصم 1.00 ج.م مدعوم من المنصة للراكب ومضمون في حسابك</p>
+</div>
+</div>
+<!-- Toggle ON -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-border-subtle peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Section 2: Trip Scheduling -->
+<section class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary">جدولة مواعيد القيام وأيام العمل</h2>
+<p class="text-label-sm font-label-sm text-text-muted">إدارة توقيتات الرحلات اليومية وأيام الخدمة الدورية</p>
+</div>
+</div>
+<div class="bg-surface rounded-2xl border border-border-subtle p-4 space-y-5 shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<!-- Daily Departure Times Chips -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<label class="text-body-md font-body-md text-text-primary font-semibold">أوقات الانطلاق اليومية</label>
+<span class="text-label-sm font-label-sm text-text-muted">4 مواعيد محددة</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-subtle border border-border-subtle text-text-primary text-body-md font-body-md font-medium">
+<span class="material-symbols-outlined text-text-muted text-[16px]">schedule</span>
+                06:30 ص
+                <button class="text-text-muted hover:text-error mr-1" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-subtle border border-border-subtle text-text-primary text-body-md font-body-md font-medium">
+<span class="material-symbols-outlined text-text-muted text-[16px]">schedule</span>
+                08:00 ص
+                <button class="text-text-muted hover:text-error mr-1" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-subtle border border-border-subtle text-text-primary text-body-md font-body-md font-medium">
+<span class="material-symbols-outlined text-text-muted text-[16px]">schedule</span>
+                01:30 م
+                <button class="text-text-muted hover:text-error mr-1" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-subtle border border-border-subtle text-text-primary text-body-md font-body-md font-medium">
+<span class="material-symbols-outlined text-text-muted text-[16px]">schedule</span>
+                05:00 م
+                <button class="text-text-muted hover:text-error mr-1" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</span>
+<!-- Add time button -->
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-dashed border-primary-container text-primary-container text-body-md font-body-md font-semibold hover:bg-primary-fixed/20 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                إضافة موعد
+              </button>
+</div>
+</div>
+<!-- Weekly Days Circular Selector -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<label class="text-body-md font-body-md text-text-primary font-semibold">أيام التشغيل الأسبوعية</label>
+<span class="text-label-sm font-label-sm text-text-secondary">الجمعة راحة اختيارية</span>
+</div>
+<div class="grid grid-cols-7 gap-1.5 text-center">
+<!-- Sat -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  سبت
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Sun -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  أحد
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Mon -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  إثن
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Tue -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  ثلا
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Wed -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  أرب
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Thu -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-label-md cursor-pointer shadow-sm">
+                  خمي
+                </div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Fri (Rest day - inactive) -->
+<div class="flex flex-col items-center gap-1 opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-subtle border border-border-subtle text-text-muted flex items-center justify-center font-semibold text-label-md cursor-pointer hover:border-primary-container">
+                  جمع
+                </div>
+<span class="text-label-sm font-label-sm text-text-muted">عطلة</span>
+</div>
+</div>
+</div>
+<!-- Trip Type Selection -->
+<div class="space-y-2 pt-2 border-t border-border-subtle">
+<label class="text-body-md font-body-md text-text-primary font-semibold block">نوع دورة الرحلات</label>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Option 1: Selected -->
+<label class="flex items-center gap-3 p-3 rounded-xl border-2 border-primary-container bg-primary-container/5 cursor-pointer">
+<input checked="" class="text-primary-container focus:ring-primary-container w-4 h-4 border-outline-variant" name="trip_frequency" type="radio"/>
+<div class="flex-1">
+<p class="text-body-md font-body-md text-text-primary font-bold">رحلات دورية منتظمة طوال اليوم</p>
+<p class="text-label-sm font-label-sm text-text-secondary">التحميل والتحرك بمجرد اكتمال المقاعد بالتنسيق مع ناظر الموقف</p>
+</div>
+</label>
+<!-- Option 2: Unselected -->
+<label class="flex items-center gap-3 p-3 rounded-xl border border-border-subtle bg-surface hover:border-outline-variant cursor-pointer">
+<input class="text-primary-container focus:ring-primary-container w-4 h-4 border-outline-variant" name="trip_frequency" type="radio"/>
+<div class="flex-1">
+<p class="text-body-md font-body-md text-text-primary font-semibold">رحلات محددة المواعيد فقط</p>
+<p class="text-label-sm font-label-sm text-text-muted">الالتزام الصارم بالساعة المحددة لانطلاق الحافلة لركاب الحجز المسبق</p>
+</div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Confirmation Bottom Control Area -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-3 shadow-md space-y-2">
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-white font-label-lg font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(11,62,66,0.2)] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+          اعتماد وحفظ خط السير ونشر الملصقات ✓
+        </button>
+<button class="w-full h-11 bg-transparent hover:bg-surface-subtle text-text-secondary font-label-md font-semibold rounded-xl flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+          السابق
+        </button>
+</section>
+</main>
+<!-- HarithBottomNav (Exact Locked Component from JSON) -->
+<!-- Destination count: 5. Active item requested: 5th item "حسابي" (person) -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface dark:bg-surface-container border-t border-border-subtle dark:border-outline rounded-t-[24px] shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية (Home) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-label-sm font-label-sm">الرئيسية</span>
+</a>
+<!-- Tab 2: محفظتي وكروتي (CreditCard) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+<span class="text-label-sm font-label-sm">محفظتي وكروتي</span>
+</a>
+<!-- Tab 3: ادفع / امسح (Center Floating Dock) -->
+<a class="flex flex-col items-center justify-center relative -top-3 group" href="#">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-white shadow-[0_8px_24px_rgba(16,185,129,0.35)] group-hover:scale-105 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[26px]">qr_code_scanner</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-text-primary mt-1">ادفع / امسح</span>
+</a>
+<!-- Tab 4: المواصلات (Bus) - Inactive -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">directions_bus</span>
+<span class="text-label-sm font-label-sm">المواصلات</span>
+</a>
+<!-- Tab 5: حسابي (Person) - Active Tab (5th destination) -->
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-secondary-fixed relative font-bold active:scale-95 duration-150" href="#">
+<span class="absolute -top-2 w-5 h-1 rounded-full bg-secondary"></span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

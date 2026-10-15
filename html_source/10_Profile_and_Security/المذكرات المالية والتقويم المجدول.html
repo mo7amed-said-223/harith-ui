@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - مذكراتي والمنبه المالي المجدول والتقويم</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#006c49",
+            "on-primary-fixed": "#002022",
+            "surface-tint": "#396569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-secondary-container": "#00714d",
+            "surface-subtle": "#F1F5F9",
+            "outline": "#707979",
+            "primary-container": "#0b3e42",
+            "inverse-on-surface": "#eef1f2",
+            "surface-container-low": "#f1f4f5",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary": "#00272a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "text-primary": "#0F172A",
+            "on-error": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-bright": "#f7fafb",
+            "secondary-fixed": "#6ffbbe",
+            "text-secondary": "#475569",
+            "on-surface": "#181c1d",
+            "outline-variant": "#c0c8c9",
+            "border-subtle": "#E2E8F0",
+            "surface-container-high": "#e5e9ea",
+            "danger-debit": "#EF4444",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-container": "#6cf8bb",
+            "on-background": "#181c1d",
+            "inverse-surface": "#2d3132",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "surface-container": "#ebeeef",
+            "secondary-fixed-dim": "#4edea3",
+            "surface": "#FFFFFF",
+            "text-muted": "#94A3B8",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-container": "#e19000",
+            "primary-fixed-dim": "#a1cfd3",
+            "tertiary": "#341e00",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary-container": "#513100",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e0e3e4",
+            "on-secondary-fixed": "#002113"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "display-lg": ["36px", {"lineHeight": "48px", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "currency-body": ["18px", {"lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "currency-display": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-secondary-container selection:text-primary">
+<!-- Mobile Device Container Wrapper -->
+<div class="w-full max-w-md min-h-screen flex flex-col bg-background shadow-xl relative pb-28">
+<!-- 1. TopAppBar (Shared Component Specs & RTL Hierarchy) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle h-16 w-full">
+<div class="flex justify-between items-center w-full px-4 h-full max-w-md mx-auto">
+<!-- RTL Start (Right Side): Back Navigation Button with chevron_right -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-primary text-[22px]">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">مذكراتي والمنبه المالي</h1>
+<p class="text-label-sm font-label-sm text-text-muted">جدول الالتزامات والأقساط الذكية</p>
+</div>
+<!-- RTL End (Left Side): Secondary Utility Trigger (Filter Bills) -->
+<button aria-label="تصفية الفواتير" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150 relative" title="تصفية الفواتير" type="button">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_list</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-5">
+<!-- 2. بطاقة الملخص المالي للالتزامات الشهرية (Hero Bento Module) -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0B3E42] via-[#082C2F] to-[#04191B] p-5 text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary-container">
+<!-- Subtle Glow Overlay -->
+<div class="absolute -top-12 -left-12 w-40 h-40 bg-secondary rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-36 h-36 bg-tertiary-fixed-dim rounded-full blur-2xl opacity-20 pointer-events-none"></div>
+<div class="relative z-10 space-y-4">
+<!-- Top Row: Label and Status -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">calendar_month</span>
+<span class="text-label-md font-label-md text-on-primary-container">إجمالي الالتزامات المستحقة هذا الشهر</span>
+</div>
+<span class="bg-surface/10 backdrop-blur-md px-2.5 py-0.5 rounded-full text-label-sm font-label-sm text-secondary-fixed border border-white/10">أكتوبر 2026</span>
+</div>
+<!-- Total Balance Display -->
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-display-lg-mobile font-display-lg-mobile text-white tracking-tight">4,850.00</span>
+<span class="text-currency-body font-currency-body text-secondary-fixed">ج.م</span>
+</div>
+<p class="text-label-sm font-label-sm text-outline-variant mt-0.5">3 التزامات مجدولة متبقية • تم سداد 1,200.00 ج.م</p>
+</div>
+<!-- Urgent Due Notice (Within 48h) -->
+<div class="bg-white/10 backdrop-blur-md border border-tertiary-fixed-dim/30 rounded-xl p-3 flex items-center justify-between gap-2 shadow-inner">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary-fixed-dim shrink-0">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-body-sm font-body-sm font-bold text-white">فاتورة الكهرباء 425.50 ج.م</span>
+<span class="text-[10px] bg-tertiary-fixed/20 text-tertiary-fixed font-bold px-1.5 py-0.2 rounded">خلال 48 س</span>
+</div>
+<p class="text-[11px] text-outline-variant">مستحقة غداً 15 أكتوبر - سداد إلكتروني معتمد</p>
+</div>
+</div>
+<!-- Golden Counter Badge -->
+<div class="text-left shrink-0">
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-tertiary-container/80 border border-tertiary-fixed-dim/40 text-tertiary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+<span>28:14:02</span>
+</span>
+</div>
+</div>
+<!-- Quick Action Button -->
+<button class="w-full h-11 bg-secondary hover:bg-on-secondary-container active:scale-[0.98] transition-all duration-150 text-white rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,108,73,0.35)]" type="button">
+<span class="material-symbols-outlined text-[20px]">magic_button</span>
+<span>جدولة سداد تلقائي ذكي</span>
+</button>
+</div>
+</section>
+<!-- 3. التقويم التفاعلي الأسبوعي/الشهري الذكي (Interactive Financial Calendar Strip) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">date_range</span>
+<h2 class="text-headline-sm font-headline-sm text-text-primary">تقويم أكتوبر 2026</h2>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-lg border border-border-subtle flex items-center justify-center hover:bg-surface-subtle text-text-secondary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-7 h-7 rounded-lg border border-border-subtle flex items-center justify-center hover:bg-surface-subtle text-text-secondary active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Days Strip -->
+<div class="grid grid-cols-7 gap-1.5 text-center">
+<!-- Day 12 -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl hover:bg-surface-subtle transition-colors group">
+<span class="text-label-sm font-label-sm text-text-muted">الإثنين</span>
+<span class="text-body-md font-body-md text-text-secondary mt-1">12</span>
+<div class="h-1.5 w-1.5 mt-1.5"></div>
+</button>
+<!-- Day 13 -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl hover:bg-surface-subtle transition-colors group">
+<span class="text-label-sm font-label-sm text-text-muted">الثلاثاء</span>
+<span class="text-body-md font-body-md text-text-secondary mt-1">13</span>
+<div class="h-1.5 w-1.5 mt-1.5"></div>
+</button>
+<!-- Day 14 (Today) Active -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl bg-primary text-white shadow-md relative">
+<span class="text-label-sm font-label-sm text-on-primary-container">اليوم</span>
+<span class="text-body-lg font-body-lg font-bold text-white mt-0.5">14</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary-fixed" title="إيداع"></span>
+</div>
+</button>
+<!-- Day 15 (Tomorrow) Due Date -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl bg-surface-subtle border border-tertiary-fixed-dim/40 hover:bg-surface-container-high transition-colors">
+<span class="text-label-sm font-label-sm text-tertiary">الخميس</span>
+<span class="text-body-md font-body-md font-bold text-text-primary mt-1">15</span>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary-fixed-dim" title="فاتورة كهرباء"></span>
+</div>
+</button>
+<!-- Day 16 -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl hover:bg-surface-subtle transition-colors group">
+<span class="text-label-sm font-label-sm text-text-muted">الجمعة</span>
+<span class="text-body-md font-body-md text-text-secondary mt-1">16</span>
+<div class="h-1.5 w-1.5 mt-1.5"></div>
+</button>
+<!-- Day 20 (Installment alert) -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl hover:bg-surface-subtle transition-colors group">
+<span class="text-label-sm font-label-sm text-text-muted">الثلاثاء</span>
+<span class="text-body-md font-body-md text-text-secondary mt-1">20</span>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="h-1.5 w-1.5 rounded-full bg-danger-debit" title="قسط جمعية"></span>
+</div>
+</button>
+<!-- Day 25 (Internet auto-renewal) -->
+<button class="flex flex-col items-center py-2 px-1 rounded-xl hover:bg-surface-subtle transition-colors group">
+<span class="text-label-sm font-label-sm text-text-muted">الأحد</span>
+<span class="text-body-md font-body-md text-text-secondary mt-1">25</span>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary" title="فاتورة إنترنت"></span>
+</div>
+</button>
+</div>
+<!-- Dots Legend -->
+<div class="flex items-center justify-between border-t border-border-subtle mt-3 pt-2 text-[11px] text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-danger-debit"></span>
+<span>مديونيات وأقساط</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>رواتب وإيداع</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>فواتير ومرافق</span>
+</div>
+</div>
+</section>
+<!-- 4. قائمة الالتزامات المالية المجدولة (Upcoming Scheduled Obligations) -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-sm font-headline-sm text-text-primary">الالتزامات القادمة</h2>
+<span class="text-label-md font-label-md text-secondary">3 التزامات نشطة</span>
+</div>
+<!-- Card 1 (Tomorrow: Electricity) -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 shrink-0">
+<span class="material-symbols-outlined text-[22px]">flash_on</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-body-lg font-body-lg font-bold text-text-primary">سداد فاتورة كهرباء شقة السلام</h3>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-amber-700 bg-amber-100/70 px-2 py-0.5 rounded-md font-medium">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+                    غداً 15 أكتوبر (48 ساعة)
+                  </span>
+<span class="text-label-sm font-label-sm text-text-muted">عداد رقم: 8940-22</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-currency-body font-currency-body text-text-primary">425.50</span>
+<span class="text-label-sm font-label-sm text-text-secondary mr-0.5">ج.م</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              تنبيه نشط (سداد فوري متاح)
+            </span>
+<button class="h-9 px-4 bg-primary hover:bg-[#082C2F] active:scale-95 transition-all text-white rounded-lg text-label-md font-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+<span>ادفع الآن</span>
+</button>
+</div>
+</div>
+<!-- Card 2 (20 Oct: Installment) -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-danger-debit shrink-0">
+<span class="material-symbols-outlined text-[22px]">handshake</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg font-bold text-text-primary">قسط الجمعية الشهرية / سلفة سلفني</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-danger-debit bg-red-100/70 px-2 py-0.5 rounded-md font-medium">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+                    20 أكتوبر (متبقي 5 أيام)
+                  </span>
+<span class="text-label-sm font-label-sm text-text-muted">الدفعة 4 من 10</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-currency-body font-currency-body text-text-primary">850.00</span>
+<span class="text-label-sm font-label-sm text-text-secondary mr-0.5">ج.م</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">account_balance_wallet</span>
+              سيتم الخصم من المحفظة الرئيسية
+            </span>
+<button class="text-primary hover:text-secondary font-bold flex items-center gap-0.5" type="button">
+<span>تعديل الحساب</span>
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 3 (25 Oct: Internet Auto-Renewal) -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">wifi</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg font-bold text-text-primary">تجديد باقة إنترنت WE الأرضي</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary bg-emerald-100/70 px-2 py-0.5 rounded-md font-medium">
+<span class="material-symbols-outlined text-[13px]">autorenew</span>
+                    25 أكتوبر 2026
+                  </span>
+<span class="text-label-sm font-label-sm text-text-muted">خط رقم: 02-334187XX</span>
+</div>
+</div>
+</div>
+<div class="text-left shrink-0">
+<span class="text-currency-body font-currency-body text-text-primary">220.00</span>
+<span class="text-label-sm font-label-sm text-text-secondary mr-0.5">ج.م</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+              مفعل التجديد التلقائي عبر رصيد كارت حارث
+            </span>
+<button class="text-text-muted hover:text-text-primary font-medium" type="button">
+              إدارة التجديد
+            </button>
+</div>
+</div>
+</section>
+<!-- 5. نموذج أو بطاقة إضافة مذكرة وتنبيه مالي جديد (Add New Financial Reminder Card) -->
+<section class="bg-surface rounded-2xl p-5 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<div class="flex items-center gap-2 pb-2 border-b border-border-subtle">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_alert</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary">إضافة التزام أو منبه مالي جديد</h2>
+<p class="text-label-sm font-label-sm text-text-muted">لن يفوتك موعد استحقاق بعد اليوم</p>
+</div>
+</div>
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Field 1: Obligation Name -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="obligation-name">
+              اسم الالتزام أو الفاتورة
+            </label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3.5 pr-10 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none" id="obligation-name" placeholder="مثال: قسط سيارة، إيجار محل، فاتورة غاز" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">edit_note</span>
+</div>
+</div>
+<!-- Field 2 & 3: Amount + Date in 2 columns -->
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="amount">
+                المبلغ المطلوب (ج.م)
+              </label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3.5 pr-10 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none" id="amount" placeholder="0.00" type="number"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">payments</span>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="due-date">
+                تاريخ الاستحقاق
+              </label>
+<div class="relative">
+<input class="w-full h-[52px] bg-surface rounded-xl border border-border-subtle px-3.5 pr-10 text-body-md font-body-md text-text-primary focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all outline-none" id="due-date" type="date" value="2026-10-30"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">event</span>
+</div>
+</div>
+</div>
+<!-- Toggle: WhatsApp & App Notification -->
+<div class="bg-surface-subtle p-3.5 rounded-xl border border-border-subtle flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-text-primary">تنبيه واتساب وإشعار حارث الفوري</p>
+<p class="text-[11px] text-text-secondary">إرسال رسالة تذكير قبل موعد الاستحقاق بـ 24 ساعة</p>
+</div>
+</div>
+<!-- Styled Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-12 bg-primary hover:bg-[#082C2F] active:scale-[0.98] transition-all duration-150 text-white rounded-xl text-label-lg font-label-lg flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(11,62,66,0.25)]" type="submit">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>حفظ وجدولة المنبه المالي</span>
+</button>
+</form>
+</section>
+<!-- FinTech Security Footnote -->
+<div class="flex items-center justify-center gap-2 pb-6 text-text-muted text-[11px]">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>بيانات مواعيدك مشفرة ومحمية ببروتوكولات الأمان السيادي لحارث</span>
+</div>
+</main>
+<!-- 6. BottomNavBar (HarithBottomNav - Exact Specs from Shared Components JSON) -->
+<!-- Fixed Navigation Shell with semantic mapping: "حسابي" is the closest profile/settings destination -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface dark:bg-surface rounded-t-3xl border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Tab 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Tab 2: محفظتي -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[22px]">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</a>
+<!-- Tab 3 (Center Dock): ادفع -->
+<a class="flex flex-col items-center justify-center -mt-6 group" href="#">
+<div class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] group-hover:scale-105 active:scale-95 transition-transform duration-150 border-2 border-white">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-primary mt-1">ادفع</span>
+</a>
+<!-- Tab 4: المواصلات -->
+<a class="flex flex-col items-center justify-center text-text-muted dark:text-outline py-1 hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95 duration-150 group" href="#">
+<span class="material-symbols-outlined text-[22px]">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Tab 5 (Active Destination for Accounts/Notes/Settings): حسابي -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-inverse-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</a>
+</nav>
+</div>
+</body></html>

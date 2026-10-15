@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>نموذج بيانات مقدم الخدمة والفاتورة - حارث</title>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-variant": "#e0e3e4",
+            "surface-container-high": "#e5e9ea",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-background": "#181c1d",
+            "on-tertiary-container": "#e19000",
+            "on-primary-fixed": "#002022",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffddb8",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-fixed-variant": "#005236",
+            "text-primary": "#0F172A",
+            "primary": "#00272a",
+            "surface-container": "#ebeeef",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#00714d",
+            "tertiary-container": "#513100",
+            "text-secondary": "#475569",
+            "background": "#f7fafb",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "primary-container": "#0b3e42",
+            "surface-tint": "#396569",
+            "primary-fixed": "#bcebef",
+            "surface-container-highest": "#e0e3e4",
+            "inverse-surface": "#2d3132",
+            "inverse-on-surface": "#eef1f2",
+            "outline-variant": "#c0c8c9",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "outline": "#707979",
+            "surface-container-low": "#f1f4f5",
+            "on-surface": "#181c1d",
+            "inverse-primary": "#a1cfd3",
+            "surface-dim": "#d7dadb",
+            "secondary": "#006c49",
+            "surface-bright": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "text-muted": "#94A3B8",
+            "danger-debit": "#EF4444",
+            "border-subtle": "#E2E8F0",
+            "tertiary": "#341e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col items-center justify-start p-0 m-0 antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Mobile Frame Container (~390px viewport simulation) -->
+<div class="w-full max-w-md min-h-screen bg-background flex flex-col relative pb-32">
+<!-- 1. Top AppBar (DefaultAppBar Component following Shared Specs) -->
+<header class="sticky top-0 z-40 bg-surface h-16 w-full flex items-center justify-between px-4 border-b border-border-subtle shadow-none">
+<!-- RTL Start (Physical Right): Back navigation -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 0;">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<div class="text-center px-2 flex-1">
+<h1 class="text-headline-sm font-headline-sm font-bold text-text-primary truncate">شمال القاهرة لتوزيع الكهرباء</h1>
+</div>
+<!-- RTL End (Physical Left): Favorite action -->
+<button aria-label="حفظ في المفضلة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-on-tertiary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-150" id="star-btn" type="button">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</header>
+<!-- Main Content Area (Fluid Bento & High-trust Financial Geometry) -->
+<main class="flex-1 px-4 pt-4 flex flex-col gap-4">
+<!-- 2. Provider Info Header Card -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] transition-all">
+<div class="flex items-start gap-3">
+<!-- Official Utility Logo Box -->
+<div class="w-14 h-14 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div class="absolute inset-0 bg-primary-container/5 pointer-events-none"></div>
+</div>
+<!-- Utility Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-fixed/30 text-on-secondary-fixed-variant border border-secondary-fixed font-semibold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                جهة معتمدة رسمياً
+              </span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary font-bold leading-tight mb-2">استعلام وسداد فاتورة الكهرباء الشهرية</h2>
+<!-- Fee disclosure badge -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest border border-secondary text-secondary text-body-sm font-body-sm font-medium">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">info</span>
+<span>رسوم الخدمة: <strong class="font-bold">3.50 ج.م</strong> فقط</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Dynamic Attributes Form Card (بيانات الاستعلام) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-border-subtle pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-container"></span>
+<h3 class="text-headline-sm font-headline-sm font-bold text-text-primary">بيانات الاستعلام والفاتورة</h3>
+</div>
+<span class="text-label-sm font-label-sm text-text-muted">مطلوب للاستعلام</span>
+</div>
+<!-- Dropdown Input 1: الفرع / الإدارة التابع لها -->
+<div class="flex flex-col gap-1.5">
+<label class="text-label-md font-label-md text-text-secondary font-medium" for="branch-select">الفرع / الإدارة التابع لها</label>
+<div class="relative w-full">
+<select class="w-full h-[52px] bg-surface border-[1.5px] border-border-subtle rounded-xl px-3.5 pr-4 pl-10 text-body-md font-body-md text-text-primary appearance-none focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all font-medium cursor-pointer" id="branch-select">
+<option selected="" value="nasr-city">إدارة شرق مدينة نصر ومصر الجديدة</option>
+<option value="heliopolis">إدارة النزهة وروكسي</option>
+<option value="shubra">إدارة شبرا والساحل</option>
+<option value="matariya">إدارة المطرية والزيتون</option>
+<option value="obour">إدارة العبور والشروق</option>
+</select>
+<div class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Numeric Input 2: كود السداد الإلكتروني / رقم العداد -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="text-label-md font-label-md text-text-secondary font-medium" for="account-code">كود السداد الإلكتروني / رقم العداد (14 رقم)</label>
+<span class="text-label-sm font-label-sm text-primary-container font-semibold cursor-pointer hover:underline">أين أجد الكود؟</span>
+</div>
+<div class="relative w-full flex items-center">
+<input class="w-full h-[52px] bg-surface border-[1.5px] border-border-subtle rounded-xl px-4 pl-14 text-currency-body font-currency-body text-text-primary text-left tracking-wider focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all" dir="ltr" id="account-code" inputmode="numeric" maxlength="14" pattern="[0-9]*" placeholder="10492841229014" type="tel" value="10492841229014"/>
+<!-- OCR / Barcode Scanner Suffix Button -->
+<button aria-label="مسح الباركود" class="absolute left-1.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-lg bg-surface-subtle hover:bg-surface-container-high flex items-center justify-center text-primary-container transition-colors active:scale-95 duration-150" title="مسح الباركود" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">qr_code_scanner</span>
+</button>
+</div>
+<!-- Helper text with info icon -->
+<div class="flex items-start gap-1.5 mt-1 px-1">
+<span class="material-symbols-outlined text-text-muted text-base mt-0.5 flex-shrink-0" style="font-variation-settings: 'FILL' 0;">help</span>
+<p class="text-body-sm font-body-sm text-text-muted leading-relaxed">
+              يمكنك إيجاد كود السداد أعلى فاتورة الكهرباء الورقية القديمة أو على ظهر كارت العداد الذكي.
+            </p>
+</div>
+</div>
+<!-- Quick Amount / Denomination Selector Chips -->
+<div class="flex flex-col gap-2 pt-2 border-t border-border-subtle">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-text-secondary font-medium">مبالغ سريعة / فئات شحن مقترحة</span>
+<span class="text-label-sm font-label-sm text-text-muted font-normal">اختياري للرصيد المسبق</span>
+</div>
+<!-- Horizontal scrolling chip bar -->
+<div aria-label="فئات الشحن السريع" class="grid grid-cols-5 gap-1.5" role="radiogroup">
+<button class="tier-chip py-2 px-1 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-secondary text-label-md font-label-md font-semibold text-center transition-all active:scale-95" type="button">
+              50 ج.م
+            </button>
+<button class="tier-chip py-2 px-1 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-secondary text-label-md font-label-md font-semibold text-center transition-all active:scale-95" type="button">
+              100 ج.م
+            </button>
+<button class="tier-chip py-2 px-1 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-secondary text-label-md font-label-md font-semibold text-center transition-all active:scale-95" type="button">
+              200 ج.م
+            </button>
+<button class="tier-chip py-2 px-1 rounded-xl border border-border-subtle bg-surface hover:bg-surface-subtle text-text-secondary text-label-md font-label-md font-semibold text-center transition-all active:scale-95" type="button">
+              500 ج.م
+            </button>
+<button class="tier-chip py-2 px-1 rounded-xl border-2 border-primary-container bg-primary-container text-on-primary text-label-md font-label-md font-bold text-center shadow-sm transition-all active:scale-95" type="button">
+              كامل المستحق
+            </button>
+</div>
+</div>
+</section>
+<!-- 4. Save to Favorites Switch Box (حفظ الفاتورة) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] flex flex-col gap-3">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container flex-shrink-0">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<div>
+<p class="text-body-md font-body-md text-text-primary font-bold">حفظ هذه الفاتورة في فواتيري المفضلة</p>
+<p class="text-body-sm font-body-sm text-text-muted">لتسهيل السداد والتذكير الشهري التلقائي</p>
+</div>
+</div>
+<!-- Emerald Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" id="favorite-toggle" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Nickname Input Field (Dynamic Reveal Container) -->
+<div class="pt-2 flex flex-col gap-1.5 border-t border-border-subtle transition-all" id="nickname-container">
+<label class="text-label-md font-label-md text-text-secondary font-medium" for="bill-nickname">اسم مميز للفاتورة</label>
+<div class="relative w-full">
+<input class="w-full h-11 bg-surface-subtle border border-border-subtle rounded-xl px-3.5 pr-10 text-body-md font-body-md text-text-primary focus:bg-surface focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all font-medium" id="bill-nickname" placeholder="مثال: كهرباء شقة العائلة" type="text" value="كهرباء شقة السلام"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none flex items-center">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">edit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Security & Trust Badge -->
+<section class="flex items-center justify-center gap-2 px-4 py-2 text-center text-text-muted">
+<span class="material-symbols-outlined text-secondary text-base flex-shrink-0" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-body-sm font-body-sm text-text-secondary leading-tight">
+          جميع المعاملات المالية مشفرة وتتم مباشرة مع <strong>الشركة القابضة لكهرباء مصر</strong>
+</span>
+</section>
+</main>
+<!-- 6. Sticky Bottom Checkout / Action Area (Linear Transactional Flow Task Bar) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.06)] pb-6 pt-3 px-4 max-w-md mx-auto">
+<div class="flex flex-col gap-2">
+<!-- Quick Preview Strip -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-text-secondary px-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary-container" style="font-variation-settings: 'FILL' 0;">credit_card</span>
+            الوسيلة المقترحة: محفظة حارث الذكية
+          </span>
+<span class="text-secondary font-bold text-label-md font-label-md">رصيد كافٍ</span>
+</div>
+<!-- Primary Action Button: "استعلام عن قيمة الفاتورة" -->
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary rounded-xl font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-3 shadow-[0_4px_12px_rgba(11,62,66,0.2)] active:scale-95 transition-all duration-150 group" id="query-bill-btn" type="button">
+<span>استعلام عن قيمة الفاتورة</span>
+<span class="material-symbols-outlined text-xl transition-transform group-hover:-translate-x-1 duration-200" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic for State & Interactions -->
+<script>
+    // Quick Amount Chips Toggle
+    const chips = document.querySelectorAll('.tier-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary', 'border-primary-container', 'border-2', 'shadow-sm');
+          c.classList.add('bg-surface', 'text-text-secondary', 'border-border-subtle');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary', 'border-primary-container', 'border-2', 'shadow-sm');
+        chip.classList.remove('bg-surface', 'text-text-secondary', 'border-border-subtle');
+      });
+    });
+
+    // Toggle Nickname Container visibility based on switch
+    const favToggle = document.getElementById('favorite-toggle');
+    const nicknameContainer = document.getElementById('nickname-container');
+    favToggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        nicknameContainer.style.opacity = '1';
+        nicknameContainer.style.pointerEvents = 'auto';
+      } else {
+        nicknameContainer.style.opacity = '0.35';
+        nicknameContainer.style.pointerEvents = 'none';
+      }
+    });
+
+    // Star favorite button toggle
+    const starBtn = document.getElementById('star-btn');
+    let isFavorite = true;
+    starBtn.addEventListener('click', () => {
+      isFavorite = !isFavorite;
+      const icon = starBtn.querySelector('.material-symbols-outlined');
+      if (isFavorite) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        icon.classList.remove('text-text-muted');
+        icon.classList.add('text-on-tertiary-container');
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 0";
+        icon.classList.remove('text-on-tertiary-container');
+        icon.classList.add('text-text-muted');
+      }
+    });
+
+    // Mock query action loading state
+    const queryBtn = document.getElementById('query-bill-btn');
+    queryBtn.addEventListener('click', () => {
+      const originalText = queryBtn.innerHTML;
+      queryBtn.innerHTML = `
+        <span class="inline-block animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></span>
+        <span>جارٍ الاتصال بمقدم الخدمة...</span>
+      `;
+      queryBtn.disabled = true;
+      setTimeout(() => {
+        queryBtn.innerHTML = originalText;
+        queryBtn.disabled = false;
+      }, 1500);
+    });
+  </script>
+</body></html>

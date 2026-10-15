@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث | أمان تسجيل الدخول والاتصال</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Hide scrollbars smoothly */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f1f4f5",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-fixed-variant": "#005236",
+            "surface": "#FFFFFF",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary": "#341e00",
+            "secondary-container": "#6cf8bb",
+            "secondary": "#006c49",
+            "primary-container": "#0b3e42",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#bcebef",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed": "#002022",
+            "background": "#f7fafb",
+            "outline-variant": "#c0c8c9",
+            "danger-debit": "#EF4444",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#e5e9ea",
+            "inverse-primary": "#a1cfd3",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "on-surface": "#181c1d",
+            "on-tertiary-container": "#e19000",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary-fixed": "#002113",
+            "outline": "#707979",
+            "inverse-surface": "#2d3132",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-subtle": "#F1F5F9",
+            "text-primary": "#0F172A",
+            "tertiary-container": "#513100",
+            "surface-dim": "#d7dadb",
+            "surface-container": "#ebeeef",
+            "text-muted": "#94A3B8",
+            "on-primary-container": "#7ca9ad",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#404849",
+            "text-secondary": "#475569",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-variant": "#e0e3e4",
+            "on-secondary-container": "#00714d",
+            "surface-tint": "#396569",
+            "border-subtle": "#E2E8F0",
+            "surface-bright": "#f7fafb",
+            "on-background": "#181c1d",
+            "primary": "#00272a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-lg": ["IBM Plex Sans Arabic"],
+            "label-sm": ["IBM Plex Sans Arabic"],
+            "headline-md": ["IBM Plex Sans Arabic"],
+            "headline-lg": ["IBM Plex Sans Arabic"],
+            "body-sm": ["IBM Plex Sans Arabic"],
+            "currency-body": ["IBM Plex Sans Arabic"],
+            "display-lg": ["IBM Plex Sans Arabic"],
+            "body-lg": ["IBM Plex Sans Arabic"],
+            "currency-display": ["IBM Plex Sans Arabic"],
+            "headline-sm": ["IBM Plex Sans Arabic"],
+            "body-md": ["IBM Plex Sans Arabic"],
+            "label-md": ["IBM Plex Sans Arabic"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-background text-on-surface antialiased flex justify-center">
+<!-- Main Container: Mobile Canvas with High-trust FinTech Shell -->
+<div class="w-full max-w-md bg-background min-h-screen flex flex-col relative pb-28">
+<!-- Top Navigation Bar (Shared Component Anchor Pattern) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full px-4 flex items-center justify-between shadow-[0_2px_8px_rgba(11,62,66,0.03)] border-b border-border-subtle">
+<!-- Right Action: Back Chevron (RTL forward trajectory points right) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container-high transition-colors flex items-center justify-center text-primary active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center Headline -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight text-center">
+        أمان تسجيل الدخول والاتصال
+      </h1>
+<!-- Left Utility: Support Agent -->
+<button aria-label="الدعم الفني والمساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container-high transition-colors flex items-center justify-center text-primary active:scale-95 duration-150 relative" type="button">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+</button>
+</header>
+<!-- Main Dynamic Content Canvas -->
+<main class="flex-1 px-4 pt-4 pb-6 space-y-4">
+<!-- Sovereign Status Indicator / Sub-header Banner -->
+<div class="bg-surface rounded-2xl p-3.5 border border-border-subtle flex items-center justify-between shadow-[0_4px_12px_rgba(11,62,66,0.04)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="text-label-md font-label-md text-text-primary flex items-center gap-1.5">
+<span>حساب حارث الذهبي</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container/40 text-on-secondary-fixed-variant">محمي</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">آخر تحديث أمني: منذ 14 يوماً</p>
+</div>
+</div>
+<div class="text-end">
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+</div>
+<!-- Segmented Tab Bar Switcher -->
+<div class="bg-surface-subtle p-1 rounded-2xl flex items-center border border-border-subtle" role="tablist">
+<button aria-selected="true" class="flex-1 py-2.5 px-3 rounded-xl text-center text-label-lg font-label-lg transition-all duration-200 bg-surface text-primary shadow-sm flex items-center justify-center gap-1.5" id="tab-btn-password" onclick="switchTab('password')" role="tab">
+<span class="material-symbols-outlined text-[18px]" data-icon="key">key</span>
+<span>كلمة المرور</span>
+</button>
+<button aria-selected="false" class="flex-1 py-2.5 px-3 rounded-xl text-center text-label-lg font-label-lg transition-all duration-200 text-text-muted hover:text-text-primary flex items-center justify-center gap-1.5" id="tab-btn-phone" onclick="switchTab('phone')" role="tab">
+<span class="material-symbols-outlined text-[18px]" data-icon="smartphone">smartphone</span>
+<span>رقم الهاتف المرتبط</span>
+</button>
+</div>
+<!-- ============================================== -->
+<!-- SECTION 1: CHANGE PASSWORD (كلمة المرور)        -->
+<!-- ============================================== -->
+<div class="space-y-4" id="section-password">
+<!-- Form Bento Box -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Field 1: Current Password -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary" for="current-password">
+                كلمة المرور الحالية
+              </label>
+<a class="text-label-sm font-label-sm text-secondary hover:underline" href="javascript:void(0)">
+                نسيت كلمة المرور؟
+              </a>
+</div>
+<div class="relative flex items-center">
+<span class="absolute right-3.5 text-text-muted pointer-events-none">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock_open">lock_open</span>
+</span>
+<input class="w-full h-[52px] pr-11 pl-11 bg-surface border-[1.5px] border-border-subtle rounded-xl text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" id="current-password" placeholder="أدخل كلمة المرور الحالية" type="password" value="SecurePass2024!"/>
+<button aria-label="إظهار أو إخفاء كلمة المرور" class="absolute left-3.5 text-text-muted hover:text-primary transition-colors p-1" onclick="toggleVisibility('current-password', this)" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="h-px bg-surface-subtle w-full"></div>
+<!-- Field 2: New Password -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="new-password">
+              كلمة المرور الجديدة
+            </label>
+<div class="relative flex items-center">
+<span class="absolute right-3.5 text-text-muted pointer-events-none">
+<span class="material-symbols-outlined text-[20px]" data-icon="password">password</span>
+</span>
+<input class="w-full h-[52px] pr-11 pl-11 bg-surface border-[1.5px] border-secondary rounded-xl text-body-md font-body-md text-text-primary focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" id="new-password" placeholder="أدخل كلمة مرور قوية" type="text" value="Harith#Cairo2025"/>
+<button aria-label="إظهار أو إخفاء كلمة المرور" class="absolute left-3.5 text-secondary hover:text-primary transition-colors p-1" onclick="toggleVisibility('new-password', this)" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+<!-- Password Strength Meter (Emerald - Excellent) -->
+<div class="mt-2.5 p-2.5 bg-surface-container-low/70 rounded-xl space-y-1.5 border border-border-subtle/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  مقياس قوة الحماية
+                </span>
+<span class="text-secondary font-bold">ممتازة (100%)</span>
+</div>
+<!-- 4-segment progress bar in emerald -->
+<div class="grid grid-cols-4 gap-1.5 h-1.5">
+<div class="h-full bg-secondary rounded-full"></div>
+<div class="h-full bg-secondary rounded-full"></div>
+<div class="h-full bg-secondary rounded-full"></div>
+<div class="h-full bg-secondary rounded-full"></div>
+</div>
+</div>
+<!-- Password Criteria Checklist -->
+<div class="mt-3 grid grid-cols-2 gap-2 text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>8 أحرف على الأقل</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>حرف كبير إنجليزي (A-Z)</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>رقم واحد على الأقل (0-9)</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>رمز خاص (@, #, $, %)</span>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-subtle w-full"></div>
+<!-- Field 3: Confirm New Password -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-label-md font-label-md text-text-primary" for="confirm-password">
+                تأكيد كلمة المرور الجديدة
+              </label>
+<!-- Green Match Badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container/40 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="done_all">done_all</span>
+<span>مطابقة تماماً</span>
+</span>
+</div>
+<div class="relative flex items-center">
+<span class="absolute right-3.5 text-secondary pointer-events-none">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+</span>
+<input class="w-full h-[52px] pr-11 pl-11 bg-surface border-[1.5px] border-secondary rounded-xl text-body-md font-body-md text-text-primary focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-colors" id="confirm-password" placeholder="أعد إدخال كلمة المرور الجديدة" type="password" value="Harith#Cairo2025"/>
+<button aria-label="إظهار أو إخفاء كلمة المرور" class="absolute left-3.5 text-text-muted hover:text-primary transition-colors p-1" onclick="toggleVisibility('confirm-password', this)" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Security Action Toggle Bento Module -->
+<div class="bg-surface rounded-2xl p-3.5 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.04)] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="devices">devices</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-text-primary">تسجيل الخروج من جميع الأجهزة</p>
+<p class="text-body-sm font-body-sm text-text-muted">إنهاء جلسات الدخول في الهواتف والمتصفحات الأخرى</p>
+</div>
+</div>
+<!-- Custom Toggle Styled Active -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-border-subtle after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- SECTION 2: CHANGE PHONE NUMBER (رقم الهاتف)   -->
+<!-- ============================================== -->
+<div class="space-y-4 hidden" id="section-phone">
+<!-- High-Trust Banking Security Alert Bento -->
+<div class="bg-gradient-to-br from-primary-container to-[#062325] text-on-primary rounded-2xl p-4 shadow-[0_12px_28px_rgba(11,62,66,0.16)] relative overflow-hidden">
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-3 relative z-10">
+<div class="w-10 h-10 rounded-xl bg-surface/10 backdrop-blur-md flex items-center justify-center shrink-0 text-secondary-fixed">
+<span class="material-symbols-outlined text-[22px]" data-icon="shield">shield</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-label-lg font-label-lg text-surface">إشعار أمان المحفظة البنكية</h3>
+<p class="text-body-sm font-body-sm text-outline-variant leading-relaxed">
+                تغيير رقم الهاتف يتطلب التحقق من الهوية والرقم القومي لحماية محفظتك من أي اختراق، وسيتم تجميد التحويلات اللحظية لمدة ساعتين تلقائياً كإجراء احترازي.
+              </p>
+</div>
+</div>
+</div>
+<!-- Phone Management Bento Card -->
+<div class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Current Active Phone (Readonly Display) -->
+<div class="p-3 bg-surface-subtle/80 rounded-xl border border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface flex items-center justify-center text-text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone_iphone">phone_iphone</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-text-muted block">الرقم المعتمد حالياً</span>
+<span class="text-currency-body font-currency-body text-text-primary tracking-wider" dir="ltr">+20 01022964376</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>موثق</span>
+</div>
+</div>
+<!-- New Phone Input Section -->
+<div>
+<label class="block text-label-md font-label-md text-text-primary mb-1.5" for="new-phone-input">
+              رقم الهاتف المحمول الجديد
+            </label>
+<div class="flex gap-2">
+<!-- Country Dial Code Selector -->
+<div class="w-28 h-[52px] bg-surface-subtle border-[1.5px] border-border-subtle rounded-xl flex items-center justify-center gap-1.5 px-2 shrink-0">
+<span class="text-body-lg">🇪🇬</span>
+<span class="text-label-md font-label-md text-text-primary" dir="ltr">+20</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<!-- Main Input Field -->
+<div class="relative flex-1 flex items-center">
+<input class="w-full h-[52px] px-3.5 bg-surface border-[1.5px] border-border-subtle rounded-xl text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors" dir="ltr" id="new-phone-input" placeholder="01x xxx xxxx" type="tel"/>
+<span class="absolute right-3.5 text-text-muted pointer-events-none">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_call">add_call</span>
+</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="info">info</span>
+<span>سيتم إرسال رمز أمان لمرة واحدة (OTP) لتأكيد الملكية.</span>
+</p>
+</div>
+<!-- WhatsApp Verification Trigger Option -->
+<div class="pt-2">
+<button class="w-full h-[48px] border border-border-subtle bg-surface hover:bg-surface-subtle active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 text-primary font-label-lg text-label-lg shadow-sm" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="chat">chat</span>
+<span>إرسال رمز التأكيد للرقم الجديد عبر واتساب</span>
+</button>
+</div>
+</div>
+<!-- National ID Re-verification Reminder Bento -->
+<div class="bg-surface rounded-2xl p-3.5 border border-border-subtle flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle text-text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="badge">badge</span>
+</div>
+<div class="flex-1">
+<p class="text-label-md font-label-md text-text-primary">مطلوب بطاقة الرقم القومي سارية</p>
+<p class="text-body-sm font-body-sm text-text-muted">ستحتاج لتأكيد آخر 4 أرقام من بطاقتك في الخطوة التالية</p>
+</div>
+</div>
+</div>
+<!-- Quick Trust Guarantee Footer Badge -->
+<div class="flex items-center justify-center gap-2 py-3 text-text-muted text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="lock">lock</span>
+<span>تشفير مالي سيادي 256-bit بمعايير البنك المركزي المصري</span>
+</div>
+</main>
+<!-- Fixed Bottom Primary Action Container -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-border-subtle p-4 z-50">
+<div class="max-w-md mx-auto">
+<button class="w-full h-12 bg-primary-container hover:bg-[#082C2F] active:scale-[0.98] transition-all duration-150 text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(11,62,66,0.18)]" onclick="handleSecurityUpdate()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>
+<span>تأكيد وتحديث البيانات الأمنية</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    function switchTab(target) {
+      const btnPassword = document.getElementById('tab-btn-password');
+      const btnPhone = document.getElementById('tab-btn-phone');
+      const secPassword = document.getElementById('section-password');
+      const secPhone = document.getElementById('section-phone');
+
+      if (target === 'password') {
+        // Activate Password Tab
+        btnPassword.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+        btnPassword.classList.remove('text-text-muted');
+        btnPassword.setAttribute('aria-selected', 'true');
+
+        btnPhone.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+        btnPhone.classList.add('text-text-muted');
+        btnPhone.setAttribute('aria-selected', 'false');
+
+        secPassword.classList.remove('hidden');
+        secPhone.classList.add('hidden');
+      } else {
+        // Activate Phone Tab
+        btnPhone.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+        btnPhone.classList.remove('text-text-muted');
+        btnPhone.setAttribute('aria-selected', 'true');
+
+        btnPassword.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+        btnPassword.classList.add('text-text-muted');
+        btnPassword.setAttribute('aria-selected', 'false');
+
+        secPhone.classList.remove('hidden');
+        secPassword.classList.add('hidden');
+      }
+    }
+
+    function toggleVisibility(inputId, buttonElement) {
+      const input = document.getElementById(inputId);
+      const iconSpan = buttonElement.querySelector('.material-symbols-outlined');
+      if (input.type === 'password') {
+        input.type = 'text';
+        iconSpan.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        iconSpan.textContent = 'visibility';
+      }
+    }
+
+    function handleSecurityUpdate() {
+      // Light feedback interaction
+      alert('تم إرسال طلب التحديث وتوثيق البيانات بنجاح.');
+    }
+  </script>
+</body></html>

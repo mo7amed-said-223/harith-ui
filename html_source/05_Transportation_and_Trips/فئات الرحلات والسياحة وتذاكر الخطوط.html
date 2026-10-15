@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - الرحلات والسياحة وتذاكر الخطوط</title>
+<!-- Google Font: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-highest": "#e0e3e4",
+            "on-surface-variant": "#404849",
+            "surface-container-low": "#f1f4f5",
+            "surface-bright": "#f7fafb",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "on-surface": "#181c1d",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#a1cfd3",
+            "text-secondary": "#475569",
+            "surface-container-high": "#e5e9ea",
+            "on-error": "#ffffff",
+            "tertiary": "#341e00",
+            "on-secondary-container": "#00714d",
+            "inverse-on-surface": "#eef1f2",
+            "primary": "#00272a",
+            "secondary-fixed": "#6ffbbe",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-dim": "#d7dadb",
+            "text-primary": "#0F172A",
+            "background": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "inverse-primary": "#a1cfd3",
+            "border-subtle": "#E2E8F0",
+            "secondary-fixed-dim": "#4edea3",
+            "text-muted": "#94A3B8",
+            "surface-tint": "#396569",
+            "secondary-container": "#6cf8bb",
+            "error-container": "#ffdad6",
+            "on-background": "#181c1d",
+            "secondary": "#006c49",
+            "primary-fixed": "#bcebef",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "primary-container": "#0b3e42",
+            "outline-variant": "#c0c8c9",
+            "on-primary": "#ffffff",
+            "danger-debit": "#EF4444",
+            "tertiary-container": "#513100",
+            "surface": "#FFFFFF",
+            "surface-container": "#ebeeef",
+            "on-tertiary-container": "#e19000",
+            "surface-variant": "#e0e3e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-full flex flex-col justify-between selection:bg-secondary selection:text-white">
+<!-- Mobile Wrapper / App Shell Container (Max-w-md centered for clean super-app mobile view) -->
+<div class="w-full max-w-md mx-auto bg-surface-bright min-h-screen flex flex-col relative pb-36">
+<!-- 1. الشريط العلوي (TopAppBar) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle shadow-none">
+<div class="flex justify-between items-center w-full px-4 h-16 max-w-md mx-auto">
+<!-- RTL Start (Right): زر رجوع -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle hover:bg-surface-container-high transition-colors flex items-center justify-center active:scale-95 duration-150 text-text-primary">
+<span class="material-symbols-outlined text-text-primary">chevron_right</span>
+</button>
+<!-- Center: Screen Title -->
+<div class="text-center px-2">
+<h1 class="text-headline-sm font-headline-sm text-text-primary truncate">الرحلات والسياحة وتذاكر الخطوط</h1>
+</div>
+<!-- RTL End (Left): زر تذاكري مع بادج -->
+<button aria-label="تذاكري" class="relative flex items-center gap-1 px-3 py-1.5 rounded-xl bg-surface-subtle hover:bg-surface-container-high transition-colors active:scale-95 duration-150 border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="text-label-md font-label-md text-primary-container">تذاكري</span>
+<span class="absolute -top-1 -right-1 w-5 h-5 bg-danger-debit text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-surface">2</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 pt-4 space-y-4">
+<!-- 2. شريط إعلاني ترويجي علوي فاخر (Hero Banner) -->
+<section class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-container via-[#082C2F] to-[#041D1F] p-4 text-white shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary-container/40">
+<!-- Ambient Decorative Pattern & Glow -->
+<div class="absolute -top-10 -left-10 w-36 h-36 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-24 h-24 bg-tertiary-fixed-dim/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary/25 border border-secondary/40 text-secondary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+              أمان معتمد ومراقبة GPS حيّة
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-tertiary-fixed-dim/20 text-tertiary-fixed text-label-sm font-label-sm border border-tertiary-fixed/30">
+              كود: HARITH2026
+            </span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-white mb-1">سافر براحة وأمان مع حافلات حارث</h2>
+<p class="text-body-sm font-body-sm text-inverse-primary leading-relaxed">
+              أسطول نقل معتمد بين المحافظات — خصم 15% على رحلات نهاية الأسبوع مع مقاعد مريحة وتكييف ومقابس شحن شخصية.
+            </p>
+</div>
+<div class="pt-1 flex items-center justify-between border-t border-white/10">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-surface-bright">
+<span class="material-symbols-outlined text-secondary text-base">airline_seat_recline_extra</span>
+              مقاعد VIP رحبة
+            </div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-surface-bright">
+<span class="material-symbols-outlined text-secondary text-base">wifi</span>
+              إنترنت مجاني
+            </div>
+<button class="px-3 py-1 rounded-lg bg-secondary text-white text-label-md font-label-md hover:bg-secondary/90 transition-colors shadow-sm">
+              استفد الآن
+            </button>
+</div>
+</div>
+</section>
+<!-- 3. شريط بحث وفلترة سريعة -->
+<section class="space-y-3">
+<!-- Search Input -->
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="w-full h-[52px] pr-11 pl-11 bg-surface border border-border-subtle rounded-xl text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all shadow-[0_2px_8px_rgba(11,62,66,0.03)]" placeholder="ابحث عن وجهتك (مثال: الغردقة، دهب، الإسكندرية...)" type="text"/>
+<button aria-label="خيارات التصفية المتقدمة" class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-text-secondary hover:text-primary-container">
+<span class="material-symbols-outlined text-xl">tune</span>
+</button>
+</div>
+<!-- Filter Pills Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="px-4 py-2 rounded-xl bg-primary-container text-white text-label-md font-label-md whitespace-nowrap shadow-sm">
+            الكل
+          </button>
+<button class="px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:bg-surface-subtle text-label-md font-label-md whitespace-nowrap transition-colors">
+            عائلية
+          </button>
+<button class="px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:bg-surface-subtle text-label-md font-label-md whitespace-nowrap transition-colors">
+            شبابية ومغامرات
+          </button>
+<button class="px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:bg-surface-subtle text-label-md font-label-md whitespace-nowrap transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            VIP كبار الشخصيات
+          </button>
+<button class="px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:bg-surface-subtle text-label-md font-label-md whitespace-nowrap transition-colors">
+            مخفّضة
+          </button>
+</div>
+</section>
+<!-- Section Title Header -->
+<div class="flex items-center justify-between pt-2">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary">فئات وباقات السفر المتاحة</h2>
+<p class="text-body-sm font-body-sm text-text-muted">اختر تصنيف الرحلة لحجز مقعدك الفوري المؤكد</p>
+</div>
+<span class="text-label-sm font-label-sm px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary border border-border-subtle">
+          6 فئات معتمدة
+        </span>
+</div>
+<!-- 4. شبكة فئات الرحلات والسياحة (Categories Bento Grid) -->
+<section class="grid grid-cols-2 gap-3.5">
+<!-- Bento Card 1: رحلات السياحة والمزارات (Spans 2 columns - Primary Hero Feature) -->
+<article class="col-span-2 relative overflow-hidden bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container/30 transition-all duration-200">
+<div class="flex flex-col sm:flex-row justify-between items-start gap-3">
+<div class="space-y-2 flex-1">
+<div class="flex items-center gap-2">
+<span class="w-10 h-10 rounded-xl bg-tertiary-fixed-dim/20 text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">temple_hindu</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-text-primary">رحلات السياحة والمزارات</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-bold">الأكثر طلباً</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">الأقصر، أسوان، واحة سيوة، سانت كاترين</p>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-text-muted">
+                رحلات منظمة مع مرشدين معتمدين وإقامة فندقية متكاملة مع جدول زمني دقيق لكل مزار.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<span class="text-label-sm font-label-sm text-primary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-base">departure_board</span>
+                  24 رحلة متاحة أسبوعياً
+                </span>
+<span class="text-currency-body font-currency-body text-primary-container">
+                  من 650 <span class="text-xs font-normal text-text-muted">ج.م</span>
+</span>
+</div>
+</div>
+<div class="w-full sm:w-28 h-24 rounded-xl overflow-hidden relative flex-shrink-0">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Modern tourism coaches traveling along scenic ancient Egyptian historic temple routes in Luxor under warm golden sunlight. The bus features a clean modern aesthetic reflecting safe comfortable travel, set against a pristine light mode atmosphere with clear blue skies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDibfGSdBzrq0p_eI1-MnvFEYlEXGLtF91_aNYz6wffcGrDft3Lu5IGmYf1cqe-_RgpxWQgvK7fh1NBT9XUvLJklbsUHjhYUc11L_v3SOFsGmjJTyTVlu1YzkmVQy2kzfLN7spdbTclu_qYMpGFDfVSwKZnOUob3HMSJsu-IUl3erpqmVVF_1U9ajnqy9WlFKYepR8kj3ctO9RE9JHRmUwOY7uGAI_IAZMGXSfKENhB_rxRL03UadKeewTc1-G0V9E921nn57I1JSHe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<span class="absolute bottom-1 right-2 text-white text-[11px] font-bold">باقات شاملة</span>
+</div>
+</div>
+</article>
+<!-- Bento Card 2: رحلات المصايف والشواطئ -->
+<article class="col-span-1 flex flex-col justify-between bg-surface rounded-2xl border border-border-subtle p-3.5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-secondary/40 transition-all duration-200">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-9 h-9 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">beach_access</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container text-[10px] font-bold">مياه فيروزية</span>
+</div>
+<div class="h-20 w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Luxury modern tourist coach parked near an azure tropical Red Sea beach resort with turquoise water and sunny coastal cliffs in Hurghada Egypt. The bright modern light-mode scene reflects calm premium transportation for vacationers with clean teal and white accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKwd1t7G3iMCvXznO7OpAeTu6HpBuCDeuikZoLOrMwnMaNTeGC4IRSOb70_-6LkrGvgTP41z85RQgeRdR5J2KbECmv8Fo7ZYtYpFVgebw0l5N4vayFVIMQ_0R647xAlw8GUMh8d9kq01RbmS-0t2JB2hhKgXFXU_6Vebk5CGRuwrWWH8kc3A30sg9sovfQ-tU0Xxra79MkK-AxWq54IbaosNW6Acft2XdnbukKyOcZdG4hI8cFKmhTJ7f1f4yeYOobDhlD1xemV8Lc"/>
+</div>
+<div>
+<h3 class="text-label-lg font-label-lg text-text-primary leading-tight">رحلات المصايف والشواطئ</h3>
+<p class="text-body-sm font-body-sm text-text-muted line-clamp-1">الغردقة، شرم الشيخ، دهب، الساحل</p>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle flex items-center justify-between">
+<span class="text-[11px] text-text-secondary font-medium">42 رحلة/أسبوع</span>
+<span class="text-label-md font-label-md text-primary-container font-bold">من 320 ج.م</span>
+</div>
+</article>
+<!-- Bento Card 3: رحلات اليوم الواحد (Day Use) -->
+<article class="col-span-1 flex flex-col justify-between bg-surface rounded-2xl border border-border-subtle p-3.5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container/30 transition-all duration-200">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-9 h-9 rounded-xl bg-primary-fixed/40 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">wb_sunny</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-subtle text-primary-container border border-border-subtle text-[10px] font-bold">توفير الوقت</span>
+</div>
+<div class="h-20 w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Fast modern sprinter shuttle bus traveling on a smooth modern Egyptian highway heading towards Ain Sokhna coast during crisp morning light. Clean architectural roadway, vivid bright daylight atmosphere, evoking quick efficient day-trip transit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD17JGEL1-corm1FKCmKbgww05yEvjjH9HMVyB_xNdEuR0EEHbsJVptLd80GVgeKJ9nWoaSOZixAkPfWe5rQi40-RqBpYxUx4XQlcBbrqrRnHL7IuHb_wYCrtnGAaAcgRA9pY2I1c1FOm35cGCWc7YUdyFJy5-uUl2yBXyEnFqoc1qNN3KJuns-K4zOPEc0JCdXCH-G-w0DnOnb3rByC-ldFRx2s0u67O8N7W8G5G7j2V5_hJagGrGcfMFInvOhlWO7W6xLm93i3bRT"/>
+</div>
+<div>
+<h3 class="text-label-lg font-label-lg text-text-primary leading-tight">رحلات اليوم الواحد (Day Use)</h3>
+<p class="text-body-sm font-body-sm text-text-muted line-clamp-1">العين السخنة، وادي الريان، إسكندرية</p>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle flex items-center justify-between">
+<span class="text-[11px] text-text-secondary font-medium">ذهاب وعودة</span>
+<span class="text-label-md font-label-md text-secondary font-bold">تبدأ 180 ج.م</span>
+</div>
+</article>
+<!-- Bento Card 4: رحلات الجامعات والمدارس -->
+<article class="col-span-1 flex flex-col justify-between bg-surface rounded-2xl border border-border-subtle p-3.5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container/30 transition-all duration-200">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-9 h-9 rounded-xl bg-surface-subtle text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">school</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container text-[10px] font-bold">أمان الطلاب</span>
+</div>
+<div>
+<h3 class="text-label-lg font-label-lg text-text-primary leading-tight">رحلات الجامعات والمدارس</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1 leading-snug">
+                خطوط نقل الطلاب المنتظمة، سفر العطلات ونهاية الفصل الدراسي.
+              </p>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle flex items-center justify-between">
+<span class="text-[11px] text-text-secondary">اشتراكات مرنة</span>
+<span class="material-symbols-outlined text-primary-container text-lg">chevron_left</span>
+</div>
+</article>
+<!-- Bento Card 5: رحلات العمل والمؤتمرات (Business Trips) -->
+<article class="col-span-1 flex flex-col justify-between bg-surface rounded-2xl border border-border-subtle p-3.5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container/30 transition-all duration-200">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="w-9 h-9 rounded-xl bg-tertiary-fixed-dim/20 text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">business_center</span>
+</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed-dim/20 text-on-tertiary-container text-[10px] font-bold">VIP &amp; WiFi</span>
+</div>
+<div>
+<h3 class="text-label-lg font-label-lg text-text-primary leading-tight">رحلات العمل والمؤتمرات</h3>
+<p class="text-body-sm font-body-sm text-text-muted mt-1 leading-snug">
+                العاصمة الإدارية الجديدة، المعارض والمؤتمرات ونقل الشركات.
+              </p>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-border-subtle flex items-center justify-between">
+<span class="text-[11px] text-text-secondary">مقاعد مكتبية</span>
+<span class="material-symbols-outlined text-primary-container text-lg">chevron_left</span>
+</div>
+</article>
+<!-- Bento Card 6: رحلات الحج والعمرة والزيارات الدينية (Spans 2 columns) -->
+<article class="col-span-2 bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:border-primary-container/30 transition-all duration-200">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-11 h-11 rounded-xl bg-primary-container/10 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">mosque</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-sm font-headline-sm text-text-primary">رحلات الحج والعمرة والزيارات الدينية</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-subtle text-text-secondary border border-border-subtle text-[11px]">مجهزة بالكامل</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">خطوط مخصصة مجهزة بأقصى درجات الراحة والتجهيزات الطبية واللوجستية</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- 5. بانر ضمان حارث للرحلات (Harith Transit Assurance) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-4 shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-3">
+<div class="flex items-center gap-2 border-b border-border-subtle pb-3">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<div>
+<h4 class="text-label-lg font-label-lg text-text-primary">ضمان حارث الشامل للركاب</h4>
+<p class="text-body-sm font-body-sm text-text-muted">رحلتك مغطاة بالكامل بأحدث معايير الأمان المالي والتقني</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-1 text-center">
+<div class="p-2 rounded-xl bg-surface-subtle flex flex-col items-center space-y-1">
+<span class="material-symbols-outlined text-primary-container text-xl">satellite_alt</span>
+<span class="text-label-sm font-label-sm text-text-primary font-semibold">تتبع GPS حي</span>
+<span class="text-[10px] text-text-muted leading-tight">مشاركة المسار لحظياً</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-subtle flex flex-col items-center space-y-1">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<span class="text-label-sm font-label-sm text-text-primary font-semibold">تأمين شامل</span>
+<span class="text-[10px] text-text-muted leading-tight">تأمين سفر إلزامي</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-subtle flex flex-col items-center space-y-1">
+<span class="material-symbols-outlined text-primary-container text-xl">contactless</span>
+<span class="text-label-sm font-label-sm text-text-primary font-semibold">سداد NFC</span>
+<span class="text-[10px] text-text-muted leading-tight">محفظة أو بطاقة حارث</span>
+</div>
+</div>
+</section>
+<!-- 6. زر عائم سفلي (Floating CTA فوق النافبار) -->
+<section class="pt-2 pb-2">
+<button class="w-full h-12 bg-primary-container text-white rounded-xl shadow-[0_8px_20px_rgba(11,62,66,0.2)] hover:bg-[#082C2F] active:scale-[0.98] transition-all duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">directions_bus</span>
+<span class="text-label-lg font-label-lg">+ تقديم طلب رحلة خاصة لمجموعتك</span>
+</button>
+</section>
+</main>
+<!-- 7. شريط التنقل السفلي المعتمد (HarithBottomNav) -->
+<!-- Destination 4: "المواصلات" is active per intent -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1: الرئيسية -->
+<button aria-label="الرئيسية" class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</button>
+<!-- Item 2: محفظتي -->
+<button aria-label="محفظتي" class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-2xl">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</button>
+<!-- Item 3: Center Floating Dock (ادفع) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع" class="w-14 h-14 rounded-full bg-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:scale-105 active:scale-95 transition-transform duration-150 border-4 border-surface">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-primary font-bold mt-0.5">ادفع</span>
+</div>
+<!-- Item 4: المواصلات (ACTIVE TAB per destination logic) -->
+<button aria-label="المواصلات" class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5 text-primary">المواصلات</span>
+</button>
+<!-- Item 5: حسابي -->
+<button aria-label="حسابي" class="flex flex-col items-center justify-center text-text-muted py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</button>
+</nav>
+</div>
+</body></html>

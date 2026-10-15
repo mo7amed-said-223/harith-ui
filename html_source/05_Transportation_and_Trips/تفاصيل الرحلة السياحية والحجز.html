@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل الرحلة السياحية - حارث</title>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-highest": "#e0e3e4",
+            "on-surface-variant": "#404849",
+            "surface-container-low": "#f1f4f5",
+            "surface-bright": "#f7fafb",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "on-surface": "#181c1d",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#a1cfd3",
+            "text-secondary": "#475569",
+            "surface-container-high": "#e5e9ea",
+            "on-error": "#ffffff",
+            "tertiary": "#341e00",
+            "on-secondary-container": "#00714d",
+            "inverse-on-surface": "#eef1f2",
+            "primary": "#00272a",
+            "secondary-fixed": "#6ffbbe",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-dim": "#d7dadb",
+            "text-primary": "#0F172A",
+            "background": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "inverse-primary": "#a1cfd3",
+            "border-subtle": "#E2E8F0",
+            "secondary-fixed-dim": "#4edea3",
+            "text-muted": "#94A3B8",
+            "surface-tint": "#396569",
+            "secondary-container": "#6cf8bb",
+            "error-container": "#ffdad6",
+            "on-background": "#181c1d",
+            "secondary": "#006c49",
+            "primary-fixed": "#bcebef",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "primary-container": "#0b3e42",
+            "outline-variant": "#c0c8c9",
+            "on-primary": "#ffffff",
+            "danger-debit": "#EF4444",
+            "tertiary-container": "#513100",
+            "surface": "#FFFFFF",
+            "surface-container": "#ebeeef",
+            "on-tertiary-container": "#e19000",
+            "surface-variant": "#e0e3e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif;
+      background-color: #f7fafb;
+      color: #0F172A;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen text-text-primary antialiased selection:bg-secondary selection:text-white flex flex-col items-center justify-start pb-32">
+<!-- Mobile View Container -->
+<main class="w-full max-w-md mx-auto min-h-screen flex flex-col relative bg-surface-bright shadow-[0_0_50px_rgba(11,62,66,0.06)]">
+<!-- 1. Top Bar (Task-Focused Detail View: Global Nav Suppressed per UX Hierarchy) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-4 h-16 flex items-center justify-between shadow-[0_2px_10px_rgba(11,62,66,0.03)]">
+<!-- Back Chevron Button (RTL Backward trajectory = Right-pointing Chevron) -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform hover:bg-surface-container-highest" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Screen Title with Trip Reference ID -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold">تفاصيل الرحلة السياحية</h1>
+<span class="text-label-sm font-label-sm text-text-muted font-medium tracking-wide">TRP-884#</span>
+</div>
+<!-- Share WhatsApp / Secondary Utility Button -->
+<button aria-label="مشاركة عبر واتساب" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-secondary active:scale-95 transition-transform hover:bg-surface-container-highest" onclick="alert('تم نسخ رابط الرحلة للمشاركة عبر واتساب')">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<div class="px-4 pt-3 space-y-4">
+<!-- 2. Hero Trip Header Card (Tier-1 FinTech Ambient Layering) -->
+<section class="relative rounded-2xl bg-gradient-to-br from-primary-container via-[#082C2F] to-[#041a1c] text-white p-5 shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary/20 overflow-hidden">
+<!-- Ambient Radial Glow Accent -->
+<div class="absolute -top-12 -left-12 w-40 h-40 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-on-tertiary-container/15 rounded-full blur-xl pointer-events-none"></div>
+<!-- Badges Row -->
+<div class="flex flex-wrap items-center gap-2 mb-3.5 relative z-10">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-white/10 backdrop-blur-sm text-primary-fixed border border-white/15">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+            مرخصة سياحياً (وزارة النقل)
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-500/20 text-secondary-fixed border border-secondary-fixed/30 animate-pulse">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+            تتبع لحظي GPS مفعل
+          </span>
+</div>
+<!-- Trip Name & VIP Badge -->
+<div class="flex items-start justify-between gap-2 mb-4 relative z-10">
+<div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-white leading-snug">
+              رحلة الغردقة وسهل حشيش
+            </h2>
+<p class="text-body-md font-body-md text-primary-fixed-dim">إكسبريس سياحي فاخر • خط الساحل الشرقي</p>
+</div>
+<span class="shrink-0 px-2.5 py-1 bg-tertiary-container/80 text-tertiary-fixed border border-tertiary-fixed-dim/40 rounded-lg text-label-sm font-label-sm font-bold">
+            درجة رجال أعمال VIP
+          </span>
+</div>
+<!-- Schedule & Boarding Details Strip -->
+<div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-3 relative z-10">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-primary-fixed-dim block">تاريخ الانطلاق</span>
+<span class="text-label-lg font-label-lg font-bold text-white">الجمعة 24 أكتوبر 2026</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm text-primary-fixed-dim block">توقيت الانطلاق</span>
+<span class="text-label-lg font-label-lg font-bold text-white">06:00 صباحاً</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Driver & Fleet Specs Bento Box -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Driver Profile Header -->
+<div class="flex items-center justify-between pb-3.5 border-b border-border-subtle">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img class="w-13 h-13 rounded-xl object-cover ring-2 ring-secondary/30 w-[52px] h-[52px]" data-alt="A professional middle-aged Egyptian commercial driver with a warm, trusted smile wearing a sharp dark navy uniform in front of a modern tourist coach, high-key bright morning lighting, crisp cinematic portrait photography, refined corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANf6c3CjcTFbAKBU2eMoMarlyjBcvHCL5CAEc-yHDy_IgtNGqz5dF0kRitknMlE_QGw_8wSDxPLUfUIJAgQPzgZDoM_uLZ4ag82Lzv6bDqNq8xFyBxnlAfADyP1pPY8OXrcDsWKNxQXQyNfp77nxHYPb9ht8RAIGnRxQS5WnRUWmhOh9tsNV84vkWrspCRzjZKOdzY_Czy0Zm7DubmEkmeX2ShtnoD0N48WpVf4Jg57bvIIpRrIE1fyd9hAWndFbRYlfRgD5qTDoP3"/>
+<span class="absolute -bottom-1 -left-1 w-5 h-5 rounded-full bg-secondary text-white flex items-center justify-center text-[10px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="text-label-lg font-label-lg font-bold text-text-primary">كابتن محمود عبد المنعم</h3>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-secondary-container/40 text-on-secondary-container font-semibold">معتمد</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">سائق دولي وسياحي معتمد درجة أولى</p>
+</div>
+</div>
+<!-- Driver Rating & Trip Count -->
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 bg-surface-subtle px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-[#F59E0B]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md font-label-md font-bold text-text-primary">4.9</span>
+</div>
+<span class="text-[10px] text-text-muted mt-0.5 font-medium">(142 رحلة سياحية)</span>
+</div>
+</div>
+<!-- Bus Specs Strip -->
+<div class="bg-surface-subtle rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface flex items-center justify-center text-primary shadow-sm border border-border-subtle">
+<span class="material-symbols-outlined text-[20px]">directions_bus</span>
+</div>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-text-primary">مرسيدس ترافيلو سياحية</h4>
+<p class="text-body-sm font-body-sm text-text-secondary">سعة 48 راكباً • أحدث طراز 2025</p>
+</div>
+</div>
+<!-- License Plate Emblem (Egyptian Authority Style) -->
+<div class="border border-border-subtle bg-white px-2.5 py-1 rounded-lg text-center shadow-xs">
+<span class="text-[9px] block text-text-muted border-b border-border-subtle/70 pb-0.5 leading-none">مصر • EGYPT</span>
+<span class="text-label-md font-label-md font-bold text-primary tracking-wider">أ ج ق 784</span>
+</div>
+</div>
+<!-- Amenities Grid -->
+<div>
+<h4 class="text-label-sm font-label-sm font-bold text-text-secondary mb-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">local_convenience_store</span>
+            وسائل الراحة والتجهيزات المشمولة:
+          </h4>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">mode_fan</span>
+<span class="text-label-sm font-label-sm">تكييف مركزي</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">tv</span>
+<span class="text-label-sm font-label-sm">شاشات عرض</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">airline_seat_recline_extra</span>
+<span class="text-label-sm font-label-sm">مقاعد مريحة</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">cable</span>
+<span class="text-label-sm font-label-sm">شحن Type-C</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">wifi</span>
+<span class="text-label-sm font-label-sm">واي فاي سريع</span>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-lg bg-background border border-border-subtle text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">wc</span>
+<span class="text-label-sm font-label-sm">مرحاض داخلي</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Interactive Route Timeline -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">route</span>
+<h3 class="text-label-lg font-label-lg font-bold text-text-primary">خط سير ومحطات الرحلة</h3>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold bg-secondary-container/20 px-2 py-0.5 rounded-full">
+            4 محطات معتمدة
+          </span>
+</div>
+<div class="relative pr-2">
+<!-- Continuous Vertical Tracking Track -->
+<div class="absolute right-[19px] top-4 bottom-6 w-0.5 bg-gradient-to-b from-primary via-secondary to-primary-container"></div>
+<!-- Station 1 -->
+<div class="relative flex items-start gap-3 pb-6 group">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0 z-10 shadow-sm ring-4 ring-white">
+<span class="material-symbols-outlined text-[16px]">trip_origin</span>
+</div>
+<div class="flex-1 bg-surface-subtle/80 p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-primary">06:00 ص</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary">نقطة الانطلاق الرئيسية</span>
+</div>
+<h4 class="text-label-md font-label-md font-bold text-text-primary mt-1">موقف السلام النموذجي (بوابة 3)</h4>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">صعود الركاب وفحص الأمتعة قبل التحرك بدقة.</p>
+</div>
+</div>
+<!-- Station 2 -->
+<div class="relative flex items-start gap-3 pb-6 group">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-secondary flex items-center justify-center shrink-0 z-10 shadow-sm ring-4 ring-white">
+<span class="material-symbols-outlined text-[16px]">group_add</span>
+</div>
+<div class="flex-1 bg-surface-subtle/80 p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-primary">06:45 ص</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-secondary-container/50 text-secondary">تجمع ركاب (10 دقائق)</span>
+</div>
+<h4 class="text-label-md font-label-md font-bold text-text-primary mt-1">ميدان التحرير (أمام المتحف المصري)</h4>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">نقطة الالتحاق لوسط وغرب القاهرة.</p>
+</div>
+</div>
+<!-- Station 3 -->
+<div class="relative flex items-start gap-3 pb-6 group">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 z-10 shadow-sm ring-4 ring-white">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+</div>
+<div class="flex-1 bg-surface-subtle/80 p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-primary">09:00 ص</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant">استراحة 30 دقيقة</span>
+</div>
+<h4 class="text-label-md font-label-md font-bold text-text-primary mt-1">استراحة الزعفرانة السياحية</h4>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">طريق العين السخنة — تناول وجبات واستخدام المرافق.</p>
+</div>
+</div>
+<!-- Station 4 (Destination) -->
+<div class="relative flex items-start gap-3 group">
+<div class="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 z-10 shadow-sm ring-4 ring-white">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+</div>
+<div class="flex-1 bg-secondary-container/15 p-3 rounded-xl border border-secondary-fixed">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm font-bold text-secondary">11:30 ص</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-secondary text-white">الوصول الختامي</span>
+</div>
+<h4 class="text-label-md font-label-md font-bold text-primary mt-1">محطة حافلات ميدان السقالة / مارينا الغردقة</h4>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">النزول النهائي وبدء برامج الإقامة والتجول.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Booking & Cancellation Terms Card -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-3">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[20px] text-primary">policy</span>
+<h3 class="text-label-lg font-label-lg font-bold text-text-primary">سياسة الحجز والأمتعة المعتمدة</h3>
+</div>
+<ul class="space-y-2.5 text-body-sm font-body-sm text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span>إلغاء مجاني حتى <strong class="text-text-primary">24 ساعة</strong> قبل موعد الانطلاق مع استرداد فوري لكامل المبلغ في محفظتك.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container shrink-0 mt-0.5">info</span>
+<span>خصم <strong class="text-text-primary">20%</strong> فقط من قيمة التذكرة في حال الإلغاء قبل موعد الرحلة بأقل من 12 ساعة.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">luggage</span>
+<span>مسموح بحقيبة سفر كبيرة <strong class="text-text-primary">(حتى 25 كجم)</strong> + حقيبة يد شخصية مجاناً داخل الحافلة.</span>
+</li>
+</ul>
+<!-- Mandatory Terms Checkbox Checked -->
+<div class="pt-3 border-t border-border-subtle">
+<label class="flex items-start gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-5 h-5 rounded border-border-subtle text-primary focus:ring-primary/20 accent-[#0B3E42] mt-0.5 cursor-pointer" id="terms-checkbox" type="checkbox"/>
+<span class="text-body-sm font-body-sm font-medium text-text-primary leading-tight">
+              أوافق على شروط السلامة وقواعد ركوب حافلات حارث السياحية ولوائح النقل البري.
+            </span>
+</label>
+</div>
+</section>
+</div>
+<!-- 6. Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface/98 backdrop-blur-md border-t border-border-subtle shadow-[0_-8px_24px_rgba(11,62,66,0.08)] py-3 px-4">
+<div class="max-w-md mx-auto space-y-2.5">
+<!-- Price Readout & CTA Button Cluster -->
+<div class="flex items-center gap-3">
+<!-- Price Pillar -->
+<div class="shrink-0 text-right">
+<span class="text-label-sm font-label-sm text-text-muted block">سعر المقعد الواحد</span>
+<div class="flex items-baseline gap-1">
+<span class="text-currency-display font-currency-display font-bold text-primary">350.00</span>
+<span class="text-label-md font-label-md text-text-secondary font-bold">ج.م</span>
+</div>
+<span class="text-[10px] text-secondary font-medium block -mt-1">شامل التأمين والضرائب</span>
+</div>
+<!-- Primary Flow Button -->
+<button class="flex-1 h-12 bg-primary-container hover:bg-[#082C2F] active:scale-[0.98] transition-all rounded-xl text-white font-label-lg font-label-lg flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(11,62,66,0.25)] border border-primary/40 relative overflow-hidden group" onclick="alert('جاري الانتقال لمخطط مقاعد حافلة مرسيدس ترافيلو...')">
+<!-- Emerald Hover Glow -->
+<span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-secondary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+<span class="relative z-10">اختيار المقاعد ومتابعة الحجز</span>
+<span class="material-symbols-outlined text-[18px] relative z-10 transition-transform group-hover:-translate-x-1">arrow_back</span>
+</button>
+</div>
+<!-- CBE Banking Security Trust Seal -->
+<div class="flex items-center justify-center gap-1.5 text-text-muted pt-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-[11px] font-medium tracking-tight">حجزك مؤمن بالكامل ومحمي عبر البنك المركزي المصري CBE</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Interactive State Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkbox = document.getElementById('terms-checkbox');
+      const actionBtn = document.querySelector('button[onclick*="مخطط مقاعد"]');
+      
+      if(checkbox && actionBtn) {
+        checkbox.addEventListener('change', () => {
+          if (!checkbox.checked) {
+            actionBtn.classList.add('opacity-50', 'pointer-events-none');
+          } else {
+            actionBtn.classList.remove('opacity-50', 'pointer-events-none');
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

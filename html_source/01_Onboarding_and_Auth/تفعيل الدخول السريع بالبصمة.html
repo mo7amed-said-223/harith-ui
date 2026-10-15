@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - تأمين الحساب السريع</title>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#0b3e42",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "tertiary-container": "#513100",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "surface-variant": "#e0e3e4",
+            "surface-subtle": "#F1F5F9",
+            "on-primary-fixed": "#002022",
+            "secondary": "#006c49",
+            "on-tertiary-fixed": "#2a1700",
+            "inverse-surface": "#2d3132",
+            "outline-variant": "#c0c8c9",
+            "danger-debit": "#EF4444",
+            "inverse-primary": "#a1cfd3",
+            "outline": "#707979",
+            "surface-container-high": "#e5e9ea",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed-variant": "#1f4d51",
+            "text-primary": "#0F172A",
+            "text-muted": "#94A3B8",
+            "error-container": "#ffdad6",
+            "surface-tint": "#396569",
+            "primary": "#00272a",
+            "background": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-low": "#f1f4f5",
+            "tertiary": "#341e00",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffddb8",
+            "primary-fixed": "#bcebef",
+            "on-primary-container": "#7ca9ad",
+            "on-background": "#181c1d",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#181c1d",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-tertiary-container": "#e19000",
+            "on-secondary-fixed-variant": "#005236",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#404849",
+            "text-secondary": "#475569",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface": "#FFFFFF",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-dim": "#d7dadb",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          fontSize: {
+            "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "currency-body": ["18px", { lineHeight: "26px", letterSpacing: "0px", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "34px", fontWeight: "700" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "500" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+            "display-lg": ["36px", { lineHeight: "48px", fontWeight: "700" }],
+            "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "0px", fontWeight: "700" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "display-lg-mobile": ["28px", { lineHeight: "38px", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.08);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+    }
+
+    .pulse-layer-1 {
+      animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .pulse-layer-2 {
+      animation: pulse-ring 4s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.2s;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex flex-col justify-between selection:bg-secondary selection:text-on-secondary">
+<!-- Mobile Wrapper Container -->
+<div class="w-full max-w-md mx-auto flex flex-col min-h-screen bg-background relative shadow-2xl">
+<!-- Top Bar Component -->
+<header class="w-full h-16 bg-surface px-4 flex items-center justify-between border-b border-border-subtle sticky top-0 z-30">
+<!-- Right Action: Back Chevron (RTL Start) -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-primary hover:bg-surface-container transition-colors active:scale-95 duration-150" onclick="window.history.back()" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary">تأمين الحساب السريع</h1>
+<!-- Left Action: Shield Security Badge with Status Indicator -->
+<div class="w-10 h-10 rounded-xl bg-surface-subtle border border-border-subtle flex items-center justify-center relative text-primary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="absolute top-2 left-2 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface"></span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 py-6 flex flex-col justify-center">
+<!-- Elevated Center Bento Card -->
+<div class="bg-surface rounded-3xl p-6 border border-border-subtle shadow-[0_4px_24px_rgba(11,62,66,0.06)] flex flex-col items-center text-center relative overflow-hidden">
+<!-- Subtle Ambient Background Glow -->
+<div class="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-16 -left-16 w-44 h-44 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<!-- Security Pill Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/20 text-on-secondary-container mb-6 text-label-md font-label-md">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>حماية فائقة 2FA ومصادقة بيومترية معتمدة</span>
+</div>
+<!-- Prominent Biometric Visual with Concentric Waves -->
+<div class="relative w-44 h-44 flex items-center justify-center my-2">
+<!-- Concentric Outer Ring Wave -->
+<div class="pulse-layer-2 absolute inset-0 rounded-full border border-secondary/20 bg-secondary/5"></div>
+<!-- Concentric Middle Ring Wave -->
+<div class="pulse-layer-1 absolute inset-3 rounded-full border border-primary-container/15 bg-primary-container/[0.03]"></div>
+<!-- Core Central Glowing Container (~120px) -->
+<div class="relative w-[118px] h-[118px] rounded-full bg-gradient-to-br from-primary-container to-primary flex items-center justify-center shadow-[0_12px_28px_rgba(11,62,66,0.22)] border-2 border-surface">
+<!-- Inner Glowing Emerald Halo -->
+<div class="absolute inset-0 rounded-full bg-secondary/20 blur-md pointer-events-none"></div>
+<!-- FaceID & Fingerprint Dual Hybrid Concept Icons -->
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[50px] transition-transform hover:scale-105 duration-200" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<!-- Subtle FaceID Tag Overlay -->
+<span class="material-symbols-outlined text-secondary-fixed absolute -bottom-1 -left-1 text-[22px] bg-primary-container p-1 rounded-full border border-secondary-fixed/40">face</span>
+</div>
+</div>
+</div>
+<!-- Bold Arabic Headline -->
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-text-primary mt-4 tracking-tight">
+          تسجيل الدخول ببصمة الإصبع والوجه
+        </h2>
+<!-- Descriptive Arabic Paragraph -->
+<p class="text-body-md font-body-md text-text-secondary mt-3 leading-relaxed max-w-sm">
+          هل ترغب في تفعيل تسجيل الدخول السريع والآمن باستخدام البصمة في المرات القادمة؟ يمكنك الدخول فورياً لحسابك ومحفظتك دون الحاجة لكتابة كلمة المرور أو رمز PIN في كل مرة.
+        </p>
+<!-- Feature Highlight Pills / Benefit Chips -->
+<div class="w-full flex flex-col gap-2.5 mt-6 pt-5 border-t border-border-subtle">
+<!-- Pill 1: Speed -->
+<div class="w-full flex items-center justify-start gap-3 p-2.5 rounded-xl bg-surface-subtle border border-border-subtle/80">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary-container shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="text-right">
+<span class="text-label-md font-label-md text-text-primary block">دخول خلال 0.5 ثانية</span>
+<span class="text-label-sm font-label-sm text-text-muted block">تخطي كتابة كلمة المرور المكررة</span>
+</div>
+</div>
+<!-- Pill 2: Hardware Security -->
+<div class="w-full flex items-center justify-start gap-3 p-2.5 rounded-xl bg-surface-subtle border border-border-subtle/80">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-secondary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="text-right">
+<span class="text-label-md font-label-md text-text-primary block">تشفير عتادي محلي Secure Enclave</span>
+<span class="text-label-sm font-label-sm text-text-muted block">لا يتم مشاركة بصماتك مع أي خوادم خارجية</span>
+</div>
+</div>
+<!-- Pill 3: Transaction Ready -->
+<div class="w-full flex items-center justify-start gap-3 p-2.5 rounded-xl bg-surface-subtle border border-border-subtle/80">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary-container shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="text-right">
+<span class="text-label-md font-label-md text-text-primary block">معتمد لسداد المعاملات وتذاكر النقل</span>
+<span class="text-label-sm font-label-sm text-text-muted block">توثيق فوري عند بوابات المترو والدفع</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Fixed Action Area -->
+<footer class="w-full bg-surface border-t border-border-subtle px-4 pt-4 pb-6 mt-auto">
+<div class="flex flex-col gap-3">
+<!-- Primary Action Button: 54px height, Deep Teal #0B3E42 -->
+<button class="w-full h-[54px] rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2.5 shadow-[0_8px_20px_rgba(11,62,66,0.2)] hover:bg-[#082C2F] active:scale-[0.98] transition-all duration-150" id="btn-enable-biometrics" type="button">
+<span class="material-symbols-outlined text-[24px]">fingerprint</span>
+<span>تفعيل البصمة الآن</span>
+</button>
+<!-- Secondary / Skip Text Button -->
+<button class="w-full py-2 text-center text-label-md font-label-md text-[#64748B] hover:text-text-primary transition-colors" id="btn-skip" type="button">
+          تخطي الآن (يمكنك تفعيلها لاحقاً من قسم الأمان في حسابي)
+        </button>
+<!-- Security Disclaimer Microcopy -->
+<p class="text-center text-label-sm font-label-sm text-text-muted leading-tight">
+          يمكنك إيقاف تفعيل البصمة في أي وقت من إعدادات الأمان والخصوصية.
+        </p>
+</div>
+</footer>
+<!-- Interactive Biometric Success Toast / Overlay -->
+<div class="fixed inset-0 bg-text-primary/40 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="biometric-modal">
+<div class="bg-surface rounded-2xl p-6 w-full max-w-xs text-center border border-border-subtle shadow-2xl transform transition-all duration-200">
+<div class="w-16 h-16 rounded-full bg-secondary-container/40 text-on-secondary-container mx-auto flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary mb-1">تم التفعيل بنجاح</h3>
+<p class="text-body-sm font-body-sm text-text-secondary mb-4">أصبح بإمكانك الآن تسجيل الدخول والمصادقة على المدفوعات ببصمتك الخاصة.</p>
+<button class="w-full h-11 rounded-xl bg-primary-container text-on-primary text-label-lg font-label-lg active:scale-95 transition-transform" onclick="document.getElementById('biometric-modal').classList.add('hidden')" type="button">
+          متابعة إلى حسابي
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Interaction Script -->
+<script>
+    const enableBtn = document.getElementById('btn-enable-biometrics');
+    const skipBtn = document.getElementById('btn-skip');
+    const modal = document.getElementById('biometric-modal');
+
+    if (enableBtn && modal) {
+      enableBtn.addEventListener('click', () => {
+        // Trigger simulated biometric verification modal
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    }
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', () => {
+        // Subtle ripple feedback for skipping
+        skipBtn.style.opacity = '0.5';
+        setTimeout(() => {
+          skipBtn.style.opacity = '1';
+          alert('تم التخطي، يمكنك تفعيل المصادقة البيومترية في أي وقت من تبويب حسابي.');
+        }, 150);
+      });
+    }
+  </script>
+</body></html>

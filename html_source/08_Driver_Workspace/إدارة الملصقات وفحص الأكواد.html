@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة مسارات وتشغيل حارث — ملصقات المركبة</title>
+<!-- IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-fixed-variant": "#1f4d51",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary-fixed": "#6ffbbe",
+            "secondary": "#006c49",
+            "surface-variant": "#e0e3e4",
+            "on-error": "#ffffff",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "error": "#ba1a1a",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "outline-variant": "#c0c8c9",
+            "primary-fixed": "#bcebef",
+            "border-subtle": "#E2E8F0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "text-secondary": "#475569",
+            "on-tertiary-container": "#e19000",
+            "text-muted": "#94A3B8",
+            "text-primary": "#0F172A",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary": "#ffffff",
+            "primary-container": "#0b3e42",
+            "on-primary-container": "#7ca9ad",
+            "on-surface": "#181c1d",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "danger-debit": "#EF4444",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#396569",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f1f4f5",
+            "secondary-container": "#6cf8bb",
+            "primary": "#00272a",
+            "tertiary-fixed": "#ffddb8",
+            "surface-subtle": "#F1F5F9",
+            "on-surface-variant": "#404849",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-fixed": "#002022",
+            "on-secondary-fixed": "#002113",
+            "tertiary": "#341e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["IBM Plex Sans"],
+            "headline-md": ["IBM Plex Sans"],
+            "label-lg": ["IBM Plex Sans"],
+            "headline-sm": ["IBM Plex Sans"],
+            "headline-lg": ["IBM Plex Sans"],
+            "display-lg": ["IBM Plex Sans"],
+            "body-md": ["IBM Plex Sans"],
+            "label-sm": ["IBM Plex Sans"],
+            "currency-display": ["IBM Plex Sans"],
+            "body-lg": ["IBM Plex Sans"],
+            "body-sm": ["IBM Plex Sans"],
+            "currency-body": ["IBM Plex Sans"],
+            "display-lg-mobile": ["IBM Plex Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+    .scanner-reticle-line {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #6ffbbe, transparent);
+      animation: scanAnim 2.2s infinite ease-in-out;
+    }
+    @keyframes scanAnim {
+      0% { top: 10%; opacity: 0.2; }
+      50% { top: 85%; opacity: 1; }
+      100% { top: 10%; opacity: 0.2; }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-primary">
+<!-- TOP APP BAR (Shared Components Tokenized) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-border-subtle shadow-sm">
+<div class="flex justify-between items-center w-full h-16 px-4 max-w-md mx-auto">
+<!-- Leading Icon (Back Chevron for RTL) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-headline-sm">arrow_forward</span>
+</button>
+<!-- Headline -->
+<div class="text-center flex-1 px-2">
+<h1 class="text-headline-sm font-headline-sm font-bold text-text-primary truncate">
+          إدارة ملصقات المركبة الذكية
+        </h1>
+<p class="text-label-sm font-label-sm text-text-muted">منظومة حارث لرقمنة المواصلات</p>
+</div>
+<!-- Trailing Icon (Info / Help) -->
+<button aria-label="مساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-headline-sm">help_outline</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 w-full max-w-md mx-auto px-4 py-4 space-y-5 pb-36">
+<!-- 3 MODE TABS SELECTOR -->
+<nav aria-label="أوضاع إدارة الملصق" class="bg-surface-container-low p-1 rounded-xl border border-border-subtle flex gap-1 shadow-sm">
+<button aria-current="page" class="flex-1 py-2 px-2 rounded-lg bg-primary-container text-surface text-label-md font-label-md shadow-sm transition-all duration-150 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>استيكراتي الرسمية</span>
+</button>
+<button class="flex-1 py-2 px-2 rounded-lg text-text-secondary hover:text-text-primary text-label-md font-label-md transition-all duration-150 flex items-center justify-center gap-1.5 hover:bg-surface">
+<span class="material-symbols-outlined text-[18px]">document_scanner</span>
+<span>كاميرا الفحص</span>
+</button>
+<button class="flex-1 py-2 px-2 rounded-lg text-text-secondary hover:text-text-primary text-label-md font-label-md transition-all duration-150 flex items-center justify-center gap-1.5 hover:bg-surface">
+<span class="material-symbols-outlined text-[18px]">add_card</span>
+<span>طلب استيكر</span>
+</button>
+</nav>
+<!-- SECTION A: OFFICIAL VEHICLE QR STICKER CARD (Tab 1 Preview) -->
+<section aria-labelledby="sticker-card-title" class="bg-surface rounded-2xl border border-border-subtle shadow-sm overflow-hidden">
+<!-- Card Header -->
+<div class="bg-primary-container text-surface px-4 py-3 flex items-center justify-between border-b border-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-headline-sm" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<h2 class="text-label-lg font-label-lg font-bold text-surface" id="sticker-card-title">
+              استيكر مركبة معتمد رسمياً — منظومة حارث
+            </h2>
+<p class="text-label-sm font-label-sm text-on-primary-container">رقم الترخيص الذكي المشفر: EG-HTH-9920</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 bg-secondary text-surface text-label-sm font-label-sm px-2.5 py-1 rounded-full border border-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+          نشط ومعتمد
+        </span>
+</div>
+<!-- Vehicle & Driver Metadata Bento Strip -->
+<div class="p-4 bg-surface-container-low border-b border-border-subtle grid grid-cols-2 gap-3">
+<div class="bg-surface p-2.5 rounded-xl border border-border-subtle">
+<p class="text-label-sm font-label-sm text-text-muted">كود المركبة واللوحة</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-body-lg font-body-lg font-bold text-primary">ق ط ع 458</span>
+<span class="text-label-md font-label-md px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-mono">#CAR-458</span>
+</div>
+</div>
+<div class="bg-surface p-2.5 rounded-xl border border-border-subtle">
+<p class="text-label-sm font-label-sm text-text-muted">السائق والطراز</p>
+<p class="text-body-md font-body-md font-bold text-text-primary mt-0.5 truncate">كابتن حسن عبد الله</p>
+<p class="text-label-sm font-label-sm text-secondary font-medium">ميكروباص ١٤ راكب</p>
+</div>
+</div>
+<!-- QR Visual Canvas Area with Specular Frame -->
+<div class="p-6 flex flex-col items-center justify-center bg-surface relative">
+<!-- Floating NFC Wave Badge -->
+<div class="absolute top-3 left-4 flex items-center gap-1 text-label-sm font-label-sm text-primary font-semibold bg-surface-subtle px-2.5 py-1 rounded-full border border-border-subtle">
+<span class="material-symbols-outlined text-[16px] text-secondary">contactless</span>
+<span>NFC مفعّل</span>
+</div>
+<!-- QR Outer Graphic Housing -->
+<div class="relative w-64 h-64 p-3 bg-surface rounded-2xl border-2 border-primary-container shadow-md flex items-center justify-center">
+<!-- Stylized Corner Frame Marks -->
+<div class="absolute top-1 right-1 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
+<div class="absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+<div class="absolute bottom-1 right-1 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+<div class="absolute bottom-1 left-1 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
+<!-- Stylized QR Code (Pure Tailwind Geometry) -->
+<div class="w-full h-full bg-surface p-2 flex flex-col justify-between relative">
+<div class="flex justify-between items-start">
+<!-- QR Top-Right Finder -->
+<div class="w-12 h-12 border-4 border-primary p-1 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 bg-primary"></div>
+</div>
+<div class="grid grid-cols-5 gap-1 pt-1">
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-transparent"></div><div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+<!-- QR Top-Left Finder -->
+<div class="w-12 h-12 border-4 border-primary p-1 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 bg-primary"></div>
+</div>
+</div>
+<!-- QR Center Graphic with Brand Emblem -->
+<div class="flex items-center justify-between py-1">
+<div class="grid grid-cols-4 gap-1">
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-transparent"></div>
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-primary"></div>
+</div>
+<!-- HARITH EMBLEM CHIP -->
+<div class="w-14 h-14 rounded-xl bg-primary-container text-surface flex flex-col items-center justify-center border-2 border-surface shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-headline-md" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+<span class="text-[9px] font-bold tracking-tight text-surface">حارث</span>
+</div>
+<div class="grid grid-cols-4 gap-1">
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-transparent"></div><div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+<!-- QR Bottom Row -->
+<div class="flex justify-between items-end">
+<!-- QR Bottom-Right Finder -->
+<div class="w-12 h-12 border-4 border-primary p-1 bg-surface flex items-center justify-center">
+<div class="w-6 h-6 bg-primary"></div>
+</div>
+<div class="grid grid-cols-6 gap-1 pb-1">
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-transparent"></div><div class="w-2 h-2 bg-primary"></div>
+<div class="w-2 h-2 bg-primary"></div><div class="w-2 h-2 bg-transparent"></div>
+</div>
+<!-- Sync Block -->
+<div class="w-12 h-12 bg-surface-subtle border border-border-subtle flex flex-col items-center justify-center p-1 rounded">
+<span class="material-symbols-outlined text-primary text-[18px]">qr_code_2</span>
+<span class="text-[8px] font-mono text-text-muted">CBE-OK</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Instruction Text -->
+<p class="text-body-md font-body-md text-text-primary text-center mt-4 max-w-xs leading-relaxed font-medium">
+          وجّه كاميرا الهاتف أو كارت حارث الذكي للمسح وسداد الأجرة فوراً.
+        </p>
+<p class="text-label-sm font-label-sm text-text-muted text-center mt-1">
+          يدعم محافظ كاش، بطاقات ميزة الوطنية، وكروت حارث اللاتلامسية
+        </p>
+</div>
+<!-- Action Buttons under Sticker Card -->
+<div class="p-4 bg-surface-container-lowest border-t border-border-subtle flex flex-col gap-2.5">
+<!-- Button 1: Download PDF -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-surface font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>تحميل الملصق جاهز للطباعة (PDF عالي الدقة)</span>
+</button>
+<!-- Button 2: Share via WhatsApp -->
+<button class="w-full h-12 rounded-xl bg-surface border border-border-subtle text-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-subtle active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px] text-secondary">share</span>
+<span>مشاركة الملصق رقمياً عبر واتساب</span>
+</button>
+</div>
+</section>
+<!-- SECTION B: LIVE SCANNER / VERIFICATION WINDOW (Tab 2 In-Screen Component) -->
+<section aria-labelledby="scanner-window-title" class="bg-surface rounded-2xl border border-border-subtle shadow-sm p-4 space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">camera</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-text-primary" id="scanner-window-title">
+            فحص صلاحية وتشفير الملصق (Verification Camera)
+          </h2>
+</div>
+<span class="text-label-sm font-label-sm bg-surface-container text-text-secondary px-2 py-0.5 rounded font-mono">LIVE AI-OCR</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">
+        وجّه الكاميرا نحو ملصق المركبة للتأكد من ربطه بخط السير النشط.
+      </p>
+<!-- Simulated Dark Viewport Frame -->
+<div class="relative w-full h-56 rounded-2xl bg-inverse-surface overflow-hidden flex items-center justify-center shadow-inner border border-inverse-on-surface">
+<!-- Viewport Grid Background Overlay -->
+<div class="absolute inset-0 opacity-15 bg-[radial-gradient(#6ffbbe_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Scanning Beam Line -->
+<div class="scanner-reticle-line"></div>
+<!-- Glowing Teal Viewfinder Corners & Target Reticle -->
+<div class="relative w-44 h-44 rounded-xl border border-dashed border-outline/50 flex items-center justify-center">
+<!-- Teal Corners -->
+<div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-secondary-fixed rounded-tr-lg"></div>
+<div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-secondary-fixed rounded-tl-lg"></div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-secondary-fixed rounded-br-lg"></div>
+<div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-secondary-fixed rounded-bl-lg"></div>
+<!-- Target Center Crosshair -->
+<div class="w-10 h-10 border border-secondary-fixed/40 rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-secondary-fixed rounded-full animate-ping"></div>
+</div>
+</div>
+<!-- Flash / Torch Toggle Button -->
+<button class="absolute bottom-3 start-3 px-3 py-1.5 rounded-full bg-surface/20 backdrop-blur-md text-surface text-label-sm font-label-sm flex items-center gap-1.5 hover:bg-surface/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">flash_on</span>
+<span>إضاءة الفلاش</span>
+</button>
+<!-- Viewport Status Floating Pill -->
+<div class="absolute top-3 end-3 px-3 py-1 rounded-full bg-inverse-surface/80 border border-outline-variant/30 text-surface text-label-sm font-label-sm flex items-center gap-1.5 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span>جاري مطابقة التوقيع</span>
+</div>
+</div>
+<!-- Result Preview Card: Validated -->
+<div class="bg-surface-bright rounded-xl p-3.5 border border-secondary/30 bg-gradient-to-br from-surface to-secondary-fixed/10">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-headline-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-lg font-label-lg font-bold text-text-primary">الملصق صالح ومعتمد بنجاح ✓</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold bg-secondary-fixed/30 px-2 py-0.5 rounded">مشفر آمن</span>
+</div>
+<div class="space-y-1.5 text-body-sm font-body-sm">
+<div class="flex justify-between items-center">
+<span class="text-text-muted">المركبة:</span>
+<span class="font-bold text-text-primary">تويوتا هاي أس #458</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-muted">الخط المرتبط:</span>
+<span class="font-bold text-primary">موقف السلام ⬅ ميدان رمسيس</span>
+</div>
+<div class="flex justify-between items-center pt-1 text-label-sm font-label-sm text-text-secondary">
+<span>آخر فحص:</span>
+<span>اليوم 08:15 ص — مشفر وفق معايير CBE</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BOTTOM FLOATING ACTION WRAPPER -->
+<aside class="fixed bottom-[76px] left-0 right-0 z-30 px-4 pb-2 bg-gradient-to-t from-background via-background/95 to-transparent pt-3 max-w-md mx-auto pointer-events-none">
+<button class="pointer-events-auto w-full h-12 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-surface text-label-lg font-label-lg font-bold flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span>طلب استيكر حراري أصلي مقاوم للتلف</span>
+</button>
+</aside>
+<!-- BOTTOM NAVIGATION BAR (Shared Components Tokenized) -->
+<nav aria-label="التنقل الرئيسي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 pb-safe bg-surface border-t border-border-subtle shadow-md rounded-t-3xl max-w-md left-1/2 -translate-x-1/2">
+<!-- Item 1: الرئيسية -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: المسارات -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm">alt_route</span>
+<span class="text-label-sm font-label-sm mt-0.5">المسارات</span>
+</a>
+<!-- Item 3: مسح الملصق (ACTIVE FOR THIS SCREEN: إدارة الملصقات وفحص الأكواد) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="text-label-sm font-label-sm mt-0.5">مسح الملصق</span>
+</a>
+<!-- Item 4: التسعير -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm">table_chart</span>
+<span class="text-label-sm font-label-sm mt-0.5">التسعير</span>
+</a>
+<!-- Item 5: الطلبات -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary-container active:scale-95 transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-headline-sm">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">الطلبات</span>
+</a>
+</nav>
+</body></html>

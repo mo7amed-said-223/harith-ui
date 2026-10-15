@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - لوحة السائق لإدارة تذاكر الرحلات والطلبات الخاصة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002022",
+            "on-background": "#181c1d",
+            "primary-container": "#0b3e42",
+            "border-subtle": "#E2E8F0",
+            "outline-variant": "#c0c8c9",
+            "text-secondary": "#475569",
+            "tertiary": "#341e00",
+            "on-secondary-fixed": "#002113",
+            "error": "#ba1a1a",
+            "inverse-primary": "#a1cfd3",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "secondary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "surface-tint": "#396569",
+            "secondary": "#006c49",
+            "primary": "#00272a",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-container": "#513100",
+            "background": "#f7fafb",
+            "surface-subtle": "#F1F5F9",
+            "primary-fixed": "#bcebef",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#f1f4f5",
+            "surface-container-highest": "#e0e3e4",
+            "text-primary": "#0F172A",
+            "outline": "#707979",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e5e9ea",
+            "on-primary-container": "#7ca9ad",
+            "tertiary-fixed-dim": "#ffb95f",
+            "text-muted": "#94A3B8",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#181c1d",
+            "secondary-container": "#6cf8bb",
+            "on-surface-variant": "#404849",
+            "surface-bright": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface-container": "#ebeeef",
+            "on-tertiary-container": "#e19000",
+            "danger-debit": "#EF4444",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "on-secondary-container": "#00714d",
+            "surface-variant": "#e0e3e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center selection:bg-secondary selection:text-on-secondary">
+<!-- Mobile Simulator Canvas Container -->
+<div class="w-full max-w-md bg-background min-h-screen relative flex flex-col pb-36 shadow-2xl overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component Anchor) -->
+<header class="bg-surface dark:bg-surface border-b border-border-subtle sticky top-0 z-40 h-16 w-full flex items-center px-4 justify-between transition-all">
+<!-- Trailing Action in RTL (Support / Help Desk) -->
+<button aria-label="الدعم الفني" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</button>
+<!-- Center Branding Headline & Title -->
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary">حارث</h1>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-low text-primary-container font-semibold">كابتن</span>
+</div>
+<p class="text-label-sm font-label-sm text-text-secondary mt-0.5">رحلاتي وتذاكر الركاب</p>
+</div>
+<!-- RTL Back/Home Trigger (chevron_right in RTL reflects backwards) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-subtle transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+</header>
+<!-- Main Content Stream -->
+<main class="flex-1 px-4 pt-3 flex flex-col gap-4">
+<!-- Captain Identity & Fleet Status Badge -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-xl border border-border-subtle shadow-sm">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-bold text-headline-sm shadow-md border-2 border-surface">
+              مح
+            </div>
+<div class="absolute -bottom-1 -left-1 bg-secondary text-on-secondary rounded-full w-5 h-5 flex items-center justify-center border-2 border-surface">
+<span class="material-symbols-outlined text-[12px] fill-icon">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="text-body-lg font-body-lg font-bold text-text-primary">كابتن محمود</h2>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-fixed/30 px-1.5 py-0.2 rounded font-semibold">سائق دولي</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="flex items-center text-amber-500 text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px] fill-icon text-amber-500">star</span>
+                4.9
+              </span>
+<span class="text-outline text-label-sm">•</span>
+<span class="text-text-secondary text-label-sm font-label-sm">حافلة VIP مرسيدس 500</span>
+</div>
+</div>
+</div>
+<button class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-subtle text-primary border border-border-subtle hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">qr_code_scanner</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">فحص سريع</span>
+</button>
+</div>
+<!-- Current Shift & Trip Performance Bento Card (FinTech Spec) -->
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary-container via-[#072d30] to-primary p-4 text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.18)] border border-on-primary-container/20">
+<!-- Specular Highlight Top Edge -->
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+<div class="flex items-start justify-between relative z-10">
+<div>
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-on-primary-container text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+              رحلة الغردقة المباشرة (رقم H-784)
+            </div>
+<p class="text-body-sm font-body-sm text-on-primary-container mt-2">إجمالي دخل رحلة الغردقة التقديري</p>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="text-currency-display font-currency-display tracking-tight text-white">16,800.00</span>
+<span class="text-label-md font-label-md text-on-primary-container font-semibold">ج.م</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-label-sm font-label-sm text-secondary-container font-bold bg-secondary/30 px-2.5 py-1 rounded-lg border border-secondary/40">
+              48 مقعد محجوز بالكامل
+            </span>
+<span class="text-body-sm font-body-sm text-white/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              الانطلاق: 06:30 ص
+            </span>
+</div>
+</div>
+<!-- Boarding Status Gauge -->
+<div class="mt-4 pt-3 border-t border-white/10 relative z-10">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-label-md font-label-md text-white font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">how_to_reg</span>
+              الركاب الذين صعدوا
+            </span>
+<span class="text-label-md font-label-md text-secondary-container font-bold">
+              38 من 48 راكباً (79%)
+            </span>
+</div>
+<!-- Progress Bar Container -->
+<div class="w-full h-2.5 bg-black/30 rounded-full overflow-hidden p-0.5 backdrop-blur-sm">
+<div class="h-full bg-gradient-to-l from-secondary-container to-secondary rounded-full transition-all duration-500 shadow-[0_0_12px_rgba(108,248,187,0.5)]" style="width: 79.16%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-primary-container mt-1.5">
+<span>متبقي 10 ركاب على موعد التحرك</span>
+<span class="text-amber-300 font-medium">موقف عبد المنعم رياض</span>
+</div>
+</div>
+</div>
+<!-- Segmented Master Navigation Tabs (Tab 1 Active vs Tab 2) -->
+<div class="bg-surface-subtle p-1 rounded-xl flex items-center gap-1 border border-border-subtle" role="tablist">
+<!-- Tab 1: Scheduled Manifest (Active State) -->
+<button aria-selected="true" class="flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-bold flex items-center justify-center gap-2 bg-surface text-primary shadow-sm border border-border-subtle transition-all duration-150" id="tab-btn-manifest" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">checklist</span>
+<span>كشف الركاب (Manifest)</span>
+<span class="w-5 h-5 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center justify-center font-bold">38</span>
+</button>
+<!-- Tab 2: Private Booking Requests (New Alerts) -->
+<button aria-selected="false" class="flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-medium flex items-center justify-center gap-2 text-text-secondary hover:text-primary transition-all duration-150" id="tab-btn-requests" role="tab" type="button">
+<span class="material-symbols-outlined text-[18px]">directions_car</span>
+<span>طلبات خاصة واردة</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error text-label-sm font-label-sm font-bold animate-pulse">3</span>
+</button>
+</div>
+<!-- TAB 1 CONTENT CONTAINER: PASSENGER MANIFEST & SCANNER -->
+<div class="flex flex-col gap-3" id="content-tab-manifest">
+<!-- Prominent Scan CTA Button (Emerald FinTech Spec) -->
+<button class="w-full h-12 bg-secondary hover:bg-on-secondary-container text-on-secondary rounded-xl flex items-center justify-center gap-2.5 font-label-lg text-label-lg font-bold shadow-[0_8px_24px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+<span>فتح ماسح QR لفحص تذاكر الصعود بالهاتف أو NFC</span>
+</button>
+<!-- Search & Filter Micro Bar for Manifest -->
+<div class="flex items-center justify-between gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-text-muted">search</span>
+<input class="w-full h-10 pr-9 pl-3 rounded-lg bg-surface border border-border-subtle text-body-sm font-body-sm focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none placeholder:text-text-muted" placeholder="بحث بالاسم أو رقم المقعد..." type="text"/>
+</div>
+<button class="h-10 px-3 bg-surface border border-border-subtle rounded-lg text-text-secondary flex items-center gap-1 text-label-md font-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>الكل</span>
+</button>
+</div>
+<!-- Manifest Passenger List Cards -->
+<div class="flex flex-col gap-2.5">
+<!-- Passenger 1: Confirmed via QR -->
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.04)] flex items-center justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex items-center gap-3 pr-1">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 text-on-secondary-fixed flex items-center justify-center font-bold text-label-lg border border-secondary-fixed">
+                11
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-body-md font-body-md font-bold text-text-primary">محمد سعيد محمود</h3>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-subtle text-text-secondary font-semibold">مقعد 11، 12</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-label-sm font-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[15px] fill-icon text-secondary">check_circle</span>
+<span>تم فحص التذكرة والصعود (05:48 ص)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="p-1.5 rounded-lg bg-surface-subtle text-text-secondary" title="تذكرة رقمية مدفوعة">
+<span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+</span>
+</div>
+</div>
+<!-- Passenger 2: Pending Arrival (Waiting) with Direct Contact -->
+<div class="bg-surface p-3.5 rounded-xl border border-amber-200 bg-amber-50/20 shadow-[0_2px_8px_rgba(11,62,66,0.04)] flex items-center justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-amber-500"></div>
+<div class="flex items-center gap-3 pr-1">
+<div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-label-lg border border-amber-200">
+                05
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-body-md font-body-md font-bold text-text-primary">أحمد كمال عبد المنعم</h3>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">مقعد 5</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-label-sm font-label-sm text-amber-700 font-medium">
+<span class="material-symbols-outlined text-[15px] text-amber-600">hourglass_top</span>
+<span>لم يصعد بعد (بانتظار الوصول)</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Triggers for Pending Passenger -->
+<div class="flex items-center gap-1.5">
+<a aria-label="اتصال بالراكب" class="w-9 h-9 rounded-lg bg-surface border border-border-subtle flex items-center justify-center text-primary hover:bg-surface-subtle active:scale-95 transition-all" href="tel:01000000000">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</a>
+<button aria-label="مراسلة واتساب" class="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-secondary hover:bg-emerald-100 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Passenger 3: Confirmed via Harith NFC Smart Card -->
+<div class="bg-surface p-3.5 rounded-xl border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.04)] flex items-center justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex items-center gap-3 pr-1">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/40 text-on-secondary-fixed flex items-center justify-center font-bold text-label-lg border border-secondary-fixed">
+                20
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-body-md font-body-md font-bold text-text-primary">سارة إبراهيم</h3>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded bg-surface-subtle text-text-secondary font-semibold">مقعد 20</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-label-sm font-label-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[15px] text-secondary">contactless</span>
+<span>صعدت عبر مسح كارت حارث NFC الذكي</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-1 rounded bg-secondary-fixed/30 text-on-secondary-fixed text-label-sm font-label-sm font-bold">
+                كارت ذهبي
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2 PREVIEW / CARD: PRIVATE CUSTOM CHARTER BOOKINGS -->
+<div class="flex flex-col gap-3" id="content-tab-requests">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h3 class="text-headline-sm font-headline-sm font-bold text-primary">طلبات الرحلات الخاصة المعروضة</h3>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary">محدث الآن</span>
+</div>
+<!-- High-Priority Charter Request Bento Card -->
+<div class="bg-surface rounded-2xl border-2 border-primary-container/20 p-4 shadow-[0_8px_20px_rgba(11,62,66,0.06)] flex flex-col gap-3 relative">
+<!-- Top Badge: Urgency Tag -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-tertiary-container text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+              طلب رحلة خاصة (يتطلب قراراً سريعاً)
+            </div>
+<span class="text-text-muted text-label-sm font-label-sm">منذ 8 دقائق</span>
+</div>
+<!-- Client & Route Profile -->
+<div class="flex items-start justify-between border-b border-border-subtle pb-3">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">account_circle</span>
+<span class="text-body-md font-body-md font-bold text-text-primary">م. أحمد الشاذلي</span>
+<span class="material-symbols-outlined text-[15px] text-secondary fill-icon" title="عميل موثق">verified</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">رحلة يوم كامل (ذهاب وعودة) — العين السخنة</p>
+<div class="flex items-center gap-3 mt-2 text-label-sm font-label-sm text-text-secondary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">calendar_today</span>
+                  الجمعة 24 أكتوبر 2026
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-outline">group</span>
+                  18 فرداً (عائلي)
+                </span>
+</div>
+</div>
+<!-- Financial Summary Box -->
+<div class="bg-surface-subtle p-2.5 rounded-xl border border-border-subtle text-left flex flex-col items-end">
+<span class="text-label-sm font-label-sm text-text-secondary">عرض العميل</span>
+<div class="flex items-baseline gap-1">
+<span class="text-currency-body font-currency-body text-primary">1,800.00</span>
+<span class="text-label-sm font-label-sm text-text-secondary">ج.م</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-bold mt-0.5">
+                صافي لك: 1,650 ج.م
+              </span>
+</div>
+</div>
+<!-- Triple Decision Action Buttons -->
+<div class="flex items-center gap-2 pt-1">
+<!-- Green Primary Accept Button -->
+<button class="flex-1 h-11 bg-secondary hover:bg-on-secondary-container text-on-secondary rounded-xl text-label-md font-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>قبول وتأكيد الرحلة</span>
+</button>
+<!-- Navy Counter-Offer Button -->
+<button class="flex-1 h-11 bg-primary-container hover:bg-primary text-on-primary rounded-xl text-label-md font-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>عرض مضاد</span>
+</button>
+<!-- Soft Muted Red Reject Button -->
+<button class="h-11 px-3 bg-error-container/60 hover:bg-error-container text-on-error-container rounded-xl text-label-md font-label-md font-bold flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>اعتذار</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Master Action Bar: Start Navigation / GPS Route -->
+<div class="fixed bottom-[84px] left-0 right-0 max-w-md mx-auto px-4 z-40 pointer-events-none">
+<div class="pointer-events-auto bg-surface/95 backdrop-blur-md p-2 rounded-2xl border border-border-subtle shadow-[0_8px_30px_rgba(11,62,66,0.15)] flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">navigation</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-body-sm font-body-sm font-bold text-text-primary truncate">خط سير القاهرة — طريق السويس — الغردقة</p>
+<p class="text-label-sm font-label-sm text-text-secondary">420 كم • الوقت المتوقع 4 ساعات و45 دقيقة</p>
+</div>
+<button class="h-10 px-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-bold flex items-center gap-1 shadow active:scale-95 transition-all" type="button">
+<span>بدء التحرك GPS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Shared Components JSON Anchor) -->
+<!-- Destination Rule: 5 Top-Level items in strictly RTL order, "أنشطتي/المواصلات" as Captain Hub -->
+<nav aria-label="شريط التنقل السفلي" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)] rounded-t-3xl">
+<!-- Item 1: الرئيسية (Home) -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</button>
+<!-- Item 2: محفظتي (Wallet) -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي</span>
+</button>
+<!-- Item 3: المركزية - ادفع / فحص سريع (Floating Elevated Qr/NFC Dock) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع أو امسح التذاكر" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] border-4 border-surface active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[26px]">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-primary font-bold mt-1">ادفع</span>
+</div>
+<!-- Item 4: المواصلات / رحلاتي (Active Captain Destination Hub) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px] fill-icon text-primary">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</button>
+<!-- Item 5: حسابي (Profile) -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">person</span>
+<span class="text-label-sm font-label-sm mt-0.5">حسابي</span>
+</button>
+</nav>
+</div>
+<!-- Interactive State Script for Driver Mode Switch & Manifest Filtering -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabManifestBtn = document.getElementById('tab-btn-manifest');
+      const tabRequestsBtn = document.getElementById('tab-btn-requests');
+      const contentManifest = document.getElementById('content-tab-manifest');
+      const contentRequests = document.getElementById('content-tab-requests');
+
+      function setActiveTab(isManifest) {
+        if (isManifest) {
+          // Tab 1 Active Styling
+          tabManifestBtn.className = "flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-bold flex items-center justify-center gap-2 bg-surface text-primary shadow-sm border border-border-subtle transition-all duration-150";
+          tabManifestBtn.setAttribute('aria-selected', 'true');
+          
+          // Tab 2 Inactive Styling
+          tabRequestsBtn.className = "flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-medium flex items-center justify-center gap-2 text-text-secondary hover:text-primary transition-all duration-150";
+          tabRequestsBtn.setAttribute('aria-selected', 'false');
+          
+          contentManifest.classList.remove('hidden');
+        } else {
+          // Tab 2 Active Styling
+          tabRequestsBtn.className = "flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-bold flex items-center justify-center gap-2 bg-surface text-primary shadow-sm border border-border-subtle transition-all duration-150";
+          tabRequestsBtn.setAttribute('aria-selected', 'true');
+
+          // Tab 1 Inactive Styling
+          tabManifestBtn.className = "flex-1 py-2.5 px-3 rounded-lg text-body-sm font-body-sm font-medium flex items-center justify-center gap-2 text-text-secondary hover:text-primary transition-all duration-150";
+          tabManifestBtn.setAttribute('aria-selected', 'false');
+
+          // Show requests in focus by scrolling smooth
+          contentRequests.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      tabManifestBtn.addEventListener('click', () => setActiveTab(true));
+      tabRequestsBtn.addEventListener('click', () => setActiveTab(false));
+    });
+  </script>
+</body></html>

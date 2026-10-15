@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مركز المساعدة والدعم الفني | منظومة حارث</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * {
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface-subtle": "#F1F5F9",
+            "surface-container-high": "#e5e9ea",
+            "background": "#f7fafb",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-container": "#e19000",
+            "inverse-surface": "#2d3132",
+            "on-secondary-fixed": "#002113",
+            "on-secondary-container": "#00714d",
+            "primary-fixed-dim": "#a1cfd3",
+            "border-subtle": "#E2E8F0",
+            "surface-container-low": "#f1f4f5",
+            "primary": "#00272a",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "text-muted": "#94A3B8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "inverse-on-surface": "#eef1f2",
+            "on-tertiary-fixed": "#2a1700",
+            "primary-container": "#0b3e42",
+            "outline": "#707979",
+            "surface-bright": "#f7fafb",
+            "danger-debit": "#EF4444",
+            "text-secondary": "#475569",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-container": "#7ca9ad",
+            "text-primary": "#0F172A",
+            "secondary-container": "#6cf8bb",
+            "surface-variant": "#e0e3e4",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container": "#ebeeef",
+            "tertiary-container": "#513100",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-tint": "#396569",
+            "on-primary-fixed": "#002022",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#FFFFFF",
+            "tertiary": "#341e00",
+            "primary-fixed": "#bcebef",
+            "on-surface-variant": "#404849",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c0c8c9",
+            "on-surface": "#181c1d",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "on-primary-fixed-variant": "#1f4d51"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["IBM Plex Sans Arabic"],
+            "headline-lg": ["IBM Plex Sans Arabic"],
+            "headline-md": ["IBM Plex Sans Arabic"],
+            "currency-body": ["IBM Plex Sans Arabic"],
+            "label-md": ["IBM Plex Sans Arabic"],
+            "body-md": ["IBM Plex Sans Arabic"],
+            "body-lg": ["IBM Plex Sans Arabic"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic"],
+            "currency-display": ["IBM Plex Sans Arabic"],
+            "body-sm": ["IBM Plex Sans Arabic"],
+            "label-sm": ["IBM Plex Sans Arabic"],
+            "display-lg": ["IBM Plex Sans Arabic"],
+            "label-lg": ["IBM Plex Sans Arabic"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "headline-lg": ["24px", {"lineHeight": "34px", "fontWeight": "700"}],
+            "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "currency-body": ["18px", {"lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "500"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "38px", "fontWeight": "700"}],
+            "currency-display": ["32px", {"lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "display-lg": ["36px", {"lineHeight": "48px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-full flex flex-col justify-between antialiased selection:bg-secondary-fixed-dim selection:text-primary">
+<!-- TOP APP BAR -->
+<header class="bg-surface sticky top-0 z-40 w-full h-16 flex items-center justify-between px-space-md shadow-sm border-b border-border-subtle">
+<!-- Leading Action: Back button (RTL Arrow pointing forward/right) -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Center Headline & Live Agent Badge -->
+<div class="flex flex-col items-center">
+<h1 class="text-headline-sm font-headline-sm font-bold text-text-primary tracking-tight">مركز المساعدة والدعم الفني</h1>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-semibold">فريق الدعم متصل الآن</span>
+</div>
+</div>
+<!-- Trailing Action: Quick Customer Service -->
+<button aria-label="خدمة العملاء" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="support_agent" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</button>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-space-md pt-4 pb-28">
+<!-- HERO / QUICK SUPPORT BANNER -->
+<section class="mb-5">
+<div class="relative overflow-hidden rounded-2xl bg-primary-container text-surface p-space-md md:p-6 shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary">
+<!-- Ambient background glow accents -->
+<div class="absolute -top-12 -left-12 w-44 h-44 rounded-full bg-secondary/20 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -right-10 w-36 h-36 rounded-full bg-secondary-fixed/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface/10 border border-surface/20 text-secondary-fixed-dim text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span>استجابة فورية أقل من دقيقتين</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-surface">جاهزون لمساعدتك 24 ساعة يومياً</h2>
+<p class="text-body-sm font-body-sm text-on-primary-container max-w-md">لا تتردد في التواصل مباشرة مع مستشاري الدعم الفني لحل مشكلات المحفظة أو البطاقات أو التذاكر.</p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-2.5 pt-1 md:pt-0">
+<a class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl bg-secondary hover:bg-secondary/90 text-surface text-label-md font-label-md font-bold shadow-[0_4px_16px_rgba(0,108,73,0.3)] active:scale-95 transition-all" href="#whatsapp">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>واتساب المعتمد</span>
+</a>
+<a class="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl bg-surface/10 hover:bg-surface/20 text-surface text-label-md font-label-md font-bold border border-surface/20 active:scale-95 transition-all" href="#livechat">
+<span class="material-symbols-outlined text-lg" data-icon="forum">forum</span>
+<span>شات حي فوري</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SEGMENTED TABS (Tab 1 Active) -->
+<nav aria-label="أقسام الدعم الفني" class="mb-5 bg-surface-subtle p-1.5 rounded-2xl border border-border-subtle">
+<div class="grid grid-cols-3 gap-1">
+<!-- Tab 1: Active -->
+<button aria-current="page" class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-primary-container text-surface shadow-sm font-headline-sm text-label-lg transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="menu_book">menu_book</span>
+<span class="font-bold">دليل مصور</span>
+</button>
+<!-- Tab 2: Inactive -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface/60 text-label-lg transition-all">
+<span class="material-symbols-outlined text-lg text-text-muted" data-icon="quiz">quiz</span>
+<span>الأسئلة الشائعة</span>
+</button>
+<!-- Tab 3: Inactive -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-text-secondary hover:text-text-primary hover:bg-surface/60 text-label-lg transition-all">
+<span class="material-symbols-outlined text-lg text-text-muted" data-icon="confirmation_number">confirmation_number</span>
+<span>تذكرة شكوى</span>
+</button>
+</div>
+</nav>
+<!-- HORIZONTAL FILTER CHIPS -->
+<section class="mb-6">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 -mx-space-md px-space-md">
+<!-- Active Filter -->
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-primary text-surface text-label-md font-label-md font-bold shadow-sm">
+          الكل
+        </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:text-text-primary text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="contactless">contactless</span>
+<span>كارت المواصلات وNFC</span>
+</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:text-text-primary text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<span class="material-symbols-outlined text-sm text-tertiary-container" data-icon="lock">lock</span>
+<span>حافظ على فلوسك</span>
+</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:text-text-primary text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="directions_bus">directions_bus</span>
+<span>حجز الأتوبيسات</span>
+</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface border border-border-subtle text-text-secondary hover:text-text-primary text-label-md font-label-md transition-colors flex items-center gap-1.5 shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<span class="material-symbols-outlined text-sm text-text-muted" data-icon="payments">payments</span>
+<span>خدمة سلفني</span>
+</button>
+</div>
+</section>
+<!-- INTERACTIVE USE CASES & SLIDES (BENTO GRID) -->
+<div class="space-y-4">
+<!-- GUIDE CARD 1 (FEATURED HERO CARD): NFC Recharge -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-space-md shadow-[0_4px_12px_rgba(11,62,66,0.05)] overflow-hidden transition-all duration-200 hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)]">
+<!-- Badge & Header -->
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-xs" data-icon="contactless">contactless</span>
+<span>الأكثر استخداماً</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+              كيف تشحن كارت حارث الذكي (NFC) من الموبايل بلمسة واحدة؟
+            </h3>
+</div>
+<span class="w-10 h-10 shrink-0 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="touch_app">touch_app</span>
+</span>
+</div>
+<!-- Visual Flow Steps -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-4">
+<!-- Step 1 -->
+<div class="bg-surface-subtle p-3.5 rounded-xl border border-border-subtle relative flex md:flex-col items-center md:items-start gap-3">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-surface flex items-center justify-center text-label-md font-bold shrink-0">1</span>
+<div>
+<p class="text-body-md font-body-md font-semibold text-text-primary">اختر شحن NFC</p>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">افتح تبويب المواصلات واضغط على أيقونة "شحن كارت NFC".</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-subtle p-3.5 rounded-xl border border-secondary/30 relative flex md:flex-col items-center md:items-start gap-3">
+<span class="w-7 h-7 rounded-lg bg-secondary text-surface flex items-center justify-center text-label-md font-bold shrink-0">2</span>
+<div>
+<p class="text-body-md font-body-md font-semibold text-text-primary">ملامسة الكارت للهاتف</p>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">ضع الكارت البلاستيكي ملاصقاً لظهر الهاتف عند الكاميرا لمدة ثانيتين.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-subtle p-3.5 rounded-xl border border-border-subtle relative flex md:flex-col items-center md:items-start gap-3">
+<span class="w-7 h-7 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center text-label-md font-bold shrink-0">3</span>
+<div>
+<p class="text-body-md font-body-md font-semibold text-text-primary">تأكيد الرصيد الفوري</p>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">تم الشحن بنجاح وتحديث الرصيد فوراً داخل الكارت وبوابة المترو.</p>
+</div>
+</div>
+</div>
+<!-- Video Player Action Bar -->
+<div class="pt-3 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-text-secondary text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle">check_circle</span>
+<span>يدعم جميع هواتف آيفون وأندرويد المزودة بخاصية NFC</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 px-4 rounded-xl bg-surface-subtle hover:bg-surface-container text-primary-container text-label-md font-label-md font-bold border border-border-subtle transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="play_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span>شاهد فيديو توضيحي (0:45 ثانية)</span>
+</button>
+</div>
+</article>
+<!-- GUIDE CARD 2: Escrow / Guard Your Money -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-space-md shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)] transition-all duration-200">
+<div class="flex items-start justify-between gap-3 mb-3">
+<div>
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-label-sm font-bold mb-1">
+<span class="material-symbols-outlined text-xs" data-icon="shield">shield</span>
+<span>أمان المعاملات المالية</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold">
+              خطوات حماية أموالك بنظام الوساطة والضمان (حافظ على فلوسك)
+            </h3>
+</div>
+<span class="w-10 h-10 shrink-0 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+</span>
+</div>
+<p class="text-body-md font-body-md text-text-secondary mb-4">
+          حل مبتكر لحماية البائع والمشتري عند شراء الأجهزة أو حجز الخدمات دون قلق من الاحتيال.
+        </p>
+<!-- 3-Step Interactive Process Strip -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 bg-surface-subtle p-3 rounded-xl border border-border-subtle">
+<div class="flex items-center gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-surface flex items-center justify-center text-label-sm font-bold shrink-0">1</div>
+<div>
+<p class="text-label-md font-label-md text-text-primary font-semibold">إنشاء العقد الذكي</p>
+<p class="text-label-sm font-label-sm text-text-muted">تحديد الشروط والمدة</p>
+</div>
+</div>
+<div class="flex items-center gap-2.5 border-t md:border-t-0 md:border-r border-border-subtle pt-2 md:pt-0 md:pr-3">
+<div class="w-6 h-6 rounded-full bg-primary-container text-surface flex items-center justify-center text-label-sm font-bold shrink-0">2</div>
+<div>
+<p class="text-label-md font-label-md text-text-primary font-semibold">حجز المبلغ في الخزينة</p>
+<p class="text-label-sm font-label-sm text-text-muted">مؤمّن لدى البنك المركزي</p>
+</div>
+</div>
+<div class="flex items-center gap-2.5 border-t md:border-t-0 md:border-r border-border-subtle pt-2 md:pt-0 md:pr-3">
+<div class="w-6 h-6 rounded-full bg-secondary text-surface flex items-center justify-center text-label-sm font-bold shrink-0">3</div>
+<div>
+<p class="text-label-md font-label-md text-text-primary font-semibold">إدخال كود الاستلام</p>
+<p class="text-label-sm font-label-sm text-text-muted">تحرير الفلوس فور المعاينة</p>
+</div>
+</div>
+</div>
+<div class="mt-3 flex justify-end">
+<button class="inline-flex items-center gap-1.5 text-primary text-label-md font-label-md font-bold hover:text-secondary transition-colors">
+<span>اقرأ تفاصيل بروتوكول الضمان كاملة</span>
+<span class="material-symbols-outlined text-sm rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- TWO-COLUMN BENTO: Bus Ticket & Salefny Loan -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- GUIDE CARD 3: Bus Seat Booking -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-space-md shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)] transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-surface-subtle text-primary">
+<span class="material-symbols-outlined" data-icon="directions_bus">directions_bus</span>
+</span>
+<span class="text-label-sm font-label-sm text-text-muted">شرح سريع • 3 خطوات</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold mb-2">
+              حجز مقعدك واستخراج تذكرة الصعود الإلكترونية
+            </h3>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+              اختر خط الحافلة، حدد المقعد المفضل، وادفع من محفظتك لتحصل فوراً على رمز QR صالح لركوب الحافلة بدون تذاكر ورقية.
+            </p>
+</div>
+<div class="pt-4 mt-3 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="qr_code_2">qr_code_2</span>
+<span>ماسح QR مباشر</span>
+</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary text-label-md font-label-md font-bold">
+<span>عرض الدليل</span>
+<span class="material-symbols-outlined text-sm rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- GUIDE CARD 4: Salefny Cash & BNPL -->
+<article class="bg-surface rounded-2xl border border-border-subtle p-space-md shadow-[0_4px_12px_rgba(11,62,66,0.05)] hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)] transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="p-2 rounded-xl bg-surface-subtle text-primary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</span>
+<span class="text-label-sm font-label-sm text-text-muted">خدمات التمويل</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-text-primary font-bold mb-2">
+              الشراء بالآجل وطلب سلفة نقدية عبر شركاء سلفني
+            </h3>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+              تعرّف على حدودك الائتمانية اللحظية، وكيفية السحب النقدي الفوري لمحفظتك أو تقسيط المشتريات بدون فوائد خفية.
+            </p>
+</div>
+<div class="pt-4 mt-3 border-t border-border-subtle flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-tertiary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="savings">savings</span>
+<span>موافقة في 30 ثانية</span>
+</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary text-label-md font-label-md font-bold">
+<span>عرض الدليل</span>
+<span class="material-symbols-outlined text-sm rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+<!-- FEEDBACK HELPFULNESS FOOTER -->
+<div class="mt-8 p-4 rounded-2xl bg-surface border border-border-subtle text-center space-y-2">
+<p class="text-body-md font-body-md font-semibold text-text-primary">هل ساعدك هذا الدليل في إنجاز معاملتك؟</p>
+<div class="flex items-center justify-center gap-3 pt-1">
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-surface-subtle hover:bg-surface-container text-text-primary text-label-md font-label-md transition-colors active:scale-95">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="thumb_up">thumb_up</span>
+<span>نعم، مفيد جداً</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-surface-subtle hover:bg-surface-container text-text-primary text-label-md font-label-md transition-colors active:scale-95">
+<span class="material-symbols-outlined text-base text-text-muted" data-icon="thumb_down">thumb_down</span>
+<span>ما زلت أواجه مشكلة</span>
+</button>
+</div>
+</div>
+</main>
+<!-- HARITH UNIFIED BOTTOM NAVIGATION (HarithBottomNav) -->
+<!-- Contextual Active Tab: "حسابي" (Account/Settings Sub-page) -->
+<nav aria-label="التنقل الرئيسي" class="fixed bottom-0 w-full z-50 h-[76px] flex justify-around items-center px-space-md bg-surface rounded-t-3xl border-t border-border-subtle shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- Item 1: الرئيسية (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#home">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">الرئيسية</span>
+</a>
+<!-- Item 2: محفظتي وكروتي (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#wallet">
+<span class="material-symbols-outlined text-2xl" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm mt-0.5">محفظتي وكروتي</span>
+</a>
+<!-- Item 3: المركز العائم (ادفع / امسح) -->
+<div class="relative -top-5 flex flex-col items-center">
+<button aria-label="ادفع أو امسح كود QR" class="w-14 h-14 rounded-full bg-primary-container text-surface flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-95 transition-transform duration-150 border-2 border-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm text-text-primary font-bold mt-1">ادفع / امسح</span>
+</div>
+<!-- Item 4: المواصلات (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors duration-150 active:scale-95" href="#transit">
+<span class="material-symbols-outlined text-2xl" data-icon="directions_bus">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-0.5">المواصلات</span>
+</a>
+<!-- Item 5: حسابي (ACTIVE TAB per Contextual Logic) -->
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary font-bold relative after:content-[''] after:w-5 after:h-1 after:bg-secondary after:rounded-full after:mt-1 active:scale-95" href="#account">
+<span class="material-symbols-outlined text-2xl" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">حسابي</span>
+</a>
+</nav>
+</body></html>

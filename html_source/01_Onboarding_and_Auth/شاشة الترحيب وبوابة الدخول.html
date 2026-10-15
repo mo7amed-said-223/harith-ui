@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="h-full" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>حارث - المنظومة المالية والمواصلات الذكية الأولى في مصر</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#0b3e42",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "tertiary-container": "#513100",
+            "surface-container-highest": "#e0e3e4",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "surface-variant": "#e0e3e4",
+            "surface-subtle": "#F1F5F9",
+            "on-primary-fixed": "#002022",
+            "secondary": "#006c49",
+            "on-tertiary-fixed": "#2a1700",
+            "inverse-surface": "#2d3132",
+            "outline-variant": "#c0c8c9",
+            "danger-debit": "#EF4444",
+            "inverse-primary": "#a1cfd3",
+            "outline": "#707979",
+            "surface-container-high": "#e5e9ea",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed-variant": "#1f4d51",
+            "text-primary": "#0F172A",
+            "text-muted": "#94A3B8",
+            "error-container": "#ffdad6",
+            "surface-tint": "#396569",
+            "primary": "#00272a",
+            "background": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-low": "#f1f4f5",
+            "tertiary": "#341e00",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eef1f2",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffddb8",
+            "primary-fixed": "#bcebef",
+            "on-primary-container": "#7ca9ad",
+            "on-background": "#181c1d",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#181c1d",
+            "primary-fixed-dim": "#a1cfd3",
+            "on-tertiary-container": "#e19000",
+            "on-secondary-fixed-variant": "#005236",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#404849",
+            "text-secondary": "#475569",
+            "on-tertiary-fixed-variant": "#653e00",
+            "surface": "#FFFFFF",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-dim": "#d7dadb",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .bg-mesh-pattern {
+      background-image: 
+        radial-gradient(at 90% 10%, rgba(16, 185, 129, 0.22) 0px, transparent 50%),
+        radial-gradient(at 10% 30%, rgba(245, 158, 11, 0.12) 0px, transparent 40%),
+        radial-gradient(at 50% 80%, rgba(11, 62, 66, 0.4) 0px, transparent 60%);
+    }
+    .shimmer-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-center p-0 m-0 overflow-x-hidden selection:bg-secondary selection:text-white">
+<!-- Mobile Viewport Container (App Shell) -->
+<div class="w-full max-w-md min-h-screen flex flex-col justify-between relative bg-background shadow-2xl overflow-hidden">
+<!-- UPPER HERO ARTWORK SECTION -->
+<div class="relative w-full bg-primary-container bg-mesh-pattern pt-8 pb-14 px-5 flex flex-col justify-between overflow-hidden flex-1 min-h-[460px]">
+<!-- Ambient Decorative Geometry -->
+<div class="absolute -top-16 -left-16 w-52 h-52 rounded-full bg-secondary opacity-15 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/3 -right-12 w-44 h-44 rounded-full bg-on-tertiary-container opacity-10 blur-2xl pointer-events-none"></div>
+<!-- Top Utility Header with Language Switcher & Support -->
+<div class="w-full flex items-center justify-between z-10 mb-3">
+<!-- Logo Brand & Badge -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-xl bg-surface/10 border border-white/20 flex items-center justify-center text-white shadow-inner">
+<span class="material-symbols-outlined text-secondary-container" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-white font-bold tracking-tight">حارث</span>
+<span class="text-[10px] text-primary-fixed font-medium leading-none">HARITH PAY &amp; TRANSIT</span>
+</div>
+</div>
+<!-- Quick Help & Language -->
+<div class="flex items-center gap-2">
+<button aria-label="اللغة الإنجليزية" class="px-2.5 py-1 rounded-lg bg-surface/10 border border-white/10 text-white font-label-sm text-label-sm hover:bg-surface/20 transition-colors" type="button">
+            English
+          </button>
+<button aria-label="مركز المساعدة" class="w-8 h-8 rounded-lg bg-surface/10 border border-white/10 flex items-center justify-center text-white/90 hover:bg-surface/20 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="support_agent">support_agent</span>
+</button>
+</div>
+</div>
+<!-- Trust Tag Pill -->
+<div class="self-start z-10 mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed font-medium">المنظومة المالية والمواصلات الذكية الأولى في مصر</span>
+</div>
+<!-- Centerpiece Visual: Virtual Smart NFC Transit & FinTech Metaphor -->
+<div class="relative w-full my-auto py-2 flex justify-center items-center z-10">
+<!-- Glowing Backdrop Circle -->
+<div class="absolute w-64 h-40 bg-secondary/20 rounded-full blur-2xl"></div>
+<!-- Smart Virtual Card Architecture -->
+<div class="relative w-full max-w-[320px] rounded-2xl shimmer-card p-4 shadow-[0_16px_32px_rgba(0,39,42,0.45)] text-white">
+<!-- Card Top Bar: EMV Chip & Contactless Waves -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-6 rounded bg-gradient-to-tr from-amber-400 to-yellow-200 border border-amber-300 shadow-sm flex items-center justify-center">
+<span class="w-5 h-3 border-y border-amber-800/40 opacity-70"></span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-xl" data-icon="contactless">contactless</span>
+</div>
+<!-- CBE Compliance Shield Badge -->
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300">
+<span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold tracking-tight">معتمد من البنك المركزي</span>
+</div>
+</div>
+<!-- Transit Silhouette Layer & Fast Balance Info -->
+<div class="flex items-end justify-between border-t border-white/10 pt-3">
+<div>
+<p class="font-label-sm text-label-sm text-primary-fixed mb-0.5">بطاقة التنقل والمحفظة الفورية</p>
+<p class="font-currency-body text-currency-body text-white font-bold tracking-wider">•••• 8492</p>
+</div>
+<!-- Mobility Transit Icons Pill (Metro, Bus, Microbus) -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-black/25 border border-white/10">
+<span class="material-symbols-outlined text-sm text-secondary-fixed" data-icon="directions_bus">directions_bus</span>
+<span class="material-symbols-outlined text-sm text-white" data-icon="train">train</span>
+<span class="material-symbols-outlined text-sm text-tertiary-fixed" data-icon="commute">commute</span>
+</div>
+</div>
+</div>
+<!-- Floating Auxiliary Micro-Badges -->
+<div class="absolute -bottom-2 right-2 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface text-primary shadow-lg border border-border-subtle animate-bounce duration-1000">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="bolt">bolt</span>
+<span class="text-[11px] font-bold">دفع لحظي بمصر</span>
+</div>
+<div class="absolute -top-1 left-2 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary-container text-white shadow-md border border-white/20">
+<span class="material-symbols-outlined text-amber-400 text-xs" data-icon="qr_code_2">qr_code_2</span>
+<span class="text-[10px] font-medium text-emerald-100">رمز المرور الموحد</span>
+</div>
+</div>
+<!-- Welcome Typography Block -->
+<div class="z-10 mt-3">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white font-bold mb-1.5 leading-snug">
+          أهلاً بك في حارث
+        </h1>
+<p class="font-body-md text-body-md text-emerald-100/90 leading-relaxed max-w-sm">
+          بوابتك الآمنة والموحدة للمدفوعات الرقمية، شحن الفواتير، والمواصلات الذكية في كافة أنحاء جمهورية مصر العربية.
+        </p>
+</div>
+</div>
+<!-- LOWER AUTH & ACTION SECTION (Curved White Card) -->
+<div class="w-full bg-surface rounded-t-[28px] -mt-6 pt-7 px-5 pb-6 flex flex-col justify-between z-20 shadow-[0_-8px_24px_rgba(11,62,66,0.12)] border-t border-border-subtle">
+<!-- Top Drag / Decorative Indicator -->
+<div class="w-12 h-1.5 bg-surface-container rounded-full mx-auto mb-6"></div>
+<!-- Quick Benefit Bullets (Micro Bento Indicators) -->
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-subtle border border-border-subtle text-center">
+<span class="material-symbols-outlined text-secondary mb-1 text-[20px]" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">تحويل فوري</span>
+<span class="text-[9px] text-text-muted mt-0.5">بدون رسوم</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-subtle border border-border-subtle text-center">
+<span class="material-symbols-outlined text-primary-container mb-1 text-[20px]" data-icon="nfc">nfc</span>
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">دفع المواصلات</span>
+<span class="text-[9px] text-text-muted mt-0.5">بتمريرة واحدة</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-subtle border border-border-subtle text-center">
+<span class="material-symbols-outlined text-tertiary-container mb-1 text-[20px]" data-icon="shield">shield</span>
+<span class="font-label-sm text-label-sm text-text-primary font-semibold">حماية سيبرانية</span>
+<span class="text-[9px] text-text-muted mt-0.5">تشفير 256-bit</span>
+</div>
+</div>
+<!-- Auth Action Buttons Stack -->
+<div class="flex flex-col gap-3 w-full">
+<!-- Primary Button: Log In -->
+<button class="w-full h-[54px] rounded-xl bg-primary-container text-white font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(11,62,66,0.24)] hover:bg-[#082C2F] active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock_open">lock_open</span>
+<span>تسجيل الدخول</span>
+</button>
+<!-- Secondary Outlined Button: Create Account -->
+<button class="w-full h-[54px] rounded-xl border-2 border-primary-container bg-surface text-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 hover:bg-surface-subtle active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="person_add">person_add</span>
+<span>إنشاء حساب جديد</span>
+</button>
+<!-- Guest Link / Service Explorer -->
+<button class="w-full py-3 mt-1 text-center font-body-md text-body-md text-text-secondary hover:text-primary transition-colors flex items-center justify-center gap-1.5 active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-muted" data-icon="visibility">visibility</span>
+<span>المتابعة كزائر (تصفح الخدمات والمواصلات المتاحة)</span>
+</button>
+</div>
+<!-- Trust, Regulatory & Security Badge -->
+<div class="mt-6 pt-4 border-t border-border-subtle flex items-center justify-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-sm shrink-0" data-icon="lock">lock</span>
+<p class="font-label-sm text-label-sm text-text-muted leading-tight">
+          خاضع لرقابة وإشراف البنك المركزي المصري ومعايير الأمن السيبراني bit-256
+        </p>
+</div>
+</div>
+</div>
+</body></html>

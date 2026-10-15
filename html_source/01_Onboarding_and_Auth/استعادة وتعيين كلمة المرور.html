@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث - استعادة وتعيين كلمة المرور الجديدة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#181c1d",
+            "surface-variant": "#e0e3e4",
+            "secondary": "#006c49",
+            "on-error-container": "#93000a",
+            "background": "#f7fafb",
+            "inverse-primary": "#a1cfd3",
+            "surface-bright": "#f7fafb",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "surface-subtle": "#F1F5F9",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary-container": "#6cf8bb",
+            "tertiary": "#341e00",
+            "surface-container-highest": "#e0e3e4",
+            "primary-container": "#0b3e42",
+            "on-primary-fixed": "#002022",
+            "surface": "#FFFFFF",
+            "on-secondary-container": "#00714d",
+            "danger-debit": "#EF4444",
+            "surface-container": "#ebeeef",
+            "on-surface-variant": "#404849",
+            "border-subtle": "#E2E8F0",
+            "on-tertiary": "#ffffff",
+            "primary-fixed-dim": "#a1cfd3",
+            "secondary-fixed-dim": "#4edea3",
+            "primary": "#00272a",
+            "on-error": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-high": "#e5e9ea",
+            "on-tertiary-container": "#e19000",
+            "text-secondary": "#475569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "text-primary": "#0F172A",
+            "outline": "#707979",
+            "tertiary-container": "#513100",
+            "primary-fixed": "#bcebef",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#653e00",
+            "text-muted": "#94A3B8",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#2d3132",
+            "surface-tint": "#396569",
+            "on-surface": "#181c1d",
+            "on-primary-container": "#7ca9ad",
+            "surface-container-low": "#f1f4f5",
+            "outline-variant": "#c0c8c9",
+            "inverse-on-surface": "#eef1f2",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.25rem",
+            "space-xl": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex justify-center selection:bg-secondary-container selection:text-on-secondary-fixed">
+<main class="w-full max-w-md bg-background min-h-screen flex flex-col relative shadow-[0_0_32px_rgba(11,62,66,0.06)] pb-12">
+<!-- TopAppBar (Locked Global Top Bar following Shared Components JSON instructions) -->
+<header class="bg-surface sticky top-0 z-40 h-16 w-full shadow-none">
+<div class="flex justify-between items-center w-full px-4 h-full max-w-md mx-auto">
+<!-- Back action (RTL start) -->
+<button aria-label="رجوع" class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Screen Title (Center) -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">استعادة كلمة المرور</h1>
+<p class="text-label-sm font-label-sm text-text-muted">حساب الأمان المالي</p>
+</div>
+<!-- Trailing Security / Support Action (RTL end) -->
+<button aria-label="دعم أمان حارث" class="w-10 h-10 rounded-xl bg-surface-subtle text-primary flex items-center justify-center hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Context Information Banner -->
+<div class="px-4 pt-3 pb-1">
+<div class="flex items-center gap-2 p-3 rounded-xl bg-surface-subtle border border-border-subtle">
+<span class="material-symbols-outlined text-primary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="text-label-sm font-label-sm text-text-secondary leading-tight">
+          نظام حماية الهوية المصرفية المزدوج متوافق مع معايير البنك المركزي المصري (CBE).
+        </p>
+</div>
+</div>
+<!-- Main Workflow Container -->
+<div class="px-4 py-3 space-y-5 flex-1">
+<!-- SECTION 1: FORGET SCREEN CARD (طلب رمز التحقق) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] relative overflow-hidden transition-all duration-200 hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)]">
+<!-- Subtle background watermarked icon -->
+<div class="absolute -left-6 -top-6 text-surface-container-low opacity-40 pointer-events-none select-none">
+<span class="material-symbols-outlined text-[100px]">lock_reset</span>
+</div>
+<div class="relative z-10 space-y-4">
+<!-- Step Badge -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-surface text-label-sm font-label-sm font-semibold tracking-wide shadow-sm">
+<span class="material-symbols-outlined text-[14px]">looks_one</span>
+              الحالة 1: طلب رمز التحقق
+            </span>
+<span class="text-label-sm font-label-sm text-text-muted">الخطوة الأولى</span>
+</div>
+<!-- Section Headline & Description -->
+<div class="space-y-1">
+<h2 class="text-headline-md font-headline-md text-text-primary">نسيت كلمة المرور؟</h2>
+<p class="text-body-sm font-body-sm text-text-secondary leading-relaxed">
+              أدخل رقم الهاتف المسجل لدينا وسنرسل لك رمز أمان مكون من 6 أرقام عبر تطبيق WhatsApp.
+            </p>
+</div>
+<!-- Input Field: Phone Number -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-text-primary text-right" for="recovery-phone">
+              رقم الهاتف المحمول المسجل
+            </label>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 start-0 flex items-center pe-3 ps-3 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">phone_android</span>
+</div>
+<input class="w-full h-[52px] pe-4 ps-11 text-left bg-surface border border-border-subtle rounded-xl text-body-md font-body-md text-text-primary placeholder-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors shadow-sm font-mono" dir="ltr" id="recovery-phone" placeholder="+20 01X XXXX XXXX" type="tel" value="+20 01022964376"/>
+<div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-subtle text-text-secondary border border-border-subtle">
+                  مصر (+20)
+                </span>
+</div>
+</div>
+</div>
+<!-- Action Button: Send Code via WhatsApp -->
+<button class="w-full h-12 bg-secondary text-surface rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,108,73,0.22)] hover:bg-[#005e3f] active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>إرسال رمز الاستعادة عبر WhatsApp 💬</span>
+</button>
+</div>
+</section>
+<!-- VISUAL SEPARATOR (Divider with State Bridge) -->
+<div class="relative py-2 flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-dashed border-border-subtle"></div>
+</div>
+<div class="relative px-4 py-1.5 bg-surface-bright rounded-full border border-border-subtle shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-sm font-label-sm text-text-secondary font-medium">
+            أو بعد التحقق من كود الـ OTP
+          </span>
+<span class="material-symbols-outlined text-text-muted text-[14px]">arrow_downward</span>
+</div>
+</div>
+<!-- SECTION 2: RESET PASSWORD SCREEN CARD (تعيين الرمز الجديد) -->
+<section class="bg-surface rounded-2xl border border-border-subtle p-5 shadow-[0_4px_12px_rgba(11,62,66,0.05)] relative overflow-hidden transition-all duration-200 hover:shadow-[0_8px_20px_rgba(11,62,66,0.08)]">
+<!-- Subtle background watermarked icon -->
+<div class="absolute -left-6 -top-6 text-surface-container-low opacity-40 pointer-events-none select-none">
+<span class="material-symbols-outlined text-[100px]">key</span>
+</div>
+<div class="relative z-10 space-y-4">
+<!-- Step Badge -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-surface text-label-sm font-label-sm font-semibold tracking-wide shadow-sm">
+<span class="material-symbols-outlined text-[14px]">looks_two</span>
+              الحالة 2: تعيين الرمز الجديد
+            </span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              جاهز للتعيين
+            </span>
+</div>
+<!-- Section Headline -->
+<div class="space-y-1">
+<h2 class="text-headline-md font-headline-md text-text-primary">تعيين كلمة مرور جديدة</h2>
+<p class="text-body-sm font-body-sm text-text-secondary">
+              اختر رمز أمان قوي ومعقد لحماية محفظتك وبطاقات النقل والمدفوعات الخاصة بك.
+            </p>
+</div>
+<!-- Form Fields Container -->
+<div class="space-y-3.5">
+<!-- Field: New Password -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-text-primary text-right" for="new-password">
+                كلمة المرور الجديدة
+              </label>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 start-0 flex items-center pe-3 ps-3 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="w-full h-[52px] pe-12 ps-11 bg-surface border border-border-subtle rounded-xl text-body-md font-body-md text-text-primary placeholder-text-muted focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-colors shadow-sm" id="new-password" placeholder="أدخل كلمة المرور الجديدة" type="password" value="Harith#Secure2025"/>
+<button aria-label="إظهار كلمة المرور" class="absolute inset-y-0 end-0 flex items-center pe-3 ps-2 text-text-muted hover:text-text-primary transition-colors" id="toggle-new-pw" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eye-icon-1">visibility</span>
+</button>
+</div>
+<!-- Password Strength Indicator (ممتاز) -->
+<div class="pt-1.5 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-text-secondary">مستوى الأمان:</span>
+<span class="text-label-sm font-label-sm font-bold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+                    أخضر ممتاز (آمن جداً)
+                  </span>
+</div>
+<!-- Progress Bars -->
+<div class="grid grid-cols-4 gap-1.5 h-1.5">
+<div class="bg-secondary rounded-full"></div>
+<div class="bg-secondary rounded-full"></div>
+<div class="bg-secondary rounded-full"></div>
+<div class="bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Field: Confirm New Password -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-text-primary text-right" for="confirm-password">
+                تأكيد كلمة المرور الجديدة
+              </label>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 start-0 flex items-center pe-3 ps-3 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+<input class="w-full h-[52px] pe-12 ps-11 bg-surface border border-secondary rounded-xl text-body-md font-body-md text-text-primary placeholder-text-muted focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-colors shadow-sm" id="confirm-password" placeholder="أعد إدخال كلمة المرور" type="password" value="Harith#Secure2025"/>
+<button aria-label="إظهار تأكيد كلمة المرور" class="absolute inset-y-0 end-0 flex items-center pe-3 ps-2 text-text-muted hover:text-text-primary transition-colors" id="toggle-confirm-pw" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eye-icon-2">visibility</span>
+</button>
+</div>
+<!-- Match Pill Badge -->
+<div class="flex items-center pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-container/40 text-on-secondary-container text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                  كلمتا المرور متطابقتان ✓
+                </span>
+</div>
+</div>
+<!-- Security Check Rules Bento -->
+<div class="p-3 bg-surface-subtle rounded-xl border border-border-subtle space-y-2">
+<div class="flex items-center gap-1.5 text-text-secondary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-container">info</span>
+<span>نصائح الأمان المطلوبة:</span>
+</div>
+<div class="grid grid-cols-1 gap-1.5 pe-1">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span>
+<span>8 أحرف على الأقل في الطول الإجمالي.</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span>
+<span>حرف واحد كبير بالإنجليزية على الأقل (A-Z).</span>
+</div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span>
+<span>رقم واحد على الأقل (0-9) ورمز خاص (#, $, @).</span>
+</div>
+</div>
+</div>
+<!-- Action Button: Save and Update Password -->
+<button class="w-full h-12 bg-primary-container text-surface rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.22)] hover:bg-[#082c2f] active:scale-[0.98] transition-all duration-150 pt-0.5" type="button">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+<span>حفظ وتحديث كلمة المرور</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Anchor & Footer Security Notice -->
+<footer class="pt-2 pb-4 space-y-4 text-center">
+<!-- Return to Login Link -->
+<div>
+<a class="inline-flex items-center gap-1.5 text-body-md font-body-md font-semibold text-primary-container hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span>العودة لتسجيل الدخول</span>
+</a>
+</div>
+<!-- CBE & Security Certification Badge -->
+<div class="mx-auto max-w-xs p-3 rounded-xl bg-surface border border-border-subtle shadow-sm flex items-center justify-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-subtle flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="text-right">
+<p class="text-label-sm font-label-sm font-bold text-text-primary leading-tight">
+              حماية سيبرانية موثقة من CBE
+            </p>
+<p class="text-body-sm font-body-sm text-text-muted text-[11px] leading-tight">
+              تشفير مصرفي متقدم 256-bit مطابق للمعايير الوطنية
+            </p>
+</div>
+</div>
+</footer>
+</div>
+</main>
+<!-- Inline Interaction for Visibility Toggles -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const setupToggle = (btnId, inputId, iconId) => {
+        const btn = document.getElementById(btnId);
+        const input = document.getElementById(inputId);
+        const icon = document.getElementById(iconId);
+        if (!btn || !input || !icon) return;
+
+        btn.addEventListener('click', () => {
+          const isPassword = input.type === 'password';
+          input.type = isPassword ? 'text' : 'password';
+          icon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+      };
+
+      setupToggle('toggle-new-pw', 'new-password', 'eye-icon-1');
+      setupToggle('toggle-confirm-pw', 'confirm-password', 'eye-icon-2');
+    });
+  </script>
+</body></html>

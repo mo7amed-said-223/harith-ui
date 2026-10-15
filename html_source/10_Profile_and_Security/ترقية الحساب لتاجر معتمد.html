@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>ترقية الحساب لتاجر وشريك تجاري — حارث</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed": "#002022",
+            "inverse-surface": "#2d3132",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-subtle": "#F1F5F9",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface-variant": "#404849",
+            "surface-container-low": "#f1f4f5",
+            "inverse-primary": "#a1cfd3",
+            "on-primary-container": "#7ca9ad",
+            "surface-dim": "#d7dadb",
+            "on-error": "#ffffff",
+            "outline-variant": "#c0c8c9",
+            "surface-container": "#ebeeef",
+            "surface-bright": "#f7fafb",
+            "on-primary": "#ffffff",
+            "on-surface": "#181c1d",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed-dim": "#a1cfd3",
+            "inverse-on-surface": "#eef1f2",
+            "background": "#f7fafb",
+            "primary": "#00272a",
+            "surface-variant": "#e0e3e4",
+            "primary-container": "#0b3e42",
+            "tertiary": "#341e00",
+            "tertiary-container": "#513100",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-high": "#e5e9ea",
+            "on-tertiary-container": "#e19000",
+            "danger-debit": "#EF4444",
+            "on-secondary-container": "#00714d",
+            "on-background": "#181c1d",
+            "error": "#ba1a1a",
+            "primary-fixed": "#bcebef",
+            "text-primary": "#0F172A",
+            "text-muted": "#94A3B8",
+            "surface-container-highest": "#e0e3e4",
+            "on-error-container": "#93000a",
+            "text-secondary": "#475569",
+            "tertiary-fixed": "#ffddb8",
+            "error-container": "#ffdad6",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "border-subtle": "#E2E8F0",
+            "secondary": "#006c49",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-fixed-variant": "#1f4d51",
+            "surface-tint": "#396569",
+            "outline": "#707979",
+            "on-secondary-fixed": "#002113"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "label-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "IBM Plex Sans", "sans-serif"]
+          },
+          fontSize: {
+            "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "500" }],
+            "display-lg": ["36px", { lineHeight: "48px", fontWeight: "700" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "30px", fontWeight: "600" }],
+            "display-lg-mobile": ["28px", { lineHeight: "38px", fontWeight: "700" }],
+            "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+            "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "0px", fontWeight: "700" }],
+            "currency-body": ["18px", { lineHeight: "26px", letterSpacing: "0px", fontWeight: "700" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "headline-lg": ["24px", { lineHeight: "34px", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen pb-12 selection:bg-secondary selection:text-white">
+<!-- Mobile Frame Container (Max Width MD for High-Fidelity Mobile Feel) -->
+<div class="max-w-md mx-auto bg-surface min-h-screen shadow-[0_4px_24px_rgba(11,62,66,0.08)] flex flex-col relative overflow-hidden">
+<!-- 1. TopAppBar (Shared Component Logic - Small Center Aligned) -->
+<header class="bg-surface sticky top-0 z-40 h-16 border-b border-border-subtle">
+<div class="flex justify-between items-center w-full px-4 h-full">
+<!-- Leading Icon: Back Chevron in RTL (points right) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Screen Title -->
+<div class="flex flex-col items-center">
+<h1 class="font-headline-sm text-headline-sm font-bold text-text-primary text-center">ترقية الحساب لتاجر معتمد</h1>
+<span class="font-label-sm text-label-sm text-text-muted">شبكة حارث للمدفوعات والأعمال</span>
+</div>
+<!-- Trailing Utility / Support -->
+<button aria-label="معلومات الشراكة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary hover:bg-surface-container transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 py-4 space-y-5">
+<!-- 2. Hero Card: Bento Style Business Advantage -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container p-5 text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.16)] border border-primary-container">
+<!-- Ambient Decorative Pattern & Glow -->
+<div class="absolute -top-12 -left-12 w-40 h-40 bg-secondary rounded-full opacity-20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -right-8 w-36 h-36 bg-on-tertiary-container rounded-full opacity-15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<!-- Tag & Shield Badge -->
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-secondary-fixed text-label-sm font-label-sm border border-white/10">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              شريك معتمد رسمي
+            </span>
+<div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+</div>
+<!-- Hero Headline -->
+<h2 class="font-headline-md text-headline-md font-bold text-white mb-2 leading-tight">
+            حوّل متجرك لمنفذ دفع وسلفني معتمد
+          </h2>
+<p class="font-body-sm text-body-sm text-surface-container-high mb-4">
+            انضم لأكثر من 45,000 تاجر في مصر واستقبل مدفوعات المواصلات، الفواتير، ونظام الشراء الآن والدفع لاحقاً.
+          </p>
+<!-- 3 Bento Value Pillars -->
+<div class="grid grid-cols-1 gap-2.5 pt-2 border-t border-white/10">
+<!-- Feature 1 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-white/5 border border-white/5">
+<div class="w-7 h-7 rounded-md bg-secondary flex items-center justify-center text-white shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-white font-bold">ماكينة POS ذكية مجانية</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high">ماكينة لمس تدعم فيزا وميزة والـ NFC بدون مصاريف تأجير شهرية.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-white/5 border border-white/5">
+<div class="w-7 h-7 rounded-md bg-on-tertiary-container flex items-center justify-center text-white shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">percent</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-white font-bold">عمولات فورية حتى 12%</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high">عائد ربحي لحظي على فواتير الكهرباء، المياه، الموبايل وشحن كروت النقل.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex items-start gap-3 p-2.5 rounded-lg bg-white/5 border border-white/5">
+<div class="w-7 h-7 rounded-md bg-primary-fixed-dim flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">credit_score</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-white font-bold">خدمة "سلفني" لزبائنك بضمان حارث</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high">مكّن عملاءك من الشراء بالآجل مع تسوية نقدية فورية في حسابك خلال 24 ساعة.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Commercial Details & Business Form -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-5 bg-primary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">بيانات النشاط والترخيص</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold bg-secondary-container/20 px-2.5 py-1 rounded-full">خطوة 1 من 2</span>
+</div>
+<form class="space-y-3.5">
+<!-- Field 1: Store Name -->
+<div>
+<label class="block font-label-md text-label-md text-text-secondary mb-1.5" for="store-name">
+              اسم المتجر أو العلامة التجارية <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] px-3.5 pe-11 bg-surface border border-border-subtle rounded-xl text-text-primary font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all placeholder:text-text-muted" id="store-name" placeholder="مثال: صيدلية النور الحديثة" type="text" value="سوبر ماركت الأمانة"/>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">store</span>
+</div>
+</div>
+</div>
+<!-- Field 2: Business Category Dropdown -->
+<div>
+<label class="block font-label-md text-label-md text-text-secondary mb-1.5" for="store-category">
+              فئة النشاط التجاري <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[52px] px-3.5 pe-11 bg-surface border border-border-subtle rounded-xl text-text-primary font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all appearance-none" id="store-category">
+<option selected="" value="groceries">بقالة وسوبر ماركت</option>
+<option value="pharmacy">صيدلية ومستلزمات طبية</option>
+<option value="restaurant">مطعم، مقهى ومخبوزات</option>
+<option value="retail">ملابس وتجزئة وإكسسوارات</option>
+<option value="telecom">خدمات اتصالات وشحن وصيانة</option>
+</select>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Field 3: Commercial Register with Validated Badge -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="font-label-md text-label-md text-text-secondary" for="commercial-reg">
+                رقم السجل التجاري <span class="text-error">*</span>
+</label>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                متحقق منه عبر بوابة مصر الرقمية
+              </span>
+</div>
+<div class="relative">
+<input class="w-full h-[52px] px-3.5 pe-11 bg-surface border border-secondary rounded-xl text-text-primary font-currency-body text-currency-body focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all font-mono" id="commercial-reg" type="text" value="1094827503"/>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Field 4: Tax Identification Number -->
+<div>
+<label class="block font-label-md text-label-md text-text-secondary mb-1.5" for="tax-id">
+              الرقم الضريبي / البطاقة الضريبية (9 أرقام) <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] px-3.5 pe-11 bg-surface border border-border-subtle rounded-xl text-text-primary font-currency-body text-currency-body focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all placeholder:text-text-muted font-mono" id="tax-id" placeholder="123-456-789" type="text" value="482-901-334"/>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+</div>
+<!-- Field 5: Store Detailed Address & GPS Pinning -->
+<div>
+<label class="block font-label-md text-label-md text-text-secondary mb-1.5" for="store-address">
+              عنوان المتجر بالتفصيل والمحافظة <span class="text-error">*</span>
+</label>
+<div class="space-y-2">
+<div class="relative">
+<input class="w-full h-[52px] px-3.5 pe-11 bg-surface border border-border-subtle rounded-xl text-text-primary font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all" id="store-address" type="text" value="شارع مصطفى النحاس، تقاطع مكرم عبيد، مدينة نصر، القاهرة"/>
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">pin_drop</span>
+</div>
+</div>
+<!-- Map Anchor Trigger Button -->
+<button class="w-full flex items-center justify-between p-3 rounded-xl bg-surface-subtle border border-border-subtle hover:bg-surface-container transition-all active:scale-[0.99]" type="button">
+<div class="flex items-center gap-2 text-primary-container">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</div>
+<div class="text-right">
+<span class="block font-label-lg text-label-lg font-bold text-text-primary">إحداثيات نقطة البيع (GPS)</span>
+<span class="block font-label-sm text-label-sm text-text-secondary">30.0561° N, 31.3429° E (دقة 3 أمتار)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-secondary bg-white px-2.5 py-1 rounded-lg border border-border-subtle">
+                  إعادة تحديد
+                </span>
+</button>
+</div>
+</div>
+</form>
+</section>
+<!-- 4. Documents & Store Visual Verification -->
+<section class="space-y-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-5 bg-on-tertiary-container rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">المستندات والصور التوثيقية</h2>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<!-- Box 1: Commercial Registration File (Attached State) -->
+<div class="p-3.5 rounded-xl border border-secondary bg-surface shadow-[0_4px_12px_rgba(11,62,66,0.05)] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div class="text-right">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-text-primary">مستخرج السجل التجاري الحديث</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-secondary text-white">مرفق ✓</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">cr_amena_2024_verified.pdf (2.4 MB)</p>
+</div>
+</div>
+<button aria-label="تغيير الملف" class="p-2 text-text-muted hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">autorenew</span>
+</button>
+</div>
+<!-- Box 2: Store Facade Capture (Interactive Camera Trigger) -->
+<div class="p-3.5 rounded-xl border-2 border-dashed border-border-subtle bg-surface-subtle flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary">صورة واجهة المحل واللافتة الخارجية</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">تأكد من وضوح اسم المتجر والمدخل ورقم العقار في ضوء النهار</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-4 h-10 rounded-xl bg-primary-container text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-primary transition-all active:scale-95 duration-150 shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+              التقاط الآن
+            </button>
+</div>
+</div>
+</section>
+<!-- 5. Hardware & POS Add-ons -->
+<section class="space-y-3.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-5 bg-secondary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">تجهيزات نقطة البيع لمتجرك</h2>
+</div>
+<div class="space-y-2.5">
+<!-- Option 1: Pax A920 POS Terminal (Active/Checked) -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-xl border border-border-subtle bg-surface hover:border-primary-container cursor-pointer transition-all shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="pt-0.5">
+<input checked="" class="w-5 h-5 rounded-md text-primary-container focus:ring-primary-container border-border-subtle transition-all" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-text-primary">طلب ماكينة دفع حرارية ذكية Harith POS (Pax A920)</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary bg-secondary-container/20 px-2 py-0.5 rounded">مجاناً للشركاء</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                تدعم شريحة 4G مدمجة، طباعة إيصالات ورقية، وقارئ بطاقات ذكي مع شاشة لمس عالية الوضوح تدعم كروت حارث للمواصلات.
+              </p>
+</div>
+</label>
+<!-- Option 2: NFC Decals & Starter Card Stock -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-xl border border-border-subtle bg-surface hover:border-primary-container cursor-pointer transition-all shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="pt-0.5">
+<input checked="" class="w-5 h-5 rounded-md text-primary-container focus:ring-primary-container border-border-subtle transition-all" type="checkbox"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg font-bold text-text-primary">ستيكرات الدفع اللاتلامسي NFC وباقة كروت حارث</span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container bg-surface-subtle px-2 py-0.5 rounded">موصى به</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                تتضمن 25 كارت تنقل ذكي جاهز لإعادة البيع للركاب + ستاند كاونتر كود QR فوري لمسح المدفوعات.
+              </p>
+</div>
+</label>
+</div>
+</section>
+<!-- 6. Regulatory & Security Trust Shield -->
+<section class="p-3.5 rounded-xl bg-surface-subtle border border-border-subtle flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface border border-border-subtle flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-text-primary">حماية وامتثال تنظيمي صارم</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed mt-0.5">
+            جميع العمليات المالية وحسابات التجار مشفرة ومطابقة لتعليمات الأمن السيبراني الصادرة عن <strong>البنك المركزي المصري (CBE)</strong> والهيئة العامة للرقابة المالية.
+          </p>
+</div>
+</section>
+<!-- 7. Primary Action Button -->
+<div class="pt-2">
+<button class="w-full h-12 rounded-xl bg-primary-container text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.2)] hover:bg-primary active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>إرسال طلب اعتماد التاجر وتفعيل الحساب</span>
+</button>
+<p class="font-label-sm text-label-sm text-text-muted text-center mt-2">
+          يتم الرد ومعاينة المتجر وتوصيل الماكينة خلال 48 ساعة عمل.
+        </p>
+</div>
+</main>
+</div>
+</body></html>

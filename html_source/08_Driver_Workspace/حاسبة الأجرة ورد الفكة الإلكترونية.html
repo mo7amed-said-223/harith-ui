@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>حاسبة الأجرة ورد الفكة - حارث كابيتال للنقل الذكي</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- IBM Plex Sans Arabic Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-subtle": "#F1F5F9",
+            "tertiary-container": "#513100",
+            "inverse-primary": "#a1cfd3",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#ebeeef",
+            "on-secondary-fixed-variant": "#005236",
+            "outline": "#707979",
+            "surface-container-highest": "#e0e3e4",
+            "on-tertiary-container": "#e19000",
+            "outline-variant": "#c0c8c9",
+            "surface-bright": "#f7fafb",
+            "border-subtle": "#E2E8F0",
+            "on-secondary-container": "#00714d",
+            "primary-fixed-dim": "#a1cfd3",
+            "danger-debit": "#EF4444",
+            "on-error": "#ffffff",
+            "background": "#f7fafb",
+            "secondary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#2d3132",
+            "surface-container-low": "#f1f4f5",
+            "on-tertiary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed": "#002022",
+            "primary-container": "#0b3e42",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffddb8",
+            "secondary": "#006c49",
+            "on-surface-variant": "#404849",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#bcebef",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d7dadb",
+            "on-primary-fixed-variant": "#1f4d51",
+            "text-secondary": "#475569",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-tint": "#396569",
+            "primary": "#00272a",
+            "surface-container-high": "#e5e9ea",
+            "on-secondary-fixed": "#002113",
+            "text-muted": "#94A3B8",
+            "on-surface": "#181c1d",
+            "inverse-on-surface": "#eef1f2",
+            "on-primary-container": "#7ca9ad",
+            "tertiary": "#341e00",
+            "secondary-container": "#6cf8bb",
+            "text-primary": "#0F172A",
+            "on-background": "#181c1d",
+            "surface-variant": "#e0e3e4",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col justify-between antialiased selection:bg-secondary-container">
+<!-- TOP APP BAR (TASK-FOCUSED MODAL HEADER) -->
+<header class="fixed top-0 inset-x-0 z-40 h-16 flex items-center justify-between px-margin w-full bg-surface shadow-sm border-b border-border-subtle">
+<!-- Close Action (Physical Right in RTL) -->
+<button aria-label="إغلاق الشاشة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform hover:bg-surface-variant" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<!-- Center Headline & Context Badge -->
+<div class="flex flex-col items-center">
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold">حاسبة الأجرة ورد الفكة</h1>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">الأجرة الرسمية للفرد: <strong class="text-primary-container font-bold">15.00 ج.م</strong></span>
+</div>
+</div>
+<!-- Utility: Sound / Mute Indicator for Driver Voice Assistant -->
+<button aria-label="تنبيهات صوتية" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary active:scale-95 transition-transform hover:bg-surface-variant" type="button">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 w-full max-w-xl mx-auto pt-20 pb-32 px-margin space-y-4">
+<!-- BENTO 1: QUICK PASSENGER COUNTER & COMPUTED FARE -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-surface-subtle text-primary-container">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</span>
+<span class="font-label-lg text-label-lg text-text-primary font-bold">عدد الركاب</span>
+</div>
+<span class="text-body-sm font-body-sm text-text-muted">اختر أو عدّل بنقرة واحدة</span>
+</div>
+<!-- Stepper and Main Numeric Readout -->
+<div class="grid grid-cols-12 gap-2 items-center bg-surface-subtle p-2 rounded-xl mb-3">
+<!-- Decrement Button -->
+<button class="col-span-3 h-14 rounded-xl bg-surface text-primary border border-border-subtle font-headline-lg flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="btn-decrement" type="button">
+<span class="material-symbols-outlined text-[28px]">remove</span>
+</button>
+<!-- Current Passengers Counter Display -->
+<div class="col-span-6 flex flex-col items-center justify-center">
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-extrabold tracking-tight" id="passengers-count">3</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">ركاب</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">صالون الميكروباص</span>
+</div>
+<!-- Increment Button -->
+<button class="col-span-3 h-14 rounded-xl bg-primary-container text-on-primary font-headline-lg flex items-center justify-center shadow-sm active:scale-95 transition-transform" id="btn-increment" type="button">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- Quick Preset Segmented Buttons -->
+<div class="grid grid-cols-4 gap-2 mb-3">
+<button class="preset-btn py-2.5 rounded-xl border border-border-subtle bg-surface text-text-secondary font-label-lg text-label-lg hover:border-primary-container transition-all" onclick="setPassengers(1)" type="button">1 فرد</button>
+<button class="preset-btn py-2.5 rounded-xl border border-border-subtle bg-surface text-text-secondary font-label-lg text-label-lg hover:border-primary-container transition-all" onclick="setPassengers(2)" type="button">2 فرد</button>
+<button class="preset-btn active-preset py-2.5 rounded-xl border-2 border-primary-container bg-primary-container/10 text-primary-container font-label-lg text-label-lg font-bold" onclick="setPassengers(3)" type="button">3 أفراد</button>
+<button class="preset-btn py-2.5 rounded-xl border border-border-subtle bg-surface text-text-secondary font-label-lg text-label-lg hover:border-primary-container transition-all" onclick="setPassengers(4)" type="button">4 أفراد</button>
+</div>
+<!-- Calculated Fare Total Strip -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low border border-border-subtle">
+<span class="font-body-md text-body-md text-text-secondary font-medium">إجمالي الأجرة المطلوبة:</span>
+<div class="flex items-baseline gap-1 text-primary-container">
+<span class="font-currency-display text-currency-display font-extrabold text-primary" id="fare-total">45.00</span>
+<span class="font-label-lg text-label-lg font-bold">ج.م</span>
+</div>
+</div>
+</section>
+<!-- BENTO 2: RECEIVED CASH SELECTION (EGYPTIAN DENOMINATIONS) -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="p-1.5 rounded-lg bg-surface-subtle text-primary-container">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+<span class="font-label-lg text-label-lg text-text-primary font-bold">المبلغ المستلم من الراكب</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> أزرار نقدية سريعة
+        </span>
+</div>
+<!-- Egyptian Cash Bills Row -->
+<div class="grid grid-cols-4 gap-2">
+<!-- 50 EGP -->
+<button class="cash-btn h-16 rounded-xl border border-border-subtle bg-surface flex flex-col items-center justify-center active:scale-95 transition-all" onclick="setReceivedAmount(50)" type="button">
+<span class="font-currency-body text-currency-body text-text-primary font-bold">50</span>
+<span class="font-label-sm text-label-sm text-text-muted">ج.م نقدي</span>
+</button>
+<!-- 100 EGP (Selected by default) -->
+<button class="cash-btn active-cash h-16 rounded-xl border-2 border-primary-container bg-primary-container text-on-primary shadow-md flex flex-col items-center justify-center active:scale-95 transition-all relative overflow-hidden" onclick="setReceivedAmount(100)" type="button">
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-secondary rotate-45"></div>
+<span class="font-currency-body text-currency-body text-white font-extrabold">100</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">ج.م مستلم</span>
+</button>
+<!-- 200 EGP -->
+<button class="cash-btn h-16 rounded-xl border border-border-subtle bg-surface flex flex-col items-center justify-center active:scale-95 transition-all" onclick="setReceivedAmount(200)" type="button">
+<span class="font-currency-body text-currency-body text-text-primary font-bold">200</span>
+<span class="font-label-sm text-label-sm text-text-muted">ج.م نقدي</span>
+</button>
+<!-- Custom Amount -->
+<button class="cash-btn h-16 rounded-xl border border-dashed border-border-subtle bg-surface-subtle flex flex-col items-center justify-center active:scale-95 transition-all hover:bg-surface-variant" onclick="setCustomAmount()" type="button">
+<span class="material-symbols-outlined text-[20px] text-text-secondary">edit_note</span>
+<span class="font-label-sm text-label-sm text-text-secondary font-bold">مخصص...</span>
+</button>
+</div>
+</section>
+<!-- BENTO 3: LUMINOUS REFUND / CHANGE COMPUTED CARD (HIGH CONTRAST & DRIVER-LEGIBLE) -->
+<section class="rounded-3xl p-5 bg-gradient-to-br from-primary-container via-[#082C2F] to-[#041a1c] text-white shadow-[0_12px_28px_rgba(11,62,66,0.22)] relative overflow-hidden border border-white/10">
+<!-- Specular Highlight Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-white/10 pointer-events-none"></div>
+<!-- Micro-accent Decorative Circuit Pattern -->
+<div class="absolute -top-12 -left-12 w-36 h-36 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 space-y-3">
+<!-- Breakdown Rows -->
+<div class="flex items-center justify-between pb-2.5 border-b border-white/10 text-primary-fixed">
+<span class="font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">arrow_circle_down</span>
+            المبلغ المستلم كاش:
+          </span>
+<span class="font-body-lg text-body-lg text-white font-bold tracking-wide" id="breakdown-received">100.00 ج.م</span>
+</div>
+<div class="flex items-center justify-between pb-2.5 border-b border-white/10 text-primary-fixed">
+<span class="font-body-sm text-body-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error-container">subtitles_off</span>
+            الأجرة المخصومة (<span id="breakdown-count">3</span> أفراد):
+          </span>
+<span class="font-body-lg text-body-lg text-error-container font-bold tracking-wide" id="breakdown-fare">-45.00 ج.م</span>
+</div>
+<!-- Primary Change / Refund Highlight -->
+<div class="pt-1 flex flex-col items-center justify-center text-center">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/20 border border-secondary/40 text-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">change_circle</span>
+              باقي الراكب (الفكة المستحقة)
+            </span>
+</div>
+<!-- Monumental Digits for Speed Reading -->
+<div class="flex items-baseline justify-center gap-1.5 text-secondary-fixed drop-shadow-[0_2px_12px_rgba(111,251,190,0.35)]">
+<span class="font-display-lg text-display-lg font-black tracking-tight text-white">+</span>
+<span class="font-display-lg text-display-lg font-black tracking-tight text-secondary-fixed" id="change-value">55.00</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-white">ج.م</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary-fixed mt-1">يجب تسليمها للراكب الآن أو تحويلها للمحفظة فوراً</p>
+</div>
+</div>
+</section>
+<!-- SECTION: SMART REFUND DISPOSITION TILES (3 ACTION CARDS) -->
+<div class="space-y-3 pt-1">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-lg text-label-lg text-text-primary font-bold">خيارات تنفيذ رد الباقي الذكية</span>
+<span class="font-label-sm text-label-sm text-text-muted">اختر آلية الإرجاع</span>
+</div>
+<!-- CARD 1: HARITH NFC / SMART BALANCE TOP-UP (HERO CARD) -->
+<article class="p-4 rounded-2xl bg-surface border-2 border-secondary shadow-[0_4px_16px_rgba(0,108,73,0.12)] relative overflow-hidden transition-all hover:shadow-lg">
+<div class="flex items-start justify-between mb-2.5">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">contactless</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-bold">رد الفكة لرصيد كارت حارث أو المحفظة (NFC)</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">إيداع فوري برقم الكارت أو الهاتف</p>
+</div>
+</div>
+<!-- Badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold border border-secondary-fixed">
+<span class="material-symbols-outlined text-[13px]">savings</span>
+            وفّر الفكة النقدية
+          </span>
+</div>
+<!-- Trigger Button with NFC Animation Prompt -->
+<button class="w-full h-12 rounded-xl bg-secondary hover:bg-secondary/90 text-on-secondary flex items-center justify-center gap-2 font-label-lg text-label-lg shadow-md active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px] animate-pulse">nfc</span>
+<span>قرّب كارت الراكب من ظهر الهاتف الآن لإيداع <strong id="nfc-amount">55.00 ج.م</strong> فوراً</span>
+</button>
+</article>
+<!-- CARD 2: HAND OVER PHYSICAL CASH -->
+<article class="p-4 rounded-2xl bg-surface border border-border-subtle shadow-sm hover:border-text-muted transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-subtle text-text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">attach_money</span>
+</div>
+<div>
+<h3 class="font-body-lg text-body-lg text-text-primary font-bold">رد الباقي كاش نقدي</h3>
+<p class="font-body-sm text-body-sm text-text-muted">تسليم عملات معدنية أو ورقية يدوياً</p>
+</div>
+</div>
+<!-- Quick Manual Confirm Button -->
+<button class="h-10 px-4 rounded-xl border border-border-subtle bg-surface-subtle hover:bg-surface-variant text-primary font-label-lg text-label-lg font-bold flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>تم تسليم <strong id="cash-handover-label">55</strong> ج.م فكة يدوياً</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: COMPLETE REFUND & CANCELLATION (EXCEPTION WORKFLOW) -->
+<article class="p-3.5 rounded-2xl bg-surface-subtle border border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-danger-debit text-[20px]">assignment_return</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-text-primary font-semibold">استرجاع أجرة راكب بالكامل (Refund)</span>
+<span class="font-label-sm text-label-sm text-text-muted">إلغاء حجز المقعد واسترداد المبلغ في حال تعذر السفر</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg border border-danger-debit/30 text-danger-debit font-label-sm text-label-sm font-bold hover:bg-danger-debit/10 active:scale-95 transition-all" type="button">
+          إلغاء المقعد
+        </button>
+</article>
+</div>
+</main>
+<!-- FIXED BOTTOM COMMIT BAR (FLAT STRUCTURAL DOCK) -->
+<footer class="fixed bottom-0 inset-x-0 z-40 bg-surface border-t border-border-subtle px-margin py-3 shadow-[0_-4px_16px_rgba(11,62,66,0.06)]">
+<div class="max-w-xl mx-auto flex items-center gap-3">
+<!-- Quick Info Chip -->
+<div class="hidden sm:flex flex-col items-center justify-center px-3 py-1 bg-surface-subtle rounded-xl border border-border-subtle">
+<span class="font-label-sm text-label-sm text-text-muted">إشغال الصالون</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">11 / 14</span>
+</div>
+<!-- Main Commit CTA -->
+<button class="flex-1 h-12 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-lg hover:bg-primary active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">done_all</span>
+<span>تأكيد العملية وتسجيل الركاب في الرحلة</span>
+</button>
+</div>
+</footer>
+<!-- SCRIPT FOR DYNAMIC FARE AND CHANGE COMPUTATION -->
+<script>
+    const FARE_PER_PERSON = 15.0;
+    let passengerCount = 3;
+    let receivedAmount = 100.0;
+
+    const elPassengersCount = document.getElementById('passengers-count');
+    const elFareTotal = document.getElementById('fare-total');
+    const elBreakdownCount = document.getElementById('breakdown-count');
+    const elBreakdownFare = document.getElementById('breakdown-fare');
+    const elBreakdownReceived = document.getElementById('breakdown-received');
+    const elChangeValue = document.getElementById('change-value');
+    const elNfcAmount = document.getElementById('nfc-amount');
+    const elCashHandover = document.getElementById('cash-handover-label');
+
+    function updateCalculator() {
+      const totalFare = passengerCount * FARE_PER_PERSON;
+      let change = receivedAmount - totalFare;
+      if (change < 0) change = 0;
+
+      // Update passenger views
+      elPassengersCount.textContent = passengerCount;
+      elBreakdownCount.textContent = passengerCount;
+      
+      // Update fare views
+      elFareTotal.textContent = totalFare.toFixed(2);
+      elBreakdownFare.textContent = `-${totalFare.toFixed(2)} ج.م`;
+
+      // Update received & change views
+      elBreakdownReceived.textContent = `${receivedAmount.toFixed(2)} ج.م`;
+      elChangeValue.textContent = change.toFixed(2);
+      elNfcAmount.textContent = `${change.toFixed(2)} ج.م`;
+      elCashHandover.textContent = Math.round(change);
+    }
+
+    // Step Increment/Decrement
+    document.getElementById('btn-increment').addEventListener('click', () => {
+      if (passengerCount < 14) {
+        passengerCount++;
+        syncPresetsUI(passengerCount);
+        updateCalculator();
+      }
+    });
+
+    document.getElementById('btn-decrement').addEventListener('click', () => {
+      if (passengerCount > 1) {
+        passengerCount--;
+        syncPresetsUI(passengerCount);
+        updateCalculator();
+      }
+    });
+
+    // Preset buttons helper
+    window.setPassengers = function(num) {
+      passengerCount = num;
+      syncPresetsUI(num);
+      updateCalculator();
+    };
+
+    function syncPresetsUI(num) {
+      const buttons = document.querySelectorAll('.preset-btn');
+      buttons.forEach((btn, idx) => {
+        if ((idx + 1) === num) {
+          btn.className = "preset-btn active-preset py-2.5 rounded-xl border-2 border-primary-container bg-primary-container/10 text-primary-container font-label-lg text-label-lg font-bold";
+        } else {
+          btn.className = "preset-btn py-2.5 rounded-xl border border-border-subtle bg-surface text-text-secondary font-label-lg text-label-lg hover:border-primary-container transition-all";
+        }
+      });
+    }
+
+    // Cash selection helper
+    window.setReceivedAmount = function(amt) {
+      receivedAmount = amt;
+      const cashButtons = document.querySelectorAll('.cash-btn');
+      cashButtons.forEach(btn => {
+        btn.classList.remove('active-cash', 'border-2', 'border-primary-container', 'bg-primary-container', 'text-on-primary', 'shadow-md');
+        btn.classList.add('border', 'border-border-subtle', 'bg-surface');
+        const mainTxt = btn.querySelector('.font-currency-body');
+        if (mainTxt) {
+          mainTxt.classList.remove('text-white');
+          mainTxt.classList.add('text-text-primary');
+        }
+      });
+
+      // Highlight target button
+      if (event && event.currentTarget) {
+        const target = event.currentTarget;
+        target.classList.remove('border', 'border-border-subtle', 'bg-surface');
+        target.classList.add('active-cash', 'border-2', 'border-primary-container', 'bg-primary-container', 'text-on-primary', 'shadow-md');
+        const mainTxt = target.querySelector('.font-currency-body');
+        if (mainTxt) {
+          mainTxt.classList.remove('text-text-primary');
+          mainTxt.classList.add('text-white');
+        }
+      }
+      updateCalculator();
+    };
+
+    window.setCustomAmount = function() {
+      const custom = prompt("أدخل المبلغ المستلم من الراكب (بالجنيه المصري):", "100");
+      if (custom && !isNaN(custom) && parseFloat(custom) > 0) {
+        receivedAmount = parseFloat(custom);
+        updateCalculator();
+      }
+    };
+
+    // Initial calculation trigger
+    updateCalculator();
+  </script>
+</body></html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>تذكرة صعود وبطاقة الرحلة الرقمية — حارث</title>
+<!-- Google Fonts: IBM Plex Sans Arabic -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e0e3e4",
+            "background": "#f7fafb",
+            "on-secondary-fixed-variant": "#005236",
+            "on-primary-container": "#7ca9ad",
+            "text-primary": "#0F172A",
+            "surface-bright": "#f7fafb",
+            "tertiary-container": "#513100",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#6ffbbe",
+            "tertiary": "#341e00",
+            "outline": "#707979",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#a1cfd3",
+            "outline-variant": "#c0c8c9",
+            "danger-debit": "#EF4444",
+            "surface-container": "#ebeeef",
+            "on-primary-fixed-variant": "#1f4d51",
+            "primary-fixed-dim": "#a1cfd3",
+            "surface": "#FFFFFF",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#002113",
+            "inverse-on-surface": "#eef1f2",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-high": "#e5e9ea",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-variant": "#e0e3e4",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#404849",
+            "inverse-surface": "#2d3132",
+            "border-subtle": "#E2E8F0",
+            "secondary-container": "#6cf8bb",
+            "primary": "#00272a",
+            "surface-container-low": "#f1f4f5",
+            "on-tertiary": "#ffffff",
+            "secondary": "#006c49",
+            "primary-container": "#0b3e42",
+            "on-error": "#ffffff",
+            "on-surface": "#181c1d",
+            "surface-subtle": "#F1F5F9",
+            "on-primary-fixed": "#002022",
+            "text-muted": "#94A3B8",
+            "on-background": "#181c1d",
+            "surface-dim": "#d7dadb",
+            "on-tertiary-container": "#e19000",
+            "tertiary-fixed": "#ffddb8",
+            "on-secondary-container": "#00714d",
+            "primary-fixed": "#bcebef",
+            "on-tertiary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "surface-tint": "#396569",
+            "surface-container-lowest": "#ffffff",
+            "text-secondary": "#475569"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1.25rem",
+            "gutter": "1rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Ticket perforation cutout effect */
+    .ticket-notch-left {
+      position: absolute;
+      left: -12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #f7fafb;
+      box-shadow: inset -2px 0 3px rgba(11, 62, 66, 0.08);
+      z-index: 20;
+    }
+    .ticket-notch-right {
+      position: absolute;
+      right: -12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #f7fafb;
+      box-shadow: inset 2px 0 3px rgba(11, 62, 66, 0.08);
+      z-index: 20;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col items-center justify-start pb-28">
+<!-- Mobile Wrapper Container -->
+<div class="w-full max-w-md mx-auto flex flex-col min-h-screen relative bg-background">
+<!-- Top Navigation Bar (Shared Component: TopAppBar Specs) -->
+<header class="bg-surface sticky top-0 z-40 w-full h-16 px-4 flex justify-between items-center shadow-none">
+<!-- Start in RTL (Physical Right): Back navigation icon in surface container -->
+<button aria-label="الرجوع للخلف" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-primary-container" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Center Title -->
+<h1 class="text-headline-sm font-headline-sm text-text-primary font-bold tracking-tight">
+        تذاكري وحجوزاتي
+      </h1>
+<!-- End in RTL (Physical Left): Share Action Button -->
+<button aria-label="مشاركة التذكرة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-primary-container" data-icon="share">share</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-4 pt-3 pb-8 flex flex-col gap-4">
+<!-- Segmented Pill Tabs -->
+<nav aria-label="تبويب التذاكر" class="w-full bg-surface p-1 rounded-xl flex items-center justify-between border border-border-subtle shadow-[0_2px_8px_rgba(11,62,66,0.03)]">
+<!-- Active Tab: Current Tickets -->
+<button class="flex-1 py-2 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 transition-all shadow-[0_2px_6px_rgba(11,62,66,0.15)] active:scale-95" type="button">
+<span class="material-symbols-outlined text-base" data-icon="confirmation_number">confirmation_number</span>
+<span>الحالية (2 تذاكر)</span>
+</button>
+<!-- Inactive Tab: Previous & Completed -->
+<button class="flex-1 py-2 rounded-lg bg-transparent text-text-muted font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-base" data-icon="history">history</span>
+<span>السابقة والمكتملة</span>
+</button>
+</nav>
+<!-- Perforated Digital Boarding Pass Ticket Card -->
+<article class="w-full bg-surface rounded-2xl border border-border-subtle shadow-[0_12px_28px_rgba(11,62,66,0.08)] overflow-hidden relative flex flex-col">
+<!-- Upper Pass Section -->
+<div class="w-full flex flex-col">
+<!-- Top Dark Teal Brand Banner -->
+<div class="bg-primary-container text-on-primary px-4 py-3.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg" data-icon="directions_bus">directions_bus</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md font-bold tracking-tight text-surface">حارث سفرية | Harith Safaria</span>
+<span class="text-label-sm font-label-sm text-inverse-primary font-mono opacity-90">#SF-7741</span>
+</div>
+</div>
+<!-- Active Status Badge -->
+<div class="bg-secondary px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow-[0_0_12px_rgba(16,185,129,0.35)]">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="text-label-sm font-label-sm text-on-secondary font-medium">حجز مؤكد ومفعل</span>
+</div>
+</div>
+<!-- Trip Route Header -->
+<div class="px-5 pt-5 pb-4 bg-surface">
+<div class="flex items-center justify-between">
+<!-- Departure City -->
+<div class="flex flex-col text-right">
+<span class="text-label-sm font-label-sm text-text-muted">نقطة الانطلاق</span>
+<span class="text-headline-sm font-headline-sm font-bold text-text-primary mt-0.5">القاهرة (ألماظة)</span>
+<div class="flex items-center gap-1.5 mt-1 text-primary-container">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="text-label-lg font-label-lg font-bold">08:00 ص</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary mt-0.5">الخميس 15 أكتوبر 2026</span>
+</div>
+<!-- Connecting Bus Route Graphic -->
+<div class="flex flex-col items-center justify-center px-2">
+<div class="text-label-sm font-label-sm text-text-muted mb-1">ساعتان و30 د</div>
+<div class="flex items-center gap-1 relative">
+<div class="w-2 h-2 rounded-full bg-secondary ring-4 ring-secondary-container"></div>
+<div class="w-12 h-0.5 border-t-2 border-dashed border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container rotate-180 -my-3" data-icon="directions_bus">directions_bus</span>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+</div>
+<span class="text-label-sm font-label-sm text-secondary font-medium mt-1">مباشر (بدون توقف)</span>
+</div>
+<!-- Arrival City -->
+<div class="flex flex-col text-left">
+<span class="text-label-sm font-label-sm text-text-muted">نقطة الوصول</span>
+<span class="text-headline-sm font-headline-sm font-bold text-text-primary mt-0.5">الإسكندرية (محرم بك)</span>
+<div class="flex items-center gap-1.5 mt-1 text-primary-container justify-end">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="text-label-lg font-label-lg font-bold">10:30 ص</span>
+</div>
+<span class="text-label-sm font-label-sm text-text-secondary mt-0.5">نفس اليوم</span>
+</div>
+</div>
+<!-- Bento Key Ticket Details (4 Grid Modules) -->
+<div class="grid grid-cols-2 gap-2.5 mt-5">
+<!-- Box 1: Bus Plate -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="pin">pin</span>
+<span class="text-label-sm font-label-sm">رقم الأتوبيس</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="text-body-lg font-body-lg font-bold text-primary-container tracking-wider">ب ر ج 912</span>
+<span class="text-[10px] font-label-sm bg-surface px-1.5 py-0.5 rounded border border-border-subtle text-text-secondary">لوحة مميزة</span>
+</div>
+</div>
+<!-- Box 2: Platform / Gate -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="door_front">door_front</span>
+<span class="text-label-sm font-label-sm">رقم الرصيف / البوابة</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="text-body-lg font-body-lg font-bold text-primary-container">رصيف 4</span>
+<span class="text-[10px] font-label-sm text-secondary font-medium">بوابة C</span>
+</div>
+</div>
+<!-- Box 3: Reserved Seats -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="airline_seat_recline_extra">airline_seat_recline_extra</span>
+<span class="text-label-sm font-label-sm">المقاعد المحجوزة</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="text-body-lg font-body-lg font-bold text-primary-container font-mono">4A, 4B</span>
+<span class="text-[10px] font-label-sm text-text-secondary">صالون أمامي</span>
+</div>
+</div>
+<!-- Box 4: Travel Class -->
+<div class="bg-surface-subtle p-3 rounded-xl border border-border-subtle flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-label-sm font-label-sm">درجة السفر</span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="text-body-lg font-body-lg font-bold text-primary-container">VIP Plus</span>
+<span class="text-[10px] font-label-sm bg-secondary-fixed text-on-secondary-fixed px-1.5 py-0.5 rounded font-bold">مكيف + Wi-Fi</span>
+</div>
+</div>
+</div>
+<!-- Passenger Info Strip -->
+<div class="mt-4 pt-3.5 border-t border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary-container font-bold text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-text-muted">المسافر الرئيسي</span>
+<span class="text-label-lg font-label-lg font-bold text-text-primary">محمد سعيد عبد الرحمن</span>
+</div>
+</div>
+<div class="flex flex-col text-left">
+<span class="text-label-sm font-label-sm text-text-muted">نوع الرحلة</span>
+<span class="text-label-md font-label-md font-medium text-text-secondary">ذهاب فقط</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Perforation Tear-Off Line with Semicircular Border Notches -->
+<div class="w-full relative py-3 flex items-center justify-center bg-surface">
+<!-- Left circular notch -->
+<div class="ticket-notch-left"></div>
+<!-- Dashed perforation line -->
+<div class="w-full mx-6 border-b-2 border-dashed border-outline-variant"></div>
+<!-- Right circular notch -->
+<div class="ticket-notch-right"></div>
+</div>
+<!-- Lower Pass Section (Boarding Pass Verification) -->
+<div class="px-5 pt-2 pb-6 bg-surface flex flex-col items-center text-center">
+<!-- Live Status Indicator Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-border-subtle mb-4">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="text-label-sm font-label-sm text-secondary font-bold">جاهز للصعود والدخول المباشر</span>
+</div>
+<!-- Crisp Centered QR Code Component -->
+<div class="p-3.5 bg-surface rounded-2xl border-2 border-primary-container shadow-[0_4px_16px_rgba(11,62,66,0.08)] flex flex-col items-center">
+<!-- Vector QR Code with center brand symbol -->
+<svg class="w-48 h-48" fill="none" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<!-- Position Markers (Top-Right, Top-Left, Bottom-Right) -->
+<!-- Top-Right (RTL origin marker) -->
+<rect fill="#00272a" height="26" rx="4" width="26" x="5" y="5"></rect>
+<rect fill="#ffffff" height="18" rx="2" width="18" x="9" y="9"></rect>
+<rect fill="#00272a" height="10" rx="1.5" width="10" x="13" y="13"></rect>
+<!-- Top-Left Marker -->
+<rect fill="#00272a" height="26" rx="4" width="26" x="69" y="5"></rect>
+<rect fill="#ffffff" height="18" rx="2" width="18" x="73" y="9"></rect>
+<rect fill="#00272a" height="10" rx="1.5" width="10" x="77" y="13"></rect>
+<!-- Bottom-Right Marker -->
+<rect fill="#00272a" height="26" rx="4" width="26" x="5" y="69"></rect>
+<rect fill="#ffffff" height="18" rx="2" width="18" x="9" y="73"></rect>
+<rect fill="#00272a" height="10" rx="1.5" width="10" x="13" y="77"></rect>
+<!-- QR Data Pattern Pixels -->
+<rect fill="#00272a" height="5" rx="1" width="5" x="36" y="8"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="46" y="8"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="56" y="8"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="36" y="18"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="42" y="24"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="54" y="18"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="8" y="38"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="18" y="38"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="28" y="38"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="68" y="38"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="78" y="38"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="88" y="38"></rect>
+<!-- Center Logo Plaque -->
+<rect fill="#0b3e42" height="24" rx="6" width="24" x="38" y="38"></rect>
+<circle cx="50" cy="50" fill="#6ffbbe" r="7"></circle>
+<path d="M47 50L49 52L53 48" stroke="#00272a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<!-- Lower Data Grid -->
+<rect fill="#00272a" height="6" rx="1" width="6" x="36" y="68"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="48" y="68"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="60" y="68"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="74" y="68"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="84" y="68"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="36" y="78"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="52" y="78"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="68" y="78"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="82" y="78"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="42" y="88"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="58" y="88"></rect>
+<rect fill="#00272a" height="6" rx="1" width="6" x="72" y="88"></rect>
+<rect fill="#00272a" height="5" rx="1" width="5" x="86" y="88"></rect>
+</svg>
+<!-- Verification Code -->
+<div class="mt-2 flex flex-col items-center">
+<span class="text-label-md font-label-md font-mono tracking-widest text-primary-container font-bold">AUTH: HRT-SF-9921-OK</span>
+<!-- Realistic Stylized 1D Barcode Graphic -->
+<div class="flex items-center gap-[2.5px] mt-1 h-5 px-3">
+<span class="w-[3px] h-full bg-primary-container"></span>
+<span class="w-[1px] h-full bg-primary-container"></span>
+<span class="w-[4px] h-full bg-primary-container"></span>
+<span class="w-[2px] h-full bg-primary-container"></span>
+<span class="w-[1px] h-full bg-primary-container"></span>
+<span class="w-[3px] h-full bg-primary-container"></span>
+<span class="w-[5px] h-full bg-primary-container"></span>
+<span class="w-[2px] h-full bg-primary-container"></span>
+<span class="w-[1px] h-full bg-primary-container"></span>
+<span class="w-[3px] h-full bg-primary-container"></span>
+<span class="w-[2px] h-full bg-primary-container"></span>
+<span class="w-[4px] h-full bg-primary-container"></span>
+<span class="w-[1px] h-full bg-primary-container"></span>
+<span class="w-[2px] h-full bg-primary-container"></span>
+<span class="w-[4px] h-full bg-primary-container"></span>
+<span class="w-[2px] h-full bg-primary-container"></span>
+</div>
+</div>
+</div>
+<!-- Offline Verification Note -->
+<p class="text-body-sm font-body-sm text-text-secondary mt-3.5 px-3 leading-relaxed">
+            أظهر هذا الرمز لمشرف الرصيف أو سائق الأتوبيس عند الصعود للتحقق اللحظي بدون إنترنت.
+          </p>
+<!-- Micro Quick Help / Support strip -->
+<div class="w-full mt-3 pt-3 border-t border-border-subtle flex items-center justify-between text-label-sm font-label-sm text-text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="security_update_good">security_update_good</span>
+              تشفير مالي معتمد
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="wifi_off">wifi_off</span>
+              يعمل في وضع عدم الاتصال
+            </span>
+</div>
+</div>
+</article>
+<!-- Action Buttons Below Ticket -->
+<div class="flex flex-col gap-2.5 mt-2">
+<!-- Primary CTA Button: Download PDF / Print -->
+<button class="w-full h-[52px] rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.2)] hover:bg-primary transition-all active:scale-[0.98] duration-150" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+<span>تحميل التذكرة PDF / طباعة</span>
+</button>
+<!-- Secondary CTA Button: WhatsApp Share -->
+<button class="w-full h-[50px] rounded-xl bg-surface border-[1.5px] border-primary-container text-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 hover:bg-surface-subtle transition-all active:scale-[0.98] duration-150" type="button">
+<!-- WhatsApp Icon Graphic -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.62C9.36 7.62 9.09 7.69 8.87 7.93C8.65 8.17 8.04 8.74 8.04 9.91C8.04 11.07 8.89 12.2 9.01 12.36C9.13 12.52 10.67 14.9 13.04 15.92C15.01 16.77 15.41 16.6 15.85 16.56C16.29 16.52 17.27 15.98 17.47 15.41C17.68 14.84 17.68 14.36 17.61 14.25C17.55 14.15 17.4 14.09 17.18 13.98C16.96 13.87 15.88 13.34 15.68 13.27C15.48 13.19 15.34 13.15 15.19 13.37C15.05 13.59 14.64 14.09 14.51 14.23C14.39 14.37 14.27 14.39 14.05 14.28C13.83 14.17 13.12 13.94 12.27 13.18C11.61 12.59 11.16 11.87 11.04 11.65C10.92 11.43 11.03 11.31 11.14 11.2C11.24 11.1 11.36 10.94 11.47 10.81C11.58 10.68 11.62 10.59 11.69 10.45C11.76 10.31 11.72 10.19 11.67 10.08C11.62 9.97 11.21 8.97 11.04 8.56C10.87 8.16 10.7 8.21 10.57 8.21C10.45 8.2 10.3 8.2 10.15 8.2C10 8.2 9.76 8.26 9.53 7.62Z"></path>
+</svg>
+<span>مشاركة التذكرة عبر واتساب</span>
+</button>
+</div>
+<!-- Station / Trip Policy Notice -->
+<div class="mt-2 p-3.5 bg-surface rounded-xl border border-border-subtle flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary-container mt-0.5" data-icon="info">info</span>
+<div class="flex flex-col text-right">
+<span class="text-label-md font-label-md font-bold text-text-primary">تعليمات محطة ألماظة</span>
+<span class="text-body-sm font-body-sm text-text-secondary mt-0.5">يرجى التواجد أمام بوابة 4 قبل موعد الانطلاق بـ 20 دقيقة لاستلام الأمتعة ومطابقة الهوية الشخصية.</span>
+</div>
+</div>
+</main>
+<!-- Global Fixed Bottom Navigation Bar (Shared Component: BottomNavBar Specs) -->
+<!-- Destination count: 5. RTL mapping: Item 1 rightmost -> Item 5 leftmost -->
+<!-- Active Destination: المواصلات (DirectionsBus, index 3 in JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[76px] px-2 max-w-md mx-auto bg-surface border-t border-border-subtle rounded-t-3xl shadow-[0_-4px_16px_rgba(11,62,66,0.04)]">
+<!-- 1. الرئيسية (Home) - Inactive -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm mt-1">الرئيسية</span>
+</button>
+<!-- 2. محفظتي (Credit Card) - Inactive -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="credit_card">credit_card</span>
+<span class="text-label-sm font-label-sm mt-1">محفظتي</span>
+</button>
+<!-- 3. ادفع (Floating QR Scan Center Dock) -->
+<div class="flex flex-col items-center justify-center relative -top-3 flex-1">
+<button aria-label="ادفع عبر المسح السريع" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_24px_rgba(16,185,129,0.35)] active:scale-90 transition-transform duration-150 ring-4 ring-background" type="button">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<span class="text-label-sm font-label-sm font-bold text-primary-container mt-1">ادفع</span>
+</div>
+<!-- 4. المواصلات (Transit Tickets) - ACTIVE DESTINATION -->
+<button class="flex flex-col items-center justify-center text-primary-container font-bold relative after:content-[''] after:w-4 after:h-1 after:bg-secondary after:rounded-full after:absolute after:-top-1 py-1 active:scale-95 duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-2xl text-primary-container" data-icon="directions_bus" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+<span class="text-label-sm font-label-sm mt-1">المواصلات</span>
+</button>
+<!-- 5. حسابي (Person / Profile) - Inactive -->
+<button class="flex flex-col items-center justify-center text-text-muted hover:text-primary transition-colors py-1 active:scale-95 duration-150 flex-1" type="button">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm mt-1">حسابي</span>
+</button>
+</nav>
+</div>
+</body></html>

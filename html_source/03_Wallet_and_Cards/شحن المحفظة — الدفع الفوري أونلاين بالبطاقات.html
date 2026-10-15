@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حارث — شحن المحفظة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#181c1d",
+            "primary": "#00272a",
+            "primary-fixed": "#bcebef",
+            "text-secondary": "#475569",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary-container": "#513100",
+            "surface-container-low": "#f1f4f5",
+            "secondary-fixed": "#6ffbbe",
+            "on-primary-fixed": "#002022",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#341e00",
+            "inverse-on-surface": "#eef1f2",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface-variant": "#404849",
+            "tertiary-fixed-dim": "#ffb95f",
+            "border-subtle": "#E2E8F0",
+            "surface-dim": "#d7dadb",
+            "on-primary-fixed-variant": "#1f4d51",
+            "on-surface": "#181c1d",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#005236",
+            "on-error": "#ffffff",
+            "background": "#f7fafb",
+            "outline": "#707979",
+            "inverse-primary": "#a1cfd3",
+            "surface-container-highest": "#e0e3e4",
+            "primary-container": "#0b3e42",
+            "on-primary-container": "#7ca9ad",
+            "on-tertiary-container": "#e19000",
+            "outline-variant": "#c0c8c9",
+            "on-secondary": "#ffffff",
+            "surface": "#FFFFFF",
+            "on-secondary-fixed": "#002113",
+            "text-muted": "#94A3B8",
+            "surface-container": "#ebeeef",
+            "inverse-surface": "#2d3132",
+            "surface-subtle": "#F1F5F9",
+            "surface-tint": "#396569",
+            "primary-fixed-dim": "#a1cfd3",
+            "secondary": "#006c49",
+            "surface-variant": "#e0e3e4",
+            "danger-debit": "#EF4444",
+            "surface-bright": "#f7fafb",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#4edea3",
+            "secondary-container": "#6cf8bb",
+            "text-primary": "#0F172A",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#00714d",
+            "surface-container-high": "#e5e9ea"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-display": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-md": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg-mobile": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-sm": ["IBM Plex Sans Arabic", "sans-serif"],
+            "currency-body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "display-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label-lg": ["IBM Plex Sans Arabic", "sans-serif"],
+            "headline-lg": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "currency-display": ["32px", { "lineHeight": "40px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "display-lg-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "currency-body": ["18px", { "lineHeight": "26px", "letterSpacing": "0px", "fontWeight": "700" }],
+            "display-lg": ["36px", { "lineHeight": "48px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "34px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-between items-center selection:bg-secondary selection:text-on-secondary">
+<!-- Mobile Shell Wrapper (Constrained 440px Canvas) -->
+<main class="w-full max-w-md mx-auto bg-surface min-h-screen flex flex-col relative shadow-[0_10px_35px_rgba(11,62,66,0.06)] pb-10">
+<!-- Top Navigation Anchor (Task-Focused Header) -->
+<header class="h-16 px-4 bg-surface flex items-center justify-between sticky top-0 z-40">
+<!-- Back Chevron Button (Physical Right in RTL) -->
+<button aria-label="الرجوع" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+<!-- Center Title -->
+<div class="text-center">
+<h1 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">شحن محفظتك</h1>
+<p class="text-label-sm font-label-sm text-text-muted">الدفع الفوري المصرفي الآمن</p>
+</div>
+<!-- Trailing Action: Support / History -->
+<button aria-label="سجل الشحن والمساعدة" class="w-10 h-10 rounded-xl bg-surface-subtle flex items-center justify-center text-primary active:scale-95 transition-transform duration-150 relative" type="button">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span class="w-2 h-2 rounded-full bg-secondary absolute top-2.5 left-2.5"></span>
+</button>
+</header>
+<!-- Scrollable Screen Content Canvas -->
+<div class="px-4 pt-2 pb-6 space-y-4">
+<!-- Current Wallet Balance Card (Tier-1 FinTech Bento) -->
+<section class="rounded-2xl p-4 bg-gradient-to-br from-primary-container to-[#062325] text-on-primary shadow-[0_12px_28px_rgba(11,62,66,0.16)] relative overflow-hidden border border-white/10">
+<!-- Subtle Pattern Accent -->
+<div class="absolute -left-10 -bottom-10 w-36 h-36 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="space-y-1">
+<span class="text-label-md font-label-md text-on-primary-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
+              رصيد محفظة حارث الحالي
+            </span>
+<div class="flex items-baseline gap-1.5">
+<span class="text-display-lg-mobile font-display-lg-mobile font-bold tracking-tight text-white">1,480.50</span>
+<span class="text-label-lg font-label-lg text-primary-fixed">ج.م</span>
+</div>
+</div>
+<!-- Active & Secure Pill -->
+<div class="flex items-center gap-1.5 bg-secondary/20 border border-secondary-fixed/30 px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-secondary-container font-semibold">نشط وآمن</span>
+</div>
+</div>
+</section>
+<!-- Three-Way Top Tabs Bar -->
+<nav aria-label="خيارات الشحن" class="grid grid-cols-3 gap-1.5 p-1 bg-surface-subtle rounded-xl border border-border-subtle">
+<button class="py-2.5 px-1 rounded-lg text-label-md font-label-md text-text-muted hover:text-text-primary transition-colors text-center truncate" type="button">
+          تحويل يدوي
+        </button>
+<button class="py-2.5 px-1 rounded-lg text-label-md font-label-md bg-primary-container text-white shadow-sm font-bold text-center flex items-center justify-center gap-1 truncate" type="button">
+<span>دفع فوري أونلاين</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+</button>
+<button class="py-2.5 px-1 rounded-lg text-label-md font-label-md text-text-muted hover:text-text-primary transition-colors text-center truncate" type="button">
+          سجل الطلبات
+        </button>
+</nav>
+<!-- Online Payment Methods Grid (3 Horizontal Option Cards) -->
+<section class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<span class="text-label-md font-label-md text-text-secondary">اختر وسيلة الدفع المباشرة:</span>
+<span class="text-label-sm font-label-sm text-secondary font-medium">معتمدة عبر PayMob</span>
+</div>
+<div class="space-y-2.5">
+<!-- Card 1: Bank Cards (Selected State) -->
+<div class="relative p-3.5 rounded-2xl bg-surface border-2 border-secondary shadow-[0_4px_16px_rgba(0,108,73,0.08)] flex items-center justify-between cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-body-lg font-body-lg text-text-primary font-bold">البطاقات البنكية</h2>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-subtle text-text-secondary border border-border-subtle">Visa / Mastercard / ميزة</span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary mt-0.5">خصم مباشر وفوري من أي كارت ائتمان أو خصم</p>
+</div>
+</div>
+<!-- Checkmark Indicator -->
+<div class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Card 2: Wallets -->
+<div class="p-3.5 rounded-2xl bg-surface border border-border-subtle hover:border-text-muted shadow-[0_2px_8px_rgba(11,62,66,0.03)] flex items-center justify-between cursor-pointer transition-all opacity-80 hover:opacity-100">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg text-text-primary font-semibold">المحافظ الإلكترونية الذكية</h3>
+<p class="text-body-sm font-body-sm text-text-muted">فودافون كاش، أورانج، اتصالات كاش، وي باي</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-border-subtle shrink-0"></div>
+</div>
+<!-- Card 3: Fawry Pay -->
+<div class="p-3.5 rounded-2xl bg-surface border border-border-subtle hover:border-text-muted shadow-[0_2px_8px_rgba(11,62,66,0.03)] flex items-center justify-between cursor-pointer transition-all opacity-80 hover:opacity-100">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-subtle flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<div>
+<h3 class="text-body-lg font-body-lg text-text-primary font-semibold">فوري باي (Fawry Pay)</h3>
+<p class="text-body-sm font-body-sm text-text-muted">إصدار كود سداد فوري والدفع من أقرب منفذ</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-border-subtle shrink-0"></div>
+</div>
+</div>
+</section>
+<!-- PayMob Bank Card Direct Recharge Form -->
+<section class="bg-surface rounded-2xl p-4 border border-border-subtle shadow-[0_4px_12px_rgba(11,62,66,0.05)] space-y-4">
+<!-- Input Field & Quick Chips -->
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-text-primary" for="recharge-amount">
+            المبلغ المراد شحنه (ج.م)
+          </label>
+<div class="relative">
+<input class="w-full h-[52px] pr-4 pl-14 bg-surface-subtle border border-border-subtle rounded-xl text-currency-body font-currency-body text-text-primary focus:bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 transition-all text-right font-bold" id="recharge-amount" type="text" value="500.00"/>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-label-lg font-label-lg text-text-secondary font-bold">
+              ج.م
+            </span>
+</div>
+<!-- Quick Selector Buttons -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="py-2 rounded-lg bg-surface border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:border-primary-container transition-colors" type="button">
+              100 ج.م
+            </button>
+<button class="py-2 rounded-lg bg-primary-container text-white text-label-sm font-label-sm font-bold shadow-sm border border-primary-container" type="button">
+              500 ج.م
+            </button>
+<button class="py-2 rounded-lg bg-surface border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:border-primary-container transition-colors" type="button">
+              1,000 ج.م
+            </button>
+<button class="py-2 rounded-lg bg-surface border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:border-primary-container transition-colors" type="button">
+              2,000 ج.م
+            </button>
+</div>
+</div>
+<!-- Transparent Fee Summary Bento Card -->
+<div class="rounded-xl bg-surface-subtle p-3.5 border border-border-subtle space-y-2 text-body-sm font-body-sm">
+<div class="flex justify-between items-center text-text-secondary">
+<span>قيمة الشحن:</span>
+<span class="font-bold text-text-primary">500.00 ج.م</span>
+</div>
+<div class="flex justify-between items-center text-text-secondary">
+<span class="flex items-center gap-1">
+              رسوم بوابة الدفع:
+              <span class="text-secondary text-[11px] font-semibold bg-secondary-fixed/40 px-1.5 py-0.2 rounded">شحن مجاني</span>
+</span>
+<span class="font-semibold text-secondary">0.00 ج.م</span>
+</div>
+<div class="pt-2 border-t border-border-subtle flex justify-between items-center text-body-lg font-body-lg text-primary-container font-bold">
+<span>يضاف للمحفظة فوراً:</span>
+<span class="text-currency-body font-currency-body text-primary-container">500.00 ج.م</span>
+</div>
+</div>
+<!-- Security Accreditation Badges & Central Bank Trust Shield -->
+<div class="p-3 bg-surface rounded-xl border border-border-subtle flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+              معتمد ومحمي بتشفير 3D-Secure المصرفي
+            </span>
+<span class="text-label-sm font-label-sm text-text-muted font-mono">256-Bit</span>
+</div>
+<!-- Payment Logos Flex Row -->
+<div class="flex items-center justify-between pt-1 px-1 border-t border-border-subtle/60">
+<!-- Visa -->
+<div class="h-6 flex items-center justify-center font-bold italic tracking-tighter text-[#1A1F71] text-[15px]">
+              VISA
+            </div>
+<!-- Mastercard -->
+<div class="flex items-center gap-1">
+<div class="w-5 h-5 rounded-full bg-[#EB001B] opacity-90 -mr-2"></div>
+<div class="w-5 h-5 rounded-full bg-[#F79E1B] opacity-90"></div>
+</div>
+<!-- Meeza (ميزة) -->
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-subtle border border-border-subtle text-[11px] font-bold text-[#0B3E42]">
+<span>ميزة</span>
+<span class="text-[9px] text-secondary">Meeza</span>
+</div>
+<!-- PayMob Badge -->
+<div class="text-[11px] font-bold tracking-tight bg-primary-container text-white px-2 py-0.5 rounded">
+              PayMob
+            </div>
+</div>
+</div>
+<!-- Explanatory Notice Note -->
+<div class="flex gap-2.5 bg-blue-50/60 p-3 rounded-xl border border-blue-100">
+<span class="material-symbols-outlined text-blue-600 text-[20px] shrink-0 mt-0.5">info</span>
+<p class="text-body-sm font-body-sm text-slate-700 leading-relaxed">
+            سيتم نقلك بأمان لشاشة إدخال بيانات الكارت والتحقق عبر رمز السري المؤقت OTP من بنكك، وسيتم إضافة الرصيد لحظياً دون أي تأخير.
+          </p>
+</div>
+</section>
+<!-- Primary Action CTA Button -->
+<div class="pt-2">
+<button class="w-full h-14 bg-primary-container hover:bg-[#082C2F] active:scale-[0.99] text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(11,62,66,0.22)] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="text-body-lg font-body-lg font-bold">الدفع الفوري الآمن (500.00 ج.م)</span>
+<span class="material-symbols-outlined text-[20px] rotate-180">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Trust & Compliance Statement -->
+<footer class="pt-2 text-center">
+<p class="text-label-sm font-label-sm text-text-muted flex items-center justify-center gap-1.5 leading-tight">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span>
+          جميع المعاملات المالية مشفرة ومحمية وفق معايير البنك المركزي المصري ومعايير PCI-DSS
+        </p>
+</footer>
+</div>
+</main>
+</body></html>
